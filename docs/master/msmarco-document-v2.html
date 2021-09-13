@@ -209,8 +209,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="4702">5K</kdb></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -413,8 +413,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="5178">5K</kdb></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -617,8 +617,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="331956">332K</kdb></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -821,11 +821,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="8229">8K</kdb></td><td class="right">59.0%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="3957">4K</kdb></td><td class="right">28.4%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1009">1K</kdb></td><td class="right">7.2%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="745">745<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -899,7 +899,7 @@
 <a class="tab" target="msmarco-document-v2/trec-dl-2019/judged__queries">queries</a>
 <div id="msmarco-document-v2/trec-dl-2019/judged__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -930,15 +930,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document-v2/trec-dl-2019/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document-v2/trec-dl-2019/judged__docs">docs</a>
@@ -998,11 +990,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="8229">8K</kdb></td><td class="right">59.0%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="3957">4K</kdb></td><td class="right">28.4%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1009">1K</kdb></td><td class="right">7.2%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="745">745<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1028,21 +1020,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document-v2/trec-dl-2019/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document-v2/trec-dl-2019/judged__citation">Citation</a>
@@ -1175,11 +1153,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="6371">6K</kdb></td><td class="right">80.2%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1059">1K</kdb></td><td class="right">13.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="279">279<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="233">233<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1253,7 +1231,7 @@
 <a class="tab" target="msmarco-document-v2/trec-dl-2020/judged__queries">queries</a>
 <div id="msmarco-document-v2/trec-dl-2020/judged__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1284,15 +1262,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document-v2/trec-dl-2020/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document-v2/trec-dl-2020/judged__docs">docs</a>
@@ -1352,11 +1322,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="6371">6K</kdb></td><td class="right">80.2%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1059">1K</kdb></td><td class="right">13.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="279">279<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="233">233<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1382,21 +1352,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document-v2/trec-dl-2020/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document-v2/trec-dl-2020/judged__citation">Citation</a>

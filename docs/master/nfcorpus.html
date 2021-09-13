@@ -212,10 +212,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="3204">3K</kdb></td><td class="right">22.0%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="10864">11K</kdb></td><td class="right">74.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -376,18 +376,18 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="699">699<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">16.1%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="3133">3K</kdb></td><td class="right">72.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -396,7 +396,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;nfcorpus/dev/nontopic&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -406,7 +406,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
@@ -548,18 +548,18 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="678">678<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">22.1%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="1979">2K</kdb></td><td class="right">64.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -568,7 +568,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;nfcorpus/dev/video&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -578,7 +578,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
@@ -728,10 +728,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="3486">3K</kdb></td><td class="right">22.0%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="11758">12K</kdb></td><td class="right">74.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -892,18 +892,18 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="676">676<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">14.9%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="3288">3K</kdb></td><td class="right">72.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -912,7 +912,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;nfcorpus/test/nontopic&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -922,7 +922,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
@@ -1064,18 +1064,18 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="610">610<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">19.6%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="2034">2K</kdb></td><td class="right">65.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1084,7 +1084,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;nfcorpus/test/video&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1094,7 +1094,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
@@ -1244,10 +1244,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="28775">29K</kdb></td><td class="right">20.6%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="106296">106K</kdb></td><td class="right">76.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1408,18 +1408,18 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="6720">7K</kdb></td><td class="right">18.0%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="26384">26K</kdb></td><td class="right">70.6%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1428,7 +1428,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;nfcorpus/train/nontopic&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1438,7 +1438,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
@@ -1580,18 +1580,18 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td></tr>
-<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td></tr>
-<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Marginally relevant, based on topic containment.</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>A link exists from the query to another query that directly links to the document.</td><td class="right"><kbd title="6260">6K</kdb></td><td class="right">22.8%</td></tr>
+<tr><td class="relScore">2</td><td>A direct link from the query to the document the cited sources section of a page.</td><td class="right"><kbd title="17669">18K</kdb></td><td class="right">64.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1600,7 +1600,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;nfcorpus/train/video&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1610,7 +1610,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>

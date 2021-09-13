@@ -50,6 +50,7 @@ def main():
                 top_level_map[parent].append((name, dataset))
 
         generate_index(args.out_dir, version, top_level_map)
+        generate_counts(args.out_dir, version, top_level_map)
 
         bibliography = pkgutil.get_data('ir_datasets', 'docs/bibliography.bib').decode().split('\n\n')
         bibliography = {b.split('{')[1].split(',')[0]: b for b in bibliography}
@@ -171,7 +172,7 @@ def generate_dataset(dataset, dataset_id, bibliography):
 <div>Query relevance judgment type:</div>
 {generate_data_format(dataset.qrels_cls())}
 <p>Relevance levels</p>
-{generate_qrel_defs_table(dataset.qrels_defs())}
+{generate_qrel_defs_table(dataset.qrels_defs(), dataset_id)}
 {generate_examples(generators, 'generate_qrels')}
 </div>
 ''')
@@ -404,6 +405,95 @@ can be found on each dataset's documenation page.
 }}
 </cite>
 ''')
+
+
+def generate_counts(out_dir, version, top_level_map):
+    with page_template('counts.html', out_dir, version, title='Counts') as out, open(get_file_path(out_dir, version, 'counts.csv'), 'wt') as csv_out:
+        index = []
+        csv_out.write(f'Dataset,docs,queries,qrels,qrels/q,scoreddocs,scoreddocs/q,docpairs,docpairs/q\n')
+        for top_level in sorted(top_level_map):
+            names = [top_level] + sorted(x[0] for x in top_level_map[top_level])
+            for name in names:
+                dataset = ir_datasets.registry[name]
+                parent = name.split('/')[0]
+                if parent != name:
+                    ds_name = f'<a href="{parent}.html#{name}"><kbd><span class="prefix"><span class="screen-small-hide">{parent}</span><span class="screen-small-show">&hellip;</span></span>{name[len(parent):]}</kbd></a>'
+                    tbody = ''
+                    row_id = ''
+                else:
+                    ds_name = f'<a style="font-weight: bold;" href="{parent}.html"><kbd>{parent}</kbd></a></li>'
+                    tbody = '</tbody><tbody>'
+                    row_id = f' id="{parent}"'
+                index.append(f'''{tbody}<tr{row_id}>
+<td>{ds_name}</td>
+<td id="{name}-docs" class="right">{ds_counts(dataset, name, "docs")}</td>
+<td id="{name}-queries" class="right">{ds_counts(dataset, name, "queries")}</td>
+<td id="{name}-qrels" class="right">{ds_counts(dataset, name, "qrels")}</td>
+<td id="{name}-qrels-q" class="right">{ds_per_q_count(dataset, name, 'qrels')}</td>
+<td id="{name}-scoreddocs" class="right">{ds_counts(dataset, name, "scoreddocs")}</td>
+<td id="{name}-scoreddocs-q" class="right">{ds_per_q_count(dataset, name, "scoreddocs")}</td>
+<td id="{name}-docpairs" class="right">{ds_counts(dataset, name, "docpairs")}</td>
+<td id="{name}-docpairs-q" class="right">{ds_per_q_count(dataset, name, "docpairs")}</td>
+</tr>''')
+                csv_out.write(f'{name},{ds_count_value(dataset, name, "docs") or ""},{ds_count_value(dataset, name, "queries") or ""},{ds_count_value(dataset, name, "qrels") or ""},{ds_per_q_count_value(dataset, name, "qrels") or ""},{ds_count_value(dataset, name, "scoreddocs") or ""},{ds_per_q_count_value(dataset, name, "scoreddocs") or ""},{ds_count_value(dataset, name, "docpairs") or ""},{ds_per_q_count_value(dataset, name, "docpairs") or ""}\n')
+        index = '\n'.join(index)
+        out.write(f'''
+<h2 style="margin-bottom: 4px;">Dataset Counts</h2>
+<p><a href="counts.csv">data in CSV format</a></p>
+<p><input type="radio" id="Approx" name="counts" value="Approx" checked><label for="Approx">Approx. counts</label> <input type="radio" id="Exact" name="counts" value="Exact"><label for="Exact">Exact counts</label></p>
+<p>K: Thousand (&times;1,000)</p>
+<p>M: Million (&times;1,000,000)</p>
+<p>B: Billion (&times;1,000,000,000)</p>
+<p>/q: Per query (value divided by query count)</p>
+<p>Hover over number for exact count.</p>
+<table>
+<tbody>
+<tr>
+<th class="stick-top">Dataset</th>
+<th class="stick-top">docs</th>
+<th class="stick-top">queries</th>
+<th class="stick-top">qrels</th>
+<th class="stick-top">/q</th>
+<th class="stick-top">scoreddocs</th>
+<th class="stick-top">/q</th>
+<th class="stick-top">docpairs</th>
+<th class="stick-top">/q</th>
+</tr>
+{index}
+</tbody>
+</table>
+<script type="text/javascript">
+''')
+        out.write(r'''
+$(function () {
+    $('kbd[title]').each(function (i, e) {
+        var $e = $(e);
+        $e.attr('data-approx', $e.text());
+        $e.attr('data-exact', $e.attr('title'));
+    });
+    $(document).on('change', '[name=counts]', function (e) {
+        var $target = $(e.target);
+        if (!$target.prop('checked')) {
+            return;
+        }
+        if ($target.attr('id') == 'Exact') {
+            $('kbd[title]').each(function (i, e) {
+                var $e = $(e);
+                $e.text($e.attr('data-exact'));
+                $e.attr('title', $e.attr('data-approx'));
+            });
+        } else if ($target.attr('id') == 'Approx') {
+            $('kbd[title]').each(function (i, e) {
+                var $e = $(e);
+                $e.text($e.attr('data-approx'));
+                $e.attr('title', $e.attr('data-exact'));
+            });
+        }
+    });
+});
+</script>
+''')
+
 
 
 
@@ -1467,6 +1557,10 @@ tbody tr:last-child td {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .sep {
   border-top: 3px solid #333;
 }
@@ -1834,14 +1928,25 @@ def get_file_path(base_dir, version, file):
     return f'{base_dir}/{version}/{file}' if version else f'{base_dir}/{file}'
 
 
-def generate_qrel_defs_table(defs):
+def generate_qrel_defs_table(defs, dsid):
+    metadata = ir_datasets.metadata_cached(dsid, 'qrels')
+    counts_by_relevance = metadata.get('counts_by_relevance')
     rows = []
     for score, desc in sorted(defs.items()):
-        rows.append(f'<tr><td class="relScore">{score}</td><td>{desc}</td></tr>')
+        if counts_by_relevance:
+            c = counts_by_relevance.get(str(score), 0)
+            count = f'<td class="right">{format_count(c)}</td><td class="right">{c/sum(counts_by_relevance.values())*100:0.1f}%</td>'
+        else:
+            count = ''
+        rows.append(f'<tr><td class="relScore">{score}</td><td>{desc}</td>{count}</tr>')
     rows = "\n".join(rows)
+    if counts_by_relevance:
+        count = f'<th>Count</th><th>%</th>'
+    else:
+        count = ''
     return f'''
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
+<tr><th>Rel.</th><th>Definition</th>{count}</tr>
 {rows}
 </table>
 '''
@@ -1857,6 +1962,47 @@ def emoji(ds, dsid, arg, top_level):
             if instructions:
                 return f'<a href="{top_level}.html#DataAccess" title="{instructions}. Click for details.">⚠️</a>'
             return f'<span style="cursor: help;" title="{arg} available as automatic download">✅</span>'
+    return ''
+
+
+def format_count(count):
+    display_count = count
+    formats = ['{:.0f}<span style="visibility: hidden;">&nbsp;</span>', '{:.0f}K', '{:.0f}M', '{:.0f}B']
+    while display_count >= 1000:
+        display_count = display_count / 1000
+        formats.pop(0)
+    return f'<kbd title="{count}">{formats[0].format(display_count)}</kdb>'
+
+def ds_count_value(ds, dsid, etype):
+    has = getattr(ds, f'has_{etype}')()
+    if has:
+        metadata = ir_datasets.metadata_cached(dsid, etype)
+        if 'count' in metadata:
+            return metadata['count']
+
+def ds_counts(ds, dsid, etype):
+    has = getattr(ds, f'has_{etype}')()
+    if has:
+        count = ds_count_value(ds, dsid, etype)
+        if count is not None:
+            return format_count(count)
+        else:
+            return f'<span title="has {etype} but missing metadata">⚠️</span>'
+    return ''
+
+def ds_per_q_count_value(ds, dsid, etype):
+    has = getattr(ds, f'has_{etype}')() and ds.has_queries()
+    if has:
+        metadata_qrels = ir_datasets.metadata_cached(dsid, etype)
+        metadata_queries = ir_datasets.metadata_cached(dsid, 'queries')
+        if 'count' in metadata_qrels and 'count' in metadata_queries:
+            count = metadata_qrels['count'] / metadata_queries['count']
+            return count
+
+def ds_per_q_count(ds, dsid, etype):
+    count = ds_per_q_count_value(ds, dsid, etype)
+    if count is not None:
+        return f'<kbd title="{count:0.4f}">{count:0.1f}</kdb>'
     return ''
 
 

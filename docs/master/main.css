@@ -249,6 +249,10 @@ tbody tr:last-child td {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .sep {
   border-top: 3px solid #333;
 }

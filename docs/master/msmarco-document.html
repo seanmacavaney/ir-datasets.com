@@ -215,8 +215,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="5193">5K</kdb></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -566,8 +566,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>User click</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>User click</td><td class="right"><kbd title="18823602">19M</kdb></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -770,8 +770,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="367013">367K</kdb></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -974,11 +974,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="9661">10K</kdb></td><td class="right">59.4%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="4607">5K</kdb></td><td class="right">28.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1149">1K</kdb></td><td class="right">7.1%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="841">841<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1088,7 +1088,7 @@
 <a class="tab" target="msmarco-document/trec-dl-2019/judged__queries">queries</a>
 <div id="msmarco-document/trec-dl-2019/judged__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1119,15 +1119,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-2019/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-2019/judged__docs">docs</a>
@@ -1187,11 +1179,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="9661">10K</kdb></td><td class="right">59.4%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="4607">5K</kdb></td><td class="right">28.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1149">1K</kdb></td><td class="right">7.1%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="841">841<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1217,21 +1209,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-2019/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">,</span> <span class="n">MAP</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-2019/judged__scoreddocs">scoreddocs</a>
@@ -1400,11 +1378,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="7331">7K</kdb></td><td class="right">80.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1187">1K</kdb></td><td class="right">13.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="315">315<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="265">265<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1514,7 +1492,7 @@
 <a class="tab" target="msmarco-document/trec-dl-2020/judged__queries">queries</a>
 <div id="msmarco-document/trec-dl-2020/judged__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1545,15 +1523,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-2020/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-2020/judged__docs">docs</a>
@@ -1613,11 +1583,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="7331">7K</kdb></td><td class="right">80.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1187">1K</kdb></td><td class="right">13.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="315">315<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="265">265<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1643,21 +1613,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-2020/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">,</span> <span class="n">MAP</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-2020/judged__scoreddocs">scoreddocs</a>
@@ -1727,7 +1683,7 @@
 <a class="tab" target="msmarco-document/trec-dl-hard__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1758,15 +1714,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard__docs">docs</a>
@@ -1826,11 +1774,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="5186">5K</kdb></td><td class="right">60.7%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="2517">3K</kdb></td><td class="right">29.5%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="485">485<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.7%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="356">356<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">4.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1856,21 +1804,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard__citation">Citation</a>
@@ -1899,13 +1833,13 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-document/trec-dl-hard/fold1"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-document/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-passage/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 1 of <a class="ds-ref">msmarco-document/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold1__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold1__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1936,15 +1870,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold1&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold1__docs">docs</a>
@@ -1996,19 +1922,19 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="1048">1K</kdb></td><td class="right">67.3%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="328">328<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">21.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="75">75<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">4.8%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="106">106<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">6.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2017,7 +1943,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-document/trec-dl-hard/fold1&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2027,28 +1953,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold1&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold1__citation">Citation</a>
@@ -2077,13 +1989,13 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-document/trec-dl-hard/fold2"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-document/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-passage/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 2 of <a class="ds-ref">msmarco-document/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold2__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold2__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -2114,15 +2026,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold2&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold2__docs">docs</a>
@@ -2174,19 +2078,19 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="922">922<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">68.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="304">304<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">22.6%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="78">78<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.8%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="41">41<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2195,7 +2099,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-document/trec-dl-hard/fold2&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2205,28 +2109,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold2&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold2__citation">Citation</a>
@@ -2255,13 +2145,13 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-document/trec-dl-hard/fold3"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-document/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-passage/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 3 of <a class="ds-ref">msmarco-document/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold3__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold3__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -2292,15 +2182,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold3&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold3__docs">docs</a>
@@ -2352,19 +2234,19 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="333">333<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">70.3%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="65">65<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">13.7%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="44">44<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">9.3%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="32">32<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">6.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2373,7 +2255,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-document/trec-dl-hard/fold3&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2383,28 +2265,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold3&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold3__citation">Citation</a>
@@ -2433,13 +2301,13 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-document/trec-dl-hard/fold4"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-document/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-passage/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 4 of <a class="ds-ref">msmarco-document/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold4__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold4__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -2470,15 +2338,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold4&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold4__docs">docs</a>
@@ -2530,19 +2390,19 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="718">718<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">68.1%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="258">258<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">24.5%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="34">34<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.2%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="44">44<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">4.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2551,7 +2411,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-document/trec-dl-hard/fold4&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2561,28 +2421,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold4&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold4__citation">Citation</a>
@@ -2611,13 +2457,13 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-document/trec-dl-hard/fold5"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-document/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-passage/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 5 of <a class="ds-ref">msmarco-document/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold5__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold5__queries" class="tab-content">
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -2648,15 +2494,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold5&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold5__docs">docs</a>
@@ -2708,19 +2546,19 @@
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="2165">2K</kdb></td><td class="right">52.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1562">2K</kdb></td><td class="right">38.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="254">254<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">6.2%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="133">133<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2729,7 +2567,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-document/trec-dl-hard/fold5&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2739,28 +2577,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-document/trec-dl-hard/fold5&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-document&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold5__citation">Citation</a>
