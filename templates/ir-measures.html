@@ -1,0 +1,57 @@
+<p>
+<a href="https://ir-measur.es/">ir-measures</a> is a Python package that interfaces
+with several IR evaluation tools, including pytrec_eval, gdeval, trectools, and others.
+</p>
+
+<h2 style="border-bottom: 1px solid grey;">Basic Usage</h2>
+
+<p>
+ir-measures accepts qrels provided by <kbd>ir_datasets</kbd> directly in its python API.
+</p>
+
+${hl('''
+import ir_datasets
+import ir_measures
+qrels = ir_datasets.load('trec-robust04').qrels_iter()
+run = ir_measures.read_trec_run('path/to/run')
+ir_measures.calc_aggregate([nDCG@10, P@5, P(rel=2)@5, Judged@10], qrels, run)
+# {
+#   nDCG@10: 0.3793,
+#   P@5: 0.4185,
+#   P(rel=2)@5: 0.0803,
+#   Judged@10: 0.9628
+# }
+''')}
+
+<p>
+If using the ir-measures CLI and a shell like bash, you can treat the output of the <kbd>ir_datasets export</kbd>
+command as a file:
+</p>
+
+${hlb('''
+ir_measures <(ir_datasets export trec-robust04 qrels) path/to/run 'nDCG@10 P@5 P(rel=2)@5 Judged@10'
+# nDCG@10 0.3793
+# P@5     0.4185
+# P(rel=2)@5      0.0803
+# Judged@10       0.9628
+''')}
+
+<p>
+Alternatively, you can always save the output of <kbd>ir_datasets export</kbd> as a file:
+</p>
+
+${hlb('''
+ir_datasets export trec-robust04 qrels > trec-robust04.qrels
+ir_measures trec-robust04.qrels path/to/run 'nDCG@10 P@5 P(rel=2)@5 Judged@10'
+# nDCG@10 0.3793
+# P@5     0.4185
+# P(rel=2)@5      0.0803
+# Judged@10       0.9628
+''')}
+
+<h2 style="border-bottom: 1px solid grey;">Further Information</h2>
+
+<ul>
+  <li><a href="https://ir-measur.es/">ir-measures Documentation</a></li>
+  <li><a href="https://github.com/terrierteam/ir_measures">ir-measures GitHub</a></li>
+</ul>

@@ -357,7 +357,8 @@ Install with pip:
 <li><a href="https://github.com/allenai/ir_datasets/blob/master/examples/adding_datasets.ipynb">Adding new datasets</a></li>
 <li><a href="https://arxiv.org/pdf/2103.02280.pdf">ir_datasets SIGIR resource paper</a></li>
 <li><kbd>ir_datasets</kbd> integration with&hellip;
-<a href="pyterrier.html">PyTerrier</a>
+<a href="pyterrier.html">PyTerrier</a> &middot;
+<a href="ir-measures.html">ir-measures</a>
 </li>
 </ul>
 
@@ -1130,16 +1131,22 @@ $(function () {
 
 def generate_integrations(out_dir, version):
     from pygments import highlight
-    from pygments.lexers import PythonLexer
+    from pygments.lexers import PythonLexer, BashLexer
     from pygments.formatters import HtmlFormatter
 
     def hl(c):
         return highlight(c, PythonLexer(), HtmlFormatter())
 
-    template = Template(filename=os.path.join("templates", "pyterrier.html"))
+    def hlb(c):
+        return highlight(c, BashLexer(), HtmlFormatter())
 
+    template = Template(filename=os.path.join("templates", "pyterrier.html"))
     with page_template('pyterrier.html', out_dir, version, title='PyTerrier &amp; ir_datasets', include_irds_title=False) as out:
         out.write(template.render(hl=hl))
+
+    template = Template(filename=os.path.join("templates", "ir-measures.html"))
+    with page_template('ir-measures.html', out_dir, version, title='ir_measures &amp; ir_datasets', include_irds_title=False) as out:
+        out.write(template.render(hl=hl, hlb=hlb))
 
 
 @contextmanager
