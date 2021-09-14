@@ -1,0 +1,150 @@
+<p>
+<a href="https://pyterrier.readthedocs.io/en/latest/">PyTerrier</a> is a Python interface to the Terrier search engine
+that enables the creation of flexible retrieval pipelines.
+</p>
+
+<p>
+The documentation for each dataset includes PyTerrier examples for indexing, retrieval, and
+experimentation. Click on the <span class="ex-tab">PyTerrier</span> tab in the documentation to see
+these examples.
+</p>
+
+
+<h2 style="border-bottom: 1px solid grey;">Basic Usage</h2>
+
+<p>
+The PyTerrier library includes its own dataset API, which will use the <kbd>ir_datasets</kbd>
+implementation under the hood if the dataset ID is prefixed with <kbd>irds:</kbd>. For example,
+to load the <a href="antique.html#antique/test"><kbd>antique/test</kbd></a> dataset in PyTerrier, run:
+</p>
+
+${hl('''
+import pyterrier as pt
+pt.init()
+dataset = pt.get_dataset('irds:antique/test') # 'irds:<ir-datasets-id>'
+''')}
+
+<p>
+<a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset">PyTerrier
+Dataset objects</a> have a different API and use a different naming convention than <kbd>ir_datasets</kbd>,
+but they provide similar functionality. When wrapping an <kbd>ir_dataset</kbd>, it automatically maps
+to a PyTerrier-compatible format:
+</p>
+
+<table>
+<tr><th>PyTerrier's...</th><th>Uses...</th><th>Notes</th></tr>
+<tr><td><kbd>get_corpus_iter()</kbd></td><td><kbd>docs_iter()</kbd></td><td></td></tr>
+<tr><td><kbd>get_corpus_lang()</kbd></td><td><kbd>docs_lang()</kbd></td><td></td></tr>
+<tr><td><kbd>get_topics(variant=None)</kbd></td><td><kbd>queries_iter()</kbd></td><td>When multiple are available (e.g., title, description, narrative), <kbd>variant</kbd> selects which query field to use</td></tr>
+<tr><td><kbd>get_topics_lang()</kbd></td><td><kbd>queries_lang()</kbd></td><td></td></tr>
+<tr><td><kbd>get_qrels()</kbd></td><td><kbd>qrels_iter()</kbd></td><td></td></tr>
+<tr><td><kbd>info_url()</kbd></td><td></td><td>Provides URL of correspnding <kbd>ir_datasets</kbd> documentation page</td></tr>
+</table>
+
+
+<h2 style="border-bottom: 1px solid grey;">Indexing a Dataset</h2>
+
+<p>
+The <a href="https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html#iterdictindexer"><code>pt.IterDictIndexer</code></a>
+class can index an <kbd>ir_datasets</kbd> doc collection. When calling <a href="https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html#pyterrier.IterDictIndexer.index"><code>index</code></a>,
+be sure to set the correct fields you want to include in the index. These can be found on the
+dataset's documentation page, and suggestions for each dataset are given in the PyTerrier samples.
+</p>
+
+
+${hl('''
+dataset = pt.get_dataset('irds:antique') # use a pyterrier dataset object here
+indexer = pt.IterDictIndexer('./indices/antique')
+index_ref = indexer.index(dataset.get_corpus_iter(), fields=['text'])
+''')}
+
+
+<p>
+More information about indexing in PyTerrier can be found <a href="https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html">here</a>.
+</p>
+
+
+<h2 style="border-bottom: 1px solid grey;">Performing Retrieval</h2>
+
+<p>
+PyTerrier provides a variety of retrieval functions with a common API. The pipelines often
+start with retrieval over an inverted index using a scoring function like BM25.
+</p>
+
+${hl('''
+dataset = pt.get_dataset('irds:antique/test') # use a pyterrier dataset object here
+index_ref = pt.IndexRef.of('./indices/antique') # assumes you have already built an index
+bm25 = pt.BatchRetrieve(index_ref, wmodel='BM25')
+bm25(dataset.get_topics())
+''')}
+
+<p>
+Some datasets have multiple query formats (e.g., title, description, narrative). To select
+which one to use, specify the <kbd>variant</kbd>:
+</p>
+
+${hl('''
+dataset = pt.get_dataset('irds:trec-robust04')
+bm25(dataset.get_topics('description'))
+''')}
+
+<p>
+More information about retrieval and ranking in PyTerrier can be found <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.
+</p>
+
+
+<h2 style="border-bottom: 1px solid grey;">Running an Experiment</h2>
+
+<p>
+PyTerrier also provides <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">an interface for conducting
+IR experiments</a>.
+</p>
+
+${hl('''
+from pyterrier.measures import *
+dataset = pt.get_dataset('irds:antique/test') # use a pyterrier dataset object here
+index_ref = pt.IndexRef.of('./indices/antique') # assumes you have already built an index
+bm25 = pt.BatchRetrieve(index_ref, wmodel='BM25')
+pt.Experiment(
+    [bm25],
+    dataset.get_topics(),
+    dataset.get_qrels(),
+    [MAP, nDCG@20]
+)
+''')}
+
+<p>
+More information about experiments in PyTerrier can be found <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.
+</p>
+
+<h2 style="border-bottom: 1px solid grey;">Document Text</h2>
+
+<p>
+Some re-ranking models, such as those based on BERT, make use of the document text. PyTerrier can use
+<kbd>ir_datasets</kbd>'s fast document lookups (via <kbd>docs_store</kbd>) for this when passing
+an <kbd>ir_datasets</kbd>-backed object into <a href="https://pyterrier.readthedocs.io/en/latest/text.html#pyterrier.text.get_text"><kbd>pt.text.get_text</kbd></a>
+when building a retrieval pipeline:
+</p>
+
+${hl('''
+dataset = pt.get_dataset('irds:antique/test') # use a pyterrier dataset object here
+index_ref = pt.IndexRef.of('./indices/antique') # assumes you have already built an index
+pipe = (pt.BatchRetrieve(index_ref, wmodel="DPH")
+     >> pt.text.get_text(dataset, "text")
+     >> pt.text.scorer(wmodel="DPH"))
+''')}
+
+<p>
+Note that the second argument specifies the document field to use.
+</p>
+
+<p>
+More information about working with document text in PyTerrier can be found <a href="https://pyterrier.readthedocs.io/en/latest/text.html">here</a>.
+</p>
+
+<h2 style="border-bottom: 1px solid grey;">Further Information</h2>
+
+<ul>
+  <li><a href="https://pyterrier.readthedocs.io/en/latest/">PyTerrier Documentation</a></li>
+  <li><a href="https://github.com/terrier-org/pyterrier">PyTerrier GitHub</a></li>
+</ul>

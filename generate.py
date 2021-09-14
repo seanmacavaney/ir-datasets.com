@@ -1,3 +1,4 @@
+from mako.template import Template
 import pkgutil
 import io
 import os
@@ -37,6 +38,7 @@ def main():
         generate_redirect(args.out_dir, version, 'datasets.html', 'index.html')
         generate_redirect(args.out_dir, version, 'all.html', 'index.html')
         generate_downloads(args.out_dir, version)
+        generate_integrations(args.out_dir, version)
         generate_css(args.out_dir, version)
         generate_js(args.out_dir, version)
         generate_bib(args.out_dir, version)
@@ -354,6 +356,9 @@ Install with pip:
 <li><a href="downloads.html">Download Dashboard</a></li>
 <li><a href="https://github.com/allenai/ir_datasets/blob/master/examples/adding_datasets.ipynb">Adding new datasets</a></li>
 <li><a href="https://arxiv.org/pdf/2103.02280.pdf">ir_datasets SIGIR resource paper</a></li>
+<li><kbd>ir_datasets</kbd> integration with&hellip;
+<a href="pyterrier.html">PyTerrier</a>
+</li>
 </ul>
 
 <h2 style="margin-bottom: 4px;">Dataset Index</h2>
@@ -1123,8 +1128,22 @@ $(function () {
 ''')
 
 
+def generate_integrations(out_dir, version):
+    from pygments import highlight
+    from pygments.lexers import PythonLexer
+    from pygments.formatters import HtmlFormatter
+
+    def hl(c):
+        return highlight(c, PythonLexer(), HtmlFormatter())
+
+    template = Template(filename=os.path.join("templates", "pyterrier.html"))
+
+    with page_template('pyterrier.html', out_dir, version, title='PyTerrier &amp; ir_datasets', include_irds_title=False) as out:
+        out.write(template.render(hl=hl))
+
+
 @contextmanager
-def page_template(file, base_dir, version, title=None, source=None):
+def page_template(file, base_dir, version, title=None, source=None, include_irds_title=True):
     with open(get_file_path(base_dir, version, file), 'wt') as out:
         no_index = '<meta name="robots" content="noindex,nofollow" />' if version else ''
         out.write(f'''<!DOCTYPE html>
@@ -1137,7 +1156,7 @@ def page_template(file, base_dir, version, title=None, source=None):
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 {no_index}
-<title>{title + ' - ir_datasets' if title else 'ir_datasets'}</title>
+<title>{(title + ' - ir_datasets' if include_irds_title else title) if title else 'ir_datasets'}</title>
 </head>
 <body>
 <div class="page">
@@ -1156,7 +1175,10 @@ def page_template(file, base_dir, version, title=None, source=None):
         out.write(f'''
 <div style="position: absolute; top: 4px; right: 4px;">Github: <a href="{url}">{text}</a></div>
 ''')
-        out.write(f'<h1><code>ir_datasets</code>{": " + title if title else ""}</h1>')
+        if include_irds_title:
+            out.write(f'<h1><code>ir_datasets</code>{": " + title if title else ""}</h1>')
+        else:
+            out.write(f'<h1>{title}</h1>')
         yield out
         out.write(f'''
 </div>
@@ -1521,9 +1543,12 @@ details {
     display: inline-block;
     padding: 2px 4px;
     border: 1px solid black;
-    cursor: pointer;
     margin: 2px;
     border-radius: 4px;
+}
+
+a.ex-tab {
+    cursor: pointer;
 }
 
 .ex-tab.selected {
@@ -1674,8 +1699,8 @@ function toggleExamples(examples, relativeTo) {
     }
     $('.ex-tab-content').hide();
     $('.ex-tab-content.' + examples).show();
-    $('.ex-tab').removeClass('selected');
-    $('.ex-tab[target=' + examples + ']').addClass('selected');
+    $('a.ex-tab').removeClass('selected');
+    $('a.ex-tab[target=' + examples + ']').addClass('selected');
     if (relativeTo) {
         var deltaTop = relativeTo[0].getBoundingClientRect().top - startTop;
         window.scrollBy(0, deltaTop);
@@ -1732,7 +1757,7 @@ $(document).ready(function() {
         examples = 'irds-python';
     }
     toggleExamples(examples, null);
-    $(document).on('click', '.ex-tab', function(e) {
+    $(document).on('click', 'a.ex-tab', function(e) {
         var $target = $(e.target);
         var examples = $target.attr('target');
         if (window.sessionStorage) {
