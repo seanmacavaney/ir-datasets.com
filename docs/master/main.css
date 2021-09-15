@@ -34,7 +34,7 @@ body {
 .tag-scoreddocs { background-color: #9e5bd9; }
 .tag-docpairs { background-color: #06a892; }
 p, blockquote {
-  margin: 6px 0;
+  margin: 8px 0;
   color: #222;
 }
 blockquote {
@@ -50,6 +50,7 @@ blockquote {
   color: #444;
   font-weight: bold;
   cursor: pointer;
+  font-size: 14px;
 }
 .page {
   position: relative; /* allow absolute position within page */
@@ -141,6 +142,7 @@ pre {
 code.example, .highlight {
   font-size: 14px;
   display: block;
+  border: 1px dotted #444;
   border-left: 4px solid #4287f5;
   padding-left: 6px;
   margin-left: 4px;
