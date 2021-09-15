@@ -1,0 +1,13 @@
+<div id="Downloads">
+</div>
+<script type="text/javascript">
+$(function () {
+    $.ajax({
+        'url': 'https://smac.pub/irdsdlc'
+    }).done(function (data) {
+        $.each(data, function (ds, downloads) {
+            $('#Downloads').append(generateDownloads(ds, downloads));
+        });
+    });
+});
+</script>

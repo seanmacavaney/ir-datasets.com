@@ -23,7 +23,11 @@
 with several IR evaluation tools, including pytrec_eval, gdeval, trectools, and others.
 </p>
 
-<h2 style="border-bottom: 1px solid grey;">Basic Usage</h2>
+<p>
+To get started with ir-measures, see <a href="https://ir-measur.es/en/latest/getting-started.html">this guide</a>.
+</p>
+
+<h2 class="underline">Basic Usage</h2>
 
 <p>
 ir-measures accepts qrels provided by <kbd>ir_datasets</kbd> directly in its python API.
@@ -34,27 +38,29 @@ ir-measures accepts qrels provided by <kbd>ir_datasets</kbd> directly in its pyt
 <span class="n">qrels</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;trec-robust04&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">()</span>
 <span class="n">run</span> <span class="o">=</span> <span class="n">ir_measures</span><span class="o">.</span><span class="n">read_trec_run</span><span class="p">(</span><span class="s1">&#39;path/to/run&#39;</span><span class="p">)</span>
 <span class="n">ir_measures</span><span class="o">.</span><span class="n">calc_aggregate</span><span class="p">([</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">P</span><span class="o">@</span><span class="mi">5</span><span class="p">,</span> <span class="n">P</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">@</span><span class="mi">5</span><span class="p">,</span> <span class="n">Judged</span><span class="o">@</span><span class="mi">10</span><span class="p">],</span> <span class="n">qrels</span><span class="p">,</span> <span class="n">run</span><span class="p">)</span>
-<span class="c1"># {</span>
-<span class="c1">#   nDCG@10: 0.3793,</span>
-<span class="c1">#   P@5: 0.4185,</span>
-<span class="c1">#   P(rel=2)@5: 0.0803,</span>
-<span class="c1">#   Judged@10: 0.9628</span>
-<span class="c1"># }</span>
 </pre></div>
 
+<code class="output pre">{
+  nDCG@10: 0.3793,
+  P@5: 0.4185,
+  P(rel=2)@5: 0.0803,
+  Judged@10: 0.9628
+}
+</code>
 
 <p>
-If using the ir-measures CLI and a shell like bash, you can treat the output of the <kbd>ir_datasets export</kbd>
-command as a file:
+If using the ir-measures CLI and a shell like bash, you can use <a href="https://tldp.org/LDP/abs/html/process-sub.html">
+process substitution</a> treat the output of the <kbd>ir_datasets export</kbd> command as a file:
 </p>
 
 <div class="highlight"><pre><span></span>ir_measures &lt;<span class="o">(</span>ir_datasets <span class="nb">export</span> trec-robust04 qrels<span class="o">)</span> path/to/run <span class="s1">&#39;nDCG@10 P@5 P(rel=2)@5 Judged@10&#39;</span>
-<span class="c1"># nDCG@10 0.3793</span>
-<span class="c1"># P@5     0.4185</span>
-<span class="c1"># P(rel=2)@5      0.0803</span>
-<span class="c1"># Judged@10       0.9628</span>
 </pre></div>
 
+<code class="output pre">nDCG@10 0.3793
+P@5     0.4185
+P(rel=2)@5      0.0803
+Judged@10       0.9628
+</code>
 
 <p>
 Alternatively, you can always save the output of <kbd>ir_datasets export</kbd> as a file:
@@ -62,14 +68,16 @@ Alternatively, you can always save the output of <kbd>ir_datasets export</kbd> a
 
 <div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-robust04 qrels &gt; trec-robust04.qrels
 ir_measures trec-robust04.qrels path/to/run <span class="s1">&#39;nDCG@10 P@5 P(rel=2)@5 Judged@10&#39;</span>
-<span class="c1"># nDCG@10 0.3793</span>
-<span class="c1"># P@5     0.4185</span>
-<span class="c1"># P(rel=2)@5      0.0803</span>
-<span class="c1"># Judged@10       0.9628</span>
 </pre></div>
 
+<code class="output pre">nDCG@10 0.3793
+P@5     0.4185
+P(rel=2)@5      0.0803
+Judged@10       0.9628
+</code>
 
-<h2 style="border-bottom: 1px solid grey;">Further Information</h2>
+
+<h2 class="underline">Further Information</h2>
 
 <ul>
   <li><a href="https://ir-measur.es/">ir-measures Documentation</a></li>

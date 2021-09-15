@@ -3,7 +3,11 @@
 with several IR evaluation tools, including pytrec_eval, gdeval, trectools, and others.
 </p>
 
-<h2 style="border-bottom: 1px solid grey;">Basic Usage</h2>
+<p>
+To get started with ir-measures, see <a href="https://ir-measur.es/en/latest/getting-started.html">this guide</a>.
+</p>
+
+<h2 class="underline">Basic Usage</h2>
 
 <p>
 ir-measures accepts qrels provided by <kbd>ir_datasets</kbd> directly in its python API.
@@ -15,26 +19,28 @@ import ir_measures
 qrels = ir_datasets.load('trec-robust04').qrels_iter()
 run = ir_measures.read_trec_run('path/to/run')
 ir_measures.calc_aggregate([nDCG@10, P@5, P(rel=2)@5, Judged@10], qrels, run)
-# {
-#   nDCG@10: 0.3793,
-#   P@5: 0.4185,
-#   P(rel=2)@5: 0.0803,
-#   Judged@10: 0.9628
-# }
 ''')}
+<code class="output pre">{
+  nDCG@10: 0.3793,
+  P@5: 0.4185,
+  P(rel=2)@5: 0.0803,
+  Judged@10: 0.9628
+}
+</code>
 
 <p>
-If using the ir-measures CLI and a shell like bash, you can treat the output of the <kbd>ir_datasets export</kbd>
-command as a file:
+If using the ir-measures CLI and a shell like bash, you can use <a href="https://tldp.org/LDP/abs/html/process-sub.html">
+process substitution</a> treat the output of the <kbd>ir_datasets export</kbd> command as a file:
 </p>
 
 ${hlb('''
 ir_measures <(ir_datasets export trec-robust04 qrels) path/to/run 'nDCG@10 P@5 P(rel=2)@5 Judged@10'
-# nDCG@10 0.3793
-# P@5     0.4185
-# P(rel=2)@5      0.0803
-# Judged@10       0.9628
 ''')}
+<code class="output pre">nDCG@10 0.3793
+P@5     0.4185
+P(rel=2)@5      0.0803
+Judged@10       0.9628
+</code>
 
 <p>
 Alternatively, you can always save the output of <kbd>ir_datasets export</kbd> as a file:
@@ -43,13 +49,15 @@ Alternatively, you can always save the output of <kbd>ir_datasets export</kbd> a
 ${hlb('''
 ir_datasets export trec-robust04 qrels > trec-robust04.qrels
 ir_measures trec-robust04.qrels path/to/run 'nDCG@10 P@5 P(rel=2)@5 Judged@10'
-# nDCG@10 0.3793
-# P@5     0.4185
-# P(rel=2)@5      0.0803
-# Judged@10       0.9628
 ''')}
+<code class="output pre">nDCG@10 0.3793
+P@5     0.4185
+P(rel=2)@5      0.0803
+Judged@10       0.9628
+</code>
 
-<h2 style="border-bottom: 1px solid grey;">Further Information</h2>
+
+<h2 class="underline">Further Information</h2>
 
 <ul>
   <li><a href="https://ir-measur.es/">ir-measures Documentation</a></li>
