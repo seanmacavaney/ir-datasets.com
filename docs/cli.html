@@ -16,8 +16,7 @@
 <div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
 
 <div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/">allenai/ir_datasets</a></div>
-<h1><code>ir_datasets</code>: Command Line Interface</h1>
-<h2 id="export">export command</h2>
+<h1><code>ir_datasets</code>: Command Line Interface</h1><h2 id="export" class="underline">export command</h2>
 
 <p>
 Data can be exported to stdout in various formats using the <code>ir_datasets export</code> command.
@@ -55,7 +54,7 @@ Data can be exported to stdout in various formats using the <code>ir_datasets ex
 <p><code>--format</code>: select output format to use: <code>trec</code>  (default), <code>tsv</code> or <code>jsonl</code></p>
 </div>
 
-<h2 id="export">lookup command</h2>
+<h2 id="export" class="underline">lookup command</h2>
 
 <p>
 You can look up documents by their <code>doc_id</code> using the <code>ir_datasets lookup</code> command.
@@ -70,7 +69,7 @@ You can look up documents by their <code>doc_id</code> using the <code>ir_datase
 </div>
 
 
-<h2 id="export">doc_fifo command</h2>
+<h2 id="export" class="underline">doc_fifo command</h2>
 
 <p>
 You can create output FIFOs suitable for Anserini indexing using the <code>ir_datasets doc_fifo</code> command.
@@ -93,6 +92,22 @@ until all documents are sent to fifos.
 <p><code>--fields</code>: select which fields from the documents to export (defaults to all). These fields are concatenated.</p>
 <p><code>--count</code>: how many fifos to make? Defualts to 1 less than the number of processors (or 1).</p>
 <p><code>--dir</code>: where to put the fifos? Defaults to a new temp directory.</p>
+</div>
+
+<h2 id="export" class="underline">clean command</h2>
+
+<p>
+This command can be used for cleaning up data that can be re-downloaded or re-generated
+again later. This is helpful for freeing up disk space.
+</p>
+
+<h4><code>ir_datasts clean [dataset-ids ...] [--list] [-y] [-H]</code></h4>
+
+<div class="methodinfo">
+<p><code>[dataset-ids]</code>: one or more top-level dataset IDs to clean up.</p>
+<p><code>--list</code>: list out the sizes of the provided dataset (or all datasets if non are given).</p>
+<p><code>-y</code>: say "yes" to prompt (i.e., confirm delete).</p>
+<p><code>-H</code>: print sizes in total bytes, rather than human-readable format.</p>
 </div>
 
 </div>
