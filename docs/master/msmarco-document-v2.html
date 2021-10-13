@@ -1425,7 +1425,7 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-document-v2/trec-dl-2021"</span></kbd></h3>
 
 <div class="desc">
- <p> Official topics for the TREC Deep Learning (DL) 2021 shared task. </p> <p> Note that at this time, qrels are only available to those with TREC active participant login credentials. </p> 
+ <p> Official topics for the TREC Deep Learning (DL) 2021 shared task. </p> <p> Note that at this time, qrels are only available to those with TREC active participant login credentials. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>AP@100</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>P@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-document-v2/trec-dl-2021__queries">queries</a>
@@ -1571,7 +1571,7 @@
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">AP</span><span class="o">@</span><span class="mi">100</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">P</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
@@ -1620,7 +1620,7 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-document-v2/trec-dl-2021/judged"</span></kbd></h3>
 
 <div class="desc">
- <p> <a class="ds-ref">msmarco-document-v2/trec-dl-2021</a>, but filtered down to the 57 queries with qrels. </p> <p> Note that at this time, this is only available to those with TREC active participant login credentials. </p> 
+ <p> <a class="ds-ref">msmarco-document-v2/trec-dl-2021</a>, but filtered down to the 57 queries with qrels. </p> <p> Note that at this time, this is only available to those with TREC active participant login credentials. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>AP@100</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>P@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-document-v2/trec-dl-2021/judged__queries">queries</a>
@@ -1766,7 +1766,7 @@
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">AP</span><span class="o">@</span><span class="mi">100</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">P</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
