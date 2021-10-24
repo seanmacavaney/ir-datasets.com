@@ -60,3 +60,14 @@ dataset = ir_datasets.load("{self.dataset_id}")
 for docpair in dataset.docpairs_iter():
     docpair # namedtuple<{fields}>
 ''', message_html='You can find more details about the Python API <a href="python.html">here</a>.')
+
+    def generate_qlogs(self):
+        if not self.dataset.has_qlogs():
+            return None
+        fields = ', '.join(self.dataset.qlogs_cls()._fields)
+        return Example(code=f'''
+import ir_datasets
+dataset = ir_datasets.load("{self.dataset_id}")
+for qlog in dataset.qlogs_iter():
+    qlog # namedtuple<{fields}>
+''', message_html='You can find more details about the Python API <a href="python.html">here</a>.')

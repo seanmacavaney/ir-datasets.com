@@ -5,6 +5,7 @@ import os
 import sys
 import typing
 import argparse
+import datetime
 from contextlib import contextmanager
 from pathlib import Path
 import ir_datasets
@@ -205,6 +206,20 @@ def generate_dataset(dataset, dataset_id, bibliography):
 {generate_examples(generators, 'generate_docpairs')}
 </div>
 ''')
+        if dataset.has_qlogs():
+            parent_ds = ir_datasets.qlogs_parent_id(dataset_id)
+            parent_ds_note = ''
+            if parent_ds != dataset_id:
+                parent_ds_note = f'<p>Inherits qlogs from <a class="ds-ref">{parent_ds}</a></p>'
+            out.write(f'''
+<a class="tab" target="{dataset_id}__qlogs">qlogs</a>
+<div id="{dataset_id}__qlogs" class="tab-content">
+{parent_ds_note}
+<div>Query Log type:</div>
+{generate_data_format(dataset.qlogs_cls())}
+{generate_examples(generators, 'generate_qlogs')}
+</div>
+''')
         if 'bibtex_ids' in documentation:
             prefix = f'<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\\cite{{{",".join(documentation["bibtex_ids"])}}}</cite>'
             bibtex = '\n'.join(bibliography[bid] for bid in documentation['bibtex_ids'])
@@ -270,8 +285,10 @@ def generate_data_access_section(documentation):
 
 
 def generate_data_format(cls):
-    if cls in (str, int, float, bytes):
+    if cls in (str, int, float, bytes, bool):
         return f'<span class="kwd">{cls.__name__}</span>'
+    if cls in (datetime.datetime,):
+        return f'<span class="kwd"><a href="https://docs.python.org/3/library/datetime.html#datetime.datetime">datetime</a></span>'
     if cls == type(None):
         return f'<span class="kwd">None</span>'
     elif isinstance(cls, typing._GenericAlias):
@@ -331,7 +348,7 @@ def generate_index(out_dir, version, top_level_map):
                     tbody = '</tbody><tbody>'
                     row_id = f' id="{parent}"'
                     jump.append(f'<option value="{parent}">{parent}</option>')
-                index.append(f'{tbody}<tr{row_id}><td>{ds_name}</td><td id="{name}-docs" class="center">{emoji(dataset, name, "docs", parent)}</td><td id="{name}-queries" class="center">{emoji(dataset, name, "queries", parent)}</td><td id="{name}-qrels" class="center">{emoji(dataset, name, "qrels", parent)}</td><td id="{name}-scoreddocs" class="center screen-small-hide">{emoji(dataset, name, "scoreddocs", parent)}</td><td id="{name}-docpairs" class="center screen-small-hide">{emoji(dataset, name, "docpairs", parent)}</td></tr>')
+                index.append(f'{tbody}<tr{row_id}><td>{ds_name}</td><td id="{name}-docs" class="center">{emoji(dataset, name, "docs", parent)}</td><td id="{name}-queries" class="center">{emoji(dataset, name, "queries", parent)}</td><td id="{name}-qrels" class="center">{emoji(dataset, name, "qrels", parent)}</td><td id="{name}-scoreddocs" class="center screen-small-hide">{emoji(dataset, name, "scoreddocs", parent)}</td><td id="{name}-docpairs" class="center screen-small-hide">{emoji(dataset, name, "docpairs", parent)}</td><td id="{name}-qlogs" class="center screen-small-hide">{emoji(dataset, name, "qlogs", parent)}</td></tr>')
         index = '\n'.join(index)
         jump = '\n'.join(jump)
         out.write(f'''
@@ -380,6 +397,7 @@ Install with pip:
 <th class="stick-top">qrels</th>
 <th class="stick-top screen-small-hide">scoreddocs</th>
 <th class="stick-top screen-small-hide">docpairs</th>
+<th class="stick-top screen-small-hide">qlogs</th>
 </tr>
 {index}
 </tbody>
