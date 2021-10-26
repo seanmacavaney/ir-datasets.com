@@ -1,3 +1,4 @@
+import json
 import pkgutil
 import io
 import os
@@ -410,7 +411,8 @@ can be found on each dataset's documenation page.
 def generate_counts(out_dir, version, top_level_map):
     with page_template('counts.html', out_dir, version, title='Counts') as out, open(get_file_path(out_dir, version, 'counts.csv'), 'wt') as csv_out:
         index = []
-        csv_out.write(f'Dataset,docs,queries,qrels,qrels/q,scoreddocs,scoreddocs/q,docpairs,docpairs/q\n')
+        csv_out.write(f'Dataset,docs,queries,qrels,qrels/q,scoreddocs,scoreddocs/q,docpairs,docpairs/q,qlogs\n')
+        json_out = {}
         for top_level in sorted(top_level_map):
             names = [top_level] + sorted(x[0] for x in top_level_map[top_level])
             for name in names:
@@ -434,12 +436,23 @@ def generate_counts(out_dir, version, top_level_map):
 <td id="{name}-scoreddocs-q" class="right">{ds_per_q_count(dataset, name, "scoreddocs")}</td>
 <td id="{name}-docpairs" class="right">{ds_counts(dataset, name, "docpairs")}</td>
 <td id="{name}-docpairs-q" class="right">{ds_per_q_count(dataset, name, "docpairs")}</td>
+<td id="{name}-qlogs" class="right">{ds_counts(dataset, name, "qlogs")}</td>
 </tr>''')
-                csv_out.write(f'{name},{ds_count_value(dataset, name, "docs") or ""},{ds_count_value(dataset, name, "queries") or ""},{ds_count_value(dataset, name, "qrels") or ""},{ds_per_q_count_value(dataset, name, "qrels") or ""},{ds_count_value(dataset, name, "scoreddocs") or ""},{ds_per_q_count_value(dataset, name, "scoreddocs") or ""},{ds_count_value(dataset, name, "docpairs") or ""},{ds_per_q_count_value(dataset, name, "docpairs") or ""}\n')
+                csv_out.write(f'{name},{ds_count_value(dataset, name, "docs") or ""},{ds_count_value(dataset, name, "queries") or ""},{ds_count_value(dataset, name, "qrels") or ""},{ds_per_q_count_value(dataset, name, "qrels") or ""},{ds_count_value(dataset, name, "scoreddocs") or ""},{ds_per_q_count_value(dataset, name, "scoreddocs") or ""},{ds_count_value(dataset, name, "docpairs") or ""},{ds_per_q_count_value(dataset, name, "docpairs") or ""},{ds_count_value(dataset, name, "qlogs") or ""}\n')
+                json_out[name] = {
+                    'docs_count': ds_count_value(dataset, name, "docs"),
+                    'queries_count': ds_count_value(dataset, name, "queries"),
+                    'qrels_count': ds_count_value(dataset, name, "qrels"),
+                    'qrels_per_query': ds_per_q_count_value(dataset, name, "qrels"),
+                    'scoreddocs_count': ds_count_value(dataset, name, "scoreddocs"),
+                    'scoreddocs_per_query': ds_per_q_count_value(dataset, name, "scoreddocs"),
+                    'docpairs_count': ds_count_value(dataset, name, "docpairs"),
+                    'docpairs_per_query': ds_per_q_count_value(dataset, name, "docpairs"),
+                    'qlogs_count': ds_count_value(dataset, name, "qlogs"),
+                }
         index = '\n'.join(index)
         out.write(f'''
-<h2 style="margin-bottom: 4px;">Dataset Counts</h2>
-<p><a href="counts.csv">data in CSV format</a></p>
+<p>Other formats: <a href="counts.csv">CSV</a>, <a href="counts.json">JSON</a></p>
 <p><input type="radio" id="Approx" name="counts" value="Approx" checked><label for="Approx">Approx. counts</label> <input type="radio" id="Exact" name="counts" value="Exact"><label for="Exact">Exact counts</label></p>
 <p>K: Thousand (&times;1,000)</p>
 <p>M: Million (&times;1,000,000)</p>
@@ -458,6 +471,7 @@ def generate_counts(out_dir, version, top_level_map):
 <th class="stick-top">/q</th>
 <th class="stick-top">docpairs</th>
 <th class="stick-top">/q</th>
+<th class="stick-top">qlogs</th>
 </tr>
 {index}
 </tbody>
@@ -493,6 +507,8 @@ $(function () {
 });
 </script>
 ''')
+    with open(get_file_path(out_dir, version, 'counts.json'), 'wt') as fjson:
+        json.dump(json_out, fjson)
 
 
 
@@ -1967,11 +1983,18 @@ def emoji(ds, dsid, arg, top_level):
 
 def format_count(count):
     display_count = count
-    formats = ['{:.0f}<span style="visibility: hidden;">&nbsp;</span>', '{:.0f}K', '{:.0f}M', '{:.0f}B']
-    while display_count >= 1000:
-        display_count = display_count / 1000
+    formats = [
+        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>', 1),
+        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>', 10),
+        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>', 100),
+        ('{:.1f}K', 1), ('{:.0f}K', 10), ('{:.0f}K', 100),
+        ('{:.1f}M', 1), ('{:.0f}M', 10), ('{:.0f}M', 100),
+        ('{:.1f}B', 1), ('{:.0f}B', 10), ('{:.0f}B', 100),
+    ]
+    while display_count >= 10:
+        display_count = display_count / 10
         formats.pop(0)
-    return f'<kbd title="{count}">{formats[0].format(display_count)}</kdb>'
+    return f'<kbd title="{count}">{formats[0][0].format(display_count*formats[0][1])}</kdb>'
 
 def ds_count_value(ds, dsid, etype):
     has = getattr(ds, f'has_{etype}')()

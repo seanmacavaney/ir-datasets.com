@@ -22,6 +22,7 @@
 <div style="font-weight: bold; font-size: 1.1em;">Index</div>
 <ol class="index">
 <li><a href="#tripclick"><kbd>tripclick</kbd></a></li>
+<li><a href="#tripclick/logs"><kbd><span class="prefix">tripclick</span>/logs</kbd></a></li>
 <li><a href="#tripclick/test"><kbd><span class="prefix">tripclick</span>/test</kbd></a></li>
 <li><a href="#tripclick/test/head"><kbd><span class="prefix">tripclick</span>/test/head</kbd></a></li>
 <li><a href="#tripclick/test/tail"><kbd><span class="prefix">tripclick</span>/test/tail</kbd></a></li>
@@ -42,7 +43,7 @@
 
 <div id="DataAccess">
 <h3>Data Access Information</h3>
- <p> To use this dataset, you need a copy of the source files, provided by the Trip Database. </p> <p> A copy of the source files can be requested through the procedure detailed <a href="https://tripdatabase.github.io/tripclick/#getting-the-data">here</a>. Documents, queries, and qrels require the "TripClick IR Benchmark"; for scoreddocs and docpairs, you will also need to request the "TripClick Training Package for Deep Learning Models". </p> <p> The source files you will need are: <ul> <li><kbd>benchmark.tar.gz</kbd> (for docs, queries, and qrels)</li> <li><kbd>dlfiles.tar.gz</kbd> (for docpairs and scoreddocs)</li> <li><kbd>dlfiles_runs_test.tar.gz</kbd> (for scoreddocs on the test set)</li> </ul> <p> ir_datasets expects these files to be copied/linked in <kbd>~/.ir_datasets/tripclick/</kbd>. </p> 
+ <p> To use this dataset, you need a copy of the source files, provided by the Trip Database. </p> <p> A copy of the source files can be requested through the procedure detailed <a href="https://tripdatabase.github.io/tripclick/#getting-the-data">here</a>. Documents, queries, and qrels require the "TripClick IR Benchmark"; for scoreddocs and docpairs, you will also need to request the "TripClick Training Package for Deep Learning Models". If you want the raw query logs, you will need to request the "Logs Dataset". </p> <p> The source files you will need are: <ul> <li><kbd>benchmark.tar.gz</kbd> (for docs, queries, and qrels)</li> <li><kbd>dlfiles.tar.gz</kbd> (for docpairs and scoreddocs)</li> <li><kbd>dlfiles_runs_test.tar.gz</kbd> (for scoreddocs on the test set)</li> <li><kbd>logs.tar.gz</kbd> (for raw qlogs)</li> </ul> <p> ir_datasets expects these files to be copied/linked in <kbd>~/.ir_datasets/tripclick/</kbd>. </p> 
 </div>
 <hr />
 <div class="dataset" id="tripclick">
@@ -98,6 +99,72 @@
 
 <a class="tab" target="tripclick__citation">Citation</a>
 <div id="tripclick__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Rekabsaz2021TripClick}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Rekabsaz2021TripClick,
+  title={TripClick: The Log Files of a Large Health Web Search Engine}, 
+  author={Navid Rekabsaz and Oleg Lesota and Markus Schedl and Jon Brassey and Carsten Eickhoff},
+  year={2021},
+  booktitle={SIGIR}
+}</cite>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="tripclick/logs" data-parent="tripclick">
+<h3><kbd class="ds-name select"><span class="str">"tripclick/logs"</span></kbd></h3>
+
+<div class="desc">
+ <p> Raw query logs from TripClick. </p> <p> Note that this subset includes a broader set of documents than the main collection, but they only provide the title and URL. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="tripclick/logs__docs">docs</a>
+<div id="tripclick/logs__docs" class="tab-content">
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TripClickPartialDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;tripclick/logs&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> tripclick/logs docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:tripclick/logs&#39;</span><span class="p">)</span>
+<span class="c1"># Index tripclick/logs</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/tripclick_logs&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="tripclick/logs__citation">Citation</a>
+<div id="tripclick/logs__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Rekabsaz2021TripClick}</cite>
 <p>Bibtex:</p>
 <cite class="select">@inproceedings{Rekabsaz2021TripClick,
@@ -809,8 +876,8 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>not clicked and appeared higher in search results</td><td class="right"><kbd title="1466051">1M</kdb></td><td class="right">54.2%</td></tr>
-<tr><td class="relScore">1</td><td>clicked</td><td class="right"><kbd title="1239161">1M</kdb></td><td class="right">45.8%</td></tr>
+<tr><td class="relScore">0</td><td>not clicked and appeared higher in search results</td><td class="right"><kbd title="1466051">1.5M</kdb></td><td class="right">54.2%</td></tr>
+<tr><td class="relScore">1</td><td>clicked</td><td class="right"><kbd title="1239161">1.2M</kdb></td><td class="right">45.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1185,8 +1252,8 @@
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
 <tr><td class="relScore">0</td><td>not relevant; never clicked</td><td class="right"><kbd title="46936">47K</kdb></td><td class="right">70.3%</td></tr>
 <tr><td class="relScore">1</td><td>partially relevant; clicked less than 4% of times it was shown (but at least once)</td><td class="right"><kbd title="13936">14K</kdb></td><td class="right">20.9%</td></tr>
-<tr><td class="relScore">2</td><td>relevant; clicked more than 4% but less than 30% of times it was shown</td><td class="right"><kbd title="3974">4K</kdb></td><td class="right">5.9%</td></tr>
-<tr><td class="relScore">3</td><td>highly relevant; clicked more than 30% of the times it was shown</td><td class="right"><kbd title="1966">2K</kdb></td><td class="right">2.9%</td></tr>
+<tr><td class="relScore">2</td><td>relevant; clicked more than 4% but less than 30% of times it was shown</td><td class="right"><kbd title="3974">4.0K</kdb></td><td class="right">5.9%</td></tr>
+<tr><td class="relScore">3</td><td>highly relevant; clicked more than 30% of the times it was shown</td><td class="right"><kbd title="1966">2.0K</kdb></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2104,8 +2171,8 @@
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
 <tr><td class="relScore">0</td><td>not relevant; never clicked</td><td class="right"><kbd title="46936">47K</kdb></td><td class="right">70.3%</td></tr>
 <tr><td class="relScore">1</td><td>partially relevant; clicked less than 4% of times it was shown (but at least once)</td><td class="right"><kbd title="13936">14K</kdb></td><td class="right">20.9%</td></tr>
-<tr><td class="relScore">2</td><td>relevant; clicked more than 4% but less than 30% of times it was shown</td><td class="right"><kbd title="3974">4K</kdb></td><td class="right">5.9%</td></tr>
-<tr><td class="relScore">3</td><td>highly relevant; clicked more than 30% of the times it was shown</td><td class="right"><kbd title="1966">2K</kdb></td><td class="right">2.9%</td></tr>
+<tr><td class="relScore">2</td><td>relevant; clicked more than 4% but less than 30% of times it was shown</td><td class="right"><kbd title="3974">4.0K</kdb></td><td class="right">5.9%</td></tr>
+<tr><td class="relScore">3</td><td>highly relevant; clicked more than 30% of the times it was shown</td><td class="right"><kbd title="1966">2.0K</kdb></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2309,8 +2376,8 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>not clicked and appeared higher in search results</td><td class="right"><kbd title="2098">2K</kdb></td><td class="right">53.6%</td></tr>
-<tr><td class="relScore">1</td><td>clicked</td><td class="right"><kbd title="1814">2K</kdb></td><td class="right">46.4%</td></tr>
+<tr><td class="relScore">0</td><td>not clicked and appeared higher in search results</td><td class="right"><kbd title="2098">2.1K</kdb></td><td class="right">53.6%</td></tr>
+<tr><td class="relScore">1</td><td>clicked</td><td class="right"><kbd title="1814">1.8K</kdb></td><td class="right">46.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2514,8 +2581,8 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>not clicked and appeared higher in search results</td><td class="right"><kbd title="7931">8K</kdb></td><td class="right">56.1%</td></tr>
-<tr><td class="relScore">1</td><td>clicked</td><td class="right"><kbd title="6202">6K</kdb></td><td class="right">43.9%</td></tr>
+<tr><td class="relScore">0</td><td>not clicked and appeared higher in search results</td><td class="right"><kbd title="7931">7.9K</kdb></td><td class="right">56.1%</td></tr>
+<tr><td class="relScore">1</td><td>clicked</td><td class="right"><kbd title="6202">6.2K</kdb></td><td class="right">43.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
