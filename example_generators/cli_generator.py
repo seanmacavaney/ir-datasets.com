@@ -60,3 +60,6 @@ ir_datasets export {self.dataset_id} docpairs
 <div>{fields}</div>
 <div>...</div>
 ''', code_lang='bash', message_html='You can find more details about the CLI <a href="cli.html">here</a>.')
+
+    def generate_qlogs(self):
+        return None

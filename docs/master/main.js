@@ -1,4 +1,3 @@
-
 function scrollIntoViewIfNeeded(target) { 
     if (target.getBoundingClientRect().bottom > window.innerHeight) {
         target.scrollIntoView(false);
@@ -31,8 +30,8 @@ function toggleExamples(examples, relativeTo) {
     }
     $('.ex-tab-content').hide();
     $('.ex-tab-content.' + examples).show();
-    $('.ex-tab').removeClass('selected');
-    $('.ex-tab[target=' + examples + ']').addClass('selected');
+    $('a.ex-tab').removeClass('selected');
+    $('a.ex-tab[target=' + examples + ']').addClass('selected');
     if (relativeTo) {
         var deltaTop = relativeTo[0].getBoundingClientRect().top - startTop;
         window.scrollBy(0, deltaTop);
@@ -89,7 +88,7 @@ $(document).ready(function() {
         examples = 'irds-python';
     }
     toggleExamples(examples, null);
-    $(document).on('click', '.ex-tab', function(e) {
+    $(document).on('click', 'a.ex-tab', function(e) {
         var $target = $(e.target);
         var examples = $target.attr('target');
         if (window.sessionStorage) {

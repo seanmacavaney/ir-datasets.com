@@ -91,3 +91,6 @@ pt.Experiment(
     [{measures}]
 )
 ''', message_html='You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.')
+
+    def generate_qlogs(self):
+        return None

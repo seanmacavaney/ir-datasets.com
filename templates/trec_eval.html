@@ -1,0 +1,37 @@
+<p>
+<a href="https://github.com/usnistgov/trec_eval">trec_eval</a> is a popular tool for
+calculating IR evaluation metrics, and is usually the official measure implementation for
+TREC shared tasks.
+</p>
+
+<p>
+To get started with trec_eval, see <a href="https://github.com/usnistgov/trec_eval/blob/master/README">this guide</a>.
+</p>
+
+<h2 class="underline">Basic Usage</h2>
+
+<p>
+<kbd>ir_datasets export</kbd> produces qrels in a trec_eval-compatible format by default.
+To use with trec_eval, first save save the output of the <kbd>ir_datasets export</kbd> command
+as a file, and then use that file as input to trec_eval.
+</p>
+
+${hlb('''
+ir_datasets export trec-robust04 qrels > trec-robust04.qrels
+trec_eval trec-robust04.qrels path/to/run
+''')}
+<code class="output pre">runid                   all run
+num_q                   all 249
+num_ret                 all 60639
+num_rel                 all 17412
+num_rel_ret             all 5293
+map                     all 0.1619
+gm_map                  all 0.0667
+Rprec                   all 0.2199
+...
+</code>
+
+<p>
+Note that trec_eval does not accept named pipes as source files, so using <a href="https://tldp.org/LDP/abs/html/process-sub.html">
+process substitution</a> will result in an error.
+</p>

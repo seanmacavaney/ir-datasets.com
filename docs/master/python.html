@@ -18,8 +18,7 @@
 <div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
 
 <div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/tree/master/">allenai/ir_datasets</a></div>
-<h1><code>ir_datasets</code>: Python API</h1>
-<h2 id="dataset">Dataset objects</h2>
+<h1><code>ir_datasets</code>: Python API</h1><h2 id="dataset" class="underline">Dataset objects</h2>
 
 <p>
 Datasets can be obtained through <code>ir_datasets.load(<span class="str">"dataset-id"</span>)</code>
@@ -113,13 +112,13 @@ The available fields and type information can be found with <code>_fields</code>
 <div>dataset.docs_cls().__annotations__</div>
 </code>
 <code class="output">
-<div>{</div>
+<div>{{</div>
 <div>&nbsp;&nbsp;<span class="str">'doc_id'</span>: <span class="kwd">str</span>,</div>
 <div>&nbsp;&nbsp;<span class="str">'title'</span>: <span class="kwd">str</span>,</div>
 <div>&nbsp;&nbsp;<span class="str">'doi'</span>: <span class="kwd">str</span>,</div>
 <div>&nbsp;&nbsp;<span class="str">'date'</span>: <span class="kwd">str</span>,</div>
 <div>&nbsp;&nbsp;<span class="str">'abstract'</span>: <span class="kwd">str</span></div>
-<div>}</div>
+<div>}}</div>
 </code>
 </div>
 
@@ -258,7 +257,7 @@ including <code>_fields</code> and <code>__annotations__</code>.
 </div>
 
 
-<h2 id="docstore">Docstore objects</h2>
+<h2 id="docstore" class="underline">Docstore objects</h2>
 
 <p>
 Docstores enable fast lookups of documents by their <code>doc_id</code>.

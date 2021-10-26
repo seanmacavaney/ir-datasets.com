@@ -1,0 +1,59 @@
+<p>
+<a href="https://ir-measur.es/">ir-measures</a> is a Python package that interfaces
+with several IR evaluation tools, including pytrec_eval, gdeval, trectools, and others.
+</p>
+
+<p>
+To get started with ir-measures, see <a href="https://ir-measur.es/en/latest/getting-started.html">this guide</a>.
+</p>
+
+<h2 class="underline">Basic Usage</h2>
+
+<p>
+ir-measures accepts qrels provided by <kbd>ir_datasets</kbd> directly in its python API.
+</p>
+
+${hl('''
+import ir_datasets
+import ir_measures
+qrels = ir_datasets.load('trec-robust04').qrels_iter()
+run = ir_measures.read_trec_run('path/to/run')
+ir_measures.calc_aggregate([nDCG@10, P@5, P(rel=2)@5, Judged@10], qrels, run)
+''')}
+<code class="output pre">{
+  nDCG@10: 0.3793,
+  P@5: 0.4185,
+  P(rel=2)@5: 0.0803,
+  Judged@10: 0.9628
+}
+</code>
+
+<p>
+The ir-measures CLI accepts dataset IDs from <kbd>ir_datasets</kbd> directly in place of the qrels file.
+</p>
+
+${hlb('''
+ir_measures trec-robust04 path/to/run 'nDCG@10 P@5 P(rel=2)@5 Judged@10'
+''')}
+<code class="output pre">nDCG@10 0.3793
+P@5     0.4185
+P(rel=2)@5      0.0803
+Judged@10       0.9628
+</code>
+
+<p>
+Note that if a file with the same name as the dataset ID exists, the file will be used instead.
+</p>
+
+<p>
+Alternatively, you can save the qrels output of the <kbd>ir_datasets export</kbd> command
+as a file and use this file as input to ir-measures.
+</p>
+
+
+<h2 class="underline">Further Information</h2>
+
+<ul>
+  <li><a href="https://ir-measur.es/">ir-measures Documentation</a></li>
+  <li><a href="https://github.com/terrierteam/ir_measures">ir-measures GitHub</a></li>
+</ul>
