@@ -131,17 +131,17 @@ def generate_dataset(dataset, dataset_id, bibliography):
 {desc}{measures}
 </div>
 ''')
-        has_any = dataset.has_docs() or dataset.has_queries() or dataset.has_qrels() or dataset.has_docpairs() or dataset.has_scoreddocs() or 'bibtex_ids' in documentation
-        if has_any:
-            out.write('<div class="tabs">')
+        out.write('<div class="tabs">')
         if dataset.has_queries():
             parent_ds = ir_datasets.queries_parent_id(dataset_id)
             parent_ds_note = ''
             if parent_ds != dataset_id:
                 parent_ds_note = f'<p>Inherits queries from <a class="ds-ref">{parent_ds}</a></p>'
+            count = ds_count_value
             out.write(f'''
 <a class="tab" target="{dataset_id}__queries">queries</a>
 <div id="{dataset_id}__queries" class="tab-content">
+{ds_page_count(dataset, dataset_id, "queries")}
 {parent_ds_note}
 <p>Language: {_lang(dataset.queries_lang())}</p>
 <div>Query type:</div>
@@ -157,6 +157,7 @@ def generate_dataset(dataset, dataset_id, bibliography):
             out.write(f'''
 <a class="tab" target="{dataset_id}__docs">docs</a>
 <div id="{dataset_id}__docs" class="tab-content">
+{ds_page_count(dataset, dataset_id, "docs")}
 {parent_ds_note}
 <p>Language: {_lang(dataset.docs_lang())}</p>
 <div>Document type:</div>
@@ -172,11 +173,12 @@ def generate_dataset(dataset, dataset_id, bibliography):
             out.write(f'''
 <a class="tab" target="{dataset_id}__qrels">qrels</a>
 <div id="{dataset_id}__qrels" class="tab-content">
+{ds_page_count(dataset, dataset_id, "qrels")}
 {parent_ds_note}
 <div>Query relevance judgment type:</div>
 {generate_data_format(dataset.qrels_cls())}
 <p>Relevance levels</p>
-{generate_qrel_defs_table(dataset.qrels_defs(), dataset_id)}
+{generate_qrel_defs_table(dataset)}
 {generate_examples(generators, 'generate_qrels')}
 </div>
 ''')
@@ -188,6 +190,7 @@ def generate_dataset(dataset, dataset_id, bibliography):
             out.write(f'''
 <a class="tab" target="{dataset_id}__scoreddocs">scoreddocs</a>
 <div id="{dataset_id}__scoreddocs" class="tab-content">
+{ds_page_count(dataset, dataset_id, "scoreddocs")}
 {parent_ds_note}
 <div>Scored Document type:</div>
 {generate_data_format(dataset.scoreddocs_cls())}
@@ -202,6 +205,7 @@ def generate_dataset(dataset, dataset_id, bibliography):
             out.write(f'''
 <a class="tab" target="{dataset_id}__docpairs">docpairs</a>
 <div id="{dataset_id}__docpairs" class="tab-content">
+{ds_page_count(dataset, dataset_id, "docpairs")}
 {parent_ds_note}
 <div>Document Pair type:</div>
 {generate_data_format(dataset.docpairs_cls())}
@@ -216,6 +220,7 @@ def generate_dataset(dataset, dataset_id, bibliography):
             out.write(f'''
 <a class="tab" target="{dataset_id}__qlogs">qlogs</a>
 <div id="{dataset_id}__qlogs" class="tab-content">
+{ds_page_count(dataset, dataset_id, "qlogs")}
 {parent_ds_note}
 <div>Query Log type:</div>
 {generate_data_format(dataset.qlogs_cls())}
@@ -233,8 +238,14 @@ def generate_dataset(dataset, dataset_id, bibliography):
 <cite class="select">{bibtex}</cite>
 </div>
 ''')
-        if has_any:
-            out.write('</div>')
+        metadata = dataset.metadata()
+        if metadata:
+            out.write(f'''
+<a class="tab" target="{dataset_id}__metadata">Metadata</a>
+<div id="{dataset_id}__metadata" class="tab-content">
+<pre class="metadata">{json.dumps(dataset.metadata(), indent=2)}</pre>
+</div>
+''')
         out.seek(0)
         return out.read()
 
@@ -373,6 +384,7 @@ Install with pip:
 <li><a href="python.html">Python API Documentation</a> (<a href="python-beta.html">beta version</a>)</li>
 <li><a href="cli.html">CLI Documentation</a></li>
 <li><a href="downloads.html">Download Dashboard</a></li>
+<li><a href="counts.html">Dataset Counts</a></li>
 <li><a href="https://github.com/allenai/ir_datasets/blob/master/examples/adding_datasets.ipynb">Adding new datasets</a></li>
 <li><a href="https://arxiv.org/pdf/2103.02280.pdf">ir_datasets SIGIR resource paper</a></li>
 <li>Using <kbd>ir_datasets</kbd> with&hellip;
@@ -667,9 +679,10 @@ def get_file_path(base_dir, version, file):
     return f'{base_dir}/{version}/{file}' if version else f'{base_dir}/{file}'
 
 
-def generate_qrel_defs_table(defs, dsid):
-    metadata = ir_datasets.metadata_cached(dsid, 'qrels')
-    counts_by_relevance = metadata.get('counts_by_relevance')
+def generate_qrel_defs_table(dataset):
+    defs = dataset.qrels_defs()
+    metadata = dataset.qrels_metadata()
+    counts_by_relevance = metadata.get('fields', {}).get('relevance', {}).get('counts_by_value')
     rows = []
     for score, desc in sorted(defs.items()):
         if counts_by_relevance:
@@ -704,12 +717,12 @@ def emoji(ds, dsid, arg, top_level):
     return ''
 
 
-def format_count(count):
+def format_count(count, pad=True):
     display_count = count
     formats = [
-        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>', 1),
-        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>', 10),
-        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>', 100),
+        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>' if pad else '{:.0f}', 1),
+        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>' if pad else '{:.0f}', 10),
+        ('{:.0f}<span style="visibility: hidden;">&nbsp;</span>' if pad else '{:.0f}', 100),
         ('{:.1f}K', 1), ('{:.0f}K', 10), ('{:.0f}K', 100),
         ('{:.1f}M', 1), ('{:.0f}M', 10), ('{:.0f}M', 100),
         ('{:.1f}B', 1), ('{:.0f}B', 10), ('{:.0f}B', 100),
@@ -717,12 +730,12 @@ def format_count(count):
     while display_count >= 10:
         display_count = display_count / 10
         formats.pop(0)
-    return f'<kbd title="{count}">{formats[0][0].format(display_count*formats[0][1])}</kdb>'
+    return f'<kbd title="{count}">{formats[0][0].format(display_count*formats[0][1])}</kbd>'
 
 def ds_count_value(ds, dsid, etype):
     has = getattr(ds, f'has_{etype}')()
     if has:
-        metadata = ir_datasets.metadata_cached(dsid, etype)
+        metadata = getattr(ds, f'{etype}_metadata')()
         if 'count' in metadata:
             return metadata['count']
 
@@ -736,11 +749,19 @@ def ds_counts(ds, dsid, etype):
             return f'<span title="has {etype} but missing metadata">⚠️</span>'
     return ''
 
+def ds_page_count(ds, dsid, etype):
+    has = getattr(ds, f'has_{etype}')()
+    if has:
+        count = ds_count_value(ds, dsid, etype)
+        if count is not None:
+            return f'<span class="ds-count">{format_count(count, pad=False)} <kbd>{etype}</kbd></span>'
+    return ''
+
 def ds_per_q_count_value(ds, dsid, etype):
     has = getattr(ds, f'has_{etype}')() and ds.has_queries()
     if has:
-        metadata_qrels = ir_datasets.metadata_cached(dsid, etype)
-        metadata_queries = ir_datasets.metadata_cached(dsid, 'queries')
+        metadata_qrels = getattr(ds, f'{etype}_metadata')()
+        metadata_queries = ds.queries_metadata()
         if 'count' in metadata_qrels and 'count' in metadata_queries:
             count = metadata_qrels['count'] / metadata_queries['count']
             return count

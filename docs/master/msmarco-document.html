@@ -49,6 +49,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document__docs">docs</a>
 <div id="msmarco-document__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -102,7 +103,22 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document__metadata">Metadata</a>
+<div id="msmarco-document__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -115,6 +131,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/dev__queries">queries</a>
 <div id="msmarco-document/dev__queries" class="tab-content">
+<span class="ds-count"><kbd title="5193">5.2K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -160,6 +177,7 @@
 
 <a class="tab" target="msmarco-document/dev__docs">docs</a>
 <div id="msmarco-document/dev__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -204,6 +222,7 @@
 
 <a class="tab" target="msmarco-document/dev__qrels">qrels</a>
 <div id="msmarco-document/dev__qrels" class="tab-content">
+<span class="ds-count"><kbd title="5193">5.2K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -216,7 +235,7 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="5193">5.2K</kdb></td><td class="right">100.0%</td></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="5193">5.2K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -261,6 +280,7 @@
 
 <a class="tab" target="msmarco-document/dev__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/dev__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="519300">519K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -306,7 +326,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/dev__metadata">Metadata</a>
+<div id="msmarco-document/dev__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 5193
+  },
+  "qrels": {
+    "count": 5193,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 5193
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 519300
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -319,6 +370,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/eval__queries">queries</a>
 <div id="msmarco-document/eval__queries" class="tab-content">
+<span class="ds-count"><kbd title="5793">5.8K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -364,6 +416,7 @@
 
 <a class="tab" target="msmarco-document/eval__docs">docs</a>
 <div id="msmarco-document/eval__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -408,6 +461,7 @@
 
 <a class="tab" target="msmarco-document/eval__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/eval__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="579300">579K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -453,7 +507,28 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/eval__metadata">Metadata</a>
+<div id="msmarco-document/eval__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 5793
+  },
+  "scoreddocs": {
+    "count": 579300
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -466,6 +541,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/orcas__queries">queries</a>
 <div id="msmarco-document/orcas__queries" class="tab-content">
+<span class="ds-count"><kbd title="10405342">10M</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -511,6 +587,7 @@
 
 <a class="tab" target="msmarco-document/orcas__docs">docs</a>
 <div id="msmarco-document/orcas__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -555,6 +632,7 @@
 
 <a class="tab" target="msmarco-document/orcas__qrels">qrels</a>
 <div id="msmarco-document/orcas__qrels" class="tab-content">
+<span class="ds-count"><kbd title="18823602">19M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -567,7 +645,7 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">1</td><td>User click</td><td class="right"><kbd title="18823602">19M</kdb></td><td class="right">100.0%</td></tr>
+<tr><td class="relScore">1</td><td>User click</td><td class="right"><kbd title="18823602">19M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -612,6 +690,7 @@
 
 <a class="tab" target="msmarco-document/orcas__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/orcas__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="982951086">983M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -657,7 +736,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/orcas__metadata">Metadata</a>
+<div id="msmarco-document/orcas__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 10405342
+  },
+  "qrels": {
+    "count": 18823602,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 18823602
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 982951086
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -670,6 +780,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/train__queries">queries</a>
 <div id="msmarco-document/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="367013">367K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -715,6 +826,7 @@
 
 <a class="tab" target="msmarco-document/train__docs">docs</a>
 <div id="msmarco-document/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -759,6 +871,7 @@
 
 <a class="tab" target="msmarco-document/train__qrels">qrels</a>
 <div id="msmarco-document/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="367013">367K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -771,7 +884,7 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="367013">367K</kdb></td><td class="right">100.0%</td></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="367013">367K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -816,6 +929,7 @@
 
 <a class="tab" target="msmarco-document/train__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/train__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="36701116">37M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -861,7 +975,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/train__metadata">Metadata</a>
+<div id="msmarco-document/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 367013
+  },
+  "qrels": {
+    "count": 367013,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 367013
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 36701116
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -874,6 +1019,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-2019__queries">queries</a>
 <div id="msmarco-document/trec-dl-2019__queries" class="tab-content">
+<span class="ds-count"><kbd title="200">200</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -919,6 +1065,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2019__docs">docs</a>
 <div id="msmarco-document/trec-dl-2019__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -963,6 +1110,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2019__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-2019__qrels" class="tab-content">
+<span class="ds-count"><kbd title="16258">16K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -975,10 +1123,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="9661">9.7K</kdb></td><td class="right">59.4%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="4607">4.6K</kdb></td><td class="right">28.3%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1149">1.1K</kdb></td><td class="right">7.1%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="841">841<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.2%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="9661">9.7K</kbd></td><td class="right">59.4%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="4607">4.6K</kbd></td><td class="right">28.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1149">1.1K</kbd></td><td class="right">7.1%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="841">841<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1023,6 +1171,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2019__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/trec-dl-2019__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="20000">20K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1074,7 +1223,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-2019__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-2019__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 200
+  },
+  "qrels": {
+    "count": 16258,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 9661,
+          "2": 1149,
+          "1": 4607,
+          "3": 841
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 20000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1087,6 +1270,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-2019/judged__queries">queries</a>
 <div id="msmarco-document/trec-dl-2019/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="43">43</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -1124,6 +1308,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2019/judged__docs">docs</a>
 <div id="msmarco-document/trec-dl-2019/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1168,6 +1353,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2019/judged__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-2019/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="16258">16K</kbd> <kbd>qrels</kbd></span>
 <p>Inherits qrels from <a class="ds-ref">msmarco-document/trec-dl-2019</a></p>
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1180,10 +1366,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="9661">9.7K</kdb></td><td class="right">59.4%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="4607">4.6K</kdb></td><td class="right">28.3%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1149">1.1K</kdb></td><td class="right">7.1%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="841">841<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.2%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="9661">9.7K</kbd></td><td class="right">59.4%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="4607">4.6K</kbd></td><td class="right">28.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="1149">1.1K</kbd></td><td class="right">7.1%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="841">841<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1214,6 +1400,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2019/judged__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/trec-dl-2019/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="4300">4.3K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1265,7 +1452,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-2019/judged__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-2019/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 43
+  },
+  "qrels": {
+    "count": 16258,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 9661,
+          "2": 1149,
+          "1": 4607,
+          "3": 841
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 4300
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1278,6 +1499,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-2020__queries">queries</a>
 <div id="msmarco-document/trec-dl-2020__queries" class="tab-content">
+<span class="ds-count"><kbd title="200">200</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1323,6 +1545,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2020__docs">docs</a>
 <div id="msmarco-document/trec-dl-2020__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1367,6 +1590,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2020__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-2020__qrels" class="tab-content">
+<span class="ds-count"><kbd title="9098">9.1K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1379,10 +1603,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="7331">7.3K</kdb></td><td class="right">80.6%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1187">1.2K</kdb></td><td class="right">13.0%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="315">315<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.5%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="265">265<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">2.9%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="7331">7.3K</kbd></td><td class="right">80.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1187">1.2K</kbd></td><td class="right">13.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="315">315<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="265">265<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1427,6 +1651,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2020__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/trec-dl-2020__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="20000">20K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1478,7 +1703,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-2020__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-2020__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 200
+  },
+  "qrels": {
+    "count": 9098,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 7331,
+          "3": 265,
+          "1": 1187,
+          "2": 315
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 20000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1491,6 +1750,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-2020/judged__queries">queries</a>
 <div id="msmarco-document/trec-dl-2020/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="45">45</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -1528,6 +1788,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2020/judged__docs">docs</a>
 <div id="msmarco-document/trec-dl-2020/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1572,6 +1833,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2020/judged__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-2020/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="9098">9.1K</kbd> <kbd>qrels</kbd></span>
 <p>Inherits qrels from <a class="ds-ref">msmarco-document/trec-dl-2020</a></p>
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1584,10 +1846,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="7331">7.3K</kdb></td><td class="right">80.6%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1187">1.2K</kdb></td><td class="right">13.0%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="315">315<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.5%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="265">265<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">2.9%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="7331">7.3K</kbd></td><td class="right">80.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1187">1.2K</kbd></td><td class="right">13.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="315">315<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="265">265<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1618,6 +1880,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-2020/judged__scoreddocs">scoreddocs</a>
 <div id="msmarco-document/trec-dl-2020/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="4500">4.5K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1669,7 +1932,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-2020/judged__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-2020/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 45
+  },
+  "qrels": {
+    "count": 9098,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 7331,
+          "3": 265,
+          "1": 1187,
+          "2": 315
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 4500
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1682,6 +1979,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -1719,6 +2017,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard__docs">docs</a>
 <div id="msmarco-document/trec-dl-hard__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1763,6 +2062,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-hard__qrels" class="tab-content">
+<span class="ds-count"><kbd title="8544">8.5K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1775,10 +2075,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="5186">5.2K</kdb></td><td class="right">60.7%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="2517">2.5K</kdb></td><td class="right">29.5%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="485">485<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.7%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="356">356<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">4.2%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="5186">5.2K</kbd></td><td class="right">60.7%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="2517">2.5K</kbd></td><td class="right">29.5%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="485">485<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.7%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="356">356<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1825,7 +2125,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-hard__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-hard__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 8544,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 5186,
+          "2": 485,
+          "1": 2517,
+          "3": 356
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1838,6 +2169,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold1__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold1__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -1875,6 +2207,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold1__docs">docs</a>
 <div id="msmarco-document/trec-dl-hard/fold1__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1919,6 +2252,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold1__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-hard/fold1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1557">1.6K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1931,10 +2265,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="1048">1.0K</kdb></td><td class="right">67.3%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="328">328<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">21.1%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="75">75<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">4.8%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="106">106<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">6.8%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="1048">1.0K</kbd></td><td class="right">67.3%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="328">328<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">21.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="75">75<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.8%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="106">106<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1981,7 +2315,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-hard/fold1__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-hard/fold1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 1557,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 328,
+          "0": 1048,
+          "3": 106,
+          "2": 75
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1994,6 +2359,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold2__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold2__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -2031,6 +2397,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold2__docs">docs</a>
 <div id="msmarco-document/trec-dl-hard/fold2__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2075,6 +2442,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold2__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-hard/fold2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1345">1.3K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2087,10 +2455,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="922">922<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">68.6%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="304">304<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">22.6%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="78">78<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">5.8%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="41">41<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.0%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="922">922<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">68.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="304">304<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">22.6%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="78">78<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.8%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="41">41<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">3.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2137,7 +2505,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-hard/fold2__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-hard/fold2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 1345,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 78,
+          "1": 304,
+          "0": 922,
+          "3": 41
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2150,6 +2549,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold3__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold3__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -2187,6 +2587,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold3__docs">docs</a>
 <div id="msmarco-document/trec-dl-hard/fold3__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2231,6 +2632,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold3__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-hard/fold3__qrels" class="tab-content">
+<span class="ds-count"><kbd title="474">474</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2243,10 +2645,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="333">333<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">70.3%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="65">65<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">13.7%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="44">44<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">9.3%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="32">32<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">6.8%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="333">333<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">70.3%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="65">65<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.7%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="44">44<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">9.3%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="32">32<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2293,7 +2695,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-hard/fold3__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-hard/fold3__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 474,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 333,
+          "2": 44,
+          "3": 32,
+          "1": 65
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2306,6 +2739,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold4__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold4__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -2343,6 +2777,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold4__docs">docs</a>
 <div id="msmarco-document/trec-dl-hard/fold4__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2387,6 +2822,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold4__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-hard/fold4__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1054">1.1K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2399,10 +2835,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="718">718<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">68.1%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="258">258<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">24.5%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="34">34<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.2%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="44">44<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">4.2%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="718">718<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">68.1%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="258">258<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">24.5%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="34">34<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">3.2%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="44">44<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2449,7 +2885,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-hard/fold4__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-hard/fold4__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 1054,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 258,
+          "2": 34,
+          "0": 718,
+          "3": 44
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2462,6 +2929,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-document/trec-dl-hard/fold5__queries">queries</a>
 <div id="msmarco-document/trec-dl-hard/fold5__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -2499,6 +2967,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold5__docs">docs</a>
 <div id="msmarco-document/trec-dl-hard/fold5__docs" class="tab-content">
+<span class="ds-count"><kbd title="3213835">3.2M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-document</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2543,6 +3012,7 @@
 
 <a class="tab" target="msmarco-document/trec-dl-hard/fold5__qrels">qrels</a>
 <div id="msmarco-document/trec-dl-hard/fold5__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4114">4.1K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2555,10 +3025,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="2165">2.2K</kdb></td><td class="right">52.6%</td></tr>
-<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1562">1.6K</kdb></td><td class="right">38.0%</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="254">254<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">6.2%</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="133">133<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">3.2%</td></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: Document does not provide any useful information about the query</td><td class="right"><kbd title="2165">2.2K</kbd></td><td class="right">52.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant: Document provides some information relevant to the query, which may be minimal.</td><td class="right"><kbd title="1562">1.6K</kbd></td><td class="right">38.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The content of this document provides substantial information on the query.</td><td class="right"><kbd title="254">254<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.2%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: Document is dedicated to the query, it is worthy of being a top result in a search engine.</td><td class="right"><kbd title="133">133<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">3.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2605,7 +3075,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-document/trec-dl-hard/fold5__metadata">Metadata</a>
+<div id="msmarco-document/trec-dl-hard/fold5__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3213835,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": "D"
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 4114,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 2165,
+          "1": 1562,
+          "2": 254,
+          "3": 133
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

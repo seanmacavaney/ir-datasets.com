@@ -36,6 +36,7 @@
 <div class="tabs">
 <a class="tab" target="cranfield__queries">queries</a>
 <div id="cranfield__queries" class="tab-content">
+<span class="ds-count"><kbd title="225">225</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -81,6 +82,7 @@
 
 <a class="tab" target="cranfield__docs">docs</a>
 <div id="cranfield__docs" class="tab-content">
+<span class="ds-count"><kbd title="1400">1.4K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -125,6 +127,7 @@
 
 <a class="tab" target="cranfield__qrels">qrels</a>
 <div id="cranfield__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1837">1.8K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -137,11 +140,11 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">-1</td><td>References of no interest.</td><td class="right"><kbd title="225">225<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">12.2%</td></tr>
-<tr><td class="relScore">1</td><td>References of minimum interest, for example, those that have been included from an historical viewpoint.</td><td class="right"><kbd title="128">128<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">7.0%</td></tr>
-<tr><td class="relScore">2</td><td>References which were useful, either as general background to the work or as suggesting methods of tackling certain aspects of the work.</td><td class="right"><kbd title="387">387<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">21.1%</td></tr>
-<tr><td class="relScore">3</td><td>References of a high degree of relevance, the lack of which either would have made the research impracticable or would have resulted in a considerable amount of extra work.</td><td class="right"><kbd title="734">734<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">40.0%</td></tr>
-<tr><td class="relScore">4</td><td>References which are a complete answer to the question.</td><td class="right"><kbd title="363">363<span style="visibility: hidden;">&nbsp;</span></kdb></td><td class="right">19.8%</td></tr>
+<tr><td class="relScore">-1</td><td>References of no interest.</td><td class="right"><kbd title="225">225<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">12.2%</td></tr>
+<tr><td class="relScore">1</td><td>References of minimum interest, for example, those that have been included from an historical viewpoint.</td><td class="right"><kbd title="128">128<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">7.0%</td></tr>
+<tr><td class="relScore">2</td><td>References which were useful, either as general background to the work or as suggesting methods of tackling certain aspects of the work.</td><td class="right"><kbd title="387">387<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">21.1%</td></tr>
+<tr><td class="relScore">3</td><td>References of a high degree of relevance, the lack of which either would have made the research impracticable or would have resulted in a considerable amount of extra work.</td><td class="right"><kbd title="734">734<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">40.0%</td></tr>
+<tr><td class="relScore">4</td><td>References which are a complete answer to the question.</td><td class="right"><kbd title="363">363<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">19.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -183,7 +186,39 @@
 </pre></div>
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="cranfield__metadata">Metadata</a>
+<div id="cranfield__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1400,
+    "fields": {
+      "doc_id": {
+        "max_len": 4,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 225
+  },
+  "qrels": {
+    "count": 1837,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 387,
+          "3": 734,
+          "4": 363,
+          "-1": 225,
+          "1": 128
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

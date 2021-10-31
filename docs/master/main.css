@@ -337,6 +337,21 @@ a.ex-tab {
     display: none;
 }
 
+.ds-count {
+  float: right;
+  display: block;
+  font-size: 1.4em;
+  border: 1px solid #444;
+  line-height: 1;
+  border-radius: 4px;
+  padding: 0 4px 2px;
+  background-color: #f3f3f3;
+}
+
+.metadata {
+  font-size: 0.7em;
+}
+
 .hl {
     background-color: #fff9bd;
 }

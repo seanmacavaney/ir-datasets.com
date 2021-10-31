@@ -44,6 +44,7 @@
 <div class="tabs">
 <a class="tab" target="nyt__docs">docs</a>
 <div id="nyt__docs" class="tab-content">
+<span class="ds-count"><kbd title="1864661">1.9M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -100,7 +101,22 @@
   year={2008}
 }</cite>
 </div>
+
+<a class="tab" target="nyt__metadata">Metadata</a>
+<div id="nyt__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1864661,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -113,6 +129,7 @@
 <div class="tabs">
 <a class="tab" target="nyt/trec-core-2017__queries">queries</a>
 <div id="nyt/trec-core-2017__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -158,6 +175,7 @@
 
 <a class="tab" target="nyt/trec-core-2017__docs">docs</a>
 <div id="nyt/trec-core-2017__docs" class="tab-content">
+<span class="ds-count"><kbd title="1864661">1.9M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">nyt</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -202,6 +220,7 @@
 
 <a class="tab" target="nyt/trec-core-2017__qrels">qrels</a>
 <div id="nyt/trec-core-2017__qrels" class="tab-content">
+<span class="ds-count"><kbd title="30030">30K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -214,9 +233,9 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="21028">21K</kdb></td><td class="right">70.0%</td></tr>
-<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="5549">5.5K</kdb></td><td class="right">18.5%</td></tr>
-<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="3453">3.5K</kdb></td><td class="right">11.5%</td></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="21028">21K</kbd></td><td class="right">70.0%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="5549">5.5K</kbd></td><td class="right">18.5%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="3453">3.5K</kbd></td><td class="right">11.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -279,7 +298,37 @@
   year={2008}
 }</cite>
 </div>
+
+<a class="tab" target="nyt/trec-core-2017__metadata">Metadata</a>
+<div id="nyt/trec-core-2017__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1864661,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 30030,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 5549,
+          "0": 21028,
+          "2": 3453
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -292,6 +341,7 @@
 <div class="tabs">
 <a class="tab" target="nyt/wksup__queries">queries</a>
 <div id="nyt/wksup__queries" class="tab-content">
+<span class="ds-count"><kbd title="1864661">1.9M</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -337,6 +387,7 @@
 
 <a class="tab" target="nyt/wksup__docs">docs</a>
 <div id="nyt/wksup__docs" class="tab-content">
+<span class="ds-count"><kbd title="1864661">1.9M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">nyt</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -381,6 +432,7 @@
 
 <a class="tab" target="nyt/wksup__qrels">qrels</a>
 <div id="nyt/wksup__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1864661">1.9M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -393,7 +445,7 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">1</td><td>title is associated with article body</td><td class="right"><kbd title="1864661">1.9M</kdb></td><td class="right">100.0%</td></tr>
+<tr><td class="relScore">1</td><td>title is associated with article body</td><td class="right"><kbd title="1864661">1.9M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -456,7 +508,35 @@
   year={2008}
 }</cite>
 </div>
+
+<a class="tab" target="nyt/wksup__metadata">Metadata</a>
+<div id="nyt/wksup__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1864661,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1864661
+  },
+  "qrels": {
+    "count": 1864661,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1864661
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -469,6 +549,7 @@
 <div class="tabs">
 <a class="tab" target="nyt/wksup/train__queries">queries</a>
 <div id="nyt/wksup/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="1863657">1.9M</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -506,6 +587,7 @@
 
 <a class="tab" target="nyt/wksup/train__docs">docs</a>
 <div id="nyt/wksup/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="1864661">1.9M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">nyt</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -550,6 +632,7 @@
 
 <a class="tab" target="nyt/wksup/train__qrels">qrels</a>
 <div id="nyt/wksup/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1863657">1.9M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -562,7 +645,7 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">1</td><td>title is associated with article body</td><td class="right"><kbd title="1863657">1.9M</kdb></td><td class="right">100.0%</td></tr>
+<tr><td class="relScore">1</td><td>title is associated with article body</td><td class="right"><kbd title="1863657">1.9M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -611,7 +694,35 @@
   year={2008}
 }</cite>
 </div>
+
+<a class="tab" target="nyt/wksup/train__metadata">Metadata</a>
+<div id="nyt/wksup/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1864661,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1863657
+  },
+  "qrels": {
+    "count": 1863657,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1863657
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -624,6 +735,7 @@
 <div class="tabs">
 <a class="tab" target="nyt/wksup/valid__queries">queries</a>
 <div id="nyt/wksup/valid__queries" class="tab-content">
+<span class="ds-count"><kbd title="1004">1.0K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -661,6 +773,7 @@
 
 <a class="tab" target="nyt/wksup/valid__docs">docs</a>
 <div id="nyt/wksup/valid__docs" class="tab-content">
+<span class="ds-count"><kbd title="1864661">1.9M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">nyt</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -705,6 +818,7 @@
 
 <a class="tab" target="nyt/wksup/valid__qrels">qrels</a>
 <div id="nyt/wksup/valid__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1004">1.0K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -717,7 +831,7 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">1</td><td>title is associated with article body</td><td class="right"><kbd title="1004">1.0K</kdb></td><td class="right">100.0%</td></tr>
+<tr><td class="relScore">1</td><td>title is associated with article body</td><td class="right"><kbd title="1004">1.0K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -766,7 +880,35 @@
   year={2008}
 }</cite>
 </div>
+
+<a class="tab" target="nyt/wksup/valid__metadata">Metadata</a>
+<div id="nyt/wksup/valid__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1864661,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1004
+  },
+  "qrels": {
+    "count": 1004,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1004
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

@@ -37,6 +37,7 @@
 <div class="tabs">
 <a class="tab" target="highwire__docs">docs</a>
 <div id="highwire__docs" class="tab-content">
+<span class="ds-count"><kbd title="162259">162K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -83,7 +84,22 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="highwire__metadata">Metadata</a>
+<div id="highwire__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 162259,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -96,6 +112,7 @@
 <div class="tabs">
 <a class="tab" target="highwire/trec-genomics-2006__queries">queries</a>
 <div id="highwire/trec-genomics-2006__queries" class="tab-content">
+<span class="ds-count"><kbd title="28">28</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -141,6 +158,7 @@
 
 <a class="tab" target="highwire/trec-genomics-2006__docs">docs</a>
 <div id="highwire/trec-genomics-2006__docs" class="tab-content">
+<span class="ds-count"><kbd title="162259">162K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">highwire</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -190,6 +208,7 @@
 
 <a class="tab" target="highwire/trec-genomics-2006__qrels">qrels</a>
 <div id="highwire/trec-genomics-2006__qrels" class="tab-content">
+<span class="ds-count"><kbd title="27999">28K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -202,9 +221,9 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>NOT</td><td class="right"><kbd title="24934">25K</kdb></td><td class="right">89.1%</td></tr>
-<tr><td class="relScore">1</td><td>POSSIBLY</td><td class="right"><kbd title="1237">1.2K</kdb></td><td class="right">4.4%</td></tr>
-<tr><td class="relScore">2</td><td>DEFINITELY</td><td class="right"><kbd title="1828">1.8K</kdb></td><td class="right">6.5%</td></tr>
+<tr><td class="relScore">0</td><td>NOT</td><td class="right"><kbd title="24934">25K</kbd></td><td class="right">89.1%</td></tr>
+<tr><td class="relScore">1</td><td>POSSIBLY</td><td class="right"><kbd title="1237">1.2K</kbd></td><td class="right">4.4%</td></tr>
+<tr><td class="relScore">2</td><td>DEFINITELY</td><td class="right"><kbd title="1828">1.8K</kbd></td><td class="right">6.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -258,7 +277,37 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="highwire/trec-genomics-2006__metadata">Metadata</a>
+<div id="highwire/trec-genomics-2006__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 162259,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 28
+  },
+  "qrels": {
+    "count": 27999,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 24934,
+          "1": 1237,
+          "2": 1828
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -271,6 +320,7 @@
 <div class="tabs">
 <a class="tab" target="highwire/trec-genomics-2007__queries">queries</a>
 <div id="highwire/trec-genomics-2007__queries" class="tab-content">
+<span class="ds-count"><kbd title="36">36</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -316,6 +366,7 @@
 
 <a class="tab" target="highwire/trec-genomics-2007__docs">docs</a>
 <div id="highwire/trec-genomics-2007__docs" class="tab-content">
+<span class="ds-count"><kbd title="162259">162K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">highwire</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -365,6 +416,7 @@
 
 <a class="tab" target="highwire/trec-genomics-2007__qrels">qrels</a>
 <div id="highwire/trec-genomics-2007__qrels" class="tab-content">
+<span class="ds-count"><kbd title="35996">36K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -377,8 +429,8 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>NOT_RELEVANT</td><td class="right"><kbd title="31501">32K</kdb></td><td class="right">87.5%</td></tr>
-<tr><td class="relScore">1</td><td>RELEVANT</td><td class="right"><kbd title="4495">4.5K</kdb></td><td class="right">12.5%</td></tr>
+<tr><td class="relScore">0</td><td>NOT_RELEVANT</td><td class="right"><kbd title="31501">32K</kbd></td><td class="right">87.5%</td></tr>
+<tr><td class="relScore">1</td><td>RELEVANT</td><td class="right"><kbd title="4495">4.5K</kbd></td><td class="right">12.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -432,7 +484,36 @@
   year={2007}
 }</cite>
 </div>
+
+<a class="tab" target="highwire/trec-genomics-2007__metadata">Metadata</a>
+<div id="highwire/trec-genomics-2007__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 162259,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 36
+  },
+  "qrels": {
+    "count": 35996,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 31501,
+          "1": 4495
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">
