@@ -275,6 +275,36 @@ Returns available metadata about the docpairs from this dataset (e.g., count).
 
 
 
+<h4><code>dataset.qlogs_count() -> int</code></h4>
+<div class="methodinfo">
+<p>Returns the number of query log records in the collection.</p>
+</div>
+
+<h4><code>dataset.qlogs_iter() -> iter[namedtuple]</code></h4>
+<div class="methodinfo">
+<p>
+Returns an iterator over namedtuples representing query log records in the dataset.
+</p>
+</div>
+
+<h4><code>dataset.qlogs_cls() -> type</code></h4>
+<div class="methodinfo">
+<p>
+Returns the type of the namedtuple returned by <code>qlogs_iter</code>,
+including <code>_fields</code> and <code>__annotations__</code>.
+</p>
+</div>
+
+<h4><code>dataset.qlogs_metadata() -> dict</code></h4>
+<div class="methodinfo">
+<p>
+Returns available metadata about the qlogs from this dataset (e.g., count).
+</p>
+</div>
+
+
+
+
 
 
 
