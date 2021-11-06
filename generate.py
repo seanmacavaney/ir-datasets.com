@@ -8,6 +8,7 @@ import argparse
 import datetime
 from contextlib import contextmanager
 from pathlib import Path
+from enum import Enum
 import ir_datasets
 
 
@@ -301,7 +302,10 @@ def generate_data_format(cls):
         if cls._name in ('Tuple', 'List', 'Dict'):
             return f'<span class="kwd">{cls._name}</span>[{",".join(args)}]'
         if cls._name is None: # aka union
-            return f'<span class="kwd">Union</span>[{",".join(args)}]'
+            if len(args) == 2 and args[1] == '<span class="kwd">None</span>':
+                return f'<span class="kwd">Optional</span>[{args[0]}]'
+            else:
+                return f'<span class="kwd">Union</span>[{",".join(args)}]'
     elif tuple in cls.__bases__ and hasattr(cls, '_fields'):
         fields = []
         for i, field in enumerate(cls._fields):
@@ -316,6 +320,9 @@ def generate_data_format(cls):
 {"".join(fields)}
 </ol>
 </div>""".strip()
+    elif Enum in cls.__bases__:
+        fields = list(cls.__members__)
+        return f'<span class="kwd">{cls.__name__}</span>[{", ".join(fields)}]'
     raise RuntimeError(f"uknown class {cls}")
 
 
