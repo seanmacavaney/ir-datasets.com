@@ -54,6 +54,7 @@
 <div class="tabs">
 <a class="tab" target="gov2__docs">docs</a>
 <div id="gov2__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -88,7 +89,22 @@
 <div class="ex-tab-content pyterrier">
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
+
+<a class="tab" target="gov2__metadata">Metadata</a>
+<div id="gov2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -101,6 +117,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-mq-2007__queries">queries</a>
 <div id="gov2/trec-mq-2007__queries" class="tab-content">
+<span class="ds-count"><kbd title="10000">10K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -138,6 +155,7 @@
 
 <a class="tab" target="gov2/trec-mq-2007__docs">docs</a>
 <div id="gov2/trec-mq-2007__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -175,6 +193,7 @@
 
 <a class="tab" target="gov2/trec-mq-2007__qrels">qrels</a>
 <div id="gov2/trec-mq-2007__qrels" class="tab-content">
+<span class="ds-count"><kbd title="73015">73K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -186,10 +205,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="54333">54K</kbd></td><td class="right">74.4%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="14689">15K</kbd></td><td class="right">20.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="3993">4.0K</kbd></td><td class="right">5.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -229,7 +248,37 @@
   year={2007}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-mq-2007__metadata">Metadata</a>
+<div id="gov2/trec-mq-2007__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 10000
+  },
+  "qrels": {
+    "count": 73015,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 54333,
+          "1": 14689,
+          "2": 3993
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -242,6 +291,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-mq-2008__queries">queries</a>
 <div id="gov2/trec-mq-2008__queries" class="tab-content">
+<span class="ds-count"><kbd title="10000">10K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -279,6 +329,7 @@
 
 <a class="tab" target="gov2/trec-mq-2008__docs">docs</a>
 <div id="gov2/trec-mq-2008__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -316,6 +367,7 @@
 
 <a class="tab" target="gov2/trec-mq-2008__qrels">qrels</a>
 <div id="gov2/trec-mq-2008__qrels" class="tab-content">
+<span class="ds-count"><kbd title="15211">15K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -327,10 +379,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="12279">12K</kbd></td><td class="right">80.7%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="2932">2.9K</kbd></td><td class="right">19.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -370,7 +422,36 @@
   year={2008}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-mq-2008__metadata">Metadata</a>
+<div id="gov2/trec-mq-2008__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 10000
+  },
+  "qrels": {
+    "count": 15211,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 12279,
+          "1": 2932
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -383,6 +464,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2004__queries">queries</a>
 <div id="gov2/trec-tb-2004__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -420,6 +502,7 @@
 
 <a class="tab" target="gov2/trec-tb-2004__docs">docs</a>
 <div id="gov2/trec-tb-2004__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -457,6 +540,7 @@
 
 <a class="tab" target="gov2/trec-tb-2004__qrels">qrels</a>
 <div id="gov2/trec-tb-2004__qrels" class="tab-content">
+<span class="ds-count"><kbd title="58077">58K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -468,10 +552,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="47460">47K</kbd></td><td class="right">81.7%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="9327">9.3K</kbd></td><td class="right">16.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="1290">1.3K</kbd></td><td class="right">2.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -511,7 +595,37 @@
   year={2004}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2004__metadata">Metadata</a>
+<div id="gov2/trec-tb-2004__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 58077,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 47460,
+          "1": 9327,
+          "2": 1290
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -524,6 +638,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2005__queries">queries</a>
 <div id="gov2/trec-tb-2005__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -561,6 +676,7 @@
 
 <a class="tab" target="gov2/trec-tb-2005__docs">docs</a>
 <div id="gov2/trec-tb-2005__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -598,6 +714,7 @@
 
 <a class="tab" target="gov2/trec-tb-2005__qrels">qrels</a>
 <div id="gov2/trec-tb-2005__qrels" class="tab-content">
+<span class="ds-count"><kbd title="45291">45K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -609,10 +726,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="34884">35K</kbd></td><td class="right">77.0%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="7772">7.8K</kbd></td><td class="right">17.2%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="2635">2.6K</kbd></td><td class="right">5.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -652,7 +769,37 @@
   year={2005}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2005__metadata">Metadata</a>
+<div id="gov2/trec-tb-2005__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 45291,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 34884,
+          "1": 7772,
+          "2": 2635
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -665,6 +812,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2005/efficiency__queries">queries</a>
 <div id="gov2/trec-tb-2005/efficiency__queries" class="tab-content">
+<span class="ds-count"><kbd title="50000">50K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -702,6 +850,7 @@
 
 <a class="tab" target="gov2/trec-tb-2005/efficiency__docs">docs</a>
 <div id="gov2/trec-tb-2005/efficiency__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -739,6 +888,7 @@
 
 <a class="tab" target="gov2/trec-tb-2005/efficiency__qrels">qrels</a>
 <div id="gov2/trec-tb-2005/efficiency__qrels" class="tab-content">
+<span class="ds-count"><kbd title="45291">45K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -750,10 +900,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="34884">35K</kbd></td><td class="right">77.0%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="7772">7.8K</kbd></td><td class="right">17.2%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="2635">2.6K</kbd></td><td class="right">5.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -793,7 +943,37 @@
   year={2005}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2005/efficiency__metadata">Metadata</a>
+<div id="gov2/trec-tb-2005/efficiency__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 50000
+  },
+  "qrels": {
+    "count": 45291,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 34884,
+          "1": 7772,
+          "2": 2635
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -806,6 +986,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2005/named-page__queries">queries</a>
 <div id="gov2/trec-tb-2005/named-page__queries" class="tab-content">
+<span class="ds-count"><kbd title="252">252</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -843,6 +1024,7 @@
 
 <a class="tab" target="gov2/trec-tb-2005/named-page__docs">docs</a>
 <div id="gov2/trec-tb-2005/named-page__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -880,6 +1062,7 @@
 
 <a class="tab" target="gov2/trec-tb-2005/named-page__qrels">qrels</a>
 <div id="gov2/trec-tb-2005/named-page__qrels" class="tab-content">
+<span class="ds-count"><kbd title="11729">12K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -891,9 +1074,9 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="11729">12K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -933,7 +1116,35 @@
   year={2005}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2005/named-page__metadata">Metadata</a>
+<div id="gov2/trec-tb-2005/named-page__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 252
+  },
+  "qrels": {
+    "count": 11729,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 11729
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -946,6 +1157,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006__queries">queries</a>
 <div id="gov2/trec-tb-2006__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -983,6 +1195,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006__docs">docs</a>
 <div id="gov2/trec-tb-2006__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1020,6 +1233,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006__qrels">qrels</a>
 <div id="gov2/trec-tb-2006__qrels" class="tab-content">
+<span class="ds-count"><kbd title="31984">32K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1031,10 +1245,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="26091">26K</kbd></td><td class="right">81.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="5467">5.5K</kbd></td><td class="right">17.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="426">426<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1074,7 +1288,37 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 31984,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 26091,
+          "1": 5467,
+          "2": 426
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1087,6 +1331,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006/efficiency__queries">queries</a>
 <div id="gov2/trec-tb-2006/efficiency__queries" class="tab-content">
+<span class="ds-count"><kbd title="100000">100K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1124,6 +1369,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency__docs">docs</a>
 <div id="gov2/trec-tb-2006/efficiency__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1161,6 +1407,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency__qrels">qrels</a>
 <div id="gov2/trec-tb-2006/efficiency__qrels" class="tab-content">
+<span class="ds-count"><kbd title="31984">32K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1172,10 +1419,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="26091">26K</kbd></td><td class="right">81.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="5467">5.5K</kbd></td><td class="right">17.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="426">426<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1215,7 +1462,37 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006/efficiency__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006/efficiency__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 100000
+  },
+  "qrels": {
+    "count": 31984,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 26091,
+          "1": 5467,
+          "2": 426
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1228,6 +1505,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006/efficiency/10k__queries">queries</a>
 <div id="gov2/trec-tb-2006/efficiency/10k__queries" class="tab-content">
+<span class="ds-count"><kbd title="10000">10K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1265,6 +1543,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency/10k__docs">docs</a>
 <div id="gov2/trec-tb-2006/efficiency/10k__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1311,7 +1590,25 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006/efficiency/10k__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006/efficiency/10k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 10000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1324,6 +1621,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream1__queries">queries</a>
 <div id="gov2/trec-tb-2006/efficiency/stream1__queries" class="tab-content">
+<span class="ds-count"><kbd title="25000">25K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1361,6 +1659,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream1__docs">docs</a>
 <div id="gov2/trec-tb-2006/efficiency/stream1__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1407,7 +1706,25 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006/efficiency/stream1__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006/efficiency/stream1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 25000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1420,6 +1737,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream2__queries">queries</a>
 <div id="gov2/trec-tb-2006/efficiency/stream2__queries" class="tab-content">
+<span class="ds-count"><kbd title="25000">25K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1457,6 +1775,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream2__docs">docs</a>
 <div id="gov2/trec-tb-2006/efficiency/stream2__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1503,7 +1822,25 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006/efficiency/stream2__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006/efficiency/stream2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 25000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1516,6 +1853,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream3__queries">queries</a>
 <div id="gov2/trec-tb-2006/efficiency/stream3__queries" class="tab-content">
+<span class="ds-count"><kbd title="25000">25K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1553,6 +1891,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream3__docs">docs</a>
 <div id="gov2/trec-tb-2006/efficiency/stream3__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1590,6 +1929,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream3__qrels">qrels</a>
 <div id="gov2/trec-tb-2006/efficiency/stream3__qrels" class="tab-content">
+<span class="ds-count"><kbd title="31984">32K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1601,10 +1941,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
-<tr><td class="relScore">2</td><td>Highly Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="26091">26K</kbd></td><td class="right">81.6%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="5467">5.5K</kbd></td><td class="right">17.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly Relevant</td><td class="right"><kbd title="426">426<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1644,7 +1984,37 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006/efficiency/stream3__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006/efficiency/stream3__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 25000
+  },
+  "qrels": {
+    "count": 31984,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 26091,
+          "1": 5467,
+          "2": 426
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1657,6 +2027,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream4__queries">queries</a>
 <div id="gov2/trec-tb-2006/efficiency/stream4__queries" class="tab-content">
+<span class="ds-count"><kbd title="25000">25K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1694,6 +2065,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/efficiency/stream4__docs">docs</a>
 <div id="gov2/trec-tb-2006/efficiency/stream4__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1740,7 +2112,25 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006/efficiency/stream4__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006/efficiency/stream4__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 25000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1753,6 +2143,7 @@
 <div class="tabs">
 <a class="tab" target="gov2/trec-tb-2006/named-page__queries">queries</a>
 <div id="gov2/trec-tb-2006/named-page__queries" class="tab-content">
+<span class="ds-count"><kbd title="181">181</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1790,6 +2181,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/named-page__docs">docs</a>
 <div id="gov2/trec-tb-2006/named-page__docs" class="tab-content">
+<span class="ds-count"><kbd title="25205179">25M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">gov2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1827,6 +2219,7 @@
 
 <a class="tab" target="gov2/trec-tb-2006/named-page__qrels">qrels</a>
 <div id="gov2/trec-tb-2006/named-page__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2361">2.4K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1838,9 +2231,9 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant</td></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant</td><td class="right"><kbd title="1554">1.6K</kbd></td><td class="right">65.8%</td></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="807">807<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">34.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1880,7 +2273,36 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="gov2/trec-tb-2006/named-page__metadata">Metadata</a>
+<div id="gov2/trec-tb-2006/named-page__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 25205179,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "GX"
+      }
+    }
+  },
+  "queries": {
+    "count": 181
+  },
+  "qrels": {
+    "count": 2361,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 807,
+          "0": 1554
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

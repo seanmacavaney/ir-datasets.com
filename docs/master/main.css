@@ -261,6 +261,10 @@ tbody tr:last-child td {
   text-align: center;
 }
 
+.right {
+  text-align: right;
+}
+
 .sep {
   border-top: 3px solid #333;
 }
@@ -331,6 +335,21 @@ a.ex-tab {
 
 .screen-small-show {
     display: none;
+}
+
+.ds-count {
+  float: right;
+  display: block;
+  font-size: 1.4em;
+  border: 1px solid #444;
+  line-height: 1;
+  border-radius: 4px;
+  padding: 0 4px 2px;
+  background-color: #f3f3f3;
+}
+
+.metadata {
+  font-size: 0.7em;
 }
 
 .hl {

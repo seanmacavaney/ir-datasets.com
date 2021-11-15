@@ -78,7 +78,7 @@
   year={2020}
 }</cite>
 </div>
-</div>
+
 </div>
 
 <hr />
@@ -91,6 +91,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en1k__docs">docs</a>
 <div id="wikir/en1k__docs" class="tab-content">
+<span class="ds-count"><kbd title="369721">370K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -150,7 +151,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en1k__metadata">Metadata</a>
+<div id="wikir/en1k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 369721,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -163,6 +179,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en1k/test__queries">queries</a>
 <div id="wikir/en1k/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="100">100</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -208,6 +225,7 @@
 
 <a class="tab" target="wikir/en1k/test__docs">docs</a>
 <div id="wikir/en1k/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="369721">370K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en1k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -252,6 +270,7 @@
 
 <a class="tab" target="wikir/en1k/test__qrels">qrels</a>
 <div id="wikir/en1k/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4435">4.4K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -263,10 +282,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="4335">4.3K</kbd></td><td class="right">97.7%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="100">100<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">2.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -311,6 +330,7 @@
 
 <a class="tab" target="wikir/en1k/test__scoreddocs">scoreddocs</a>
 <div id="wikir/en1k/test__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="10000">10K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -362,7 +382,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en1k/test__metadata">Metadata</a>
+<div id="wikir/en1k/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 369721,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 100
+  },
+  "qrels": {
+    "count": 4435,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 100,
+          "1": 4335
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 10000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -375,6 +427,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en1k/training__queries">queries</a>
 <div id="wikir/en1k/training__queries" class="tab-content">
+<span class="ds-count"><kbd title="1444">1.4K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -420,6 +473,7 @@
 
 <a class="tab" target="wikir/en1k/training__docs">docs</a>
 <div id="wikir/en1k/training__docs" class="tab-content">
+<span class="ds-count"><kbd title="369721">370K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en1k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -464,6 +518,7 @@
 
 <a class="tab" target="wikir/en1k/training__qrels">qrels</a>
 <div id="wikir/en1k/training__qrels" class="tab-content">
+<span class="ds-count"><kbd title="47699">48K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -475,10 +530,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="46255">46K</kbd></td><td class="right">97.0%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1444">1.4K</kbd></td><td class="right">3.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -523,6 +578,7 @@
 
 <a class="tab" target="wikir/en1k/training__scoreddocs">scoreddocs</a>
 <div id="wikir/en1k/training__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="144400">144K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -574,7 +630,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en1k/training__metadata">Metadata</a>
+<div id="wikir/en1k/training__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 369721,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1444
+  },
+  "qrels": {
+    "count": 47699,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1444,
+          "1": 46255
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 144400
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -587,6 +675,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en1k/validation__queries">queries</a>
 <div id="wikir/en1k/validation__queries" class="tab-content">
+<span class="ds-count"><kbd title="100">100</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -632,6 +721,7 @@
 
 <a class="tab" target="wikir/en1k/validation__docs">docs</a>
 <div id="wikir/en1k/validation__docs" class="tab-content">
+<span class="ds-count"><kbd title="369721">370K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en1k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -676,6 +766,7 @@
 
 <a class="tab" target="wikir/en1k/validation__qrels">qrels</a>
 <div id="wikir/en1k/validation__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4979">5.0K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -687,10 +778,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="4879">4.9K</kbd></td><td class="right">98.0%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="100">100<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">2.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -735,6 +826,7 @@
 
 <a class="tab" target="wikir/en1k/validation__scoreddocs">scoreddocs</a>
 <div id="wikir/en1k/validation__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="10000">10K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -786,7 +878,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en1k/validation__metadata">Metadata</a>
+<div id="wikir/en1k/validation__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 369721,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 100
+  },
+  "qrels": {
+    "count": 4979,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 100,
+          "1": 4879
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 10000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -799,6 +923,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en59k__docs">docs</a>
 <div id="wikir/en59k__docs" class="tab-content">
+<span class="ds-count"><kbd title="2454785">2.5M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -858,7 +983,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en59k__metadata">Metadata</a>
+<div id="wikir/en59k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2454785,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -871,6 +1011,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en59k/test__queries">queries</a>
 <div id="wikir/en59k/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="1000">1.0K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -916,6 +1057,7 @@
 
 <a class="tab" target="wikir/en59k/test__docs">docs</a>
 <div id="wikir/en59k/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="2454785">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en59k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -960,6 +1102,7 @@
 
 <a class="tab" target="wikir/en59k/test__qrels">qrels</a>
 <div id="wikir/en59k/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="104715">105K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -971,10 +1114,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="103715">104K</kbd></td><td class="right">99.0%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1000">1.0K</kbd></td><td class="right">1.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1019,6 +1162,7 @@
 
 <a class="tab" target="wikir/en59k/test__scoreddocs">scoreddocs</a>
 <div id="wikir/en59k/test__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="100000">100K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1070,7 +1214,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en59k/test__metadata">Metadata</a>
+<div id="wikir/en59k/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2454785,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1000
+  },
+  "qrels": {
+    "count": 104715,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1000,
+          "1": 103715
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 100000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1083,6 +1259,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en59k/training__queries">queries</a>
 <div id="wikir/en59k/training__queries" class="tab-content">
+<span class="ds-count"><kbd title="57251">57K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1128,6 +1305,7 @@
 
 <a class="tab" target="wikir/en59k/training__docs">docs</a>
 <div id="wikir/en59k/training__docs" class="tab-content">
+<span class="ds-count"><kbd title="2454785">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en59k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1172,6 +1350,7 @@
 
 <a class="tab" target="wikir/en59k/training__qrels">qrels</a>
 <div id="wikir/en59k/training__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2443383">2.4M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1183,10 +1362,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="2386132">2.4M</kbd></td><td class="right">97.7%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="57251">57K</kbd></td><td class="right">2.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1231,6 +1410,7 @@
 
 <a class="tab" target="wikir/en59k/training__scoreddocs">scoreddocs</a>
 <div id="wikir/en59k/training__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="5725100">5.7M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1282,7 +1462,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en59k/training__metadata">Metadata</a>
+<div id="wikir/en59k/training__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2454785,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 57251
+  },
+  "qrels": {
+    "count": 2443383,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 57251,
+          "1": 2386132
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 5725100
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1295,6 +1507,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en59k/validation__queries">queries</a>
 <div id="wikir/en59k/validation__queries" class="tab-content">
+<span class="ds-count"><kbd title="1000">1.0K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1340,6 +1553,7 @@
 
 <a class="tab" target="wikir/en59k/validation__docs">docs</a>
 <div id="wikir/en59k/validation__docs" class="tab-content">
+<span class="ds-count"><kbd title="2454785">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en59k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1384,6 +1598,7 @@
 
 <a class="tab" target="wikir/en59k/validation__qrels">qrels</a>
 <div id="wikir/en59k/validation__qrels" class="tab-content">
+<span class="ds-count"><kbd title="68905">69K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1395,10 +1610,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="67905">68K</kbd></td><td class="right">98.5%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1000">1.0K</kbd></td><td class="right">1.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1443,6 +1658,7 @@
 
 <a class="tab" target="wikir/en59k/validation__scoreddocs">scoreddocs</a>
 <div id="wikir/en59k/validation__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="100000">100K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1494,7 +1710,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en59k/validation__metadata">Metadata</a>
+<div id="wikir/en59k/validation__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2454785,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1000
+  },
+  "qrels": {
+    "count": 68905,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1000,
+          "1": 67905
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 100000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1507,6 +1755,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en78k__docs">docs</a>
 <div id="wikir/en78k__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1566,7 +1815,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en78k__metadata">Metadata</a>
+<div id="wikir/en78k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1579,6 +1843,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en78k/test__queries">queries</a>
 <div id="wikir/en78k/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="7862">7.9K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1624,6 +1889,7 @@
 
 <a class="tab" target="wikir/en78k/test__docs">docs</a>
 <div id="wikir/en78k/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en78k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1668,6 +1934,7 @@
 
 <a class="tab" target="wikir/en78k/test__qrels">qrels</a>
 <div id="wikir/en78k/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="353060">353K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1679,10 +1946,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="345198">345K</kbd></td><td class="right">97.8%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="7862">7.9K</kbd></td><td class="right">2.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1727,6 +1994,7 @@
 
 <a class="tab" target="wikir/en78k/test__scoreddocs">scoreddocs</a>
 <div id="wikir/en78k/test__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="785600">786K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1778,7 +2046,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en78k/test__metadata">Metadata</a>
+<div id="wikir/en78k/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 7862
+  },
+  "qrels": {
+    "count": 353060,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 7862,
+          "1": 345198
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 785600
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1791,6 +2091,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en78k/training__queries">queries</a>
 <div id="wikir/en78k/training__queries" class="tab-content">
+<span class="ds-count"><kbd title="62904">63K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1836,6 +2137,7 @@
 
 <a class="tab" target="wikir/en78k/training__docs">docs</a>
 <div id="wikir/en78k/training__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en78k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1880,6 +2182,7 @@
 
 <a class="tab" target="wikir/en78k/training__qrels">qrels</a>
 <div id="wikir/en78k/training__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2435257">2.4M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1891,10 +2194,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="2372353">2.4M</kbd></td><td class="right">97.4%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="62904">63K</kbd></td><td class="right">2.6%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1939,6 +2242,7 @@
 
 <a class="tab" target="wikir/en78k/training__scoreddocs">scoreddocs</a>
 <div id="wikir/en78k/training__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6284800">6.3M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1990,7 +2294,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en78k/training__metadata">Metadata</a>
+<div id="wikir/en78k/training__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 62904
+  },
+  "qrels": {
+    "count": 2435257,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 62904,
+          "1": 2372353
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6284800
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2003,6 +2339,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/en78k/validation__queries">queries</a>
 <div id="wikir/en78k/validation__queries" class="tab-content">
+<span class="ds-count"><kbd title="7862">7.9K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -2048,6 +2385,7 @@
 
 <a class="tab" target="wikir/en78k/validation__docs">docs</a>
 <div id="wikir/en78k/validation__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/en78k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2092,6 +2430,7 @@
 
 <a class="tab" target="wikir/en78k/validation__qrels">qrels</a>
 <div id="wikir/en78k/validation__qrels" class="tab-content">
+<span class="ds-count"><kbd title="271874">272K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2103,10 +2442,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="264012">264K</kbd></td><td class="right">97.1%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="7862">7.9K</kbd></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2151,6 +2490,7 @@
 
 <a class="tab" target="wikir/en78k/validation__scoreddocs">scoreddocs</a>
 <div id="wikir/en78k/validation__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="785700">786K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2202,7 +2542,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/en78k/validation__metadata">Metadata</a>
+<div id="wikir/en78k/validation__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 7862
+  },
+  "qrels": {
+    "count": 271874,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 7862,
+          "1": 264012
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 785700
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2215,6 +2587,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/ens78k__docs">docs</a>
 <div id="wikir/ens78k__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2274,7 +2647,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/ens78k__metadata">Metadata</a>
+<div id="wikir/ens78k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2287,6 +2675,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/ens78k/test__queries">queries</a>
 <div id="wikir/ens78k/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="7862">7.9K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -2332,6 +2721,7 @@
 
 <a class="tab" target="wikir/ens78k/test__docs">docs</a>
 <div id="wikir/ens78k/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/ens78k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2376,6 +2766,7 @@
 
 <a class="tab" target="wikir/ens78k/test__qrels">qrels</a>
 <div id="wikir/ens78k/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="353060">353K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2387,10 +2778,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="345198">345K</kbd></td><td class="right">97.8%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="7862">7.9K</kbd></td><td class="right">2.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2435,6 +2826,7 @@
 
 <a class="tab" target="wikir/ens78k/test__scoreddocs">scoreddocs</a>
 <div id="wikir/ens78k/test__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="786100">786K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2486,7 +2878,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/ens78k/test__metadata">Metadata</a>
+<div id="wikir/ens78k/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 7862
+  },
+  "qrels": {
+    "count": 353060,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 7862,
+          "1": 345198
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 786100
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2499,6 +2923,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/ens78k/training__queries">queries</a>
 <div id="wikir/ens78k/training__queries" class="tab-content">
+<span class="ds-count"><kbd title="62904">63K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -2544,6 +2969,7 @@
 
 <a class="tab" target="wikir/ens78k/training__docs">docs</a>
 <div id="wikir/ens78k/training__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/ens78k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2588,6 +3014,7 @@
 
 <a class="tab" target="wikir/ens78k/training__qrels">qrels</a>
 <div id="wikir/ens78k/training__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2435257">2.4M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2599,10 +3026,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="2372353">2.4M</kbd></td><td class="right">97.4%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="62904">63K</kbd></td><td class="right">2.6%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2647,6 +3074,7 @@
 
 <a class="tab" target="wikir/ens78k/training__scoreddocs">scoreddocs</a>
 <div id="wikir/ens78k/training__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6289800">6.3M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2698,7 +3126,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/ens78k/training__metadata">Metadata</a>
+<div id="wikir/ens78k/training__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 62904
+  },
+  "qrels": {
+    "count": 2435257,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 62904,
+          "1": 2372353
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6289800
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2711,6 +3171,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/ens78k/validation__queries">queries</a>
 <div id="wikir/ens78k/validation__queries" class="tab-content">
+<span class="ds-count"><kbd title="7862">7.9K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -2756,6 +3217,7 @@
 
 <a class="tab" target="wikir/ens78k/validation__docs">docs</a>
 <div id="wikir/ens78k/validation__docs" class="tab-content">
+<span class="ds-count"><kbd title="2456637">2.5M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/ens78k</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2800,6 +3262,7 @@
 
 <a class="tab" target="wikir/ens78k/validation__qrels">qrels</a>
 <div id="wikir/ens78k/validation__qrels" class="tab-content">
+<span class="ds-count"><kbd title="271874">272K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2811,10 +3274,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="264012">264K</kbd></td><td class="right">97.1%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="7862">7.9K</kbd></td><td class="right">2.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2859,6 +3322,7 @@
 
 <a class="tab" target="wikir/ens78k/validation__scoreddocs">scoreddocs</a>
 <div id="wikir/ens78k/validation__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="786100">786K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2910,7 +3374,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/ens78k/validation__metadata">Metadata</a>
+<div id="wikir/ens78k/validation__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2456637,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 7862
+  },
+  "qrels": {
+    "count": 271874,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 7862,
+          "1": 264012
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 786100
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2923,6 +3419,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/es13k__docs">docs</a>
 <div id="wikir/es13k__docs" class="tab-content">
+<span class="ds-count"><kbd title="645901">646K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">es</span></p>
 <div>Document type:</div>
@@ -2975,7 +3472,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/es13k__metadata">Metadata</a>
+<div id="wikir/es13k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 645901,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2988,6 +3500,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/es13k/test__queries">queries</a>
 <div id="wikir/es13k/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="1300">1.3K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">es</span></p>
 <div>Query type:</div>
@@ -3025,6 +3538,7 @@
 
 <a class="tab" target="wikir/es13k/test__docs">docs</a>
 <div id="wikir/es13k/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="645901">646K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/es13k</a></p>
 <p>Language: <span class="lang-code">es</span></p>
 <div>Document type:</div>
@@ -3062,6 +3576,7 @@
 
 <a class="tab" target="wikir/es13k/test__qrels">qrels</a>
 <div id="wikir/es13k/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="71339">71K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -3073,10 +3588,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="70039">70K</kbd></td><td class="right">98.2%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1300">1.3K</kbd></td><td class="right">1.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3107,6 +3622,7 @@
 
 <a class="tab" target="wikir/es13k/test__scoreddocs">scoreddocs</a>
 <div id="wikir/es13k/test__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="130000">130K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -3158,7 +3674,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/es13k/test__metadata">Metadata</a>
+<div id="wikir/es13k/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 645901,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1300
+  },
+  "qrels": {
+    "count": 71339,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1300,
+          "1": 70039
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 130000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3171,6 +3719,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/es13k/training__queries">queries</a>
 <div id="wikir/es13k/training__queries" class="tab-content">
+<span class="ds-count"><kbd title="11202">11K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">es</span></p>
 <div>Query type:</div>
@@ -3208,6 +3757,7 @@
 
 <a class="tab" target="wikir/es13k/training__docs">docs</a>
 <div id="wikir/es13k/training__docs" class="tab-content">
+<span class="ds-count"><kbd title="645901">646K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/es13k</a></p>
 <p>Language: <span class="lang-code">es</span></p>
 <div>Document type:</div>
@@ -3245,6 +3795,7 @@
 
 <a class="tab" target="wikir/es13k/training__qrels">qrels</a>
 <div id="wikir/es13k/training__qrels" class="tab-content">
+<span class="ds-count"><kbd title="477212">477K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -3256,10 +3807,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="466010">466K</kbd></td><td class="right">97.7%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="11202">11K</kbd></td><td class="right">2.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3290,6 +3841,7 @@
 
 <a class="tab" target="wikir/es13k/training__scoreddocs">scoreddocs</a>
 <div id="wikir/es13k/training__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="1120200">1.1M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -3341,7 +3893,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/es13k/training__metadata">Metadata</a>
+<div id="wikir/es13k/training__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 645901,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 11202
+  },
+  "qrels": {
+    "count": 477212,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 11202,
+          "1": 466010
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 1120200
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3354,6 +3938,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/es13k/validation__queries">queries</a>
 <div id="wikir/es13k/validation__queries" class="tab-content">
+<span class="ds-count"><kbd title="1300">1.3K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">es</span></p>
 <div>Query type:</div>
@@ -3391,6 +3976,7 @@
 
 <a class="tab" target="wikir/es13k/validation__docs">docs</a>
 <div id="wikir/es13k/validation__docs" class="tab-content">
+<span class="ds-count"><kbd title="645901">646K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/es13k</a></p>
 <p>Language: <span class="lang-code">es</span></p>
 <div>Document type:</div>
@@ -3428,6 +4014,7 @@
 
 <a class="tab" target="wikir/es13k/validation__qrels">qrels</a>
 <div id="wikir/es13k/validation__qrels" class="tab-content">
+<span class="ds-count"><kbd title="58757">59K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -3439,10 +4026,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="57457">57K</kbd></td><td class="right">97.8%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1300">1.3K</kbd></td><td class="right">2.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3473,6 +4060,7 @@
 
 <a class="tab" target="wikir/es13k/validation__scoreddocs">scoreddocs</a>
 <div id="wikir/es13k/validation__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="130000">130K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -3524,7 +4112,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/es13k/validation__metadata">Metadata</a>
+<div id="wikir/es13k/validation__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 645901,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1300
+  },
+  "qrels": {
+    "count": 58757,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1300,
+          "1": 57457
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 130000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3537,6 +4157,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/fr14k__docs">docs</a>
 <div id="wikir/fr14k__docs" class="tab-content">
+<span class="ds-count"><kbd title="736616">737K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">fr</span></p>
 <div>Document type:</div>
@@ -3589,7 +4210,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/fr14k__metadata">Metadata</a>
+<div id="wikir/fr14k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 736616,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3602,6 +4238,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/fr14k/test__queries">queries</a>
 <div id="wikir/fr14k/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="1400">1.4K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">fr</span></p>
 <div>Query type:</div>
@@ -3639,6 +4276,7 @@
 
 <a class="tab" target="wikir/fr14k/test__docs">docs</a>
 <div id="wikir/fr14k/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="736616">737K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/fr14k</a></p>
 <p>Language: <span class="lang-code">fr</span></p>
 <div>Document type:</div>
@@ -3676,6 +4314,7 @@
 
 <a class="tab" target="wikir/fr14k/test__qrels">qrels</a>
 <div id="wikir/fr14k/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="55647">56K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -3687,10 +4326,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="54247">54K</kbd></td><td class="right">97.5%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1400">1.4K</kbd></td><td class="right">2.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3721,6 +4360,7 @@
 
 <a class="tab" target="wikir/fr14k/test__scoreddocs">scoreddocs</a>
 <div id="wikir/fr14k/test__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="140000">140K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -3772,7 +4412,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/fr14k/test__metadata">Metadata</a>
+<div id="wikir/fr14k/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 736616,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1400
+  },
+  "qrels": {
+    "count": 55647,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1400,
+          "1": 54247
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 140000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3785,6 +4457,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/fr14k/training__queries">queries</a>
 <div id="wikir/fr14k/training__queries" class="tab-content">
+<span class="ds-count"><kbd title="11341">11K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">fr</span></p>
 <div>Query type:</div>
@@ -3822,6 +4495,7 @@
 
 <a class="tab" target="wikir/fr14k/training__docs">docs</a>
 <div id="wikir/fr14k/training__docs" class="tab-content">
+<span class="ds-count"><kbd title="736616">737K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/fr14k</a></p>
 <p>Language: <span class="lang-code">fr</span></p>
 <div>Document type:</div>
@@ -3859,6 +4533,7 @@
 
 <a class="tab" target="wikir/fr14k/training__qrels">qrels</a>
 <div id="wikir/fr14k/training__qrels" class="tab-content">
+<span class="ds-count"><kbd title="609240">609K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -3870,10 +4545,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="597899">598K</kbd></td><td class="right">98.1%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="11341">11K</kbd></td><td class="right">1.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3904,6 +4579,7 @@
 
 <a class="tab" target="wikir/fr14k/training__scoreddocs">scoreddocs</a>
 <div id="wikir/fr14k/training__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="1134100">1.1M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -3955,7 +4631,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/fr14k/training__metadata">Metadata</a>
+<div id="wikir/fr14k/training__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 736616,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 11341
+  },
+  "qrels": {
+    "count": 609240,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 11341,
+          "1": 597899
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 1134100
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3968,6 +4676,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/fr14k/validation__queries">queries</a>
 <div id="wikir/fr14k/validation__queries" class="tab-content">
+<span class="ds-count"><kbd title="1400">1.4K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">fr</span></p>
 <div>Query type:</div>
@@ -4005,6 +4714,7 @@
 
 <a class="tab" target="wikir/fr14k/validation__docs">docs</a>
 <div id="wikir/fr14k/validation__docs" class="tab-content">
+<span class="ds-count"><kbd title="736616">737K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/fr14k</a></p>
 <p>Language: <span class="lang-code">fr</span></p>
 <div>Document type:</div>
@@ -4042,6 +4752,7 @@
 
 <a class="tab" target="wikir/fr14k/validation__qrels">qrels</a>
 <div id="wikir/fr14k/validation__qrels" class="tab-content">
+<span class="ds-count"><kbd title="81255">81K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -4053,10 +4764,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="79855">80K</kbd></td><td class="right">98.3%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1400">1.4K</kbd></td><td class="right">1.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -4087,6 +4798,7 @@
 
 <a class="tab" target="wikir/fr14k/validation__scoreddocs">scoreddocs</a>
 <div id="wikir/fr14k/validation__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="140000">140K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -4138,7 +4850,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/fr14k/validation__metadata">Metadata</a>
+<div id="wikir/fr14k/validation__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 736616,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1400
+  },
+  "qrels": {
+    "count": 81255,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1400,
+          "1": 79855
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 140000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -4151,6 +4895,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/it16k__docs">docs</a>
 <div id="wikir/it16k__docs" class="tab-content">
+<span class="ds-count"><kbd title="503012">503K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">it</span></p>
 <div>Document type:</div>
@@ -4203,7 +4948,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/it16k__metadata">Metadata</a>
+<div id="wikir/it16k__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 503012,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -4216,6 +4976,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/it16k/test__queries">queries</a>
 <div id="wikir/it16k/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="1600">1.6K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">it</span></p>
 <div>Query type:</div>
@@ -4253,6 +5014,7 @@
 
 <a class="tab" target="wikir/it16k/test__docs">docs</a>
 <div id="wikir/it16k/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="503012">503K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/it16k</a></p>
 <p>Language: <span class="lang-code">it</span></p>
 <div>Document type:</div>
@@ -4290,6 +5052,7 @@
 
 <a class="tab" target="wikir/it16k/test__qrels">qrels</a>
 <div id="wikir/it16k/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="49338">49K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -4301,10 +5064,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="47738">48K</kbd></td><td class="right">96.8%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1600">1.6K</kbd></td><td class="right">3.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -4335,6 +5098,7 @@
 
 <a class="tab" target="wikir/it16k/test__scoreddocs">scoreddocs</a>
 <div id="wikir/it16k/test__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="160000">160K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -4386,7 +5150,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/it16k/test__metadata">Metadata</a>
+<div id="wikir/it16k/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 503012,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1600
+  },
+  "qrels": {
+    "count": 49338,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1600,
+          "1": 47738
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 160000
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -4399,6 +5195,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/it16k/training__queries">queries</a>
 <div id="wikir/it16k/training__queries" class="tab-content">
+<span class="ds-count"><kbd title="13418">13K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">it</span></p>
 <div>Query type:</div>
@@ -4436,6 +5233,7 @@
 
 <a class="tab" target="wikir/it16k/training__docs">docs</a>
 <div id="wikir/it16k/training__docs" class="tab-content">
+<span class="ds-count"><kbd title="503012">503K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/it16k</a></p>
 <p>Language: <span class="lang-code">it</span></p>
 <div>Document type:</div>
@@ -4473,6 +5271,7 @@
 
 <a class="tab" target="wikir/it16k/training__qrels">qrels</a>
 <div id="wikir/it16k/training__qrels" class="tab-content">
+<span class="ds-count"><kbd title="381920">382K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -4484,10 +5283,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="368502">369K</kbd></td><td class="right">96.5%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="13418">13K</kbd></td><td class="right">3.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -4518,6 +5317,7 @@
 
 <a class="tab" target="wikir/it16k/training__scoreddocs">scoreddocs</a>
 <div id="wikir/it16k/training__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="1341800">1.3M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -4569,7 +5369,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/it16k/training__metadata">Metadata</a>
+<div id="wikir/it16k/training__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 503012,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 13418
+  },
+  "qrels": {
+    "count": 381920,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 13418,
+          "1": 368502
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 1341800
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -4582,6 +5414,7 @@
 <div class="tabs">
 <a class="tab" target="wikir/it16k/validation__queries">queries</a>
 <div id="wikir/it16k/validation__queries" class="tab-content">
+<span class="ds-count"><kbd title="1600">1.6K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">it</span></p>
 <div>Query type:</div>
@@ -4619,6 +5452,7 @@
 
 <a class="tab" target="wikir/it16k/validation__docs">docs</a>
 <div id="wikir/it16k/validation__docs" class="tab-content">
+<span class="ds-count"><kbd title="503012">503K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wikir/it16k</a></p>
 <p>Language: <span class="lang-code">it</span></p>
 <div>Document type:</div>
@@ -4656,6 +5490,7 @@
 
 <a class="tab" target="wikir/it16k/validation__qrels">qrels</a>
 <div id="wikir/it16k/validation__qrels" class="tab-content">
+<span class="ds-count"><kbd title="45003">45K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -4667,10 +5502,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Otherwise</td></tr>
-<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td></tr>
-<tr><td class="relScore">2</td><td>Query is the article title</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Otherwise</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>There is a link to the article with the query as its title in the first sentence</td><td class="right"><kbd title="43403">43K</kbd></td><td class="right">96.4%</td></tr>
+<tr><td class="relScore">2</td><td>Query is the article title</td><td class="right"><kbd title="1600">1.6K</kbd></td><td class="right">3.6%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -4701,6 +5536,7 @@
 
 <a class="tab" target="wikir/it16k/validation__scoreddocs">scoreddocs</a>
 <div id="wikir/it16k/validation__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="160000">160K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -4752,7 +5588,39 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="wikir/it16k/validation__metadata">Metadata</a>
+<div id="wikir/it16k/validation__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 503012,
+    "fields": {
+      "doc_id": {
+        "max_len": 6,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1600
+  },
+  "qrels": {
+    "count": 45003,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1600,
+          "1": 43403
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 160000
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

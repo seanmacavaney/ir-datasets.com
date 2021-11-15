@@ -42,7 +42,7 @@
 <div class="desc">
  <p> The Washington Post collection. </p>
 </div>
-
+<div class="tabs">
 </div>
 
 <hr />
@@ -55,6 +55,7 @@
 <div class="tabs">
 <a class="tab" target="wapo/v2__docs">docs</a>
 <div id="wapo/v2__docs" class="tab-content">
+<span class="ds-count"><kbd title="595037">595K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -101,7 +102,22 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="wapo/v2__metadata">Metadata</a>
+<div id="wapo/v2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 595037,
+    "fields": {
+      "doc_id": {
+        "max_len": 36,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -114,6 +130,7 @@
 <div class="tabs">
 <a class="tab" target="wapo/v2/trec-core-2018__queries">queries</a>
 <div id="wapo/v2/trec-core-2018__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -159,6 +176,7 @@
 
 <a class="tab" target="wapo/v2/trec-core-2018__docs">docs</a>
 <div id="wapo/v2/trec-core-2018__docs" class="tab-content">
+<span class="ds-count"><kbd title="595037">595K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wapo/v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -208,6 +226,7 @@
 
 <a class="tab" target="wapo/v2/trec-core-2018__qrels">qrels</a>
 <div id="wapo/v2/trec-core-2018__qrels" class="tab-content">
+<span class="ds-count"><kbd title="26233">26K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -219,10 +238,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>relevant</td></tr>
-<tr><td class="relScore">2</td><td>highly relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="22285">22K</kbd></td><td class="right">85.0%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="2083">2.1K</kbd></td><td class="right">7.9%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="1865">1.9K</kbd></td><td class="right">7.1%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -264,7 +283,37 @@
 </pre></div>
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="wapo/v2/trec-core-2018__metadata">Metadata</a>
+<div id="wapo/v2/trec-core-2018__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 595037,
+    "fields": {
+      "doc_id": {
+        "max_len": 36,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 26233,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 22285,
+          "2": 1865,
+          "1": 2083
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -277,6 +326,7 @@
 <div class="tabs">
 <a class="tab" target="wapo/v2/trec-news-2018__queries">queries</a>
 <div id="wapo/v2/trec-news-2018__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -322,6 +372,7 @@
 
 <a class="tab" target="wapo/v2/trec-news-2018__docs">docs</a>
 <div id="wapo/v2/trec-news-2018__docs" class="tab-content">
+<span class="ds-count"><kbd title="595037">595K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wapo/v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -371,6 +422,7 @@
 
 <a class="tab" target="wapo/v2/trec-news-2018__qrels">qrels</a>
 <div id="wapo/v2/trec-news-2018__qrels" class="tab-content">
+<span class="ds-count"><kbd title="8508">8.5K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -382,12 +434,12 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>The document provides little or no useful background information.</td></tr>
-<tr><td class="relScore">2</td><td>The document provides some useful background or contextual information that would help the user understand the broader story context of the target article.</td></tr>
-<tr><td class="relScore">4</td><td>The document provides significantly useful background ...</td></tr>
-<tr><td class="relScore">8</td><td>The document provides essential useful background ...</td></tr>
-<tr><td class="relScore">16</td><td>The document _must_ appear in the sidebar otherwise critical context is missing.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>The document provides little or no useful background information.</td><td class="right"><kbd title="6465">6.5K</kbd></td><td class="right">76.0%</td></tr>
+<tr><td class="relScore">2</td><td>The document provides some useful background or contextual information that would help the user understand the broader story context of the target article.</td><td class="right"><kbd title="1189">1.2K</kbd></td><td class="right">14.0%</td></tr>
+<tr><td class="relScore">4</td><td>The document provides significantly useful background ...</td><td class="right"><kbd title="584">584<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.9%</td></tr>
+<tr><td class="relScore">8</td><td>The document provides essential useful background ...</td><td class="right"><kbd title="164">164<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.9%</td></tr>
+<tr><td class="relScore">16</td><td>The document _must_ appear in the sidebar otherwise critical context is missing.</td><td class="right"><kbd title="106">106<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -441,7 +493,39 @@
   year={2018}
 }</cite>
 </div>
+
+<a class="tab" target="wapo/v2/trec-news-2018__metadata">Metadata</a>
+<div id="wapo/v2/trec-news-2018__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 595037,
+    "fields": {
+      "doc_id": {
+        "max_len": 36,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 8508,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "16": 106,
+          "2": 1189,
+          "0": 6465,
+          "4": 584,
+          "8": 164
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -454,6 +538,7 @@
 <div class="tabs">
 <a class="tab" target="wapo/v2/trec-news-2019__queries">queries</a>
 <div id="wapo/v2/trec-news-2019__queries" class="tab-content">
+<span class="ds-count"><kbd title="60">60</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -499,6 +584,7 @@
 
 <a class="tab" target="wapo/v2/trec-news-2019__docs">docs</a>
 <div id="wapo/v2/trec-news-2019__docs" class="tab-content">
+<span class="ds-count"><kbd title="595037">595K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">wapo/v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -548,6 +634,7 @@
 
 <a class="tab" target="wapo/v2/trec-news-2019__qrels">qrels</a>
 <div id="wapo/v2/trec-news-2019__qrels" class="tab-content">
+<span class="ds-count"><kbd title="15655">16K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -559,12 +646,12 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>The document provides little or no useful background information.</td></tr>
-<tr><td class="relScore">2</td><td>The document provides some useful background or contextual information that would help the user understand the broader story context of the target article.</td></tr>
-<tr><td class="relScore">4</td><td>The document provides significantly useful background ...</td></tr>
-<tr><td class="relScore">8</td><td>The document provides essential useful background ...</td></tr>
-<tr><td class="relScore">16</td><td>The document _must_ appear in the sidebar otherwise critical context is missing.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>The document provides little or no useful background information.</td><td class="right"><kbd title="12614">13K</kbd></td><td class="right">80.6%</td></tr>
+<tr><td class="relScore">2</td><td>The document provides some useful background or contextual information that would help the user understand the broader story context of the target article.</td><td class="right"><kbd title="1677">1.7K</kbd></td><td class="right">10.7%</td></tr>
+<tr><td class="relScore">4</td><td>The document provides significantly useful background ...</td><td class="right"><kbd title="660">660<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.2%</td></tr>
+<tr><td class="relScore">8</td><td>The document provides essential useful background ...</td><td class="right"><kbd title="431">431<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">2.8%</td></tr>
+<tr><td class="relScore">16</td><td>The document _must_ appear in the sidebar otherwise critical context is missing.</td><td class="right"><kbd title="273">273<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -618,7 +705,39 @@
   year={2019}
 }</cite>
 </div>
+
+<a class="tab" target="wapo/v2/trec-news-2019__metadata">Metadata</a>
+<div id="wapo/v2/trec-news-2019__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 595037,
+    "fields": {
+      "doc_id": {
+        "max_len": 36,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 60
+  },
+  "qrels": {
+    "count": 15655,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1677,
+          "0": 12614,
+          "8": 431,
+          "16": 273,
+          "4": 660
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -631,6 +750,7 @@
 <div class="tabs">
 <a class="tab" target="wapo/v3/trec-news-2020__queries">queries</a>
 <div id="wapo/v3/trec-news-2020__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -668,6 +788,7 @@
 
 <a class="tab" target="wapo/v3/trec-news-2020__qrels">qrels</a>
 <div id="wapo/v3/trec-news-2020__qrels" class="tab-content">
+<span class="ds-count"><kbd title="17764">18K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -679,12 +800,12 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>The document provides little or no useful background information.</td></tr>
-<tr><td class="relScore">2</td><td>The document provides some useful background or contextual information that would help the user understand the broader story context of the target article.</td></tr>
-<tr><td class="relScore">4</td><td>The document provides significantly useful background ...</td></tr>
-<tr><td class="relScore">8</td><td>The document provides essential useful background ...</td></tr>
-<tr><td class="relScore">16</td><td>The document _must_ appear in the sidebar otherwise critical context is missing.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>The document provides little or no useful background information.</td><td class="right"><kbd title="15348">15K</kbd></td><td class="right">86.4%</td></tr>
+<tr><td class="relScore">2</td><td>The document provides some useful background or contextual information that would help the user understand the broader story context of the target article.</td><td class="right"><kbd title="1603">1.6K</kbd></td><td class="right">9.0%</td></tr>
+<tr><td class="relScore">4</td><td>The document provides significantly useful background ...</td><td class="right"><kbd title="631">631<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">3.6%</td></tr>
+<tr><td class="relScore">8</td><td>The document provides essential useful background ...</td><td class="right"><kbd title="132">132<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.7%</td></tr>
+<tr><td class="relScore">16</td><td>The document _must_ appear in the sidebar otherwise critical context is missing.</td><td class="right"><kbd title="50">50<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -712,7 +833,30 @@
 <div class="ex-tab-content pyterrier">
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
+
+<a class="tab" target="wapo/v3/trec-news-2020__metadata">Metadata</a>
+<div id="wapo/v3/trec-news-2020__metadata" class="tab-content">
+<pre class="metadata">{
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 17764,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 15348,
+          "2": 1603,
+          "4": 631,
+          "8": 132,
+          "16": 50
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

@@ -38,7 +38,7 @@
 <div class="desc">
  <p> Medical articles from <a href="https://www.nlm.nih.gov/bsd/medline.html">Medline</a>. This collection was used by TREC Genomics 2004-05 (2004 version of dataset) and by TREC Precision Medicine 2017-18 (2017 version). </p> 
 </div>
-
+<div class="tabs">
 </div>
 
 <hr />
@@ -51,6 +51,7 @@
 <div class="tabs">
 <a class="tab" target="medline/2004__docs">docs</a>
 <div id="medline/2004__docs" class="tab-content">
+<span class="ds-count"><kbd title="3672808">3.7M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -92,7 +93,22 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="medline/2004__metadata">Metadata</a>
+<div id="medline/2004__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3672808,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -105,6 +121,7 @@
 <div class="tabs">
 <a class="tab" target="medline/2004/trec-genomics-2004__queries">queries</a>
 <div id="medline/2004/trec-genomics-2004__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -150,6 +167,7 @@
 
 <a class="tab" target="medline/2004/trec-genomics-2004__docs">docs</a>
 <div id="medline/2004/trec-genomics-2004__docs" class="tab-content">
+<span class="ds-count"><kbd title="3672808">3.7M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">medline/2004</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -194,6 +212,7 @@
 
 <a class="tab" target="medline/2004/trec-genomics-2004__qrels">qrels</a>
 <div id="medline/2004/trec-genomics-2004__qrels" class="tab-content">
+<span class="ds-count"><kbd title="8268">8.3K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -205,10 +224,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>possibly relevant</td></tr>
-<tr><td class="relScore">2</td><td>definitely relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">1</td><td>possibly relevant</td><td class="right"><kbd title="4629">4.6K</kbd></td><td class="right">56.0%</td></tr>
+<tr><td class="relScore">2</td><td>definitely relevant</td><td class="right"><kbd title="3639">3.6K</kbd></td><td class="right">44.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -262,7 +281,36 @@
   year={2004}
 }</cite>
 </div>
+
+<a class="tab" target="medline/2004/trec-genomics-2004__metadata">Metadata</a>
+<div id="medline/2004/trec-genomics-2004__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3672808,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 8268,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 3639,
+          "1": 4629
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -275,6 +323,7 @@
 <div class="tabs">
 <a class="tab" target="medline/2004/trec-genomics-2005__queries">queries</a>
 <div id="medline/2004/trec-genomics-2005__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -320,6 +369,7 @@
 
 <a class="tab" target="medline/2004/trec-genomics-2005__docs">docs</a>
 <div id="medline/2004/trec-genomics-2005__docs" class="tab-content">
+<span class="ds-count"><kbd title="3672808">3.7M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">medline/2004</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -364,6 +414,7 @@
 
 <a class="tab" target="medline/2004/trec-genomics-2005__qrels">qrels</a>
 <div id="medline/2004/trec-genomics-2005__qrels" class="tab-content">
+<span class="ds-count"><kbd title="39958">40K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -375,10 +426,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>possibly relevant</td></tr>
-<tr><td class="relScore">2</td><td>definitely relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="35374">35K</kbd></td><td class="right">88.5%</td></tr>
+<tr><td class="relScore">1</td><td>possibly relevant</td><td class="right"><kbd title="2059">2.1K</kbd></td><td class="right">5.2%</td></tr>
+<tr><td class="relScore">2</td><td>definitely relevant</td><td class="right"><kbd title="2525">2.5K</kbd></td><td class="right">6.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -432,7 +483,37 @@
   year={2007}
 }</cite>
 </div>
+
+<a class="tab" target="medline/2004/trec-genomics-2005__metadata">Metadata</a>
+<div id="medline/2004/trec-genomics-2005__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 3672808,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 39958,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 35374,
+          "2": 2525,
+          "1": 2059
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -445,6 +526,7 @@
 <div class="tabs">
 <a class="tab" target="medline/2017__docs">docs</a>
 <div id="medline/2017__docs" class="tab-content">
+<span class="ds-count"><kbd title="26740025">27M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -486,7 +568,22 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="medline/2017__metadata">Metadata</a>
+<div id="medline/2017__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 26740025,
+    "fields": {
+      "doc_id": {
+        "max_len": 15,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -499,6 +596,7 @@
 <div class="tabs">
 <a class="tab" target="medline/2017/trec-pm-2017__queries">queries</a>
 <div id="medline/2017/trec-pm-2017__queries" class="tab-content">
+<span class="ds-count"><kbd title="30">30</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -544,6 +642,7 @@
 
 <a class="tab" target="medline/2017/trec-pm-2017__docs">docs</a>
 <div id="medline/2017/trec-pm-2017__docs" class="tab-content">
+<span class="ds-count"><kbd title="26740025">27M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">medline/2017</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -588,6 +687,7 @@
 
 <a class="tab" target="medline/2017/trec-pm-2017__qrels">qrels</a>
 <div id="medline/2017/trec-pm-2017__qrels" class="tab-content">
+<span class="ds-count"><kbd title="22642">23K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -599,10 +699,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>possibly relevant</td></tr>
-<tr><td class="relScore">2</td><td>definitely relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="18767">19K</kbd></td><td class="right">82.9%</td></tr>
+<tr><td class="relScore">1</td><td>possibly relevant</td><td class="right"><kbd title="1853">1.9K</kbd></td><td class="right">8.2%</td></tr>
+<tr><td class="relScore">2</td><td>definitely relevant</td><td class="right"><kbd title="2022">2.0K</kbd></td><td class="right">8.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -656,7 +756,37 @@
   year={2017}
 }</cite>
 </div>
+
+<a class="tab" target="medline/2017/trec-pm-2017__metadata">Metadata</a>
+<div id="medline/2017/trec-pm-2017__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 26740025,
+    "fields": {
+      "doc_id": {
+        "max_len": 15,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 30
+  },
+  "qrels": {
+    "count": 22642,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 18767,
+          "1": 1853,
+          "2": 2022
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -669,6 +799,7 @@
 <div class="tabs">
 <a class="tab" target="medline/2017/trec-pm-2018__queries">queries</a>
 <div id="medline/2017/trec-pm-2018__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -714,6 +845,7 @@
 
 <a class="tab" target="medline/2017/trec-pm-2018__docs">docs</a>
 <div id="medline/2017/trec-pm-2018__docs" class="tab-content">
+<span class="ds-count"><kbd title="26740025">27M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">medline/2017</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -758,6 +890,7 @@
 
 <a class="tab" target="medline/2017/trec-pm-2018__qrels">qrels</a>
 <div id="medline/2017/trec-pm-2018__qrels" class="tab-content">
+<span class="ds-count"><kbd title="22429">22K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -769,10 +902,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>possibly relevant</td></tr>
-<tr><td class="relScore">2</td><td>definitely relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="16841">17K</kbd></td><td class="right">75.1%</td></tr>
+<tr><td class="relScore">1</td><td>possibly relevant</td><td class="right"><kbd title="2146">2.1K</kbd></td><td class="right">9.6%</td></tr>
+<tr><td class="relScore">2</td><td>definitely relevant</td><td class="right"><kbd title="3442">3.4K</kbd></td><td class="right">15.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -826,7 +959,37 @@
   year={2018}
 }</cite>
 </div>
+
+<a class="tab" target="medline/2017/trec-pm-2018__metadata">Metadata</a>
+<div id="medline/2017/trec-pm-2018__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 26740025,
+    "fields": {
+      "doc_id": {
+        "max_len": 15,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 22429,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 16841,
+          "2": 3442,
+          "1": 2146
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

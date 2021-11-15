@@ -39,6 +39,7 @@
 <div class="tabs">
 <a class="tab" target="codesearchnet__docs">docs</a>
 <div id="codesearchnet__docs" class="tab-content">
+<span class="ds-count"><kbd title="2070536">2.1M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Document type:</div>
@@ -85,7 +86,22 @@
   year={2019}
 }</cite>
 </div>
+
+<a class="tab" target="codesearchnet__metadata">Metadata</a>
+<div id="codesearchnet__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2070536,
+    "fields": {
+      "doc_id": {
+        "max_len": 339,
+        "common_prefix": "https://github.com/"
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -98,6 +114,7 @@
 <div class="tabs">
 <a class="tab" target="codesearchnet/challenge__queries">queries</a>
 <div id="codesearchnet/challenge__queries" class="tab-content">
+<span class="ds-count"><kbd title="99">99</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -135,7 +152,8 @@
 
 <a class="tab" target="codesearchnet/challenge__docs">docs</a>
 <div id="codesearchnet/challenge__docs" class="tab-content">
-
+<span class="ds-count"><kbd title="2070536">2.1M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">codesearchnet</a></p>
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Document type:</div>
 <div class="type">
@@ -172,6 +190,7 @@
 
 <a class="tab" target="codesearchnet/challenge__qrels">qrels</a>
 <div id="codesearchnet/challenge__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4006">4.0K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -183,11 +202,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant</td></tr>
-<tr><td class="relScore">1</td><td>Weak Match</td></tr>
-<tr><td class="relScore">2</td><td>String Match</td></tr>
-<tr><td class="relScore">3</td><td>Exact Match</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant</td><td class="right"><kbd title="1314">1.3K</kbd></td><td class="right">32.8%</td></tr>
+<tr><td class="relScore">1</td><td>Weak Match</td><td class="right"><kbd title="982">982<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">24.5%</td></tr>
+<tr><td class="relScore">2</td><td>String Match</td><td class="right"><kbd title="863">863<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">21.5%</td></tr>
+<tr><td class="relScore">3</td><td>Exact Match</td><td class="right"><kbd title="847">847<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">21.1%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -227,7 +246,38 @@
   year={2019}
 }</cite>
 </div>
+
+<a class="tab" target="codesearchnet/challenge__metadata">Metadata</a>
+<div id="codesearchnet/challenge__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2070536,
+    "fields": {
+      "doc_id": {
+        "max_len": 339,
+        "common_prefix": "https://github.com/"
+      }
+    }
+  },
+  "queries": {
+    "count": 99
+  },
+  "qrels": {
+    "count": 4006,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 1314,
+          "1": 982,
+          "2": 863,
+          "3": 847
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -240,6 +290,7 @@
 <div class="tabs">
 <a class="tab" target="codesearchnet/test__queries">queries</a>
 <div id="codesearchnet/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="100529">101K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -277,7 +328,8 @@
 
 <a class="tab" target="codesearchnet/test__docs">docs</a>
 <div id="codesearchnet/test__docs" class="tab-content">
-
+<span class="ds-count"><kbd title="2070536">2.1M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">codesearchnet</a></p>
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Document type:</div>
 <div class="type">
@@ -314,6 +366,7 @@
 
 <a class="tab" target="codesearchnet/test__qrels">qrels</a>
 <div id="codesearchnet/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="100529">101K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -325,8 +378,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Matches docstring</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Matches docstring</td><td class="right"><kbd title="100529">101K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -366,7 +419,35 @@
   year={2019}
 }</cite>
 </div>
+
+<a class="tab" target="codesearchnet/test__metadata">Metadata</a>
+<div id="codesearchnet/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2070536,
+    "fields": {
+      "doc_id": {
+        "max_len": 339,
+        "common_prefix": "https://github.com/"
+      }
+    }
+  },
+  "queries": {
+    "count": 100529
+  },
+  "qrels": {
+    "count": 100529,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 100529
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -379,6 +460,7 @@
 <div class="tabs">
 <a class="tab" target="codesearchnet/train__queries">queries</a>
 <div id="codesearchnet/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="1880853">1.9M</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -416,7 +498,8 @@
 
 <a class="tab" target="codesearchnet/train__docs">docs</a>
 <div id="codesearchnet/train__docs" class="tab-content">
-
+<span class="ds-count"><kbd title="2070536">2.1M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">codesearchnet</a></p>
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Document type:</div>
 <div class="type">
@@ -453,6 +536,7 @@
 
 <a class="tab" target="codesearchnet/train__qrels">qrels</a>
 <div id="codesearchnet/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1880853">1.9M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -464,8 +548,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Matches docstring</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Matches docstring</td><td class="right"><kbd title="1880853">1.9M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -505,7 +589,35 @@
   year={2019}
 }</cite>
 </div>
+
+<a class="tab" target="codesearchnet/train__metadata">Metadata</a>
+<div id="codesearchnet/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2070536,
+    "fields": {
+      "doc_id": {
+        "max_len": 339,
+        "common_prefix": "https://github.com/"
+      }
+    }
+  },
+  "queries": {
+    "count": 1880853
+  },
+  "qrels": {
+    "count": 1880853,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1880853
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -518,6 +630,7 @@
 <div class="tabs">
 <a class="tab" target="codesearchnet/valid__queries">queries</a>
 <div id="codesearchnet/valid__queries" class="tab-content">
+<span class="ds-count"><kbd title="89154">89K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -555,7 +668,8 @@
 
 <a class="tab" target="codesearchnet/valid__docs">docs</a>
 <div id="codesearchnet/valid__docs" class="tab-content">
-
+<span class="ds-count"><kbd title="2070536">2.1M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">codesearchnet</a></p>
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Document type:</div>
 <div class="type">
@@ -592,6 +706,7 @@
 
 <a class="tab" target="codesearchnet/valid__qrels">qrels</a>
 <div id="codesearchnet/valid__qrels" class="tab-content">
+<span class="ds-count"><kbd title="89154">89K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -603,8 +718,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Matches docstring</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Matches docstring</td><td class="right"><kbd title="89154">89K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -644,7 +759,35 @@
   year={2019}
 }</cite>
 </div>
+
+<a class="tab" target="codesearchnet/valid__metadata">Metadata</a>
+<div id="codesearchnet/valid__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 2070536,
+    "fields": {
+      "doc_id": {
+        "max_len": 339,
+        "common_prefix": "https://github.com/"
+      }
+    }
+  },
+  "queries": {
+    "count": 89154
+  },
+  "qrels": {
+    "count": 89154,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 89154
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

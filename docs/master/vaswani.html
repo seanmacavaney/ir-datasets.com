@@ -36,6 +36,7 @@
 <div class="tabs">
 <a class="tab" target="vaswani__queries">queries</a>
 <div id="vaswani__queries" class="tab-content">
+<span class="ds-count"><kbd title="93">93</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -81,6 +82,7 @@
 
 <a class="tab" target="vaswani__docs">docs</a>
 <div id="vaswani__docs" class="tab-content">
+<span class="ds-count"><kbd title="11429">11K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -125,6 +127,7 @@
 
 <a class="tab" target="vaswani__qrels">qrels</a>
 <div id="vaswani__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2083">2.1K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -136,8 +139,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Relevant</td><td class="right"><kbd title="2083">2.1K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -179,7 +182,35 @@
 </pre></div>
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="vaswani__metadata">Metadata</a>
+<div id="vaswani__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 11429,
+    "fields": {
+      "doc_id": {
+        "max_len": 5,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 93
+  },
+  "qrels": {
+    "count": 2083,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 2083
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

@@ -37,6 +37,7 @@
 <div class="tabs">
 <a class="tab" target="trec-fair-2021__docs">docs</a>
 <div id="trec-fair-2021__docs" class="tab-content">
+<span class="ds-count"><kbd title="6280328">6.3M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -78,7 +79,22 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="trec-fair-2021__metadata">Metadata</a>
+<div id="trec-fair-2021__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 6280328,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -91,6 +107,7 @@
 <div class="tabs">
 <a class="tab" target="trec-fair-2021/eval__queries">queries</a>
 <div id="trec-fair-2021/eval__queries" class="tab-content">
+<span class="ds-count"><kbd title="49">49</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -136,6 +153,7 @@
 
 <a class="tab" target="trec-fair-2021/eval__docs">docs</a>
 <div id="trec-fair-2021/eval__docs" class="tab-content">
+<span class="ds-count"><kbd title="6280328">6.3M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">trec-fair-2021</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -177,7 +195,25 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="trec-fair-2021/eval__metadata">Metadata</a>
+<div id="trec-fair-2021/eval__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 6280328,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 49
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -190,6 +226,7 @@
 <div class="tabs">
 <a class="tab" target="trec-fair-2021/train__queries">queries</a>
 <div id="trec-fair-2021/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="57">57</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -235,6 +272,7 @@
 
 <a class="tab" target="trec-fair-2021/train__docs">docs</a>
 <div id="trec-fair-2021/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="6280328">6.3M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">trec-fair-2021</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -279,6 +317,7 @@
 
 <a class="tab" target="trec-fair-2021/train__qrels">qrels</a>
 <div id="trec-fair-2021/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2185446">2.2M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -290,8 +329,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="2185446">2.2M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -333,7 +372,35 @@
 </pre></div>
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="trec-fair-2021/train__metadata">Metadata</a>
+<div id="trec-fair-2021/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 6280328,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 57
+  },
+  "qrels": {
+    "count": 2185446,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 2185446
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

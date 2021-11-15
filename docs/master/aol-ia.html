@@ -41,6 +41,7 @@
 <div class="tabs">
 <a class="tab" target="aol-ia__queries">queries</a>
 <div id="aol-ia__queries" class="tab-content">
+<span class="ds-count"><kbd title="9966939">10.0M</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
@@ -78,6 +79,7 @@
 
 <a class="tab" target="aol-ia__docs">docs</a>
 <div id="aol-ia__docs" class="tab-content">
+<span class="ds-count"><kbd title="1525586">1.5M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Document type:</div>
@@ -115,6 +117,7 @@
 
 <a class="tab" target="aol-ia__qrels">qrels</a>
 <div id="aol-ia__qrels" class="tab-content">
+<span class="ds-count"><kbd title="19442629">19M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -126,8 +129,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>clicked</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>clicked</td><td class="right"><kbd title="19442629">19M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -158,6 +161,7 @@
 
 <a class="tab" target="aol-ia__qlogs">qlogs</a>
 <div id="aol-ia__qlogs" class="tab-content">
+<span class="ds-count"><kbd title="36389567">36M</kbd> <kbd>qlogs</kbd></span>
 
 <div>Query Log type:</div>
 <div class="type">
@@ -199,7 +203,38 @@
   year={2006}
 }</cite>
 </div>
+
+<a class="tab" target="aol-ia__metadata">Metadata</a>
+<div id="aol-ia__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1525586,
+    "fields": {
+      "doc_id": {
+        "max_len": 12,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 9966939
+  },
+  "qrels": {
+    "count": 19442629,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 19442629
+        }
+      }
+    }
+  },
+  "qlogs": {
+    "count": 36389567
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

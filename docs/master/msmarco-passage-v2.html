@@ -40,6 +40,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2__docs">docs</a>
 <div id="msmarco-passage-v2__docs" class="tab-content">
+<span class="ds-count"><kbd title="138364198">138M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -93,7 +94,22 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage-v2__metadata">Metadata</a>
+<div id="msmarco-passage-v2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 138364198,
+    "fields": {
+      "doc_id": {
+        "max_len": 28,
+        "common_prefix": "msmarco_passage_"
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -106,6 +122,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/dev1__queries">queries</a>
 <div id="msmarco-passage-v2/dev1__queries" class="tab-content">
+<span class="ds-count"><kbd title="3903">3.9K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -151,6 +168,7 @@
 
 <a class="tab" target="msmarco-passage-v2/dev1__docs">docs</a>
 <div id="msmarco-passage-v2/dev1__docs" class="tab-content">
+<span class="ds-count"><kbd title="138364198">138M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage-v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -195,6 +213,7 @@
 
 <a class="tab" target="msmarco-passage-v2/dev1__qrels">qrels</a>
 <div id="msmarco-passage-v2/dev1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4009">4.0K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -206,8 +225,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="4009">4.0K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -252,6 +271,7 @@
 
 <a class="tab" target="msmarco-passage-v2/dev1__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage-v2/dev1__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="390300">390K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -297,7 +317,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage-v2/dev1__metadata">Metadata</a>
+<div id="msmarco-passage-v2/dev1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 138364198,
+    "fields": {
+      "doc_id": {
+        "max_len": 28,
+        "common_prefix": "msmarco_passage_"
+      }
+    }
+  },
+  "queries": {
+    "count": 3903
+  },
+  "qrels": {
+    "count": 4009,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 4009
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 390300
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -310,6 +361,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/dev2__queries">queries</a>
 <div id="msmarco-passage-v2/dev2__queries" class="tab-content">
+<span class="ds-count"><kbd title="4281">4.3K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -355,6 +407,7 @@
 
 <a class="tab" target="msmarco-passage-v2/dev2__docs">docs</a>
 <div id="msmarco-passage-v2/dev2__docs" class="tab-content">
+<span class="ds-count"><kbd title="138364198">138M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage-v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -399,6 +452,7 @@
 
 <a class="tab" target="msmarco-passage-v2/dev2__qrels">qrels</a>
 <div id="msmarco-passage-v2/dev2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4411">4.4K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -410,8 +464,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="4411">4.4K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -456,6 +510,7 @@
 
 <a class="tab" target="msmarco-passage-v2/dev2__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage-v2/dev2__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="428100">428K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -501,7 +556,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage-v2/dev2__metadata">Metadata</a>
+<div id="msmarco-passage-v2/dev2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 138364198,
+    "fields": {
+      "doc_id": {
+        "max_len": 28,
+        "common_prefix": "msmarco_passage_"
+      }
+    }
+  },
+  "queries": {
+    "count": 4281
+  },
+  "qrels": {
+    "count": 4411,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 4411
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 428100
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -514,6 +600,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/train__queries">queries</a>
 <div id="msmarco-passage-v2/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="277144">277K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -559,6 +646,7 @@
 
 <a class="tab" target="msmarco-passage-v2/train__docs">docs</a>
 <div id="msmarco-passage-v2/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="138364198">138M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage-v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -603,6 +691,7 @@
 
 <a class="tab" target="msmarco-passage-v2/train__qrels">qrels</a>
 <div id="msmarco-passage-v2/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="284212">284K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -614,8 +703,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="284212">284K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -660,6 +749,7 @@
 
 <a class="tab" target="msmarco-passage-v2/train__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage-v2/train__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="27713673">28M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -705,7 +795,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage-v2/train__metadata">Metadata</a>
+<div id="msmarco-passage-v2/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 138364198,
+    "fields": {
+      "doc_id": {
+        "max_len": 28,
+        "common_prefix": "msmarco_passage_"
+      }
+    }
+  },
+  "queries": {
+    "count": 277144
+  },
+  "qrels": {
+    "count": 284212,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 284212
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 27713673
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -718,6 +839,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021__queries">queries</a>
 <div id="msmarco-passage-v2/trec-dl-2021__queries" class="tab-content">
+<span class="ds-count"><kbd title="477">477</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -763,6 +885,7 @@
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021__docs">docs</a>
 <div id="msmarco-passage-v2/trec-dl-2021__docs" class="tab-content">
+<span class="ds-count"><kbd title="138364198">138M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage-v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -807,6 +930,7 @@
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021__qrels">qrels</a>
 <div id="msmarco-passage-v2/trec-dl-2021__qrels" class="tab-content">
+<span class="ds-count"><kbd title="10828">11K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -818,11 +942,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="4338">4.3K</kbd></td><td class="right">40.1%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="3063">3.1K</kbd></td><td class="right">28.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="2341">2.3K</kbd></td><td class="right">21.6%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="1086">1.1K</kbd></td><td class="right">10.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -867,6 +991,7 @@
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage-v2/trec-dl-2021__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="47700">48K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -900,7 +1025,41 @@
 <div class="ex-tab-content pyterrier">
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
+
+<a class="tab" target="msmarco-passage-v2/trec-dl-2021__metadata">Metadata</a>
+<div id="msmarco-passage-v2/trec-dl-2021__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 138364198,
+    "fields": {
+      "doc_id": {
+        "max_len": 28,
+        "common_prefix": "msmarco_passage_"
+      }
+    }
+  },
+  "queries": {
+    "count": 477
+  },
+  "qrels": {
+    "count": 10828,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 4338,
+          "3": 1086,
+          "1": 3063,
+          "2": 2341
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 47700
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -913,8 +1072,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__queries">queries</a>
 <div id="msmarco-passage-v2/trec-dl-2021/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="53">53</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -945,19 +1105,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage-v2/trec-dl-2021/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__docs">docs</a>
 <div id="msmarco-passage-v2/trec-dl-2021/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="138364198">138M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage-v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1002,6 +1155,7 @@
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__qrels">qrels</a>
 <div id="msmarco-passage-v2/trec-dl-2021/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="10828">11K</kbd> <kbd>qrels</kbd></span>
 <p>Inherits qrels from <a class="ds-ref">msmarco-passage-v2/trec-dl-2021</a></p>
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1013,11 +1167,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="4338">4.3K</kbd></td><td class="right">40.1%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="3063">3.1K</kbd></td><td class="right">28.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="2341">2.3K</kbd></td><td class="right">21.6%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="1086">1.1K</kbd></td><td class="right">10.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1043,25 +1197,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage-v2/trec-dl-2021/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">AP</span><span class="o">@</span><span class="mi">100</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">P</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage-v2/trec-dl-2021/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="5300">5.3K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1095,7 +1236,41 @@
 <div class="ex-tab-content pyterrier">
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
+
+<a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__metadata">Metadata</a>
+<div id="msmarco-passage-v2/trec-dl-2021/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 138364198,
+    "fields": {
+      "doc_id": {
+        "max_len": 28,
+        "common_prefix": "msmarco_passage_"
+      }
+    }
+  },
+  "queries": {
+    "count": 53
+  },
+  "qrels": {
+    "count": 10828,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 4338,
+          "3": 1086,
+          "1": 3063,
+          "2": 2341
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 5300
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">
