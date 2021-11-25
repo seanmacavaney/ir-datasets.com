@@ -24,44 +24,41 @@ or constructed with <code>ir_datasets.create_dataset(...)</code>. Dataset object
 following methods:
 </p>
 
-<h4><code>dataset.has_docs() -> bool</code></h4>
 
+<h4><code>dataset.has_docs() -> bool</code></h4>
 <div class="methodinfo">
 <p>Returns <code class="kwd">True</code> if this dataset supports <code>dataset.docs_*</code> methods.</p>
 </div>
 
 <h4><code>dataset.has_queries() -> bool</code></h4>
-
 <div class="methodinfo">
 <p>Returns <code class="kwd">True</code> if this dataset supports <code>dataset.queries_*</code> methods.</p>
 </div>
 
 <h4><code>dataset.has_qrels() -> bool</code></h4>
-
 <div class="methodinfo">
 <p>Returns <code class="kwd">True</code> if this dataset supports <code>dataset.qrels_*</code> methods.</p>
 </div>
-<h4><code>dataset.has_scoreddocs() -> bool</code></h4>
 
+<h4><code>dataset.has_scoreddocs() -> bool</code></h4>
 <div class="methodinfo">
 <p>Returns <code class="kwd">True</code> if this dataset supports <code>dataset.scoreddocs_*</code> methods.</p>
 </div>
-<h4><code>dataset.has_docpairs() -> bool</code></h4>
 
+<h4><code>dataset.has_docpairs() -> bool</code></h4>
 <div class="methodinfo">
 <p>Returns <code class="kwd">True</code> if this dataset supports <code>dataset.docpairs_*</code> methods.</p>
 </div>
 
 
-<h4><code>dataset.docs_count() -> int</code></h4>
 
+
+<h4><code>dataset.docs_count() -> int</code></h4>
 <div class="methodinfo">
 <p>Returns the number of documents in the collection.</p>
 </div>
 
-
 <h4><code>dataset.docs_iter() -> iter[namedtuple]</code></h4>
-
 <div class="methodinfo">
 <p>Returns an iterator of <code>namedtuple</code>s, where each item is a document in the collection.</p>
 <p>This iterator supports fancy slicing (with some limitations):</p>
@@ -93,7 +90,6 @@ Note that the fancy slicing mechanics are faster and more sophisticated than
 </div>
 
 <h4><code>dataset.docs_cls() -> type</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns the <code class="kwd">NamedTuple</code> type that the <code>docs_iter</code> returns.
@@ -120,9 +116,7 @@ The available fields and type information can be found with <code>_fields</code>
 </code>
 </div>
 
-
 <h4><code>dataset.docs_store() -> docstore</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns a <a href="#docstore">docstore object</a> for this dataset, which enables
@@ -131,7 +125,6 @@ fast lookups by <code>doc_id</code>.
 </div>
 
 <h4><code>dataset.docs_lang() -> str</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns the two-character <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1
@@ -141,18 +134,28 @@ ISO 639-1 code, or the language is otherwise unknown.
 </p>
 </div>
 
+<h4><code>dataset.docs_metadata() -> dict</code></h4>
+<div class="methodinfo">
+<p>
+Returns available metadata about the docs from this dataset (e.g., count).
+</p>
+</div>
+
+
+
+<h4><code>dataset.queries_count() -> int</code></h4>
+<div class="methodinfo">
+<p>Returns the number of queries in the collection.</p>
+</div>
 
 <h4><code>dataset.queries_iter() -> iter[namedtuple]</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns an iterator over namedtuples representing queries in the dataset.
 </p>
 </div>
 
-
 <h4><code>dataset.queries_cls() -> type</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns the type of the namedtuple returned by <code>queries_iter</code>,
@@ -160,9 +163,7 @@ including <code>_fields</code> and <code>__annotations__</code>.
 </p>
 </div>
 
-
 <h4><code>dataset.queries_lang() -> str</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns the two-character <a href="https://en.wikipedia.org/wiki/ISO_639-1">ISO 639-1
@@ -173,18 +174,29 @@ translations as different query fields.
 </p>
 </div>
 
+<h4><code>dataset.queries_metadata() -> dict</code></h4>
+<div class="methodinfo">
+<p>
+Returns available metadata about the queries from this dataset (e.g., count).
+</p>
+</div>
+
+
+
+
+<h4><code>dataset.qrels_count() -> int</code></h4>
+<div class="methodinfo">
+<p>Returns the number of qrels in the collection.</p>
+</div>
 
 <h4><code>dataset.qrels_iter() -> iter[namedtuple]</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns an iterator over namedtuples representing query relevance assessments in the dataset.
 </p>
 </div>
 
-
 <h4><code>dataset.qrels_cls() -> type</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns the type of the namedtuple returned by <code>qrels_iter</code>,
@@ -192,9 +204,7 @@ including <code>_fields</code> and <code>__annotations__</code>.
 </p>
 </div>
 
-
 <h4><code>dataset.qrels_defs() -> dict[int, str]</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns a mapping between relevance levels and a textual description of
@@ -203,9 +213,7 @@ possibly relevant, 2 representing definitely relevant.)
 </p>
 </div>
 
-
 <h4><code>dataset.qrels_dict() -> dict[str, dict[str, int]]</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns a dict of dicts representing all qrels for this collection. Note
@@ -215,9 +223,22 @@ This is useful in tools such as <a href="https://github.com/cvangysel/pytrec_eva
 </p>
 </div>
 
+<h4><code>dataset.qrels_metadata() -> dict</code></h4>
+<div class="methodinfo">
+<p>
+Returns available metadata about the qrels from this dataset (e.g., count).
+</p>
+</div>
+
+
+
+
+<h4><code>dataset.scoreddocs_count() -> int</code></h4>
+<div class="methodinfo">
+<p>Returns the number of scoreddocs in the collection.</p>
+</div>
 
 <h4><code>dataset.scoreddocs_iter() -> iter[namedtuple]</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns an iterator over namedtuples representing scored docs (e.g., initial rankings
@@ -225,9 +246,7 @@ for re-ranking tasks) in the dataset.
 </p>
 </div>
 
-
 <h4><code>dataset.scoreddocs_cls() -> type</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns the type of the namedtuple returned by <code>scoreddocs_iter</code>,
@@ -235,24 +254,78 @@ including <code>_fields</code> and <code>__annotations__</code>.
 </p>
 </div>
 
+<h4><code>dataset.scoreddocs_metadata() -> dict</code></h4>
+<div class="methodinfo">
+<p>
+Returns available metadata about the scoreddocs from this dataset (e.g., count).
+</p>
+</div>
+
+
+
+<h4><code>dataset.docpairs_count() -> int</code></h4>
+<div class="methodinfo">
+<p>Returns the number of docpairs in the collection.</p>
+</div>
 
 <h4><code>dataset.docpairs_iter() -> iter[namedtuple]</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns an iterator over namedtuples representing doc pairs (e.g., training pairs) in the dataset.
 </p>
 </div>
 
-
 <h4><code>dataset.docpairs_cls() -> type</code></h4>
-
 <div class="methodinfo">
 <p>
 Returns the type of the namedtuple returned by <code>docpairs_iter</code>,
 including <code>_fields</code> and <code>__annotations__</code>.
 </p>
 </div>
+
+<h4><code>dataset.docpairs_metadata() -> dict</code></h4>
+<div class="methodinfo">
+<p>
+Returns available metadata about the docpairs from this dataset (e.g., count).
+</p>
+</div>
+
+
+
+
+<h4><code>dataset.qlogs_count() -> int</code></h4>
+<div class="methodinfo">
+<p>Returns the number of query log records in the collection.</p>
+</div>
+
+<h4><code>dataset.qlogs_iter() -> iter[namedtuple]</code></h4>
+<div class="methodinfo">
+<p>
+Returns an iterator over namedtuples representing query log records in the dataset.
+</p>
+</div>
+
+<h4><code>dataset.qlogs_cls() -> type</code></h4>
+<div class="methodinfo">
+<p>
+Returns the type of the namedtuple returned by <code>qlogs_iter</code>,
+including <code>_fields</code> and <code>__annotations__</code>.
+</p>
+</div>
+
+<h4><code>dataset.qlogs_metadata() -> dict</code></h4>
+<div class="methodinfo">
+<p>
+Returns available metadata about the qlogs from this dataset (e.g., count).
+</p>
+</div>
+
+
+
+
+
+
+
 
 
 <h2 id="docstore" class="underline">Docstore objects</h2>

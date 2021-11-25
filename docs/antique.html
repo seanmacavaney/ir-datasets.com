@@ -38,6 +38,7 @@
 <div class="tabs">
 <a class="tab" target="antique__docs">docs</a>
 <div id="antique__docs" class="tab-content">
+<span class="ds-count"><kbd title="403666">404K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -91,7 +92,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="antique__metadata">Metadata</a>
+<div id="antique__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 403666,
+    "fields": {
+      "doc_id": {
+        "max_len": 10,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -104,6 +120,7 @@
 <div class="tabs">
 <a class="tab" target="antique/test__queries">queries</a>
 <div id="antique/test__queries" class="tab-content">
+<span class="ds-count"><kbd title="200">200</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -149,6 +166,7 @@
 
 <a class="tab" target="antique/test__docs">docs</a>
 <div id="antique/test__docs" class="tab-content">
+<span class="ds-count"><kbd title="403666">404K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">antique</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -193,6 +211,7 @@
 
 <a class="tab" target="antique/test__qrels">qrels</a>
 <div id="antique/test__qrels" class="tab-content">
+<span class="ds-count"><kbd title="6589">6.6K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -204,11 +223,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td></tr>
-<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td></tr>
-<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td></tr>
-<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td><td class="right"><kbd title="1642">1.6K</kbd></td><td class="right">24.9%</td></tr>
+<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td><td class="right"><kbd title="2417">2.4K</kbd></td><td class="right">36.7%</td></tr>
+<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td><td class="right"><kbd title="1196">1.2K</kbd></td><td class="right">18.2%</td></tr>
+<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td><td class="right"><kbd title="1334">1.3K</kbd></td><td class="right">20.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -262,7 +281,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="antique/test__metadata">Metadata</a>
+<div id="antique/test__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 403666,
+    "fields": {
+      "doc_id": {
+        "max_len": 10,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 200
+  },
+  "qrels": {
+    "count": 6589,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "4": 1334,
+          "1": 1642,
+          "2": 2417,
+          "3": 1196
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -275,8 +325,9 @@
 <div class="tabs">
 <a class="tab" target="antique/test/non-offensive__queries">queries</a>
 <div id="antique/test/non-offensive__queries" class="tab-content">
+<span class="ds-count"><kbd title="176">176</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -307,19 +358,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:antique/test/non-offensive&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/antique&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="antique/test/non-offensive__docs">docs</a>
 <div id="antique/test/non-offensive__docs" class="tab-content">
+<span class="ds-count"><kbd title="403666">404K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">antique</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -364,22 +408,23 @@
 
 <a class="tab" target="antique/test/non-offensive__qrels">qrels</a>
 <div id="antique/test/non-offensive__qrels" class="tab-content">
+<span class="ds-count"><kbd title="5752">5.8K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td></tr>
-<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td></tr>
-<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td></tr>
-<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td><td class="right"><kbd title="1407">1.4K</kbd></td><td class="right">24.5%</td></tr>
+<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td><td class="right"><kbd title="2101">2.1K</kbd></td><td class="right">36.5%</td></tr>
+<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td><td class="right"><kbd title="1049">1.0K</kbd></td><td class="right">18.2%</td></tr>
+<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td><td class="right"><kbd title="1195">1.2K</kbd></td><td class="right">20.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -388,7 +433,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;antique/test/non-offensive&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -398,28 +443,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:antique/test/non-offensive&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/antique&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="antique/test/non-offensive__citation">Citation</a>
@@ -433,7 +464,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="antique/test/non-offensive__metadata">Metadata</a>
+<div id="antique/test/non-offensive__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 403666,
+    "fields": {
+      "doc_id": {
+        "max_len": 10,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 176
+  },
+  "qrels": {
+    "count": 5752,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "4": 1195,
+          "1": 1407,
+          "2": 2101,
+          "3": 1049
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -446,6 +508,7 @@
 <div class="tabs">
 <a class="tab" target="antique/train__queries">queries</a>
 <div id="antique/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="2426">2.4K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -491,6 +554,7 @@
 
 <a class="tab" target="antique/train__docs">docs</a>
 <div id="antique/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="403666">404K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">antique</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -535,6 +599,7 @@
 
 <a class="tab" target="antique/train__qrels">qrels</a>
 <div id="antique/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="27422">27K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -546,11 +611,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td></tr>
-<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td></tr>
-<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td></tr>
-<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td><td class="right"><kbd title="1272">1.3K</kbd></td><td class="right">4.6%</td></tr>
+<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td><td class="right"><kbd title="6337">6.3K</kbd></td><td class="right">23.1%</td></tr>
+<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td><td class="right"><kbd title="8080">8.1K</kbd></td><td class="right">29.5%</td></tr>
+<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td><td class="right"><kbd title="11733">12K</kbd></td><td class="right">42.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -604,7 +669,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="antique/train__metadata">Metadata</a>
+<div id="antique/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 403666,
+    "fields": {
+      "doc_id": {
+        "max_len": 10,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 2426
+  },
+  "qrels": {
+    "count": 27422,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "4": 11733,
+          "3": 8080,
+          "2": 6337,
+          "1": 1272
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -617,8 +713,9 @@
 <div class="tabs">
 <a class="tab" target="antique/train/split200-train__queries">queries</a>
 <div id="antique/train/split200-train__queries" class="tab-content">
+<span class="ds-count"><kbd title="2226">2.2K</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -649,19 +746,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:antique/train/split200-train&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/antique&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="antique/train/split200-train__docs">docs</a>
 <div id="antique/train/split200-train__docs" class="tab-content">
+<span class="ds-count"><kbd title="403666">404K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">antique</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -706,22 +796,23 @@
 
 <a class="tab" target="antique/train/split200-train__qrels">qrels</a>
 <div id="antique/train/split200-train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="25229">25K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td></tr>
-<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td></tr>
-<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td></tr>
-<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td><td class="right"><kbd title="1171">1.2K</kbd></td><td class="right">4.6%</td></tr>
+<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td><td class="right"><kbd title="5829">5.8K</kbd></td><td class="right">23.1%</td></tr>
+<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td><td class="right"><kbd title="7447">7.4K</kbd></td><td class="right">29.5%</td></tr>
+<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td><td class="right"><kbd title="10782">11K</kbd></td><td class="right">42.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -730,7 +821,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;antique/train/split200-train&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -740,28 +831,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:antique/train/split200-train&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/antique&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="antique/train/split200-train__citation">Citation</a>
@@ -775,7 +852,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="antique/train/split200-train__metadata">Metadata</a>
+<div id="antique/train/split200-train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 403666,
+    "fields": {
+      "doc_id": {
+        "max_len": 10,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 2226
+  },
+  "qrels": {
+    "count": 25229,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "4": 10782,
+          "3": 7447,
+          "2": 5829,
+          "1": 1171
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -788,8 +896,9 @@
 <div class="tabs">
 <a class="tab" target="antique/train/split200-valid__queries">queries</a>
 <div id="antique/train/split200-valid__queries" class="tab-content">
+<span class="ds-count"><kbd title="200">200</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -820,19 +929,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:antique/train/split200-valid&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/antique&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="antique/train/split200-valid__docs">docs</a>
 <div id="antique/train/split200-valid__docs" class="tab-content">
+<span class="ds-count"><kbd title="403666">404K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">antique</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -877,22 +979,23 @@
 
 <a class="tab" target="antique/train/split200-valid__qrels">qrels</a>
 <div id="antique/train/split200-valid__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2193">2.2K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td></tr>
-<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td></tr>
-<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td></tr>
-<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>It is completely out of context or does not make any sense.</td><td class="right"><kbd title="101">101<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.6%</td></tr>
+<tr><td class="relScore">2</td><td>It does not answer the question or if it does, it provides anunreasonable answer, however, it is not out of context. Therefore, you cannot accept it as an answer to the question.</td><td class="right"><kbd title="508">508<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">23.2%</td></tr>
+<tr><td class="relScore">3</td><td>It can be an answer to the question, however, it is notsufficiently convincing. There should be an answer with much better quality for the question.</td><td class="right"><kbd title="633">633<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">28.9%</td></tr>
+<tr><td class="relScore">4</td><td>It looks reasonable and convincing. Its quality is on parwith or better than the "Possibly Correct Answer". Note that it does not have to provide the same answer as the "PossiblyCorrect Answer".</td><td class="right"><kbd title="951">951<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">43.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -901,7 +1004,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;antique/train/split200-valid&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -911,28 +1014,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:antique/train/split200-valid&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/antique&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="antique/train/split200-valid__citation">Citation</a>
@@ -946,7 +1035,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="antique/train/split200-valid__metadata">Metadata</a>
+<div id="antique/train/split200-valid__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 403666,
+    "fields": {
+      "doc_id": {
+        "max_len": 10,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 200
+  },
+  "qrels": {
+    "count": 2193,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "4": 951,
+          "2": 508,
+          "3": 633,
+          "1": 101
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

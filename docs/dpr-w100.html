@@ -37,6 +37,7 @@
 <div class="tabs">
 <a class="tab" target="dpr-w100__docs">docs</a>
 <div id="dpr-w100__docs" class="tab-content">
+<span class="ds-count"><kbd title="21015324">21M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -92,7 +93,22 @@
   primaryClass={cs.CL}
 }</cite>
 </div>
+
+<a class="tab" target="dpr-w100__metadata">Metadata</a>
+<div id="dpr-w100__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 21015324,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -105,6 +121,7 @@
 <div class="tabs">
 <a class="tab" target="dpr-w100/natural-questions/dev__queries">queries</a>
 <div id="dpr-w100/natural-questions/dev__queries" class="tab-content">
+<span class="ds-count"><kbd title="6515">6.5K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -150,6 +167,7 @@
 
 <a class="tab" target="dpr-w100/natural-questions/dev__docs">docs</a>
 <div id="dpr-w100/natural-questions/dev__docs" class="tab-content">
+<span class="ds-count"><kbd title="21015324">21M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">dpr-w100</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -194,6 +212,7 @@
 
 <a class="tab" target="dpr-w100/natural-questions/dev__qrels">qrels</a>
 <div id="dpr-w100/natural-questions/dev__qrels" class="tab-content">
+<span class="ds-count"><kbd title="979893">980K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -205,11 +224,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">-1</td><td>negative samples</td></tr>
-<tr><td class="relScore">0</td><td>"hard" negative samples</td></tr>
-<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td></tr>
-<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">-1</td><td>negative samples</td><td class="right"><kbd title="325748">326K</kbd></td><td class="right">33.2%</td></tr>
+<tr><td class="relScore">0</td><td>"hard" negative samples</td><td class="right"><kbd title="602894">603K</kbd></td><td class="right">61.5%</td></tr>
+<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td><td class="right"><kbd title="44736">45K</kbd></td><td class="right">4.6%</td></tr>
+<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td><td class="right"><kbd title="6515">6.5K</kbd></td><td class="right">0.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -271,7 +290,38 @@
   primaryClass={cs.CL}
 }</cite>
 </div>
+
+<a class="tab" target="dpr-w100/natural-questions/dev__metadata">Metadata</a>
+<div id="dpr-w100/natural-questions/dev__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 21015324,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6515
+  },
+  "qrels": {
+    "count": 979893,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 6515,
+          "1": 44736,
+          "0": 602894,
+          "-1": 325748
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -284,6 +334,7 @@
 <div class="tabs">
 <a class="tab" target="dpr-w100/natural-questions/train__queries">queries</a>
 <div id="dpr-w100/natural-questions/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="58880">59K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -329,6 +380,7 @@
 
 <a class="tab" target="dpr-w100/natural-questions/train__docs">docs</a>
 <div id="dpr-w100/natural-questions/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="21015324">21M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">dpr-w100</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -373,6 +425,7 @@
 
 <a class="tab" target="dpr-w100/natural-questions/train__qrels">qrels</a>
 <div id="dpr-w100/natural-questions/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="8856662">8.9M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -384,11 +437,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">-1</td><td>negative samples</td></tr>
-<tr><td class="relScore">0</td><td>"hard" negative samples</td></tr>
-<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td></tr>
-<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">-1</td><td>negative samples</td><td class="right"><kbd title="2943989">2.9M</kbd></td><td class="right">33.2%</td></tr>
+<tr><td class="relScore">0</td><td>"hard" negative samples</td><td class="right"><kbd title="5448064">5.4M</kbd></td><td class="right">61.5%</td></tr>
+<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td><td class="right"><kbd title="405729">406K</kbd></td><td class="right">4.6%</td></tr>
+<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td><td class="right"><kbd title="58880">59K</kbd></td><td class="right">0.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -450,7 +503,38 @@
   primaryClass={cs.CL}
 }</cite>
 </div>
+
+<a class="tab" target="dpr-w100/natural-questions/train__metadata">Metadata</a>
+<div id="dpr-w100/natural-questions/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 21015324,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 58880
+  },
+  "qrels": {
+    "count": 8856662,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 58880,
+          "1": 405729,
+          "0": 5448064,
+          "-1": 2943989
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -463,6 +547,7 @@
 <div class="tabs">
 <a class="tab" target="dpr-w100/trivia-qa/dev__queries">queries</a>
 <div id="dpr-w100/trivia-qa/dev__queries" class="tab-content">
+<span class="ds-count"><kbd title="8837">8.8K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -508,6 +593,7 @@
 
 <a class="tab" target="dpr-w100/trivia-qa/dev__docs">docs</a>
 <div id="dpr-w100/trivia-qa/dev__docs" class="tab-content">
+<span class="ds-count"><kbd title="21015324">21M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">dpr-w100</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -552,6 +638,7 @@
 
 <a class="tab" target="dpr-w100/trivia-qa/dev__qrels">qrels</a>
 <div id="dpr-w100/trivia-qa/dev__qrels" class="tab-content">
+<span class="ds-count"><kbd title="883700">884K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -563,11 +650,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">-1</td><td>negative samples</td></tr>
-<tr><td class="relScore">0</td><td>"hard" negative samples</td></tr>
-<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td></tr>
-<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">-1</td><td>negative samples</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">0</td><td>"hard" negative samples</td><td class="right"><kbd title="801042">801K</kbd></td><td class="right">90.6%</td></tr>
+<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td><td class="right"><kbd title="82658">83K</kbd></td><td class="right">9.4%</td></tr>
+<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -629,7 +716,36 @@
   primaryClass={cs.CL}
 }</cite>
 </div>
+
+<a class="tab" target="dpr-w100/trivia-qa/dev__metadata">Metadata</a>
+<div id="dpr-w100/trivia-qa/dev__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 21015324,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 8837
+  },
+  "qrels": {
+    "count": 883700,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 82658,
+          "0": 801042
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -642,6 +758,7 @@
 <div class="tabs">
 <a class="tab" target="dpr-w100/trivia-qa/train__queries">queries</a>
 <div id="dpr-w100/trivia-qa/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="78785">79K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -687,6 +804,7 @@
 
 <a class="tab" target="dpr-w100/trivia-qa/train__docs">docs</a>
 <div id="dpr-w100/trivia-qa/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="21015324">21M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">dpr-w100</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -731,6 +849,7 @@
 
 <a class="tab" target="dpr-w100/trivia-qa/train__qrels">qrels</a>
 <div id="dpr-w100/trivia-qa/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7878500">7.9M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -742,11 +861,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">-1</td><td>negative samples</td></tr>
-<tr><td class="relScore">0</td><td>"hard" negative samples</td></tr>
-<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td></tr>
-<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">-1</td><td>negative samples</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
+<tr><td class="relScore">0</td><td>"hard" negative samples</td><td class="right"><kbd title="7137064">7.1M</kbd></td><td class="right">90.6%</td></tr>
+<tr><td class="relScore">1</td><td>contains the answer text and retrieved in the top BM25 results</td><td class="right"><kbd title="741436">741K</kbd></td><td class="right">9.4%</td></tr>
+<tr><td class="relScore">2</td><td>marked by human annotator as containing the answer</td><td class="right"><kbd title="0">0<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -808,7 +927,36 @@
   primaryClass={cs.CL}
 }</cite>
 </div>
+
+<a class="tab" target="dpr-w100/trivia-qa/train__metadata">Metadata</a>
+<div id="dpr-w100/trivia-qa/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 21015324,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 78785
+  },
+  "qrels": {
+    "count": 7878500,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 7137064,
+          "1": 741436
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

@@ -35,7 +35,7 @@
 <div class="desc">
  <p> Bio-medical articles from <a href="https://www.ncbi.nlm.nih.gov/pmc/">PubMed Central</a>. Right now, only includes subsets used for the TREC Clinical Decision Support (CDS) 2014-16 tasks. </p>
 </div>
-
+<div class="tabs">
 </div>
 
 <hr />
@@ -48,6 +48,7 @@
 <div class="tabs">
 <a class="tab" target="pmc/v1__docs">docs</a>
 <div id="pmc/v1__docs" class="tab-content">
+<span class="ds-count"><kbd title="733111">733K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -89,7 +90,22 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="pmc/v1__metadata">Metadata</a>
+<div id="pmc/v1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 733111,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -102,6 +118,7 @@
 <div class="tabs">
 <a class="tab" target="pmc/v1/trec-cds-2014__queries">queries</a>
 <div id="pmc/v1/trec-cds-2014__queries" class="tab-content">
+<span class="ds-count"><kbd title="30">30</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -147,6 +164,7 @@
 
 <a class="tab" target="pmc/v1/trec-cds-2014__docs">docs</a>
 <div id="pmc/v1/trec-cds-2014__docs" class="tab-content">
+<span class="ds-count"><kbd title="733111">733K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">pmc/v1</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -191,6 +209,7 @@
 
 <a class="tab" target="pmc/v1/trec-cds-2014__qrels">qrels</a>
 <div id="pmc/v1/trec-cds-2014__qrels" class="tab-content">
+<span class="ds-count"><kbd title="37949">38K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -202,10 +221,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>possibly relevant</td></tr>
-<tr><td class="relScore">2</td><td>definitely relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="34593">35K</kbd></td><td class="right">91.2%</td></tr>
+<tr><td class="relScore">1</td><td>possibly relevant</td><td class="right"><kbd title="1673">1.7K</kbd></td><td class="right">4.4%</td></tr>
+<tr><td class="relScore">2</td><td>definitely relevant</td><td class="right"><kbd title="1683">1.7K</kbd></td><td class="right">4.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -259,7 +278,37 @@
   year={2014}
 }</cite>
 </div>
+
+<a class="tab" target="pmc/v1/trec-cds-2014__metadata">Metadata</a>
+<div id="pmc/v1/trec-cds-2014__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 733111,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 30
+  },
+  "qrels": {
+    "count": 37949,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 34593,
+          "2": 1683,
+          "1": 1673
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -272,6 +321,7 @@
 <div class="tabs">
 <a class="tab" target="pmc/v1/trec-cds-2015__queries">queries</a>
 <div id="pmc/v1/trec-cds-2015__queries" class="tab-content">
+<span class="ds-count"><kbd title="30">30</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -317,6 +367,7 @@
 
 <a class="tab" target="pmc/v1/trec-cds-2015__docs">docs</a>
 <div id="pmc/v1/trec-cds-2015__docs" class="tab-content">
+<span class="ds-count"><kbd title="733111">733K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">pmc/v1</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -361,6 +412,7 @@
 
 <a class="tab" target="pmc/v1/trec-cds-2015__qrels">qrels</a>
 <div id="pmc/v1/trec-cds-2015__qrels" class="tab-content">
+<span class="ds-count"><kbd title="37807">38K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -372,10 +424,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>possibly relevant</td></tr>
-<tr><td class="relScore">2</td><td>definitely relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="32817">33K</kbd></td><td class="right">86.8%</td></tr>
+<tr><td class="relScore">1</td><td>possibly relevant</td><td class="right"><kbd title="2979">3.0K</kbd></td><td class="right">7.9%</td></tr>
+<tr><td class="relScore">2</td><td>definitely relevant</td><td class="right"><kbd title="2011">2.0K</kbd></td><td class="right">5.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -429,7 +481,37 @@
   year={2015}
 }</cite>
 </div>
+
+<a class="tab" target="pmc/v1/trec-cds-2015__metadata">Metadata</a>
+<div id="pmc/v1/trec-cds-2015__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 733111,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 30
+  },
+  "qrels": {
+    "count": 37807,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 2979,
+          "0": 32817,
+          "2": 2011
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -442,6 +524,7 @@
 <div class="tabs">
 <a class="tab" target="pmc/v2__docs">docs</a>
 <div id="pmc/v2__docs" class="tab-content">
+<span class="ds-count"><kbd title="1255260">1.3M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -483,7 +566,22 @@
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
+
+<a class="tab" target="pmc/v2__metadata">Metadata</a>
+<div id="pmc/v2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1255260,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -496,6 +594,7 @@
 <div class="tabs">
 <a class="tab" target="pmc/v2/trec-cds-2016__queries">queries</a>
 <div id="pmc/v2/trec-cds-2016__queries" class="tab-content">
+<span class="ds-count"><kbd title="30">30</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -541,6 +640,7 @@
 
 <a class="tab" target="pmc/v2/trec-cds-2016__docs">docs</a>
 <div id="pmc/v2/trec-cds-2016__docs" class="tab-content">
+<span class="ds-count"><kbd title="1255260">1.3M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">pmc/v2</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -585,6 +685,7 @@
 
 <a class="tab" target="pmc/v2/trec-cds-2016__qrels">qrels</a>
 <div id="pmc/v2/trec-cds-2016__qrels" class="tab-content">
+<span class="ds-count"><kbd title="37707">38K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -596,10 +697,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>not relevant</td></tr>
-<tr><td class="relScore">1</td><td>possibly relevant</td></tr>
-<tr><td class="relScore">2</td><td>definitely relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="32246">32K</kbd></td><td class="right">85.5%</td></tr>
+<tr><td class="relScore">1</td><td>possibly relevant</td><td class="right"><kbd title="3411">3.4K</kbd></td><td class="right">9.0%</td></tr>
+<tr><td class="relScore">2</td><td>definitely relevant</td><td class="right"><kbd title="2050">2.0K</kbd></td><td class="right">5.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -653,7 +754,37 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="pmc/v2/trec-cds-2016__metadata">Metadata</a>
+<div id="pmc/v2/trec-cds-2016__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 1255260,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 30
+  },
+  "qrels": {
+    "count": 37707,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 32246,
+          "1": 3411,
+          "2": 2050
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

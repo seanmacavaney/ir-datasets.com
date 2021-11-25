@@ -47,11 +47,10 @@ ir-measures accepts qrels provided by <kbd>ir_datasets</kbd> directly in its pyt
 </code>
 
 <p>
-If using the ir-measures CLI and a shell like bash, you can use <a href="https://tldp.org/LDP/abs/html/process-sub.html">
-process substitution</a> treat the output of the <kbd>ir_datasets export</kbd> command as a file:
+The ir-measures CLI accepts dataset IDs from <kbd>ir_datasets</kbd> directly in place of the qrels file.
 </p>
 
-<div class="highlight"><pre><span></span>ir_measures &lt;<span class="o">(</span>ir_datasets <span class="nb">export</span> trec-robust04 qrels<span class="o">)</span> path/to/run <span class="s1">&#39;nDCG@10 P@5 P(rel=2)@5 Judged@10&#39;</span>
+<div class="highlight"><pre><span></span>ir_measures trec-robust04 path/to/run <span class="s1">&#39;nDCG@10 P@5 P(rel=2)@5 Judged@10&#39;</span>
 </pre></div>
 
 <code class="output pre">nDCG@10 0.3793
@@ -61,18 +60,13 @@ Judged@10       0.9628
 </code>
 
 <p>
-Alternatively, you can always save the output of <kbd>ir_datasets export</kbd> as a file:
+Note that if a file with the same name as the dataset ID exists, the file will be used instead.
 </p>
 
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-robust04 qrels &gt; trec-robust04.qrels
-ir_measures trec-robust04.qrels path/to/run <span class="s1">&#39;nDCG@10 P@5 P(rel=2)@5 Judged@10&#39;</span>
-</pre></div>
-
-<code class="output pre">nDCG@10 0.3793
-P@5     0.4185
-P(rel=2)@5      0.0803
-Judged@10       0.9628
-</code>
+<p>
+Alternatively, you can save the qrels output of the <kbd>ir_datasets export</kbd> command
+as a file and use this file as input to ir-measures.
+</p>
 
 
 <h2 class="underline">Further Information</h2>

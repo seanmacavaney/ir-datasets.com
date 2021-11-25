@@ -53,6 +53,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage__docs">docs</a>
 <div id="msmarco-passage__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -106,7 +107,22 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage__metadata">Metadata</a>
+<div id="msmarco-passage__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -119,6 +135,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/dev__queries">queries</a>
 <div id="msmarco-passage/dev__queries" class="tab-content">
+<span class="ds-count"><kbd title="101093">101K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -164,6 +181,7 @@
 
 <a class="tab" target="msmarco-passage/dev__docs">docs</a>
 <div id="msmarco-passage/dev__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -208,6 +226,7 @@
 
 <a class="tab" target="msmarco-passage/dev__qrels">qrels</a>
 <div id="msmarco-passage/dev__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -219,8 +238,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -265,6 +284,7 @@
 
 <a class="tab" target="msmarco-passage/dev__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/dev__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6668967">6.7M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -310,7 +330,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/dev__metadata">Metadata</a>
+<div id="msmarco-passage/dev__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 101093
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6668967
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -323,8 +374,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/dev/judged__queries">queries</a>
 <div id="msmarco-passage/dev/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="55578">56K</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -355,19 +407,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/judged__docs">docs</a>
 <div id="msmarco-passage/dev/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -412,6 +457,7 @@
 
 <a class="tab" target="msmarco-passage/dev/judged__qrels">qrels</a>
 <div id="msmarco-passage/dev/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
 <p>Inherits qrels from <a class="ds-ref">msmarco-passage/dev</a></p>
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -423,8 +469,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -450,25 +496,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/judged__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/dev/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6668967">6.7M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -514,7 +547,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/dev/judged__metadata">Metadata</a>
+<div id="msmarco-passage/dev/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 55578
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6668967
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -527,6 +591,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/dev/small__queries">queries</a>
 <div id="msmarco-passage/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -572,6 +637,7 @@
 
 <a class="tab" target="msmarco-passage/dev/small__docs">docs</a>
 <div id="msmarco-passage/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -616,6 +682,7 @@
 
 <a class="tab" target="msmarco-passage/dev/small__qrels">qrels</a>
 <div id="msmarco-passage/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -627,8 +694,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -682,7 +749,35 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/dev/small__metadata">Metadata</a>
+<div id="msmarco-passage/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -695,6 +790,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/eval__queries">queries</a>
 <div id="msmarco-passage/eval__queries" class="tab-content">
+<span class="ds-count"><kbd title="101092">101K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -740,6 +836,7 @@
 
 <a class="tab" target="msmarco-passage/eval__docs">docs</a>
 <div id="msmarco-passage/eval__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -784,6 +881,7 @@
 
 <a class="tab" target="msmarco-passage/eval__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/eval__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6515736">6.5M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -829,7 +927,28 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/eval__metadata">Metadata</a>
+<div id="msmarco-passage/eval__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 101092
+  },
+  "scoreddocs": {
+    "count": 6515736
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -842,6 +961,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/eval/small__queries">queries</a>
 <div id="msmarco-passage/eval/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6837">6.8K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -887,6 +1007,7 @@
 
 <a class="tab" target="msmarco-passage/eval/small__docs">docs</a>
 <div id="msmarco-passage/eval/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -940,7 +1061,25 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/eval/small__metadata">Metadata</a>
+<div id="msmarco-passage/eval/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6837
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -953,6 +1092,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/train__queries">queries</a>
 <div id="msmarco-passage/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="808731">809K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -998,6 +1138,7 @@
 
 <a class="tab" target="msmarco-passage/train__docs">docs</a>
 <div id="msmarco-passage/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1042,6 +1183,7 @@
 
 <a class="tab" target="msmarco-passage/train__qrels">qrels</a>
 <div id="msmarco-passage/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1053,8 +1195,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1099,6 +1241,7 @@
 
 <a class="tab" target="msmarco-passage/train__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/train__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="478002393">478M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1135,6 +1278,7 @@
 
 <a class="tab" target="msmarco-passage/train__docpairs">docpairs</a>
 <div id="msmarco-passage/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
 
 <div>Document Pair type:</div>
 <div class="type">
@@ -1180,7 +1324,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/train__metadata">Metadata</a>
+<div id="msmarco-passage/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 808731
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 478002393
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1193,8 +1371,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/train/judged__queries">queries</a>
 <div id="msmarco-passage/train/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="502939">503K</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1225,19 +1404,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/judged__docs">docs</a>
 <div id="msmarco-passage/train/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1282,6 +1454,7 @@
 
 <a class="tab" target="msmarco-passage/train/judged__qrels">qrels</a>
 <div id="msmarco-passage/train/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
 <p>Inherits qrels from <a class="ds-ref">msmarco-passage/train</a></p>
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1293,8 +1466,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1320,25 +1493,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/judged__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/train/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="478002393">478M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1375,6 +1535,7 @@
 
 <a class="tab" target="msmarco-passage/train/judged__docpairs">docpairs</a>
 <div id="msmarco-passage/train/judged__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
 <p>Inherits docpairs from <a class="ds-ref">msmarco-passage/train</a></p>
 <div>Document Pair type:</div>
 <div class="type">
@@ -1420,7 +1581,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/train/judged__metadata">Metadata</a>
+<div id="msmarco-passage/train/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 502939
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 478002393
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1433,8 +1628,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/train/medical__queries">queries</a>
 <div id="msmarco-passage/train/medical__queries" class="tab-content">
+<span class="ds-count"><kbd title="78895">79K</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1465,19 +1661,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/medical&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/medical__docs">docs</a>
 <div id="msmarco-passage/train/medical__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1522,19 +1711,20 @@
 
 <a class="tab" target="msmarco-passage/train/medical__qrels">qrels</a>
 <div id="msmarco-passage/train/medical__qrels" class="tab-content">
+<span class="ds-count"><kbd title="54627">55K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="54627">55K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1543,7 +1733,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/train/medical&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1553,32 +1743,19 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/medical&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/medical__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/train/medical__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="48852277">49M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1615,6 +1792,7 @@
 
 <a class="tab" target="msmarco-passage/train/medical__docpairs">docpairs</a>
 <div id="msmarco-passage/train/medical__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="28969254">29M</kbd> <kbd>docpairs</kbd></span>
 
 <div>Document Pair type:</div>
 <div class="type">
@@ -1666,7 +1844,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/train/medical__metadata">Metadata</a>
+<div id="msmarco-passage/train/medical__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 78895
+  },
+  "qrels": {
+    "count": 54627,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 54627
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 48852277
+  },
+  "docpairs": {
+    "count": 28969254
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1679,8 +1891,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/train/split200-train__queries">queries</a>
 <div id="msmarco-passage/train/split200-train__queries" class="tab-content">
+<span class="ds-count"><kbd title="808531">809K</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1711,19 +1924,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/split200-train&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-train__docs">docs</a>
 <div id="msmarco-passage/train/split200-train__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1768,19 +1974,20 @@
 
 <a class="tab" target="msmarco-passage/train/split200-train__qrels">qrels</a>
 <div id="msmarco-passage/train/split200-train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532630">533K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532630">533K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1789,7 +1996,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/train/split200-train&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1799,32 +2006,19 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/split200-train&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-train__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/train/split200-train__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="477883382">478M</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -1861,6 +2055,7 @@
 
 <a class="tab" target="msmarco-passage/train/split200-train__docpairs">docpairs</a>
 <div id="msmarco-passage/train/split200-train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269854839">270M</kbd> <kbd>docpairs</kbd></span>
 
 <div>Document Pair type:</div>
 <div class="type">
@@ -1906,7 +2101,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/train/split200-train__metadata">Metadata</a>
+<div id="msmarco-passage/train/split200-train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 808531
+  },
+  "qrels": {
+    "count": 532630,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532630
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 477883382
+  },
+  "docpairs": {
+    "count": 269854839
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1919,8 +2148,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/train/split200-valid__queries">queries</a>
 <div id="msmarco-passage/train/split200-valid__queries" class="tab-content">
+<span class="ds-count"><kbd title="200">200</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1951,19 +2181,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/split200-valid&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-valid__docs">docs</a>
 <div id="msmarco-passage/train/split200-valid__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2008,19 +2231,20 @@
 
 <a class="tab" target="msmarco-passage/train/split200-valid__qrels">qrels</a>
 <div id="msmarco-passage/train/split200-valid__qrels" class="tab-content">
+<span class="ds-count"><kbd title="131">131</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="131">131<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2029,7 +2253,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/train/split200-valid&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2039,32 +2263,19 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/split200-valid&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-valid__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/train/split200-valid__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="119011">119K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2101,6 +2312,7 @@
 
 <a class="tab" target="msmarco-passage/train/split200-valid__docpairs">docpairs</a>
 <div id="msmarco-passage/train/split200-valid__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="64165">64K</kbd> <kbd>docpairs</kbd></span>
 
 <div>Document Pair type:</div>
 <div class="type">
@@ -2146,7 +2358,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/train/split200-valid__metadata">Metadata</a>
+<div id="msmarco-passage/train/split200-valid__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 200
+  },
+  "qrels": {
+    "count": 131,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 131
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 119011
+  },
+  "docpairs": {
+    "count": 64165
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2159,6 +2405,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-2019__queries">queries</a>
 <div id="msmarco-passage/trec-dl-2019__queries" class="tab-content">
+<span class="ds-count"><kbd title="200">200</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -2204,6 +2451,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2019__docs">docs</a>
 <div id="msmarco-passage/trec-dl-2019__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2248,6 +2496,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2019__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-2019__qrels" class="tab-content">
+<span class="ds-count"><kbd title="9260">9.3K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2259,11 +2508,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="5158">5.2K</kbd></td><td class="right">55.7%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="1601">1.6K</kbd></td><td class="right">17.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="1804">1.8K</kbd></td><td class="right">19.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="697">697<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">7.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2308,6 +2557,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2019__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/trec-dl-2019__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="189877">190K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2359,7 +2609,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-2019__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-2019__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 200
+  },
+  "qrels": {
+    "count": 9260,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 5158,
+          "1": 1601,
+          "2": 1804,
+          "3": 697
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 189877
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2372,8 +2656,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__queries">queries</a>
 <div id="msmarco-passage/trec-dl-2019/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="43">43</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -2404,19 +2689,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2019/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__docs">docs</a>
 <div id="msmarco-passage/trec-dl-2019/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2461,6 +2739,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-2019/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="9260">9.3K</kbd> <kbd>qrels</kbd></span>
 <p>Inherits qrels from <a class="ds-ref">msmarco-passage/trec-dl-2019</a></p>
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2472,11 +2751,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="5158">5.2K</kbd></td><td class="right">55.7%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="1601">1.6K</kbd></td><td class="right">17.3%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="1804">1.8K</kbd></td><td class="right">19.5%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="697">697<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">7.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2502,25 +2781,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2019/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">AP</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/trec-dl-2019/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="41042">41K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2572,7 +2838,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-2019/judged__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-2019/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 43
+  },
+  "qrels": {
+    "count": 9260,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 5158,
+          "1": 1601,
+          "2": 1804,
+          "3": 697
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 41042
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2585,6 +2885,7 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-2020__queries">queries</a>
 <div id="msmarco-passage/trec-dl-2020__queries" class="tab-content">
+<span class="ds-count"><kbd title="200">200</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -2630,6 +2931,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2020__docs">docs</a>
 <div id="msmarco-passage/trec-dl-2020__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2674,6 +2976,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2020__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-2020__qrels" class="tab-content">
+<span class="ds-count"><kbd title="11386">11K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2685,11 +2988,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="7780">7.8K</kbd></td><td class="right">68.3%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="1940">1.9K</kbd></td><td class="right">17.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="1020">1.0K</kbd></td><td class="right">9.0%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="646">646<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2734,6 +3037,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2020__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/trec-dl-2020__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="190699">191K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2785,7 +3089,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-2020__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-2020__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 200
+  },
+  "qrels": {
+    "count": 11386,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1020,
+          "3": 646,
+          "0": 7780,
+          "1": 1940
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 190699
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -2798,8 +3136,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__queries">queries</a>
 <div id="msmarco-passage/trec-dl-2020/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="54">54</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -2830,19 +3169,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2020/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__docs">docs</a>
 <div id="msmarco-passage/trec-dl-2020/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -2887,6 +3219,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-2020/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="11386">11K</kbd> <kbd>qrels</kbd></span>
 <p>Inherits qrels from <a class="ds-ref">msmarco-passage/trec-dl-2020</a></p>
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -2898,11 +3231,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="7780">7.8K</kbd></td><td class="right">68.3%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="1940">1.9K</kbd></td><td class="right">17.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="1020">1.0K</kbd></td><td class="right">9.0%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="646">646<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -2928,25 +3261,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2020/judged&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">AP</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__scoreddocs">scoreddocs</a>
 <div id="msmarco-passage/trec-dl-2020/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="50024">50K</kbd> <kbd>scoreddocs</kbd></span>
 
 <div>Scored Document type:</div>
 <div class="type">
@@ -2998,7 +3318,41 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-2020/judged__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-2020/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 54
+  },
+  "qrels": {
+    "count": 11386,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1020,
+          "3": 646,
+          "0": 7780,
+          "1": 1940
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 50024
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3011,8 +3365,9 @@
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-hard__queries">queries</a>
 <div id="msmarco-passage/trec-dl-hard__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -3043,19 +3398,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard__docs">docs</a>
 <div id="msmarco-passage/trec-dl-hard__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -3100,6 +3448,7 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-hard__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-hard__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4256">4.3K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -3111,11 +3460,11 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="2462">2.5K</kbd></td><td class="right">57.8%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="810">810<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">19.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="634">634<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">14.9%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="350">350<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">8.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3141,21 +3490,7 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard__citation">Citation</a>
@@ -3176,7 +3511,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-hard__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-hard__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 4256,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 2462,
+          "1": 810,
+          "2": 634,
+          "3": 350
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3184,13 +3550,14 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/trec-dl-hard/fold1"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-passage/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-document/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 1 of <a class="ds-ref">msmarco-passage/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold1__queries">queries</a>
 <div id="msmarco-passage/trec-dl-hard/fold1__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -3221,19 +3588,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold1&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold1__docs">docs</a>
 <div id="msmarco-passage/trec-dl-hard/fold1__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -3278,22 +3638,23 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold1__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-hard/fold1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1072">1.1K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="582">582<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">54.3%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="197">197<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">18.4%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="181">181<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">16.9%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="112">112<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">10.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3302,7 +3663,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/trec-dl-hard/fold1&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3312,28 +3673,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold1&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold1__citation">Citation</a>
@@ -3354,7 +3701,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-hard/fold1__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-hard/fold1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 1072,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 582,
+          "1": 197,
+          "2": 181,
+          "3": 112
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3362,13 +3740,14 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/trec-dl-hard/fold2"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-passage/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-document/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 2 of <a class="ds-ref">msmarco-passage/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold2__queries">queries</a>
 <div id="msmarco-passage/trec-dl-hard/fold2__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -3399,19 +3778,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold2&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold2__docs">docs</a>
 <div id="msmarco-passage/trec-dl-hard/fold2__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -3456,22 +3828,23 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold2__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-hard/fold2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="898">898</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="611">611<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">68.0%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="151">151<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">16.8%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="99">99<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">11.0%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="37">37<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.1%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3480,7 +3853,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/trec-dl-hard/fold2&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3490,28 +3863,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold2&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold2__citation">Citation</a>
@@ -3532,7 +3891,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-hard/fold2__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-hard/fold2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 898,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "3": 37,
+          "2": 99,
+          "0": 611,
+          "1": 151
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3540,13 +3930,14 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/trec-dl-hard/fold3"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-passage/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-document/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 3 of <a class="ds-ref">msmarco-passage/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold3__queries">queries</a>
 <div id="msmarco-passage/trec-dl-hard/fold3__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -3577,19 +3968,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold3&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold3__docs">docs</a>
 <div id="msmarco-passage/trec-dl-hard/fold3__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -3634,22 +4018,23 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold3__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-hard/fold3__qrels" class="tab-content">
+<span class="ds-count"><kbd title="444">444</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="342">342<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">77.0%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="43">43<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">9.7%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="36">36<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">8.1%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="23">23<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3658,7 +4043,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/trec-dl-hard/fold3&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3668,28 +4053,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold3&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold3__citation">Citation</a>
@@ -3710,7 +4081,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-hard/fold3__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-hard/fold3__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 444,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 342,
+          "1": 43,
+          "2": 36,
+          "3": 23
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3718,13 +4120,14 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/trec-dl-hard/fold4"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-passage/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-document/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 4 of <a class="ds-ref">msmarco-passage/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold4__queries">queries</a>
 <div id="msmarco-passage/trec-dl-hard/fold4__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -3755,19 +4158,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold4&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold4__docs">docs</a>
 <div id="msmarco-passage/trec-dl-hard/fold4__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -3812,22 +4208,23 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold4__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-hard/fold4__qrels" class="tab-content">
+<span class="ds-count"><kbd title="716">716</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="396">396<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">55.3%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="137">137<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">19.1%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="151">151<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">21.1%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="32">32<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -3836,7 +4233,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/trec-dl-hard/fold4&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3846,28 +4243,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold4&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold4__citation">Citation</a>
@@ -3888,7 +4271,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-hard/fold4__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-hard/fold4__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 716,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "3": 32,
+          "2": 151,
+          "1": 137,
+          "0": 396
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -3896,13 +4310,14 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/trec-dl-hard/fold5"</span></kbd></h3>
 
 <div class="desc">
- <p> A more challenging subset of <a class="ds-ref">msmarco-passage/trec-dl-2019</a> and <a class="ds-ref">msmarco-document/trec-dl-2020</a>. </p> <ul> <li><a href="https://github.com/grill-lab/DL-Hard">data website</a></li> <li>See Also: <a class="ds-ref">msmarco-document/trec-dl-hard</a></li> </ul> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Fold 5 of <a class="ds-ref">msmarco-passage/trec-dl-hard</a> </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold5__queries">queries</a>
 <div id="msmarco-passage/trec-dl-hard/fold5__queries" class="tab-content">
+<span class="ds-count"><kbd title="10">10</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <span class="lang-code">en</span></p>
+<p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -3933,19 +4348,12 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold5&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold5__docs">docs</a>
 <div id="msmarco-passage/trec-dl-hard/fold5__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -3990,22 +4398,23 @@
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold5__qrels">qrels</a>
 <div id="msmarco-passage/trec-dl-hard/fold5__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1126">1.1K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
-<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td></tr>
-<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td></tr>
-<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td></tr>
-<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Irrelevant: The passage has nothing to do with the query.</td><td class="right"><kbd title="531">531<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">47.2%</td></tr>
+<tr><td class="relScore">1</td><td>Related: The passage seems related to the query but does not answer it.</td><td class="right"><kbd title="282">282<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">25.0%</td></tr>
+<tr><td class="relScore">2</td><td>Highly relevant: The passage has some answer for the query, but the answer may be a bit unclear, or hidden amongst extraneous information.</td><td class="right"><kbd title="167">167<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">14.8%</td></tr>
+<tr><td class="relScore">3</td><td>Perfectly relevant: The passage is dedicated to the query and contains the exact answer.</td><td class="right"><kbd title="146">146<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -4014,7 +4423,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/trec-dl-hard/fold5&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -4024,28 +4433,14 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
 <div>...</div>
 
 </code>
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-hard/fold5&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold5__citation">Citation</a>
@@ -4066,7 +4461,38 @@
   year={2016}
 }</cite>
 </div>
+
+<a class="tab" target="msmarco-passage/trec-dl-hard/fold5__metadata">Metadata</a>
+<div id="msmarco-passage/trec-dl-hard/fold5__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 10
+  },
+  "qrels": {
+    "count": 1126,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "3": 146,
+          "1": 282,
+          "0": 531,
+          "2": 167
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

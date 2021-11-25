@@ -40,7 +40,7 @@
 <div class="desc">
  <p> An ad-hoc passage retrieval collection, constructed from Wikipedia and used as the basis of the TREC Complex Answer Retrieval (CAR) task. </p> 
 </div>
-
+<div class="tabs">
 </div>
 
 <hr />
@@ -53,6 +53,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5__docs">docs</a>
 <div id="car/v1.5__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -107,7 +108,22 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5__metadata">Metadata</a>
+<div id="car/v1.5__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -120,6 +136,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/test200__queries">queries</a>
 <div id="car/v1.5/test200__queries" class="tab-content">
+<span class="ds-count"><kbd title="1987">2.0K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -165,6 +182,7 @@
 
 <a class="tab" target="car/v1.5/test200__docs">docs</a>
 <div id="car/v1.5/test200__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -209,6 +227,7 @@
 
 <a class="tab" target="car/v1.5/test200__qrels">qrels</a>
 <div id="car/v1.5/test200__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4706">4.7K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -220,8 +239,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Paragraph appears under heading</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Paragraph appears under heading</td><td class="right"><kbd title="4706">4.7K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -282,7 +301,35 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/test200__metadata">Metadata</a>
+<div id="car/v1.5/test200__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 1987
+  },
+  "qrels": {
+    "count": 4706,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 4706
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -295,6 +342,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/train/fold0__queries">queries</a>
 <div id="car/v1.5/train/fold0__queries" class="tab-content">
+<span class="ds-count"><kbd title="467946">468K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -340,6 +388,7 @@
 
 <a class="tab" target="car/v1.5/train/fold0__docs">docs</a>
 <div id="car/v1.5/train/fold0__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -384,6 +433,7 @@
 
 <a class="tab" target="car/v1.5/train/fold0__qrels">qrels</a>
 <div id="car/v1.5/train/fold0__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1054369">1.1M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -395,8 +445,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Paragraph appears under heading</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Paragraph appears under heading</td><td class="right"><kbd title="1054369">1.1M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -457,7 +507,35 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/train/fold0__metadata">Metadata</a>
+<div id="car/v1.5/train/fold0__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 467946
+  },
+  "qrels": {
+    "count": 1054369,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1054369
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -470,6 +548,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/train/fold1__queries">queries</a>
 <div id="car/v1.5/train/fold1__queries" class="tab-content">
+<span class="ds-count"><kbd title="466596">467K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -515,6 +594,7 @@
 
 <a class="tab" target="car/v1.5/train/fold1__docs">docs</a>
 <div id="car/v1.5/train/fold1__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -559,6 +639,7 @@
 
 <a class="tab" target="car/v1.5/train/fold1__qrels">qrels</a>
 <div id="car/v1.5/train/fold1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1052398">1.1M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -570,8 +651,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Paragraph appears under heading</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Paragraph appears under heading</td><td class="right"><kbd title="1052398">1.1M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -632,7 +713,35 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/train/fold1__metadata">Metadata</a>
+<div id="car/v1.5/train/fold1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 466596
+  },
+  "qrels": {
+    "count": 1052398,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1052398
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -645,6 +754,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/train/fold2__queries">queries</a>
 <div id="car/v1.5/train/fold2__queries" class="tab-content">
+<span class="ds-count"><kbd title="469323">469K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -690,6 +800,7 @@
 
 <a class="tab" target="car/v1.5/train/fold2__docs">docs</a>
 <div id="car/v1.5/train/fold2__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -734,6 +845,7 @@
 
 <a class="tab" target="car/v1.5/train/fold2__qrels">qrels</a>
 <div id="car/v1.5/train/fold2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1061162">1.1M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -745,8 +857,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Paragraph appears under heading</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Paragraph appears under heading</td><td class="right"><kbd title="1061162">1.1M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -807,7 +919,35 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/train/fold2__metadata">Metadata</a>
+<div id="car/v1.5/train/fold2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 469323
+  },
+  "qrels": {
+    "count": 1061162,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1061162
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -820,6 +960,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/train/fold3__queries">queries</a>
 <div id="car/v1.5/train/fold3__queries" class="tab-content">
+<span class="ds-count"><kbd title="463314">463K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -865,6 +1006,7 @@
 
 <a class="tab" target="car/v1.5/train/fold3__docs">docs</a>
 <div id="car/v1.5/train/fold3__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -909,6 +1051,7 @@
 
 <a class="tab" target="car/v1.5/train/fold3__qrels">qrels</a>
 <div id="car/v1.5/train/fold3__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1046784">1.0M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -920,8 +1063,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Paragraph appears under heading</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Paragraph appears under heading</td><td class="right"><kbd title="1046784">1.0M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -982,7 +1125,35 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/train/fold3__metadata">Metadata</a>
+<div id="car/v1.5/train/fold3__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 463314
+  },
+  "qrels": {
+    "count": 1046784,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1046784
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -995,6 +1166,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/train/fold4__queries">queries</a>
 <div id="car/v1.5/train/fold4__queries" class="tab-content">
+<span class="ds-count"><kbd title="468789">469K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1040,6 +1212,7 @@
 
 <a class="tab" target="car/v1.5/train/fold4__docs">docs</a>
 <div id="car/v1.5/train/fold4__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1084,6 +1257,7 @@
 
 <a class="tab" target="car/v1.5/train/fold4__qrels">qrels</a>
 <div id="car/v1.5/train/fold4__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1061911">1.1M</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1095,8 +1269,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Paragraph appears under heading</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Paragraph appears under heading</td><td class="right"><kbd title="1061911">1.1M</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1157,7 +1331,35 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/train/fold4__metadata">Metadata</a>
+<div id="car/v1.5/train/fold4__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 468789
+  },
+  "qrels": {
+    "count": 1061911,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 1061911
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1170,6 +1372,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/trec-y1__queries">queries</a>
 <div id="car/v1.5/trec-y1__queries" class="tab-content">
+<span class="ds-count"><kbd title="2287">2.3K</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1215,6 +1418,7 @@
 
 <a class="tab" target="car/v1.5/trec-y1__docs">docs</a>
 <div id="car/v1.5/trec-y1__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1275,7 +1479,25 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/trec-y1__metadata">Metadata</a>
+<div id="car/v1.5/trec-y1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 2287
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1288,6 +1510,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/trec-y1/auto__queries">queries</a>
 <div id="car/v1.5/trec-y1/auto__queries" class="tab-content">
+<span class="ds-count"><kbd title="2287">2.3K</kbd> <kbd>queries</kbd></span>
 <p>Inherits queries from <a class="ds-ref">car/v1.5/trec-y1</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1333,6 +1556,7 @@
 
 <a class="tab" target="car/v1.5/trec-y1/auto__docs">docs</a>
 <div id="car/v1.5/trec-y1/auto__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1377,6 +1601,7 @@
 
 <a class="tab" target="car/v1.5/trec-y1/auto__qrels">qrels</a>
 <div id="car/v1.5/trec-y1/auto__qrels" class="tab-content">
+<span class="ds-count"><kbd title="5820">5.8K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1388,8 +1613,8 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">1</td><td>Paragraph appears under heading</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Paragraph appears under heading</td><td class="right"><kbd title="5820">5.8K</kbd></td><td class="right">100.0%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1450,7 +1675,35 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/trec-y1/auto__metadata">Metadata</a>
+<div id="car/v1.5/trec-y1/auto__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 2287
+  },
+  "qrels": {
+    "count": 5820,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 5820
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1463,6 +1716,7 @@
 <div class="tabs">
 <a class="tab" target="car/v1.5/trec-y1/manual__queries">queries</a>
 <div id="car/v1.5/trec-y1/manual__queries" class="tab-content">
+<span class="ds-count"><kbd title="2287">2.3K</kbd> <kbd>queries</kbd></span>
 <p>Inherits queries from <a class="ds-ref">car/v1.5/trec-y1</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1508,6 +1762,7 @@
 
 <a class="tab" target="car/v1.5/trec-y1/manual__docs">docs</a>
 <div id="car/v1.5/trec-y1/manual__docs" class="tab-content">
+<span class="ds-count"><kbd title="29678367">30M</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">car/v1.5</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1552,6 +1807,7 @@
 
 <a class="tab" target="car/v1.5/trec-y1/manual__qrels">qrels</a>
 <div id="car/v1.5/trec-y1/manual__qrels" class="tab-content">
+<span class="ds-count"><kbd title="29571">30K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1563,13 +1819,13 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">-2</td><td>Trash</td></tr>
-<tr><td class="relScore">-1</td><td>NO, non-relevant</td></tr>
-<tr><td class="relScore">0</td><td>Non-relevant, but roughly on TOPIC</td></tr>
-<tr><td class="relScore">1</td><td>CAN be mentioned</td></tr>
-<tr><td class="relScore">2</td><td>SHOULD be mentioned</td></tr>
-<tr><td class="relScore">3</td><td>MUST be mentioned</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">-2</td><td>Trash</td><td class="right"><kbd title="42">42<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.1%</td></tr>
+<tr><td class="relScore">-1</td><td>NO, non-relevant</td><td class="right"><kbd title="12785">13K</kbd></td><td class="right">43.2%</td></tr>
+<tr><td class="relScore">0</td><td>Non-relevant, but roughly on TOPIC</td><td class="right"><kbd title="9219">9.2K</kbd></td><td class="right">31.2%</td></tr>
+<tr><td class="relScore">1</td><td>CAN be mentioned</td><td class="right"><kbd title="3094">3.1K</kbd></td><td class="right">10.5%</td></tr>
+<tr><td class="relScore">2</td><td>SHOULD be mentioned</td><td class="right"><kbd title="1970">2.0K</kbd></td><td class="right">6.7%</td></tr>
+<tr><td class="relScore">3</td><td>MUST be mentioned</td><td class="right"><kbd title="2461">2.5K</kbd></td><td class="right">8.3%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1630,7 +1886,40 @@
   url={http://trec-car.cs.unh.edu}
 }</cite>
 </div>
+
+<a class="tab" target="car/v1.5/trec-y1/manual__metadata">Metadata</a>
+<div id="car/v1.5/trec-y1/manual__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29678367,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 2287
+  },
+  "qrels": {
+    "count": 29571,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "-1": 12785,
+          "0": 9219,
+          "1": 3094,
+          "2": 1970,
+          "3": 2461,
+          "-2": 42
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">

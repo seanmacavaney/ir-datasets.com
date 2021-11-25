@@ -41,6 +41,7 @@
 <div class="tabs">
 <a class="tab" target="cord19__docs">docs</a>
 <div id="cord19__docs" class="tab-content">
+<span class="ds-count"><kbd title="192509">193K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -94,7 +95,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19__metadata">Metadata</a>
+<div id="cord19__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 192509,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -107,6 +123,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/fulltext__docs">docs</a>
 <div id="cord19/fulltext__docs" class="tab-content">
+<span class="ds-count"><kbd title="192509">193K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -165,7 +182,22 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/fulltext__metadata">Metadata</a>
+<div id="cord19/fulltext__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 192509,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -178,6 +210,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/fulltext/trec-covid__queries">queries</a>
 <div id="cord19/fulltext/trec-covid__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -223,6 +256,7 @@
 
 <a class="tab" target="cord19/fulltext/trec-covid__docs">docs</a>
 <div id="cord19/fulltext/trec-covid__docs" class="tab-content">
+<span class="ds-count"><kbd title="192509">193K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">cord19/fulltext</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -272,6 +306,7 @@
 
 <a class="tab" target="cord19/fulltext/trec-covid__qrels">qrels</a>
 <div id="cord19/fulltext/trec-covid__qrels" class="tab-content">
+<span class="ds-count"><kbd title="69318">69K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -283,10 +318,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td></tr>
-<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td></tr>
-<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td><td class="right"><kbd title="42652">43K</kbd></td><td class="right">61.5%</td></tr>
+<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td><td class="right"><kbd title="11055">11K</kbd></td><td class="right">15.9%</td></tr>
+<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td><td class="right"><kbd title="15609">16K</kbd></td><td class="right">22.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -347,7 +382,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/fulltext/trec-covid__metadata">Metadata</a>
+<div id="cord19/fulltext/trec-covid__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 192509,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 69318,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 15609,
+          "1": 11055,
+          "0": 42652,
+          "-1": 2
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -360,6 +426,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/trec-covid__queries">queries</a>
 <div id="cord19/trec-covid__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -405,6 +472,7 @@
 
 <a class="tab" target="cord19/trec-covid__docs">docs</a>
 <div id="cord19/trec-covid__docs" class="tab-content">
+<span class="ds-count"><kbd title="192509">193K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">cord19</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -449,6 +517,7 @@
 
 <a class="tab" target="cord19/trec-covid__qrels">qrels</a>
 <div id="cord19/trec-covid__qrels" class="tab-content">
+<span class="ds-count"><kbd title="69318">69K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -460,10 +529,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td></tr>
-<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td></tr>
-<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td><td class="right"><kbd title="42652">43K</kbd></td><td class="right">61.5%</td></tr>
+<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td><td class="right"><kbd title="11055">11K</kbd></td><td class="right">15.9%</td></tr>
+<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td><td class="right"><kbd title="15609">16K</kbd></td><td class="right">22.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -524,7 +593,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/trec-covid__metadata">Metadata</a>
+<div id="cord19/trec-covid__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 192509,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 69318,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 15609,
+          "1": 11055,
+          "0": 42652,
+          "-1": 2
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -537,6 +637,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/trec-covid/round1__queries">queries</a>
 <div id="cord19/trec-covid/round1__queries" class="tab-content">
+<span class="ds-count"><kbd title="30">30</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -582,6 +683,7 @@
 
 <a class="tab" target="cord19/trec-covid/round1__docs">docs</a>
 <div id="cord19/trec-covid/round1__docs" class="tab-content">
+<span class="ds-count"><kbd title="51078">51K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -626,6 +728,7 @@
 
 <a class="tab" target="cord19/trec-covid/round1__qrels">qrels</a>
 <div id="cord19/trec-covid/round1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="8691">8.7K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -637,10 +740,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td></tr>
-<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td></tr>
-<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td><td class="right"><kbd title="6339">6.3K</kbd></td><td class="right">72.9%</td></tr>
+<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td><td class="right"><kbd title="1115">1.1K</kbd></td><td class="right">12.8%</td></tr>
+<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td><td class="right"><kbd title="1237">1.2K</kbd></td><td class="right">14.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -701,7 +804,37 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/trec-covid/round1__metadata">Metadata</a>
+<div id="cord19/trec-covid/round1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 51078,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 30
+  },
+  "qrels": {
+    "count": 8691,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 1237,
+          "1": 1115,
+          "0": 6339
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -714,6 +847,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/trec-covid/round2__queries">queries</a>
 <div id="cord19/trec-covid/round2__queries" class="tab-content">
+<span class="ds-count"><kbd title="35">35</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -759,6 +893,7 @@
 
 <a class="tab" target="cord19/trec-covid/round2__docs">docs</a>
 <div id="cord19/trec-covid/round2__docs" class="tab-content">
+<span class="ds-count"><kbd title="59887">60K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -803,6 +938,7 @@
 
 <a class="tab" target="cord19/trec-covid/round2__qrels">qrels</a>
 <div id="cord19/trec-covid/round2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="12037">12K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -814,10 +950,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td></tr>
-<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td></tr>
-<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td><td class="right"><kbd title="9035">9.0K</kbd></td><td class="right">75.1%</td></tr>
+<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td><td class="right"><kbd title="1410">1.4K</kbd></td><td class="right">11.7%</td></tr>
+<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td><td class="right"><kbd title="1592">1.6K</kbd></td><td class="right">13.2%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -878,7 +1014,37 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/trec-covid/round2__metadata">Metadata</a>
+<div id="cord19/trec-covid/round2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 59887,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 35
+  },
+  "qrels": {
+    "count": 12037,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 9035,
+          "1": 1410,
+          "2": 1592
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -891,6 +1057,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/trec-covid/round3__queries">queries</a>
 <div id="cord19/trec-covid/round3__queries" class="tab-content">
+<span class="ds-count"><kbd title="40">40</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -936,6 +1103,7 @@
 
 <a class="tab" target="cord19/trec-covid/round3__docs">docs</a>
 <div id="cord19/trec-covid/round3__docs" class="tab-content">
+<span class="ds-count"><kbd title="128492">128K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -980,6 +1148,7 @@
 
 <a class="tab" target="cord19/trec-covid/round3__qrels">qrels</a>
 <div id="cord19/trec-covid/round3__qrels" class="tab-content">
+<span class="ds-count"><kbd title="12713">13K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -991,10 +1160,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td></tr>
-<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td></tr>
-<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td><td class="right"><kbd title="8015">8.0K</kbd></td><td class="right">63.0%</td></tr>
+<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td><td class="right"><kbd title="2089">2.1K</kbd></td><td class="right">16.4%</td></tr>
+<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td><td class="right"><kbd title="2609">2.6K</kbd></td><td class="right">20.5%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1055,7 +1224,37 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/trec-covid/round3__metadata">Metadata</a>
+<div id="cord19/trec-covid/round3__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 128492,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 40
+  },
+  "qrels": {
+    "count": 12713,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 2089,
+          "0": 8015,
+          "2": 2609
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1068,6 +1267,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/trec-covid/round4__queries">queries</a>
 <div id="cord19/trec-covid/round4__queries" class="tab-content">
+<span class="ds-count"><kbd title="45">45</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1113,6 +1313,7 @@
 
 <a class="tab" target="cord19/trec-covid/round4__docs">docs</a>
 <div id="cord19/trec-covid/round4__docs" class="tab-content">
+<span class="ds-count"><kbd title="158274">158K</kbd> <kbd>docs</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1157,6 +1358,7 @@
 
 <a class="tab" target="cord19/trec-covid/round4__qrels">qrels</a>
 <div id="cord19/trec-covid/round4__qrels" class="tab-content">
+<span class="ds-count"><kbd title="13262">13K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1168,10 +1370,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td></tr>
-<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td></tr>
-<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td><td class="right"><kbd title="7438">7.4K</kbd></td><td class="right">56.1%</td></tr>
+<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td><td class="right"><kbd title="2279">2.3K</kbd></td><td class="right">17.2%</td></tr>
+<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td><td class="right"><kbd title="3545">3.5K</kbd></td><td class="right">26.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1232,7 +1434,37 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/trec-covid/round4__metadata">Metadata</a>
+<div id="cord19/trec-covid/round4__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 158274,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 45
+  },
+  "qrels": {
+    "count": 13262,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 2279,
+          "0": 7438,
+          "2": 3545
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <hr />
@@ -1245,6 +1477,7 @@
 <div class="tabs">
 <a class="tab" target="cord19/trec-covid/round5__queries">queries</a>
 <div id="cord19/trec-covid/round5__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
 <p>Inherits queries from <a class="ds-ref">cord19/trec-covid</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
@@ -1290,6 +1523,7 @@
 
 <a class="tab" target="cord19/trec-covid/round5__docs">docs</a>
 <div id="cord19/trec-covid/round5__docs" class="tab-content">
+<span class="ds-count"><kbd title="192509">193K</kbd> <kbd>docs</kbd></span>
 <p>Inherits docs from <a class="ds-ref">cord19</a></p>
 <p>Language: <span class="lang-code">en</span></p>
 <div>Document type:</div>
@@ -1334,6 +1568,7 @@
 
 <a class="tab" target="cord19/trec-covid/round5__qrels">qrels</a>
 <div id="cord19/trec-covid/round5__qrels" class="tab-content">
+<span class="ds-count"><kbd title="23151">23K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -1345,10 +1580,10 @@
 <p>Relevance levels</p>
 
 <table>
-<tr><th>Rel.</th><th>Definition</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td></tr>
-<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td></tr>
-<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td></tr>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant: everything else.</td><td class="right"><kbd title="12239">12K</kbd></td><td class="right">52.9%</td></tr>
+<tr><td class="relScore">1</td><td>Partially Relevant: the article answers part of the question but would need to be combined with other information to get a complete answer.</td><td class="right"><kbd title="4233">4.2K</kbd></td><td class="right">18.3%</td></tr>
+<tr><td class="relScore">2</td><td>Relevant: the article is fully responsive to the information need as expressed by the topic, i.e. answers the Question in the topic. The article need not contain all information on the topic, but must, on its own, provide an answer to the question.</td><td class="right"><kbd title="6677">6.7K</kbd></td><td class="right">28.8%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -1409,7 +1644,38 @@
   year={2020}
 }</cite>
 </div>
+
+<a class="tab" target="cord19/trec-covid/round5__metadata">Metadata</a>
+<div id="cord19/trec-covid/round5__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 192509,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 23151,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 6677,
+          "1": 4233,
+          "0": 12239,
+          "-1": 2
+        }
+      }
+    }
+  }
+}</pre>
 </div>
+
 </div>
 
 <script type="text/javascript">
