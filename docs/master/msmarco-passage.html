@@ -284,43 +284,6 @@
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
-<a class="tab" target="msmarco-passage/dev__scoreddocs">scoreddocs</a>
-<div id="msmarco-passage/dev__scoreddocs" class="tab-content">
-<span class="ds-count"><kbd title="6668967">6.7M</kbd> <kbd>scoreddocs</kbd></span>
-
-<div>Scored Document type:</div>
-<div class="type">
-<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
-<ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
-</ol>
-</div>
-<p>Examples:</p><div class="ex-tabs">
-<a class="ex-tab" target="irds-python">Python API</a>
-<div class="ex-tab-content irds-python">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
-    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
-</pre></div>
-<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
-<a class="ex-tab" target="irds-cli">CLI</a>
-<div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev scoreddocs --format tsv
-</pre></div>
-
-<code class="output">
-
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
-<div>...</div>
-
-</code>
-<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
-<a class="ex-tab" target="pyterrier">PyTerrier</a>
-<div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
-</div>
-
 <a class="tab" target="msmarco-passage/dev__citation">Citation</a>
 <div id="msmarco-passage/dev__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bajaj2016Msmarco}</cite>
@@ -357,9 +320,6 @@
         }
       }
     }
-  },
-  "scoreddocs": {
-    "count": 6668967
   }
 }</pre>
 </div>
@@ -501,43 +461,6 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
-<a class="tab" target="msmarco-passage/dev/judged__scoreddocs">scoreddocs</a>
-<div id="msmarco-passage/dev/judged__scoreddocs" class="tab-content">
-<span class="ds-count"><kbd title="6668967">6.7M</kbd> <kbd>scoreddocs</kbd></span>
-
-<div>Scored Document type:</div>
-<div class="type">
-<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
-<ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
-</ol>
-</div>
-<p>Examples:</p><div class="ex-tabs">
-<a class="ex-tab" target="irds-python">Python API</a>
-<div class="ex-tab-content irds-python">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/judged&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
-    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
-</pre></div>
-<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
-<a class="ex-tab" target="irds-cli">CLI</a>
-<div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/judged scoreddocs --format tsv
-</pre></div>
-
-<code class="output">
-
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
-<div>...</div>
-
-</code>
-<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
-<a class="ex-tab" target="pyterrier">PyTerrier</a>
-<div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
-</div>
-
 <a class="tab" target="msmarco-passage/dev/judged__citation">Citation</a>
 <div id="msmarco-passage/dev/judged__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bajaj2016Msmarco}</cite>
@@ -574,9 +497,6 @@
         }
       }
     }
-  },
-  "scoreddocs": {
-    "count": 6668967
   }
 }</pre>
 </div>
@@ -740,6 +660,43 @@
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
+<a class="tab" target="msmarco-passage/dev/small__scoreddocs">scoreddocs</a>
+<div id="msmarco-passage/dev/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6668967">6.7M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="msmarco-passage/dev/small__citation">Citation</a>
 <div id="msmarco-passage/dev/small__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bajaj2016Msmarco}</cite>
@@ -776,6 +733,9 @@
         }
       }
     }
+  },
+  "scoreddocs": {
+    "count": 6668967
   }
 }</pre>
 </div>
@@ -881,43 +841,6 @@
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
 
-<a class="tab" target="msmarco-passage/eval__scoreddocs">scoreddocs</a>
-<div id="msmarco-passage/eval__scoreddocs" class="tab-content">
-<span class="ds-count"><kbd title="6515736">6.5M</kbd> <kbd>scoreddocs</kbd></span>
-
-<div>Scored Document type:</div>
-<div class="type">
-<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
-<ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
-</ol>
-</div>
-<p>Examples:</p><div class="ex-tabs">
-<a class="ex-tab" target="irds-python">Python API</a>
-<div class="ex-tab-content irds-python">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/eval&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
-    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
-</pre></div>
-<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
-<a class="ex-tab" target="irds-cli">CLI</a>
-<div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/eval scoreddocs --format tsv
-</pre></div>
-
-<code class="output">
-
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
-<div>...</div>
-
-</code>
-<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
-<a class="ex-tab" target="pyterrier">PyTerrier</a>
-<div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
-</div>
-
 <a class="tab" target="msmarco-passage/eval__citation">Citation</a>
 <div id="msmarco-passage/eval__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bajaj2016Msmarco}</cite>
@@ -944,9 +867,6 @@
   },
   "queries": {
     "count": 101092
-  },
-  "scoreddocs": {
-    "count": 6515736
   }
 }</pre>
 </div>
@@ -1052,6 +972,43 @@
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
 </div>
 
+<a class="tab" target="msmarco-passage/eval/small__scoreddocs">scoreddocs</a>
+<div id="msmarco-passage/eval/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6515736">6.5M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/eval/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/eval/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="msmarco-passage/eval/small__citation">Citation</a>
 <div id="msmarco-passage/eval/small__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bajaj2016Msmarco}</cite>
@@ -1078,6 +1035,9 @@
   },
   "queries": {
     "count": 6837
+  },
+  "scoreddocs": {
+    "count": 6515736
   }
 }</pre>
 </div>
