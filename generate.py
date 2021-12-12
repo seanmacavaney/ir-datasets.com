@@ -399,6 +399,7 @@ Install with pip:
 <a href="ir-measures.html">ir-measures</a> &middot;
 <a href="trec_eval.html">trec_eval</a>
 </li>
+<li><a href="design.html">Design Documentation</a></li>
 </ul>
 
 <h2 class="underline" style="margin-bottom: 4px;">Dataset Index</h2>
@@ -613,13 +614,15 @@ def generate_integrations(out_dir, version):
     template = Template(filename=os.path.join("templates", "pyterrier.html"))
     with page_template('pyterrier.html', out_dir, version, title='PyTerrier &amp; ir_datasets', include_irds_title=False) as out:
         out.write(template.render(hl=hl))
-
     template = Template(filename=os.path.join("templates", "ir-measures.html"))
     with page_template('ir-measures.html', out_dir, version, title='ir_measures &amp; ir_datasets', include_irds_title=False) as out:
         out.write(template.render(hl=hl, hlb=hlb))
     template = Template(filename=os.path.join("templates", "trec_eval.html"))
     with page_template('trec_eval.html', out_dir, version, title='trec_eval &amp; ir_datasets', include_irds_title=False) as out:
         out.write(template.render(hl=hl, hlb=hlb))
+    template = Template(filename=os.path.join("templates", "design.html"))
+    with page_template('design.html', out_dir, version, title='Design', include_irds_title=True) as out:
+        out.write(template.render(hl=hl))
 
 
 @contextmanager
