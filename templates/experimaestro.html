@@ -1,0 +1,87 @@
+<p>
+    <a href="https://github.com/experimaestro/experimaestro-python">Experimaestro</a> is a experiment manager framework.
+    The <a href="https://github.com/bpiwowar/experimaestro-ir"><kbd>experimaestro-ir</kbd></a> package provides
+    support for IR data and experiments.
+</p>
+
+<p>
+    To get started with experimaestro-ir, see <a href="https://experimaestro-ir.readthedocs.io/en/latest/">this guide</a>.
+    You will need to run:
+</p>
+
+${hl('''
+pip install experimaestro-ir
+''')}
+
+
+<h2 class="underline">Basic Usage</h2>
+
+<p>
+    Datasets are references using <kbd>irds.{dotted-irds}</kbd>, where <kbd>{dotted-irds}</kbd> is the
+    ir-datasets dataset ID with the slashes replaced with dots. For example, to load the <a href="antique.html#antique/test"><kbd>antique/test</kbd></a>
+    dataset in Experimaestro, use:
+</p>
+
+${hl('''
+from datamaestro import prepare_dataset
+dataset = prepare_dataset("irds.antique.train")
+''')}
+
+<p>
+    Experimaestro's Dataset objects</a> have a different API and use a different naming convention than <kbd>ir_datasets</kbd>,
+    but they provide similar functionality. The naming is as follows:
+</p>
+
+<table>
+<tr><th>Experimaestro's...</th><th>Uses...</th></tr>
+<tr><td><kbd>dataset.documents.iter()</kbd></td><td><kbd>dataset.docs_iter()</kbd></td></tr>
+<tr><td><kbd>dataset.topics.iter()</kbd></td><td><kbd>dataset.queries_iter()</kbd></tr>
+<tr><td><kbd>dataset.assessments.iter()</kbd></td><td><kbd>dataset.qrels_iter()</kbd></td></tr>
+</table>
+
+<p>
+    To get the first 20 documents:
+</p>
+
+${hl('''
+for _, document in zip(range(20), dataset.documents.iter()):
+    print(document.docid, document.text)  # (qid, text) tuple
+''')}
+
+<p>
+    To get the topics:
+</p>
+
+${hl('''
+for topic in dataset.topics.iter():
+    print(topic.qid, topic.text, topic.metadata)  # (qid, text, metadata) tuple
+''')}
+
+<h2 class="underline">Running an experiment</h2>
+
+${hl('''
+from experimaestro import experiment
+from datamaestro import prepare_dataset
+from xpmir.measures import AP, nDCG
+from xpmir.interfaces.anserini import IndexCollection, AnseriniRetriever
+from xpmir.rankers.standard import BM25
+from xpmir.evaluation import Evaluate
+import os
+import logging
+
+logging.basicConfig(level=logging.INFO)
+dataset = prepare_dataset("irds.antique.train")
+
+with experiment("workdir", "evaluate-bm25", port=12345) as xp:
+    # Build the index
+    xp.setenv("JAVA_HOME", os.environ["JAVA_HOME"])
+    index = IndexCollection(documents=dataset.documents).submit()
+
+    bm25_retriever = AnseriniRetriever(k=1500, index=index, model=BM25())
+    bm25_eval = Evaluate(dataset=dataset, retriever=bm25_retriever, measures=[
+        AP, nDCG@10
+    ]).submit()
+
+print("BM25 results")
+print(bm25_eval.results.read_text())
+''')}

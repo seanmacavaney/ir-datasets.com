@@ -397,7 +397,8 @@ Install with pip:
 <li>Using <kbd>ir_datasets</kbd> with&hellip;
 <a href="pyterrier.html">PyTerrier</a> &middot;
 <a href="ir-measures.html">ir-measures</a> &middot;
-<a href="trec_eval.html">trec_eval</a>
+<a href="trec_eval.html">trec_eval</a> &middot;
+<a href="experimaestro.html">Experimaestro</a>
 </li>
 <li><a href="design.html">Design Documentation</a></li>
 </ul>
@@ -622,6 +623,9 @@ def generate_integrations(out_dir, version):
         out.write(template.render(hl=hl, hlb=hlb))
     template = Template(filename=os.path.join("templates", "design.html"))
     with page_template('design.html', out_dir, version, title='Design', include_irds_title=True) as out:
+        out.write(template.render(hl=hl))
+    template = Template(filename=os.path.join("templates", "experimaestro.html"))
+    with page_template('experimaestro.html', out_dir, version, title='Experimaestro', include_irds_title=True) as out:
         out.write(template.render(hl=hl))
 
 
