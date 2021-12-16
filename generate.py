@@ -649,7 +649,7 @@ def page_template(file, base_dir, version, title=None, source=None, include_irds
 <div class="page">
 ''')
         path_segment = 'blob' if source else 'tree'
-        url = 'https://github.com/allenai/ir_datasets/' + (f'{path_segment}/{version or ("v" + ir_datasets.__version__)}/' if version else '') + (f'ir_datasets/{source}' if source else '')
+        url = 'https://github.com/allenai/ir_datasets/' + (f'{path_segment}/{version or ("v" + ir_datasets.__version__)}/' if source else '') + (f'ir_datasets/{source}' if source else '')
         text = source or 'allenai/ir_datasets'
         if version: # a specific version -- warn the user
             out.write(f'''
