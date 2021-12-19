@@ -24,29 +24,39 @@
 <li><a href="#mmarco"><kbd>mmarco</kbd></a></li>
 <li><a href="#mmarco/de"><kbd><span class="prefix">mmarco</span>/de</kbd></a></li>
 <li><a href="#mmarco/de/dev"><kbd><span class="prefix">mmarco</span>/de/dev</kbd></a></li>
+<li><a href="#mmarco/de/dev/small"><kbd><span class="prefix">mmarco</span>/de/dev/small</kbd></a></li>
 <li><a href="#mmarco/de/train"><kbd><span class="prefix">mmarco</span>/de/train</kbd></a></li>
 <li><a href="#mmarco/es"><kbd><span class="prefix">mmarco</span>/es</kbd></a></li>
 <li><a href="#mmarco/es/dev"><kbd><span class="prefix">mmarco</span>/es/dev</kbd></a></li>
+<li><a href="#mmarco/es/dev/small"><kbd><span class="prefix">mmarco</span>/es/dev/small</kbd></a></li>
 <li><a href="#mmarco/es/train"><kbd><span class="prefix">mmarco</span>/es/train</kbd></a></li>
 <li><a href="#mmarco/fr"><kbd><span class="prefix">mmarco</span>/fr</kbd></a></li>
 <li><a href="#mmarco/fr/dev"><kbd><span class="prefix">mmarco</span>/fr/dev</kbd></a></li>
+<li><a href="#mmarco/fr/dev/small"><kbd><span class="prefix">mmarco</span>/fr/dev/small</kbd></a></li>
 <li><a href="#mmarco/fr/train"><kbd><span class="prefix">mmarco</span>/fr/train</kbd></a></li>
 <li><a href="#mmarco/id"><kbd><span class="prefix">mmarco</span>/id</kbd></a></li>
 <li><a href="#mmarco/id/dev"><kbd><span class="prefix">mmarco</span>/id/dev</kbd></a></li>
+<li><a href="#mmarco/id/dev/small"><kbd><span class="prefix">mmarco</span>/id/dev/small</kbd></a></li>
 <li><a href="#mmarco/id/train"><kbd><span class="prefix">mmarco</span>/id/train</kbd></a></li>
 <li><a href="#mmarco/it"><kbd><span class="prefix">mmarco</span>/it</kbd></a></li>
 <li><a href="#mmarco/it/dev"><kbd><span class="prefix">mmarco</span>/it/dev</kbd></a></li>
+<li><a href="#mmarco/it/dev/small"><kbd><span class="prefix">mmarco</span>/it/dev/small</kbd></a></li>
 <li><a href="#mmarco/it/train"><kbd><span class="prefix">mmarco</span>/it/train</kbd></a></li>
 <li><a href="#mmarco/pt"><kbd><span class="prefix">mmarco</span>/pt</kbd></a></li>
 <li><a href="#mmarco/pt/dev"><kbd><span class="prefix">mmarco</span>/pt/dev</kbd></a></li>
+<li><a href="#mmarco/pt/dev/small"><kbd><span class="prefix">mmarco</span>/pt/dev/small</kbd></a></li>
+<li><a href="#mmarco/pt/dev/small/v1.1"><kbd><span class="prefix">mmarco</span>/pt/dev/small/v1.1</kbd></a></li>
 <li><a href="#mmarco/pt/dev/v1.1"><kbd><span class="prefix">mmarco</span>/pt/dev/v1.1</kbd></a></li>
 <li><a href="#mmarco/pt/train"><kbd><span class="prefix">mmarco</span>/pt/train</kbd></a></li>
 <li><a href="#mmarco/pt/train/v1.1"><kbd><span class="prefix">mmarco</span>/pt/train/v1.1</kbd></a></li>
 <li><a href="#mmarco/ru"><kbd><span class="prefix">mmarco</span>/ru</kbd></a></li>
 <li><a href="#mmarco/ru/dev"><kbd><span class="prefix">mmarco</span>/ru/dev</kbd></a></li>
+<li><a href="#mmarco/ru/dev/small"><kbd><span class="prefix">mmarco</span>/ru/dev/small</kbd></a></li>
 <li><a href="#mmarco/ru/train"><kbd><span class="prefix">mmarco</span>/ru/train</kbd></a></li>
 <li><a href="#mmarco/zh"><kbd><span class="prefix">mmarco</span>/zh</kbd></a></li>
 <li><a href="#mmarco/zh/dev"><kbd><span class="prefix">mmarco</span>/zh/dev</kbd></a></li>
+<li><a href="#mmarco/zh/dev/small"><kbd><span class="prefix">mmarco</span>/zh/dev/small</kbd></a></li>
+<li><a href="#mmarco/zh/dev/small/v1.1"><kbd><span class="prefix">mmarco</span>/zh/dev/small/v1.1</kbd></a></li>
 <li><a href="#mmarco/zh/dev/v1.1"><kbd><span class="prefix">mmarco</span>/zh/dev/v1.1</kbd></a></li>
 <li><a href="#mmarco/zh/train"><kbd><span class="prefix">mmarco</span>/zh/train</kbd></a></li>
 </ol>
@@ -320,6 +330,216 @@
 </div>
 
 <hr />
+<div class="dataset" id="mmarco/de/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/de/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into German. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/de/dev/small__queries">queries</a>
+<div id="mmarco/de/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/de/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/de/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/de/dev/small__docs">docs</a>
+<div id="mmarco/de/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/de</a></p>
+<p>Language: <span class="lang-code">de</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/de/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/de/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/de/dev/small__qrels">qrels</a>
+<div id="mmarco/de/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/de/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/de/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/de/dev/small__scoreddocs">scoreddocs</a>
+<div id="mmarco/de/dev/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6594126">6.6M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/de/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/de/dev/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/de/dev/small__citation">Citation</a>
+<div id="mmarco/de/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/de/dev/small__metadata">Metadata</a>
+<div id="mmarco/de/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6594126
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
 <div class="dataset" id="mmarco/de/train" data-parent="mmarco">
 <h3><kbd class="ds-name select"><span class="str">"mmarco/de/train"</span></kbd></h3>
 
@@ -447,6 +667,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/de/train__docpairs">docpairs</a>
+<div id="mmarco/de/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/de/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/de/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/de/train__citation">Citation</a>
 <div id="mmarco/de/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -483,6 +740,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -735,6 +995,216 @@
 </div>
 
 <hr />
+<div class="dataset" id="mmarco/es/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/es/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into Spanish. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/es/dev/small__queries">queries</a>
+<div id="mmarco/es/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/es/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/es/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/es/dev/small__docs">docs</a>
+<div id="mmarco/es/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/es</a></p>
+<p>Language: <span class="lang-code">es</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/es/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/es/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/es/dev/small__qrels">qrels</a>
+<div id="mmarco/es/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/es/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/es/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/es/dev/small__scoreddocs">scoreddocs</a>
+<div id="mmarco/es/dev/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6786720">6.8M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/es/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/es/dev/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/es/dev/small__citation">Citation</a>
+<div id="mmarco/es/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/es/dev/small__metadata">Metadata</a>
+<div id="mmarco/es/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6786720
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
 <div class="dataset" id="mmarco/es/train" data-parent="mmarco">
 <h3><kbd class="ds-name select"><span class="str">"mmarco/es/train"</span></kbd></h3>
 
@@ -862,6 +1332,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/es/train__docpairs">docpairs</a>
+<div id="mmarco/es/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/es/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/es/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/es/train__citation">Citation</a>
 <div id="mmarco/es/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -898,6 +1405,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -1150,6 +1660,216 @@
 </div>
 
 <hr />
+<div class="dataset" id="mmarco/fr/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/fr/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into French. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/fr/dev/small__queries">queries</a>
+<div id="mmarco/fr/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/fr/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/fr/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/fr/dev/small__docs">docs</a>
+<div id="mmarco/fr/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/fr</a></p>
+<p>Language: <span class="lang-code">fr</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/fr/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/fr/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/fr/dev/small__qrels">qrels</a>
+<div id="mmarco/fr/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/fr/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/fr/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/fr/dev/small__scoreddocs">scoreddocs</a>
+<div id="mmarco/fr/dev/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6785763">6.8M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/fr/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/fr/dev/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/fr/dev/small__citation">Citation</a>
+<div id="mmarco/fr/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/fr/dev/small__metadata">Metadata</a>
+<div id="mmarco/fr/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6785763
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
 <div class="dataset" id="mmarco/fr/train" data-parent="mmarco">
 <h3><kbd class="ds-name select"><span class="str">"mmarco/fr/train"</span></kbd></h3>
 
@@ -1277,6 +1997,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/fr/train__docpairs">docpairs</a>
+<div id="mmarco/fr/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/fr/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/fr/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/fr/train__citation">Citation</a>
 <div id="mmarco/fr/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -1313,6 +2070,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -1565,6 +2325,216 @@
 </div>
 
 <hr />
+<div class="dataset" id="mmarco/id/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/id/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into Indonesian. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/id/dev/small__queries">queries</a>
+<div id="mmarco/id/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/id/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/id/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/id/dev/small__docs">docs</a>
+<div id="mmarco/id/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/id</a></p>
+<p>Language: <span class="lang-code">id</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/id/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/id/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/id/dev/small__qrels">qrels</a>
+<div id="mmarco/id/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/id/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/id/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/id/dev/small__scoreddocs">scoreddocs</a>
+<div id="mmarco/id/dev/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6841990">6.8M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/id/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/id/dev/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/id/dev/small__citation">Citation</a>
+<div id="mmarco/id/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/id/dev/small__metadata">Metadata</a>
+<div id="mmarco/id/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6841990
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
 <div class="dataset" id="mmarco/id/train" data-parent="mmarco">
 <h3><kbd class="ds-name select"><span class="str">"mmarco/id/train"</span></kbd></h3>
 
@@ -1692,6 +2662,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/id/train__docpairs">docpairs</a>
+<div id="mmarco/id/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/id/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/id/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/id/train__citation">Citation</a>
 <div id="mmarco/id/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -1728,6 +2735,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -1980,6 +2990,216 @@
 </div>
 
 <hr />
+<div class="dataset" id="mmarco/it/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/it/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into Italian. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/it/dev/small__queries">queries</a>
+<div id="mmarco/it/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/it/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/it/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/it/dev/small__docs">docs</a>
+<div id="mmarco/it/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/it</a></p>
+<p>Language: <span class="lang-code">it</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/it/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/it/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/it/dev/small__qrels">qrels</a>
+<div id="mmarco/it/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/it/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/it/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/it/dev/small__scoreddocs">scoreddocs</a>
+<div id="mmarco/it/dev/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6966491">7.0M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/it/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/it/dev/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/it/dev/small__citation">Citation</a>
+<div id="mmarco/it/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/it/dev/small__metadata">Metadata</a>
+<div id="mmarco/it/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6966491
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
 <div class="dataset" id="mmarco/it/train" data-parent="mmarco">
 <h3><kbd class="ds-name select"><span class="str">"mmarco/it/train"</span></kbd></h3>
 
@@ -2107,6 +3327,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/it/train__docpairs">docpairs</a>
+<div id="mmarco/it/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/it/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/it/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/it/train__citation">Citation</a>
 <div id="mmarco/it/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -2143,6 +3400,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -2388,6 +3648,386 @@
         }
       }
     }
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
+<div class="dataset" id="mmarco/pt/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/pt/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into Portuguese. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/pt/dev/small__queries">queries</a>
+<div id="mmarco/pt/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="7000">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small__docs">docs</a>
+<div id="mmarco/pt/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/pt</a></p>
+<p>Language: <span class="lang-code">pt</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small__qrels">qrels</a>
+<div id="mmarco/pt/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small__citation">Citation</a>
+<div id="mmarco/pt/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small__metadata">Metadata</a>
+<div id="mmarco/pt/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 7000
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
+<div class="dataset" id="mmarco/pt/dev/small/v1.1" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/pt/dev/small/v1.1"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev</a>, with queries and documents translated into Portuguese. </p> <p> Version 1.1 of this file includes manual corrections from the authorss of the translated files. <a href="https://github.com/unicamp-dl/mMARCO/issues/8#issuecomment-992810293">See discussion here</a>. It also removes some duplicated query IDs. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/pt/dev/small/v1.1__queries">queries</a>
+<div id="mmarco/pt/dev/small/v1.1__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/dev/small/v1.1 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small/v1.1__docs">docs</a>
+<div id="mmarco/pt/dev/small/v1.1__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/pt</a></p>
+<p>Language: <span class="lang-code">pt</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/dev/small/v1.1 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small/v1.1__qrels">qrels</a>
+<div id="mmarco/pt/dev/small/v1.1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">mmarco/pt/dev/small</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/dev/small/v1.1 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small/v1.1__scoreddocs">scoreddocs</a>
+<div id="mmarco/pt/dev/small/v1.1__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6976324">7.0M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/dev/small/v1.1 scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small/v1.1__citation">Citation</a>
+<div id="mmarco/pt/dev/small/v1.1__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/pt/dev/small/v1.1__metadata">Metadata</a>
+<div id="mmarco/pt/dev/small/v1.1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6976324
   }
 }</pre>
 </div>
@@ -2692,6 +4332,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/pt/train__docpairs">docpairs</a>
+<div id="mmarco/pt/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/pt/train__citation">Citation</a>
 <div id="mmarco/pt/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -2728,6 +4405,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -2862,6 +4542,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/pt/train/v1.1__docpairs">docpairs</a>
+<div id="mmarco/pt/train/v1.1__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+<p>Inherits docpairs from <a class="ds-ref">mmarco/pt/train</a></p>
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/pt/train/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/pt/train/v1.1 docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/pt/train/v1.1__citation">Citation</a>
 <div id="mmarco/pt/train/v1.1__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -2898,6 +4615,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -3150,6 +4870,216 @@
 </div>
 
 <hr />
+<div class="dataset" id="mmarco/ru/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/ru/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into Russian. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/ru/dev/small__queries">queries</a>
+<div id="mmarco/ru/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/ru/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/ru/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/ru/dev/small__docs">docs</a>
+<div id="mmarco/ru/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/ru</a></p>
+<p>Language: <span class="lang-code">ru</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/ru/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/ru/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/ru/dev/small__qrels">qrels</a>
+<div id="mmarco/ru/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/ru/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/ru/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/ru/dev/small__scoreddocs">scoreddocs</a>
+<div id="mmarco/ru/dev/small__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="6958739">7.0M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/ru/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/ru/dev/small scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/ru/dev/small__citation">Citation</a>
+<div id="mmarco/ru/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/ru/dev/small__metadata">Metadata</a>
+<div id="mmarco/ru/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 6958739
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
 <div class="dataset" id="mmarco/ru/train" data-parent="mmarco">
 <h3><kbd class="ds-name select"><span class="str">"mmarco/ru/train"</span></kbd></h3>
 
@@ -3277,6 +5207,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/ru/train__docpairs">docpairs</a>
+<div id="mmarco/ru/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/ru/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/ru/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/ru/train__citation">Citation</a>
 <div id="mmarco/ru/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -3313,6 +5280,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
@@ -3558,6 +5528,386 @@
         }
       }
     }
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
+<div class="dataset" id="mmarco/zh/dev/small" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/zh/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev/small</a>, with queries and documents translated into Chinese. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/zh/dev/small__queries">queries</a>
+<div id="mmarco/zh/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small__docs">docs</a>
+<div id="mmarco/zh/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/zh</a></p>
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small__qrels">qrels</a>
+<div id="mmarco/zh/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small__citation">Citation</a>
+<div id="mmarco/zh/dev/small__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small__metadata">Metadata</a>
+<div id="mmarco/zh/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
+<div class="dataset" id="mmarco/zh/dev/small/v1.1" data-parent="mmarco">
+<h3><kbd class="ds-name select"><span class="str">"mmarco/zh/dev/small/v1.1"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version of <a class="ds-ref">msmarco-passage/dev</a>, with queries and documents translated into Chinese. </p> <p> Version 1.1 of this file includes manual corrections from the authorss of the translated files. <a href="https://github.com/unicamp-dl/mMARCO/issues/8#issuecomment-992810293">See discussion here</a>. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="mmarco/zh/dev/small/v1.1__queries">queries</a>
+<div id="mmarco/zh/dev/small/v1.1__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <em>multiple/other/unknown</em></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/dev/small/v1.1 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small/v1.1__docs">docs</a>
+<div id="mmarco/zh/dev/small/v1.1__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">mmarco/zh</a></p>
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/dev/small/v1.1 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small/v1.1__qrels">qrels</a>
+<div id="mmarco/zh/dev/small/v1.1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">mmarco/zh/dev/small</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/dev/small/v1.1 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small/v1.1__scoreddocs">scoreddocs</a>
+<div id="mmarco/zh/dev/small/v1.1__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="1034597">1.0M</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/dev/small/v1.1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/dev/small/v1.1 scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small/v1.1__citation">Citation</a>
+<div id="mmarco/zh/dev/small/v1.1__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Bonifacio2021MMarco,
+    title={{mMARCO}: A Multilingual Version of {MS MARCO} Passage Ranking Dataset},
+    author={Luiz Henrique Bonifacio and Israel Campiotti and Roberto Lotufo and Rodrigo Nogueira},
+    year={2021},
+    journal={arXiv:2108.13897}
+}</cite>
+</div>
+
+<a class="tab" target="mmarco/zh/dev/small/v1.1__metadata">Metadata</a>
+<div id="mmarco/zh/dev/small/v1.1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 1034597
   }
 }</pre>
 </div>
@@ -3862,6 +6212,43 @@
 <p><i>No example available for PyTerrier</i></p></div></div>
 </div>
 
+<a class="tab" target="mmarco/zh/train__docpairs">docpairs</a>
+<div id="mmarco/zh/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="39780811">40M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;mmarco/zh/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> mmarco/zh/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
 <a class="tab" target="mmarco/zh/train__citation">Citation</a>
 <div id="mmarco/zh/train__citation" class="tab-content">
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bonifacio2021MMarco}</cite>
@@ -3898,6 +6285,9 @@
         }
       }
     }
+  },
+  "docpairs": {
+    "count": 39780811
   }
 }</pre>
 </div>
