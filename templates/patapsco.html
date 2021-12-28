@@ -1,0 +1,59 @@
+<p>
+<a href="https://github.com/hltcoe/patapsco">Patapsco</a> is a framework for running cross-language 
+infomration retrieval (CLIR) experiments developed by <a href="https://hltcoe.jhu.edu/">Human Language 
+Technlogy Center of Excellence (HLTCOE) at Johns Hopkins University. 
+</p>
+
+<p>
+To get started with Patapsco, see <a href="https://github.com/hltcoe/patapsco">this guide</a>.
+</p>
+
+<h2 class="underline">Basic Usage</h2>
+
+<p>
+Patapsco specify the source of the collection via config files or config dictionary in Python. 
+Please see <a href="https://github.com/hltcoe/patapsco/blob/master/samples/configs/irds_test.yml"> this 
+example config file</a> for reference. 
+</p>
+
+<p>
+For both <kbd>documents</kbd>, <kbd>topics</kbd> and <kbd>scores</kbd> sections, use <kbd>irds</kbd> 
+as the <kbd>format</kbd> in the <kbd>input</kbd> to tell Pataspco to use <kbd>ir_datasets</kbd> and 
+specify the dataset name at <kbd>path</kbd>. The <kbd>lang</kbd> value has to match the language 
+information provided by <kbd>ir_datasets</kbd>.
+</p>
+
+${hl('''
+documents:
+  input:
+    format: irds
+    lang: zho
+    path: clirmatrix/zh/bi139-base/en/dev
+  process:
+    inherit: text
+  output: true
+
+topics:
+  input:
+    format: irds
+    lang: eng
+    source: original
+    encoding: utf8
+    path: clirmatrix/zh/bi139-base/en/dev
+
+score:
+  input:
+    format: irds
+    path: clirmatrix/zh/bi139-base/en/dev
+''')}
+
+<p>
+This YAML config file can also be specified as a Python dictionary. Please refer to the 
+documentation of Pataspco for further information.
+</p>
+
+<h2 class="underline">Further Information</h2>
+
+<ul>  
+  <li><a href="https://github.com/hltcoe/patapsco">Patapsco GitHub</a></li>
+</ul>

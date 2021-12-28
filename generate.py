@@ -396,6 +396,7 @@ Install with pip:
 <li><a href="https://arxiv.org/pdf/2103.02280.pdf">ir_datasets SIGIR resource paper</a></li>
 <li>Using <kbd>ir_datasets</kbd> with&hellip;
 <a href="pyterrier.html">PyTerrier</a> &middot;
+<a href="patapsco.html">Patapsco</a> &middot;
 <a href="ir-measures.html">ir-measures</a> &middot;
 <a href="trec_eval.html">trec_eval</a> &middot;
 <a href="experimaestro.html">Experimaestro</a>
@@ -614,6 +615,9 @@ def generate_integrations(out_dir, version):
 
     template = Template(filename=os.path.join("templates", "pyterrier.html"))
     with page_template('pyterrier.html', out_dir, version, title='PyTerrier &amp; ir_datasets', include_irds_title=False) as out:
+        out.write(template.render(hl=hl))
+    template = Template(filename=os.path.join("templates", "patapsco.html"))
+    with page_template('patapsco.html', out_dir, version, title='Patapsco &amp; ir_datasets', include_irds_title=False) as out:
         out.write(template.render(hl=hl))
     template = Template(filename=os.path.join("templates", "ir-measures.html"))
     with page_template('ir-measures.html', out_dir, version, title='ir_measures &amp; ir_datasets', include_irds_title=False) as out:
