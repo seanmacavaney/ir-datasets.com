@@ -20,7 +20,9 @@ example config file</a> for reference.
 For both <kbd>documents</kbd>, <kbd>topics</kbd> and <kbd>scores</kbd> sections, use <kbd>irds</kbd> 
 as the <kbd>format</kbd> in the <kbd>input</kbd> subsection to tell Pataspco to use <kbd>ir_datasets</kbd> 
 and specify the dataset name at <kbd>path</kbd>. The <kbd>lang</kbd> value has to match the language 
-information provided by <kbd>ir_datasets</kbd>.
+information provided by <kbd>ir_datasets</kbd> through <kbd>dataset.docs_lang()</kbd> and
+<kbd>dataset.queries_lang()</kbd>. Note that Patapsco uses the 3-letter ISO 639-3 language codes,
+whereas ir_datasets provides two-letter ISO 639-1 language codes.
 </p>
 
 ${hl('''
@@ -51,6 +53,19 @@ score:
 This YAML config file can also be specified as a Python dictionary. Please refer to the 
 documentation of Pataspco for further information.
 </p>
+
+<table>
+<tr><th>Patapsco's...</th><th>Corresponds to...</th><th>Notes</th></tr>
+<tr><td><kbd>documents</kbd></td><td><kbd>docs</kbd></td><td></td></tr>
+<tr><td><kbd>documents.input.path</kbd></td><td>dataset's ID</td><td></td></tr>
+<tr><td><kbd>documents.input.lang</kbd></td><td><kbd>dataset.docs_lang()</kbd></td><td>Need to convert from ISO 639-1 to ISO 639-3</td></tr>
+<tr><td><kbd>documents.process.inherit</kbd></td><td>the doc's field representing the text to use</td><td></td></tr>
+<tr><td><kbd>topics</kbd></td><td><kbd>queries</kbd></td><td></td></tr>
+<tr><td><kbd>topics.input.path</kbd></td><td>dataset's ID</td><td></td></tr>
+<tr><td><kbd>topics.input.lang</kbd></td><td><kbd>dataset.queries_lang()</kbd></td><td>Need to convert from ISO 639-1 to ISO 639-3</td></tr>
+<tr><td><kbd>score</kbd></td><td><kbd>qrels</kbd></td><td></td></tr>
+<tr><td><kbd>score.input.path</kbd></td><td>dataset's ID</td><td></td></tr>
+</table>
 
 <h2 class="underline">Further Information</h2>
 
