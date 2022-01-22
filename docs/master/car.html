@@ -32,6 +32,7 @@
 <li><a href="#car/v1.5/trec-y1"><kbd><span class="prefix">car</span>/v1.5/trec-y1</kbd></a></li>
 <li><a href="#car/v1.5/trec-y1/auto"><kbd><span class="prefix">car</span>/v1.5/trec-y1/auto</kbd></a></li>
 <li><a href="#car/v1.5/trec-y1/manual"><kbd><span class="prefix">car</span>/v1.5/trec-y1/manual</kbd></a></li>
+<li><a href="#car/v2.0"><kbd><span class="prefix">car</span>/v2.0</kbd></a></li>
 </ol>
 <div id="Downloads">
 </div>
@@ -1916,6 +1917,89 @@
           "3": 2461,
           "-2": 42
         }
+      }
+    }
+  }
+}</pre>
+</div>
+
+</div>
+
+<hr />
+<div class="dataset" id="car/v2.0" data-parent="car">
+<h3><kbd class="ds-name select"><span class="str">"car/v2.0"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version 2.0 of the TREC CAR dataset. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="car/v2.0__docs">docs</a>
+<div id="car/v2.0__docs" class="tab-content">
+<span class="ds-count"><kbd title="29794697">30M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;car/v2.0&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> car/v2.0 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:car/v2.0&#39;</span><span class="p">)</span>
+<span class="c1"># Index car/v2.0</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/car_v2.0&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="car/v2.0__citation">Citation</a>
+<div id="car/v2.0__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dietz2017Car}</cite>
+<p>Bibtex:</p>
+<cite class="select">@article{Dietz2017Car,
+  title={{TREC CAR}: A Data Set for Complex Answer Retrieval},
+  author={Laura Dietz and Ben Gamari},
+  year={2017},
+  note={Version 1.5},
+  url={http://trec-car.cs.unh.edu}
+}</cite>
+</div>
+
+<a class="tab" target="car/v2.0__metadata">Metadata</a>
+<div id="car/v2.0__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 29794697,
+    "fields": {
+      "doc_id": {
+        "max_len": 40,
+        "common_prefix": ""
       }
     }
   }

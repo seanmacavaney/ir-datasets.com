@@ -1074,7 +1074,7 @@
 <div id="msmarco-passage-v2/trec-dl-2021/judged__queries" class="tab-content">
 <span class="ds-count"><kbd title="53">53</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <em>multiple/other/unknown</em></p>
+<p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1105,7 +1105,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage-v2/trec-dl-2021/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__docs">docs</a>
@@ -1197,7 +1205,21 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage-v2/trec-dl-2021/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">AP</span><span class="o">@</span><span class="mi">100</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">P</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__scoreddocs">scoreddocs</a>
