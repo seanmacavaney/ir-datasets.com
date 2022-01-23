@@ -1483,8 +1483,10 @@ jobs:
         python merge_dlc.py
     - uses: EndBug/add-and-commit@v8
       with:
-        message: 'from verify_downloads'
         add: 'docs/dlc/*.json'
+        message: 'from verify_downloads'
+        committer_name: GitHub Actions
+        committer_email: actions@github.com
     - run: |
         git checkout master
         git merge -s recursive -Xtheirs --squash verify-downloads-${{github.run_number}} --allow-unrelated-histories
