@@ -12,8 +12,18 @@ on:
 
 jobs:
 
+  create_branch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: verify-downloads-${{github.run_number}}
+    - run: git checkout -b verify-downloads-${{github.run_number}} --track
+    - uses: EndBug/add-and-commit@v8
+
   cranfield:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cranfield'"
+    needs: [create_branch]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -23,9 +33,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: ir-datasets.com
-    - run: |
-        cd ir-datasets.com
-        git checkout -b verify-downloads-${{github.run_number}} --track
+        ref: verify-downloads-${{github.run_number}}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -52,6 +60,7 @@ jobs:
 
   vaswani:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'vaswani'"
+    needs: [create_branch]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -61,6 +70,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
     - run: |
         cd ir-datasets.com
         git checkout -b verify-downloads-${{github.run_number}} --track
