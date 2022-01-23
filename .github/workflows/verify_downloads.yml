@@ -19,6 +19,7 @@ jobs:
     - run: git checkout -b verify-downloads-${{github.run_number}} --track
     - run: 'cat ${{github.run_number}} > docs/dlc/_placeholder.txt'
     - uses: EndBug/add-and-commit@v8
+      with:
         message: 'touch'
         add: 'docs/dlc/_placeholder.txt'
 
