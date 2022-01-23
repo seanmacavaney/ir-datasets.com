@@ -55,6 +55,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^antique/" --output "../ir-datasets.com/docs/dlc/antique.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: antique'
@@ -88,6 +90,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^aol-ia/" --output "../ir-datasets.com/docs/dlc/aol-ia.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: aol-ia'
@@ -121,6 +125,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^aquaint/" --output "../ir-datasets.com/docs/dlc/aquaint.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: aquaint'
@@ -154,6 +160,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^argsme/" --output "../ir-datasets.com/docs/dlc/argsme.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: argsme'
@@ -187,6 +195,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^beir/" --output "../ir-datasets.com/docs/dlc/beir.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: beir'
@@ -220,6 +230,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^c4/" --output "../ir-datasets.com/docs/dlc/c4.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: c4'
@@ -253,6 +265,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^car/" --output "../ir-datasets.com/docs/dlc/car.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: car'
@@ -286,6 +300,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clinicaltrials/" --output "../ir-datasets.com/docs/dlc/clinicaltrials.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clinicaltrials'
@@ -319,6 +335,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clirmatrix/" --output "../ir-datasets.com/docs/dlc/clirmatrix.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clirmatrix'
@@ -352,6 +370,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clueweb09/" --output "../ir-datasets.com/docs/dlc/clueweb09.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clueweb09'
@@ -385,6 +405,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clueweb12/" --output "../ir-datasets.com/docs/dlc/clueweb12.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clueweb12'
@@ -418,6 +440,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^codesearchnet/" --output "../ir-datasets.com/docs/dlc/codesearchnet.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: codesearchnet'
@@ -451,6 +475,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^cord19/" --output "../ir-datasets.com/docs/dlc/cord19.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: cord19'
@@ -484,6 +510,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^cranfield/" --output "../ir-datasets.com/docs/dlc/cranfield.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: cranfield'
@@ -517,6 +545,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^dpr-w100/" --output "../ir-datasets.com/docs/dlc/dpr-w100.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: dpr-w100'
@@ -550,6 +580,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^gov/" --output "../ir-datasets.com/docs/dlc/gov.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: gov'
@@ -583,6 +615,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^gov2/" --output "../ir-datasets.com/docs/dlc/gov2.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: gov2'
@@ -616,6 +650,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^highwire/" --output "../ir-datasets.com/docs/dlc/highwire.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: highwire'
@@ -649,6 +685,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^medline/" --output "../ir-datasets.com/docs/dlc/medline.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: medline'
@@ -682,6 +720,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^mmarco/" --output "../ir-datasets.com/docs/dlc/mmarco.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: mmarco'
@@ -715,6 +755,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^mr-tydi/" --output "../ir-datasets.com/docs/dlc/mr-tydi.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: mr-tydi'
@@ -748,6 +790,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-document/" --output "../ir-datasets.com/docs/dlc/msmarco-document.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-document'
@@ -781,6 +825,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-document-v2/" --output "../ir-datasets.com/docs/dlc/msmarco-document-v2.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-document-v2'
@@ -814,6 +860,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-passage/" --output "../ir-datasets.com/docs/dlc/msmarco-passage.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-passage'
@@ -847,6 +895,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-passage-v2/" --output "../ir-datasets.com/docs/dlc/msmarco-passage-v2.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-passage-v2'
@@ -880,6 +930,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-qna/" --output "../ir-datasets.com/docs/dlc/msmarco-qna.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-qna'
@@ -913,6 +965,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^natural-questions/" --output "../ir-datasets.com/docs/dlc/natural-questions.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: natural-questions'
@@ -946,6 +1000,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^nfcorpus/" --output "../ir-datasets.com/docs/dlc/nfcorpus.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: nfcorpus'
@@ -979,6 +1035,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^nyt/" --output "../ir-datasets.com/docs/dlc/nyt.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: nyt'
@@ -1012,6 +1070,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^pmc/" --output "../ir-datasets.com/docs/dlc/pmc.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: pmc'
@@ -1045,6 +1105,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^touche/" --output "../ir-datasets.com/docs/dlc/touche.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: touche'
@@ -1078,6 +1140,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-arabic/" --output "../ir-datasets.com/docs/dlc/trec-arabic.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-arabic'
@@ -1111,6 +1175,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-fair-2021/" --output "../ir-datasets.com/docs/dlc/trec-fair-2021.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-fair-2021'
@@ -1144,6 +1210,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-mandarin/" --output "../ir-datasets.com/docs/dlc/trec-mandarin.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-mandarin'
@@ -1177,6 +1245,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-robust04/" --output "../ir-datasets.com/docs/dlc/trec-robust04.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-robust04'
@@ -1210,6 +1280,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-spanish/" --output "../ir-datasets.com/docs/dlc/trec-spanish.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-spanish'
@@ -1243,6 +1315,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^tripclick/" --output "../ir-datasets.com/docs/dlc/tripclick.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: tripclick'
@@ -1276,6 +1350,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^tweets2013-ia/" --output "../ir-datasets.com/docs/dlc/tweets2013-ia.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: tweets2013-ia'
@@ -1309,6 +1385,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^vaswani/" --output "../ir-datasets.com/docs/dlc/vaswani.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: vaswani'
@@ -1342,6 +1420,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^wapo/" --output "../ir-datasets.com/docs/dlc/wapo.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: wapo'
@@ -1375,6 +1455,8 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^wikir/" --output "../ir-datasets.com/docs/dlc/wikir.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: wikir'
