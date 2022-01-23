@@ -116,5 +116,6 @@ jobs:
     - run: |
         git checkout master
         git merge -s recursive -Xtheirs --squash verify-downloads-${{github.run_number}} --allow-unrelated-histories
+        git commit -m verify-downloads-${{github.run_number}}
         git push origin master
         git push origin --delete verify-downloads-${{github.run_number}}
