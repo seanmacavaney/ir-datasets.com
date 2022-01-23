@@ -1,1 +1,1 @@
-[{"name": "cranfield/main", "url": "http://ir.dcs.gla.ac.uk/resources/test_collections/cran/cran.tar.gz", "time": "2022-01-23T19:09:54.511470", "duration": 1.3481354713439941, "result": "PASS", "fail_messagae": null, "md5": "1730f7be572d95a5a4b56c59a7b900a5", "size": 506960}]
+[{"name": "cranfield/main", "url": "http://ir.dcs.gla.ac.uk/resources/test_collections/cran/cran.tar.gz", "time": "2022-01-23T20:29:18.559470", "duration": 1.0349116325378418, "result": "PASS", "fail_messagae": null, "md5": "1730f7be572d95a5a4b56c59a7b900a5", "size": 506960}]
