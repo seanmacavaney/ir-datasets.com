@@ -25,7 +25,7 @@ jobs:
         path: ir-datasets.com
     - run: |
         cd ir-datasets.com
-        git checkout verify-downloads-${{github.run_number}}
+        git checkout -b verify-downloads-${{github.run_number}}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -67,7 +67,7 @@ jobs:
         path: ir-datasets.com
     - run: |
         cd ir-datasets.com
-        git checkout verify-downloads-${{github.run_number}}
+        git checkout -b verify-downloads-${{github.run_number}}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -102,7 +102,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: git checkout verify-downloads-${{github.run_number}}
+    - run: git checkout -b verify-downloads-${{github.run_number}}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
