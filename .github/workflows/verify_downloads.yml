@@ -36,13 +36,14 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^cranfield/" --output "../ir-datasets.com/docs/dlc/cranfield.json" --randdelay 60
+        python -m test.downloads --filter "^cranfield/" --output "../ir-datasets.com/docs/dlc/cranfield.json"
     - uses: EndBug/add-and-commit@v8
       if: always() # don't skip if the Test step fails (defeats the whole purpose)
       with:
         message: 'from verify_downloads'
         add: 'docs/*.json'
         cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
     - name: Upload artifact
       if: always() # don't skip if the Test step fails (defeats the whole purpose)
       uses: actions/upload-artifact@v2
