@@ -40,11 +40,13 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^cranfield/" --output "../ir-datasets.com/docs/dlc/cranfield.json"
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
     - uses: EndBug/add-and-commit@v8
       if: always() # don't skip if the Test step fails (defeats the whole purpose)
       with:
         message: 'from verify_downloads'
-        add: 'docs/*.json'
+        add: 'docs/dlc/*.json'
         cwd: './ir-datasets.com/'
         pull: '--rebase --autostash'
 
@@ -76,11 +78,13 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^vaswani/" --output "../ir-datasets.com/docs/dlc/vaswani.json"
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
     - uses: EndBug/add-and-commit@v8
       if: always() # don't skip if the Test step fails (defeats the whole purpose)
       with:
         message: 'from verify_downloads'
-        add: 'docs/*.json'
+        add: 'docs/dlc/*.json'
         cwd: './ir-datasets.com/'
         pull: '--rebase --autostash'
 
@@ -90,7 +94,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: git checkout -b verify-downloads-${{github.run_number}} --track
+      ref: verify-downloads-${{github.run_number}}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -98,6 +102,4 @@ jobs:
     - uses: EndBug/add-and-commit@v8
       with:
         message: 'from verify_downloads'
-        add: 'docs/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
+        add: 'docs/dlc/*.json'
