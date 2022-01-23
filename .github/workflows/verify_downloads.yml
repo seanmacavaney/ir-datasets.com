@@ -25,7 +25,7 @@ jobs:
         path: ir-datasets.com
     - run: |
         cd ir-datasets.com
-        git checkout -b verify-downloads-${{github.run_number}}
+        git checkout -b verify-downloads-${{github.run_number}} --track
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -47,12 +47,6 @@ jobs:
         add: 'docs/*.json'
         cwd: './ir-datasets.com/'
         pull: '--rebase --autostash'
-    - name: Upload artifact
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      uses: actions/upload-artifact@v2
-      with:
-        name: "cranfield.json"
-        path: "ir-datasets.com/docs/dlc/cranfield.json"
 
   vaswani:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'vaswani'"
@@ -67,7 +61,7 @@ jobs:
         path: ir-datasets.com
     - run: |
         cd ir-datasets.com
-        git checkout -b verify-downloads-${{github.run_number}}
+        git checkout -b verify-downloads-${{github.run_number}} --track
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -89,12 +83,6 @@ jobs:
         add: 'docs/*.json'
         cwd: './ir-datasets.com/'
         pull: '--rebase --autostash'
-    - name: Upload artifact
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      uses: actions/upload-artifact@v2
-      with:
-        name: "vaswani.json"
-        path: "ir-datasets.com/docs/dlc/vaswani.json"
 
   merge_dlc:
     if: ${{ always() }}
@@ -102,7 +90,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: git checkout -b verify-downloads-${{github.run_number}}
+    - run: git checkout -b verify-downloads-${{github.run_number}} --track
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
