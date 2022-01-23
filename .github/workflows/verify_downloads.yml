@@ -23,6 +23,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: ir-datasets.com
+    - run: |
+        cd ir-datasets.com
+        git checkout verify-downloads-${{github.run_number}}
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -49,4 +52,64 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: "cranfield.json"
-        path: "ir-datasets.com/docs/dlc/cranfield."
+        path: "ir-datasets.com/docs/dlc/cranfield.json"
+
+  vaswani:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'vaswani'"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+    - run: |
+        cd ir-datasets.com
+        git checkout verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^vaswani/" --output "../ir-datasets.com/docs/dlc/vaswani.json"
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+    - name: Upload artifact
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      uses: actions/upload-artifact@v2
+      with:
+        name: "vaswani.json"
+        path: "ir-datasets.com/docs/dlc/vaswani.json"
+
+  merge_dlc:
+    if: ${{ always() }}
+    needs: [cranfield, vaswani]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: git checkout verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: python merge_dlc.py
+    - uses: EndBug/add-and-commit@v8
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
