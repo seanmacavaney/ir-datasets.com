@@ -113,3 +113,8 @@ jobs:
       with:
         message: 'from verify_downloads'
         add: 'docs/dlc/*.json'
+    - run: |
+        git checkout master
+        git merge --squash verify-downloads-${{github.run_number}}
+        git commit -m verify-downloads-${{github.run_number}}
+    - uses: EndBug/add-and-commit@v8
