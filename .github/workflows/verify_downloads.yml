@@ -650,7 +650,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^highwire/" --output "../ir-datasets.com/docs/dlc/highwire.json" --randdelay 60
+        python -m test.downloads --filter "^highwire/" --output "../ir-datasets.com/docs/dlc/highwire.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
@@ -685,7 +685,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^medline/" --output "../ir-datasets.com/docs/dlc/medline.json" --randdelay 60
+        python -m test.downloads --filter "^medline/" --output "../ir-datasets.com/docs/dlc/medline.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
@@ -720,7 +720,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^mmarco/" --output "../ir-datasets.com/docs/dlc/mmarco.json" --randdelay 60
+        python -m test.downloads --filter "^mmarco/" --output "../ir-datasets.com/docs/dlc/mmarco.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
@@ -965,7 +965,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^natural-questions/" --output "../ir-datasets.com/docs/dlc/natural-questions.json" --randdelay 60
+        python -m test.downloads --filter "^natural-questions/" --output "../ir-datasets.com/docs/dlc/natural-questions.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
