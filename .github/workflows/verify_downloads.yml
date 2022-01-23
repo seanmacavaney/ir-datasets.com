@@ -22,8 +22,8 @@ jobs:
       with:
         add: 'docs/dlc/_placeholder.txt'
         message: 'touch'
-        committer_name: GitHub Actions
-        committer_email: actions@github.com
+        author_name: GitHub Actions
+        author_email: actions@github.com
 
 
 
@@ -1487,8 +1487,8 @@ jobs:
       with:
         add: 'docs/dlc/*.json'
         message: 'from verify_downloads'
-        committer_name: GitHub Actions
-        committer_email: actions@github.com
+        author_name: GitHub Actions
+        author_email: actions@github.com
     - run: |
         git checkout master
         git merge -s recursive -Xtheirs --squash verify-downloads-${{github.run_number}} --allow-unrelated-histories
