@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: verify-downloads-${{github.run_number}}
     - run: git checkout -b verify-downloads-${{github.run_number}} --track
     - uses: EndBug/add-and-commit@v8
 
