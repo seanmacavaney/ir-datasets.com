@@ -18,8 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir-datasets
-        ref: 'master'
+        repository: allenai/ir_datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
