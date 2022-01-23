@@ -23,6 +23,491 @@ jobs:
         message: 'touch'
         add: 'docs/dlc/_placeholder.txt'
 
+
+
+
+
+  antique:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'antique'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^antique/" --output "../ir-datasets.com/docs/dlc/antique.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  aol-ia:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aol-ia'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^aol-ia/" --output "../ir-datasets.com/docs/dlc/aol-ia.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  aquaint:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aquaint'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^aquaint/" --output "../ir-datasets.com/docs/dlc/aquaint.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  argsme:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'argsme'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^argsme/" --output "../ir-datasets.com/docs/dlc/argsme.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  beir:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'beir'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^beir/" --output "../ir-datasets.com/docs/dlc/beir.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  c4:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'c4'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^c4/" --output "../ir-datasets.com/docs/dlc/c4.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  car:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'car'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^car/" --output "../ir-datasets.com/docs/dlc/car.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  clinicaltrials:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clinicaltrials'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^clinicaltrials/" --output "../ir-datasets.com/docs/dlc/clinicaltrials.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  clirmatrix:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clirmatrix'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^clirmatrix/" --output "../ir-datasets.com/docs/dlc/clirmatrix.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  clueweb09:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb09'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^clueweb09/" --output "../ir-datasets.com/docs/dlc/clueweb09.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  clueweb12:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb12'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^clueweb12/" --output "../ir-datasets.com/docs/dlc/clueweb12.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  codesearchnet:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'codesearchnet'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^codesearchnet/" --output "../ir-datasets.com/docs/dlc/codesearchnet.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  cord19:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cord19'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^cord19/" --output "../ir-datasets.com/docs/dlc/cord19.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
   cranfield:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cranfield'"
     needs: [create_branch]
@@ -49,7 +534,895 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^cranfield/" --output "../ir-datasets.com/docs/dlc/cranfield.json"
+        python -m test.downloads --filter "^cranfield/" --output "../ir-datasets.com/docs/dlc/cranfield.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  dpr-w100:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'dpr-w100'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^dpr-w100/" --output "../ir-datasets.com/docs/dlc/dpr-w100.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  gov:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^gov/" --output "../ir-datasets.com/docs/dlc/gov.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  gov2:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov2'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^gov2/" --output "../ir-datasets.com/docs/dlc/gov2.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  highwire:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'highwire'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^highwire/" --output "../ir-datasets.com/docs/dlc/highwire.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  medline:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'medline'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^medline/" --output "../ir-datasets.com/docs/dlc/medline.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  mmarco:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mmarco'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^mmarco/" --output "../ir-datasets.com/docs/dlc/mmarco.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  mr-tydi:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mr-tydi'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^mr-tydi/" --output "../ir-datasets.com/docs/dlc/mr-tydi.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  msmarco-document:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^msmarco-document/" --output "../ir-datasets.com/docs/dlc/msmarco-document.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  msmarco-document-v2:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document-v2'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^msmarco-document-v2/" --output "../ir-datasets.com/docs/dlc/msmarco-document-v2.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  msmarco-passage:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^msmarco-passage/" --output "../ir-datasets.com/docs/dlc/msmarco-passage.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  msmarco-passage-v2:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage-v2'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^msmarco-passage-v2/" --output "../ir-datasets.com/docs/dlc/msmarco-passage-v2.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  msmarco-qna:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-qna'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^msmarco-qna/" --output "../ir-datasets.com/docs/dlc/msmarco-qna.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  natural-questions:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'natural-questions'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^natural-questions/" --output "../ir-datasets.com/docs/dlc/natural-questions.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  nfcorpus:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nfcorpus'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^nfcorpus/" --output "../ir-datasets.com/docs/dlc/nfcorpus.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  nyt:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nyt'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^nyt/" --output "../ir-datasets.com/docs/dlc/nyt.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  pmc:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'pmc'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^pmc/" --output "../ir-datasets.com/docs/dlc/pmc.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  touche:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'touche'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^touche/" --output "../ir-datasets.com/docs/dlc/touche.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  trec-arabic:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-arabic'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^trec-arabic/" --output "../ir-datasets.com/docs/dlc/trec-arabic.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  trec-fair-2021:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-fair-2021'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^trec-fair-2021/" --output "../ir-datasets.com/docs/dlc/trec-fair-2021.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  trec-mandarin:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-mandarin'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^trec-mandarin/" --output "../ir-datasets.com/docs/dlc/trec-mandarin.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  trec-robust04:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-robust04'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^trec-robust04/" --output "../ir-datasets.com/docs/dlc/trec-robust04.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  trec-spanish:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-spanish'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^trec-spanish/" --output "../ir-datasets.com/docs/dlc/trec-spanish.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  tripclick:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tripclick'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^tripclick/" --output "../ir-datasets.com/docs/dlc/tripclick.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  tweets2013-ia:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tweets2013-ia'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^tweets2013-ia/" --output "../ir-datasets.com/docs/dlc/tweets2013-ia.json" --randdelay 60
         cd ../ir-datasets.com/
         git pull --rebase --autostash
     - uses: EndBug/add-and-commit@v8
@@ -86,7 +1459,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^vaswani/" --output "../ir-datasets.com/docs/dlc/vaswani.json"
+        python -m test.downloads --filter "^vaswani/" --output "../ir-datasets.com/docs/dlc/vaswani.json" --randdelay 60
         cd ../ir-datasets.com/
         git pull --rebase --autostash
     - uses: EndBug/add-and-commit@v8
@@ -97,9 +1470,87 @@ jobs:
         cwd: './ir-datasets.com/'
         pull: '--rebase --autostash'
 
+  wapo:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wapo'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^wapo/" --output "../ir-datasets.com/docs/dlc/wapo.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+  wikir:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikir'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^wikir/" --output "../ir-datasets.com/docs/dlc/wikir.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git pull --rebase --autostash
+    - uses: EndBug/add-and-commit@v8
+      if: always() # don't skip if the Test step fails (defeats the whole purpose)
+      with:
+        message: 'from verify_downloads'
+        add: 'docs/dlc/*.json'
+        cwd: './ir-datasets.com/'
+        pull: '--rebase --autostash'
+
+
+
+
+
   merge_dlc:
     if: ${{ always() }}
-    needs: [cranfield, vaswani]
+    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codesearchnet, cord19, cranfield, dpr-w100, gov, gov2, highwire, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, nfcorpus, nyt, pmc, touche, trec-arabic, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikir]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
