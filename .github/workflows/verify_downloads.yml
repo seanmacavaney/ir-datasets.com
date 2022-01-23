@@ -73,9 +73,6 @@ jobs:
       with:
         path: ir-datasets.com
         ref: verify-downloads-${{github.run_number}}
-    - run: |
-        cd ir-datasets.com
-        git checkout -b verify-downloads-${{github.run_number}} --track
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
