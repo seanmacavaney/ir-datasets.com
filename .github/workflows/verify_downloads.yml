@@ -20,8 +20,10 @@ jobs:
     - run: 'echo ${{github.run_number}} > docs/dlc/_placeholder.txt'
     - uses: EndBug/add-and-commit@v8
       with:
-        message: 'touch'
         add: 'docs/dlc/_placeholder.txt'
+        message: 'touch'
+        author_name: GitHub Actions
+        author_email: actions@github.com
 
 
 
@@ -55,15 +57,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^antique/" --output "../ir-datasets.com/docs/dlc/antique.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: antique'
+        git push
   aol-ia:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aol-ia'"
     needs: [create_branch]
@@ -92,15 +91,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^aol-ia/" --output "../ir-datasets.com/docs/dlc/aol-ia.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: aol-ia'
+        git push
   aquaint:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aquaint'"
     needs: [create_branch]
@@ -129,15 +125,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^aquaint/" --output "../ir-datasets.com/docs/dlc/aquaint.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: aquaint'
+        git push
   argsme:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'argsme'"
     needs: [create_branch]
@@ -166,15 +159,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^argsme/" --output "../ir-datasets.com/docs/dlc/argsme.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: argsme'
+        git push
   beir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'beir'"
     needs: [create_branch]
@@ -203,15 +193,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^beir/" --output "../ir-datasets.com/docs/dlc/beir.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: beir'
+        git push
   c4:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'c4'"
     needs: [create_branch]
@@ -240,15 +227,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^c4/" --output "../ir-datasets.com/docs/dlc/c4.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: c4'
+        git push
   car:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'car'"
     needs: [create_branch]
@@ -277,15 +261,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^car/" --output "../ir-datasets.com/docs/dlc/car.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: car'
+        git push
   clinicaltrials:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clinicaltrials'"
     needs: [create_branch]
@@ -314,15 +295,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clinicaltrials/" --output "../ir-datasets.com/docs/dlc/clinicaltrials.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: clinicaltrials'
+        git push
   clirmatrix:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clirmatrix'"
     needs: [create_branch]
@@ -351,15 +329,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clirmatrix/" --output "../ir-datasets.com/docs/dlc/clirmatrix.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: clirmatrix'
+        git push
   clueweb09:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb09'"
     needs: [create_branch]
@@ -388,15 +363,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clueweb09/" --output "../ir-datasets.com/docs/dlc/clueweb09.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: clueweb09'
+        git push
   clueweb12:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb12'"
     needs: [create_branch]
@@ -425,15 +397,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^clueweb12/" --output "../ir-datasets.com/docs/dlc/clueweb12.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: clueweb12'
+        git push
   codesearchnet:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'codesearchnet'"
     needs: [create_branch]
@@ -462,15 +431,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^codesearchnet/" --output "../ir-datasets.com/docs/dlc/codesearchnet.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: codesearchnet'
+        git push
   cord19:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cord19'"
     needs: [create_branch]
@@ -499,15 +465,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^cord19/" --output "../ir-datasets.com/docs/dlc/cord19.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: cord19'
+        git push
   cranfield:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cranfield'"
     needs: [create_branch]
@@ -536,15 +499,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^cranfield/" --output "../ir-datasets.com/docs/dlc/cranfield.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: cranfield'
+        git push
   dpr-w100:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'dpr-w100'"
     needs: [create_branch]
@@ -573,15 +533,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^dpr-w100/" --output "../ir-datasets.com/docs/dlc/dpr-w100.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: dpr-w100'
+        git push
   gov:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov'"
     needs: [create_branch]
@@ -610,15 +567,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^gov/" --output "../ir-datasets.com/docs/dlc/gov.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: gov'
+        git push
   gov2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov2'"
     needs: [create_branch]
@@ -647,15 +601,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^gov2/" --output "../ir-datasets.com/docs/dlc/gov2.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: gov2'
+        git push
   highwire:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'highwire'"
     needs: [create_branch]
@@ -682,17 +633,14 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^highwire/" --output "../ir-datasets.com/docs/dlc/highwire.json" --randdelay 60
+        python -m test.downloads --filter "^highwire/" --output "../ir-datasets.com/docs/dlc/highwire.json"
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: highwire'
+        git push
   medline:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'medline'"
     needs: [create_branch]
@@ -719,17 +667,14 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^medline/" --output "../ir-datasets.com/docs/dlc/medline.json" --randdelay 60
+        python -m test.downloads --filter "^medline/" --output "../ir-datasets.com/docs/dlc/medline.json"
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: medline'
+        git push
   mmarco:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mmarco'"
     needs: [create_branch]
@@ -756,17 +701,14 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^mmarco/" --output "../ir-datasets.com/docs/dlc/mmarco.json" --randdelay 60
+        python -m test.downloads --filter "^mmarco/" --output "../ir-datasets.com/docs/dlc/mmarco.json"
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: mmarco'
+        git push
   mr-tydi:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mr-tydi'"
     needs: [create_branch]
@@ -795,15 +737,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^mr-tydi/" --output "../ir-datasets.com/docs/dlc/mr-tydi.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: mr-tydi'
+        git push
   msmarco-document:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document'"
     needs: [create_branch]
@@ -832,15 +771,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-document/" --output "../ir-datasets.com/docs/dlc/msmarco-document.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: msmarco-document'
+        git push
   msmarco-document-v2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document-v2'"
     needs: [create_branch]
@@ -869,15 +805,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-document-v2/" --output "../ir-datasets.com/docs/dlc/msmarco-document-v2.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: msmarco-document-v2'
+        git push
   msmarco-passage:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage'"
     needs: [create_branch]
@@ -906,15 +839,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-passage/" --output "../ir-datasets.com/docs/dlc/msmarco-passage.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: msmarco-passage'
+        git push
   msmarco-passage-v2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage-v2'"
     needs: [create_branch]
@@ -943,15 +873,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-passage-v2/" --output "../ir-datasets.com/docs/dlc/msmarco-passage-v2.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: msmarco-passage-v2'
+        git push
   msmarco-qna:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-qna'"
     needs: [create_branch]
@@ -980,15 +907,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-qna/" --output "../ir-datasets.com/docs/dlc/msmarco-qna.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: msmarco-qna'
+        git push
   natural-questions:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'natural-questions'"
     needs: [create_branch]
@@ -1015,17 +939,14 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^natural-questions/" --output "../ir-datasets.com/docs/dlc/natural-questions.json" --randdelay 60
+        python -m test.downloads --filter "^natural-questions/" --output "../ir-datasets.com/docs/dlc/natural-questions.json"
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: natural-questions'
+        git push
   nfcorpus:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nfcorpus'"
     needs: [create_branch]
@@ -1054,15 +975,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^nfcorpus/" --output "../ir-datasets.com/docs/dlc/nfcorpus.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: nfcorpus'
+        git push
   nyt:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nyt'"
     needs: [create_branch]
@@ -1091,15 +1009,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^nyt/" --output "../ir-datasets.com/docs/dlc/nyt.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: nyt'
+        git push
   pmc:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'pmc'"
     needs: [create_branch]
@@ -1128,15 +1043,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^pmc/" --output "../ir-datasets.com/docs/dlc/pmc.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: pmc'
+        git push
   touche:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'touche'"
     needs: [create_branch]
@@ -1165,15 +1077,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^touche/" --output "../ir-datasets.com/docs/dlc/touche.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: touche'
+        git push
   trec-arabic:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-arabic'"
     needs: [create_branch]
@@ -1202,15 +1111,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-arabic/" --output "../ir-datasets.com/docs/dlc/trec-arabic.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: trec-arabic'
+        git push
   trec-fair-2021:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-fair-2021'"
     needs: [create_branch]
@@ -1239,15 +1145,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-fair-2021/" --output "../ir-datasets.com/docs/dlc/trec-fair-2021.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: trec-fair-2021'
+        git push
   trec-mandarin:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-mandarin'"
     needs: [create_branch]
@@ -1276,15 +1179,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-mandarin/" --output "../ir-datasets.com/docs/dlc/trec-mandarin.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: trec-mandarin'
+        git push
   trec-robust04:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-robust04'"
     needs: [create_branch]
@@ -1313,15 +1213,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-robust04/" --output "../ir-datasets.com/docs/dlc/trec-robust04.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: trec-robust04'
+        git push
   trec-spanish:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-spanish'"
     needs: [create_branch]
@@ -1350,15 +1247,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^trec-spanish/" --output "../ir-datasets.com/docs/dlc/trec-spanish.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: trec-spanish'
+        git push
   tripclick:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tripclick'"
     needs: [create_branch]
@@ -1387,15 +1281,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^tripclick/" --output "../ir-datasets.com/docs/dlc/tripclick.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: tripclick'
+        git push
   tweets2013-ia:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tweets2013-ia'"
     needs: [create_branch]
@@ -1424,15 +1315,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^tweets2013-ia/" --output "../ir-datasets.com/docs/dlc/tweets2013-ia.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: tweets2013-ia'
+        git push
   vaswani:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'vaswani'"
     needs: [create_branch]
@@ -1461,15 +1349,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^vaswani/" --output "../ir-datasets.com/docs/dlc/vaswani.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: vaswani'
+        git push
   wapo:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wapo'"
     needs: [create_branch]
@@ -1498,15 +1383,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^wapo/" --output "../ir-datasets.com/docs/dlc/wapo.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: wapo'
+        git push
   wikir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikir'"
     needs: [create_branch]
@@ -1535,19 +1417,12 @@ jobs:
         cd ir-datasets
         python -m test.downloads --filter "^wikir/" --output "../ir-datasets.com/docs/dlc/wikir.json" --randdelay 60
         cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git pull --rebase --autostash
-    - uses: EndBug/add-and-commit@v8
-      if: always() # don't skip if the Test step fails (defeats the whole purpose)
-      with:
-        message: 'from verify_downloads'
-        add: 'docs/dlc/*.json'
-        cwd: './ir-datasets.com/'
-        pull: '--rebase --autostash'
-
-
-
-
-
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: wikir'
+        git push
   merge_dlc:
     if: ${{ always() }}
     needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codesearchnet, cord19, cranfield, dpr-w100, gov, gov2, highwire, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, nfcorpus, nyt, pmc, touche, trec-arabic, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikir]
@@ -1559,11 +1434,16 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
-    - run: python merge_dlc.py
+    - run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        python merge_dlc.py
     - uses: EndBug/add-and-commit@v8
       with:
-        message: 'from verify_downloads'
         add: 'docs/dlc/*.json'
+        message: 'from verify_downloads'
+        author_name: GitHub Actions
+        author_email: actions@github.com
     - run: |
         git checkout master
         git merge -s recursive -Xtheirs --squash verify-downloads-${{github.run_number}} --allow-unrelated-histories
