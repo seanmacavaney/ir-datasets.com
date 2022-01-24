@@ -1431,6 +1431,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: verify-downloads-${{github.run_number}}
+        fetch-depth: 0
     - uses: actions/setup-python@v2
       with:
         python-version: '3.x'
@@ -1446,7 +1447,6 @@ jobs:
         author_email: actions@github.com
     - run: |
         git checkout master
-        git pull
         git merge -s recursive -Xtheirs --squash verify-downloads-${{github.run_number}} --allow-unrelated-histories
         git commit -m verify-downloads-${{github.run_number}}
         git push origin master
