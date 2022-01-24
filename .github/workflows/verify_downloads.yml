@@ -1446,6 +1446,7 @@ jobs:
         author_email: actions@github.com
     - run: |
         git checkout master
+        git pull
         git merge -s recursive -Xtheirs --squash verify-downloads-${{github.run_number}} --allow-unrelated-histories
         git commit -m verify-downloads-${{github.run_number}}
         git push origin master
