@@ -2,7 +2,7 @@ name: Downloadable Content
 
 on:
   schedule:
-    - cron: '0 8 * * 0' # run every sunday at (around) 8:00am UTC
+    - cron: '0 8 * * 1' # run every monday at (around) 8:00am UTC
   workflow_dispatch:
     inputs:
       dataset:
