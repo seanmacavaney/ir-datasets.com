@@ -17,7 +17,7 @@ for file in glob('docs/dlc/*.json'):
         merged_tmp = merged.setdefault(name, [])
         for record in merged_tmp:
             if record['name'] in data_by_name:
-                record.update(data_by_name)
+                record.update(data_by_name[record['name']])
                 del data_by_name[record['name']]
         for record in data_by_name.values():
             merged_tmp.append(record)
