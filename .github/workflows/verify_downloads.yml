@@ -607,6 +607,40 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: gov2'
         git push
+  hc4:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'hc4'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^hc4/" --output "../ir-datasets.com/docs/dlc/hc4.json" --randdelay 60
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: hc4'
+        git push
   highwire:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'highwire'"
     needs: [create_branch]
