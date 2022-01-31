@@ -1459,7 +1459,7 @@ jobs:
         git push
   merge_dlc:
     if: ${{ always() }}
-    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codesearchnet, cord19, cranfield, dpr-w100, gov, gov2, highwire, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, nfcorpus, nyt, pmc, touche, trec-arabic, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikir]
+    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codesearchnet, cord19, cranfield, dpr-w100, gov, gov2, hc4, highwire, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, nfcorpus, nyt, pmc, touche, trec-arabic, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikir]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
