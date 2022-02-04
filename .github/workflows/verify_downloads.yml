@@ -56,6 +56,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^antique/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/antique.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -96,6 +100,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^aol-ia/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/aol-ia.new.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -136,6 +144,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^aquaint/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/aquaint.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -176,6 +188,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^argsme/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/argsme.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -216,6 +232,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^beir/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/beir.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -256,6 +276,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^c4/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/c4.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -296,6 +320,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^car/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/car.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -336,6 +364,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^clinicaltrials/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clinicaltrials.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -376,6 +408,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^clirmatrix/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clirmatrix.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -416,6 +452,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^clueweb09/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clueweb09.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -456,6 +496,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^clueweb12/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clueweb12.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -496,6 +540,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^codesearchnet/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/codesearchnet.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -536,6 +584,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^cord19/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/cord19.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -576,6 +628,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^cranfield/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/cranfield.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -616,6 +672,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^dpr-w100/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/dpr-w100.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -656,6 +716,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^gov/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/gov.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -696,6 +760,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^gov2/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/gov2.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -736,6 +804,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^hc4/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/hc4.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -776,6 +848,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^highwire/" --output download.new.json
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/highwire.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -816,6 +892,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^medline/" --output download.new.json
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/medline.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -856,6 +936,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^mmarco/" --output download.new.json
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/mmarco.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -896,6 +980,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^mr-tydi/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/mr-tydi.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -936,6 +1024,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-document/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-document.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -976,6 +1068,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-document-v2/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-document-v2.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1016,6 +1112,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-passage/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-passage.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1056,6 +1156,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-passage-v2/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-passage-v2.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1096,6 +1200,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^msmarco-qna/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-qna.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1136,6 +1244,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^natural-questions/" --output download.new.json
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/natural-questions.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1176,6 +1288,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^nfcorpus/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/nfcorpus.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1216,6 +1332,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^nyt/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/nyt.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1256,6 +1376,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^pmc/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/pmc.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1296,6 +1420,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^touche/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/touche.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1336,6 +1464,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^trec-arabic/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-arabic.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1376,6 +1508,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^trec-fair-2021/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-fair-2021.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1416,6 +1552,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^trec-mandarin/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-mandarin.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1456,6 +1596,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^trec-robust04/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-robust04.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1496,6 +1640,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^trec-spanish/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-spanish.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1536,6 +1684,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^tripclick/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/tripclick.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1576,6 +1728,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^tweets2013-ia/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/tweets2013-ia.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1616,6 +1772,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^vaswani/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/vaswani.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1656,6 +1816,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^wapo/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/wapo.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
@@ -1696,6 +1860,10 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^wikir/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
         python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/wikir.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
