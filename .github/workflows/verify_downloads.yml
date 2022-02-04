@@ -55,7 +55,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^antique/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^antique/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -100,7 +100,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^aol-ia/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^aol-ia/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -190,7 +190,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^argsme/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^argsme/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -235,7 +235,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^beir/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^beir/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -415,7 +415,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^clirmatrix/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^clirmatrix/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -550,7 +550,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^codesearchnet/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^codesearchnet/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -640,7 +640,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^cranfield/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^cranfield/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -685,7 +685,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^dpr-w100/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^dpr-w100/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -820,7 +820,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^hc4/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^hc4/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -1000,7 +1000,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^mr-tydi/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^mr-tydi/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -1225,7 +1225,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^msmarco-qna/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^msmarco-qna/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -1315,7 +1315,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^nfcorpus/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^nfcorpus/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -1450,7 +1450,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^touche/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^touche/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -1720,7 +1720,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^tripclick/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^tripclick/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -1810,7 +1810,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^vaswani/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^vaswani/" --output download.new.json
     - name: Upload
       if: always()
       run: |
@@ -1900,7 +1900,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --filter "^wikir/" --output download.new.json --randdelay 60
+        python -m test.downloads --filter "^wikir/" --output download.new.json
     - name: Upload
       if: always()
       run: |
