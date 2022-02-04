@@ -5,7 +5,7 @@ $(function () {
     $.ajax({
         'url': 'https://ir-datasets.com/dlc/dlc_merged.json'
     }).done(function (data) {
-        var ds = Object.keys(data).sort()
+        var ds = Object.keys(data).sort();
         $.each(ds, function (i, ds) {
             $('#Downloads').append(generateDownloads(ds, data[ds]));
         });

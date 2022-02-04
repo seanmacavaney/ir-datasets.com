@@ -24,7 +24,7 @@
 <script type="text/javascript">
 $(function () {
     $.ajax({
-        'url': 'https://smac.pub/irdsdlc'
+        'url': 'https://ir-datasets.com/dlc/dlc_merged.json'
     }).done(function (data) {
         $.each(data, function (ds, downloads) {
             $('#Downloads').append(generateDownloads(ds, downloads));

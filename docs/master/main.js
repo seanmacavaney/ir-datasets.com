@@ -167,17 +167,18 @@ function generateDownloads(title, downloads) {
         var hidx = 0;
         $.each(dl.recent_history, function (hidx, h) {
             var color = h.result === 'PASS' ? '#32a852' : '#eb4034';
-            history.append($('<span>').text('❚').css({'color': color, 'cursor': 'default'}).attr('title', h.result + ' ' + h.time.substring(0, 19).replace('T', ' ')));
+            history.append($('<span>').addClass('hist').text('❚').css({'color': color}).attr('title', h.result + ' @ ' + h.time.substring(0, 19).replace('T', ' ')));
         })
         for (var j=hidx; j<16; j++) {
-            history.prepend($('<span>').text('❚').css({'color': '#ccc', 'cursor': 'default'}).attr('title', 'no info'));
+            history.prepend($('<span>').addClass('hist').text('❚').attr('title', 'no history available'));
         }
+        var abbr_name = dl.name.replace(new RegExp('^[^/]+'), '...');
         $content.append($('<tr></tr>')
             .append($('<td></td>').text(toEmoji(good, dl.result)).attr('title', dl.result).css('text-align', 'center'))
-            .append($('<td></td>').append($('<a></a>').attr('href', dl.url).text(dl.name)))
-            .append($('<td></td>').html(toFileSize(dl.size).replace(' ', '&nbsp;')))
-            .append($('<td></td>').text(toTime(dl.duration)))
-            .append($('<td></td>').text(dl.time.substring(0, 10)).attr('title', dl.time.substring(0, 19).replace('T', ' ')))
+            .append($('<td></td>').append($('<a></a>').attr('href', dl.url).attr('title', dl.name).text(abbr_name)))
+            .append($('<td></td>').css('text-align', 'right').html(toFileSize(dl.size).replace(' ', '&nbsp;')))
+            .append($('<td></td>').css('text-align', 'right').html(toTime(dl.duration).replace(' ', '&nbsp;')))
+            .append($('<td></td>').css('text-align', 'right').text(dl.time.substring(0, 10)).attr('title', dl.time.substring(0, 19).replace('T', ' ')))
             .append($('<td></td>').append(md5))
             .append($('<td></td>').append(history))
         );

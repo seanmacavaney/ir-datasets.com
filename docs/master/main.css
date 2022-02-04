@@ -352,6 +352,16 @@ a.ex-tab {
   font-size: 0.7em;
 }
 
+.hist {
+  color: #ccc;
+  cursor: default;
+  opacity: 0.5;
+}
+
+.hist:hover {
+  opacity: 1;
+}
+
 .hl {
     background-color: #fff9bd;
 }
