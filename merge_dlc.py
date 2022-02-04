@@ -2,10 +2,10 @@ from glob import glob
 import json
 
 def main():
-    with open('docs/dlc/_merged.json', 'rt') as fin:
+    with open('docs/dlc/dlc_merged.json', 'rt') as fin:
         merged = json.load(fin)
 
-    with open('docs/dlc/_history.json', 'rt') as fin:
+    with open('docs/dlc/dlc_history.json', 'rt') as fin:
         history = json.load(fin)
 
     for file in glob('docs/dlc/*.json'):
@@ -30,10 +30,10 @@ def main():
                 if not history_tmp or history_tmp[-1]['time'] != new_rec['time']:
                     history_tmp.append(new_rec)
 
-    with open('docs/dlc/_merged.json', 'wt') as fout:
+    with open('docs/dlc/dlc_merged.json', 'wt') as fout:
         json.dump(merged, fout)
 
-    with open('docs/dlc/_history.json', 'wt') as fout:
+    with open('docs/dlc/dlc_history.json', 'wt') as fout:
         json.dump(history, fout)
 
 

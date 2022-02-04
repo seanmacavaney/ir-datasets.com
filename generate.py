@@ -96,7 +96,7 @@ def generate_dataset_page(out_dir, version, top_level, sub_datasets, bibliograph
 <script type="text/javascript">
 $(function () {
     $.ajax({
-        'url': 'https://smac.pub/irdsdlc?ds=''' + top_level + ''''
+        'url': 'https://ir-datasets.com/dlc/''' + top_level + '''.json'
     }).done(function (data) {
         $('#Downloads').append(generateDownloads('Downloadable content', data));
     });

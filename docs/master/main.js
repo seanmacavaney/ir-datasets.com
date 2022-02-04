@@ -151,7 +151,7 @@ function generateDownloads(title, downloads) {
     }
     var allGood = true;
     var $content = $('<table></table>');
-    $content.append($('<tr><th>Avail</th><th>Download ID</th><th>Size</th><th>Time</th><th>Last Tested At</th><th>Expected MD5 Hash</th></tr>'));
+    $content.append($('<tr><th>Avail</th><th>Download ID</th><th>Size</th><th>Duration</th><th>Tested At</th><th>Expected MD5</th><th>History</th></tr>'));
     var goodCount = 0;
     var totalCount = 0;
     $.each(downloads, function (i, dl) {
@@ -162,13 +162,24 @@ function generateDownloads(title, downloads) {
         } else {
             goodCount += 1;
         }
+        var md5 = $('<code>').attr('data-full', dl.md5).attr('title', dl.md5).text(dl.md5.substr(0, 10) + '…').click(e => $(e.target).text($(e.target).attr('data-full')))
+        var history = $('<span>');
+        var hidx = 0;
+        $.each(dl.recent_history, function (hidx, h) {
+            var color = h.result === 'PASS' ? '#32a852' : '#eb4034';
+            history.append($('<span>').text('❚').css({'color': color, 'cursor': 'default'}).attr('title', h.result + ' ' + h.time.substring(0, 19).replace('T', ' ')));
+        })
+        for (var j=hidx; j<16; j++) {
+            history.prepend($('<span>').text('❚').css({'color': '#ccc', 'cursor': 'default'}).attr('title', 'no info'));
+        }
         $content.append($('<tr></tr>')
             .append($('<td></td>').text(toEmoji(good, dl.result)).attr('title', dl.result).css('text-align', 'center'))
             .append($('<td></td>').append($('<a></a>').attr('href', dl.url).text(dl.name)))
-            .append($('<td></td>').text(toFileSize(dl.size)))
+            .append($('<td></td>').html(toFileSize(dl.size).replace(' ', '&nbsp;')))
             .append($('<td></td>').text(toTime(dl.duration)))
-            .append($('<td></td>').text(dl.time.substring(0, 19).replace('T', ' ')))
-            .append($('<td></td>').append($('<code>').text(dl.md5)))
+            .append($('<td></td>').text(dl.time.substring(0, 10)).attr('title', dl.time.substring(0, 19).replace('T', ' ')))
+            .append($('<td></td>').append(md5))
+            .append($('<td></td>').append(history))
         );
     });
     return $('<details></details>')
