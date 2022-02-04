@@ -68,6 +68,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: antique'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -112,6 +113,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: aol-ia'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -156,6 +158,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: aquaint'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -200,6 +203,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: argsme'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -244,6 +248,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: beir'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -288,6 +293,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: c4'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -332,6 +338,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: car'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -376,6 +383,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clinicaltrials'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -420,6 +428,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clirmatrix'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -464,6 +473,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clueweb09'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -508,6 +518,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clueweb12'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -552,6 +563,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: codesearchnet'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -596,6 +608,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: cord19'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -640,6 +653,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: cranfield'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -684,6 +698,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: dpr-w100'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -728,6 +743,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: gov'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -772,6 +788,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: gov2'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -816,6 +833,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: hc4'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -860,6 +878,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: highwire'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -904,6 +923,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: medline'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -948,6 +968,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: mmarco'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -992,6 +1013,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: mr-tydi'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1036,6 +1058,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-document'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1080,6 +1103,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-document-v2'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1124,6 +1148,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-passage'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1168,6 +1193,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-passage-v2'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1212,6 +1238,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-qna'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1256,6 +1283,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: natural-questions'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1300,6 +1328,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: nfcorpus'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1344,6 +1373,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: nyt'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1388,6 +1418,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: pmc'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1432,6 +1463,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: touche'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1476,6 +1508,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-arabic'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1520,6 +1553,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-fair-2021'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1564,6 +1598,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-mandarin'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1608,6 +1643,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-robust04'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1652,6 +1688,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-spanish'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1696,6 +1733,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: tripclick'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1740,6 +1778,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: tweets2013-ia'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1784,6 +1823,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: vaswani'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1828,6 +1868,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: wapo'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
@@ -1872,6 +1913,7 @@ jobs:
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: wikir'
         if git push ; then
+          echo success
         else
           # Try again...
           git pull --rebase --autostash
