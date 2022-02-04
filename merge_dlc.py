@@ -26,6 +26,8 @@ def main():
             for record in data:
                 new_rec = dict(record)
                 del new_rec['name']
+                if 'recent_history' in new_rec:
+                    del new_rec['recent_history']
                 history_tmp = history[name].setdefault(record['name'], [])
                 if not history_tmp or history_tmp[-1]['time'] != new_rec['time']:
                     history_tmp.append(new_rec)
