@@ -10,7 +10,7 @@ def main():
 
     for file in glob('docs/dlc/*.json'):
         name = file.split('/')[-1].replace('.json', '')
-        if name.startswith('_'):
+        if name.startswith('dlc_'): # dlc_merged.json and dlc_history.json
             continue
         with open(file, 'rt') as fin:
             data = json.load(fin)
