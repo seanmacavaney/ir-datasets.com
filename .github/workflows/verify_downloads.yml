@@ -63,7 +63,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: antique'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   aol-ia:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aol-ia'"
     needs: [create_branch]
@@ -91,14 +96,19 @@ jobs:
       run: |
         cd ir-datasets
         python -m test.downloads --filter "^aol-ia/" --output download.new.json --randdelay 60
-        python ../ir-datasets.com/merge_history.py download.new.json "aol-ia.new.json"
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/aol-ia.new.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: aol-ia'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   aquaint:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aquaint'"
     needs: [create_branch]
@@ -133,7 +143,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: aquaint'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   argsme:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'argsme'"
     needs: [create_branch]
@@ -168,7 +183,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: argsme'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   beir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'beir'"
     needs: [create_branch]
@@ -203,7 +223,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: beir'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   c4:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'c4'"
     needs: [create_branch]
@@ -238,7 +263,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: c4'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   car:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'car'"
     needs: [create_branch]
@@ -273,7 +303,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: car'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   clinicaltrials:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clinicaltrials'"
     needs: [create_branch]
@@ -308,7 +343,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clinicaltrials'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   clirmatrix:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clirmatrix'"
     needs: [create_branch]
@@ -343,7 +383,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clirmatrix'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   clueweb09:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb09'"
     needs: [create_branch]
@@ -378,7 +423,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clueweb09'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   clueweb12:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb12'"
     needs: [create_branch]
@@ -413,7 +463,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: clueweb12'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   codesearchnet:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'codesearchnet'"
     needs: [create_branch]
@@ -448,7 +503,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: codesearchnet'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   cord19:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cord19'"
     needs: [create_branch]
@@ -483,7 +543,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: cord19'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   cranfield:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cranfield'"
     needs: [create_branch]
@@ -518,7 +583,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: cranfield'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   dpr-w100:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'dpr-w100'"
     needs: [create_branch]
@@ -553,7 +623,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: dpr-w100'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   gov:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov'"
     needs: [create_branch]
@@ -588,7 +663,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: gov'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   gov2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov2'"
     needs: [create_branch]
@@ -623,7 +703,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: gov2'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   hc4:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'hc4'"
     needs: [create_branch]
@@ -658,7 +743,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: hc4'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   highwire:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'highwire'"
     needs: [create_branch]
@@ -693,7 +783,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: highwire'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   medline:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'medline'"
     needs: [create_branch]
@@ -728,7 +823,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: medline'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   mmarco:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mmarco'"
     needs: [create_branch]
@@ -763,7 +863,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: mmarco'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   mr-tydi:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mr-tydi'"
     needs: [create_branch]
@@ -798,7 +903,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: mr-tydi'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   msmarco-document:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document'"
     needs: [create_branch]
@@ -833,7 +943,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-document'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   msmarco-document-v2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document-v2'"
     needs: [create_branch]
@@ -868,7 +983,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-document-v2'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   msmarco-passage:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage'"
     needs: [create_branch]
@@ -903,7 +1023,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-passage'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   msmarco-passage-v2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage-v2'"
     needs: [create_branch]
@@ -938,7 +1063,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-passage-v2'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   msmarco-qna:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-qna'"
     needs: [create_branch]
@@ -973,7 +1103,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: msmarco-qna'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   natural-questions:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'natural-questions'"
     needs: [create_branch]
@@ -1008,7 +1143,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: natural-questions'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   nfcorpus:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nfcorpus'"
     needs: [create_branch]
@@ -1043,7 +1183,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: nfcorpus'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   nyt:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nyt'"
     needs: [create_branch]
@@ -1078,7 +1223,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: nyt'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   pmc:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'pmc'"
     needs: [create_branch]
@@ -1113,7 +1263,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: pmc'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   touche:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'touche'"
     needs: [create_branch]
@@ -1148,7 +1303,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: touche'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   trec-arabic:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-arabic'"
     needs: [create_branch]
@@ -1183,7 +1343,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-arabic'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   trec-fair-2021:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-fair-2021'"
     needs: [create_branch]
@@ -1218,7 +1383,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-fair-2021'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   trec-mandarin:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-mandarin'"
     needs: [create_branch]
@@ -1253,7 +1423,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-mandarin'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   trec-robust04:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-robust04'"
     needs: [create_branch]
@@ -1288,7 +1463,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-robust04'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   trec-spanish:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-spanish'"
     needs: [create_branch]
@@ -1323,7 +1503,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: trec-spanish'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   tripclick:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tripclick'"
     needs: [create_branch]
@@ -1358,7 +1543,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: tripclick'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   tweets2013-ia:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tweets2013-ia'"
     needs: [create_branch]
@@ -1393,7 +1583,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: tweets2013-ia'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   vaswani:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'vaswani'"
     needs: [create_branch]
@@ -1428,7 +1623,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: vaswani'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   wapo:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wapo'"
     needs: [create_branch]
@@ -1463,7 +1663,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: wapo'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   wikir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikir'"
     needs: [create_branch]
@@ -1498,7 +1703,12 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'verify_downloads: wikir'
-        git push
+        if git push ; then
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   merge_dlc:
     if: ${{ always() }}
     needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codesearchnet, cord19, cranfield, dpr-w100, gov, gov2, hc4, highwire, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, nfcorpus, nyt, pmc, touche, trec-arabic, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikir]
