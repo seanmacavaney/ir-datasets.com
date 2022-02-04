@@ -105,7 +105,7 @@ jobs:
       if: always()
       run: |
         cd ir-datasets
-        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/aol-ia.new.json"
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/aol-ia.json"
         cd ../ir-datasets.com/
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions"
