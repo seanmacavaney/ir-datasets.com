@@ -62,6 +62,7 @@ def main():
 
         for top_level in sorted(top_level_map):
             generate_dataset_page(args.out_dir, version, top_level, top_level_map[top_level], bibliography)
+    generate_github_action(top_level_map)
 
 
 def generate_dataset_page(out_dir, version, top_level, sub_datasets, bibliography):
@@ -687,6 +688,120 @@ def generate_js(base_dir, version):
 def generate_bib(base_dir, version):
     with open(get_file_path(base_dir, version, 'ir_datasets.bib'), 'wb') as out:
         out.write(pkgutil.get_data('ir_datasets', 'docs/bibliography.bib'))
+
+
+def generate_github_action(top_levels):
+    top_levels = sorted(list(top_levels) + ['touche']) # TODO: why is touche split out?
+    no_delay = {'antique', 'aol-ia', 'argsme', 'beir', 'clirmatrix', 'codesearchnet', 'cranfield', 'dpr-w100', 'hc4', 'highwire', 'lotte', 'medline', 'mmarco', 'mr-tydi', 'msmarco-qna', 'natural-questions', 'nfcorpus', 'touche', 'tripclick', 'vaswani', 'wikir'}
+    with open('.github/workflows/verify_downloads.yml', 'wt') as out:
+        out.write(f'''name: Downloadable Content
+
+on:
+  schedule:
+    - cron: '0 8 * * 0' # run every sunday at (around) 8:00am UTC
+  workflow_dispatch:
+    inputs:
+      dataset:
+        description: "Top-level dataset ID to run (or leave blank for all)" 
+        required: false
+        default: ''
+
+jobs:
+
+  create_branch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: git checkout -b verify-downloads-${{{{github.run_number}}}} --track
+    - run: 'echo ${{{{github.run_number}}}} > docs/dlc/_placeholder.txt'
+    - uses: EndBug/add-and-commit@v8
+      with:
+        add: 'docs/dlc/_placeholder.txt'
+        message: 'touch'
+        author_name: GitHub Actions
+        author_email: actions@github.com
+
+
+
+
+''')
+        for dsid in top_levels:
+            out.write(f'''
+  {dsid}:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == '{dsid}'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{{{github.run_number}}}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^{dsid}/" --output download.new.json{"" if dsid in no_delay else " --randdelay 60"}
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/{dsid}.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: {dsid}'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi''')
+        out.write(f'''
+  merge_dlc:
+    if: ${{{{ always() }}}}
+    needs: [{', '.join(top_levels)}]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: verify-downloads-${{{{github.run_number}}}}
+        fetch-depth: 0
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        python merge_dlc.py
+    - uses: EndBug/add-and-commit@v8
+      with:
+        add: 'docs/dlc/*.json'
+        message: 'from verify_downloads'
+        author_name: GitHub Actions
+        author_email: actions@github.com
+    - run: |
+        git checkout master
+        git merge -s recursive -Xtheirs --squash verify-downloads-${{{{github.run_number}}}} --allow-unrelated-histories
+        git commit -m verify-downloads-${{{{github.run_number}}}}
+        git push origin master
+        git push origin --delete verify-downloads-${{{{github.run_number}}}}
+''')
 
 
 def get_file_path(base_dir, version, file):
