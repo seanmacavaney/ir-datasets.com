@@ -165,9 +165,10 @@ function generateDownloads(title, downloads) {
         var md5 = $('<code>').attr('data-full', dl.md5).attr('title', dl.md5).text(dl.md5.substr(0, 10) + '…').click(e => $(e.target).text($(e.target).attr('data-full')))
         var history = $('<span>');
         var hidx = 0;
-        $.each(dl.recent_history, function (hidx, h) {
+        $.each(dl.recent_history, function (j, h) {
             var color = h.result === 'PASS' ? '#32a852' : '#eb4034';
             history.append($('<span>').addClass('hist').text('❚').css({'color': color}).attr('title', h.result + ' @ ' + h.time.substring(0, 19).replace('T', ' ')));
+            hidx = j;
         })
         for (var j=hidx; j<16; j++) {
             history.prepend($('<span>').addClass('hist').text('❚').attr('title', 'no history available'));
