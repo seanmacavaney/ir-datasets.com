@@ -252,6 +252,7 @@ def generate_dataset(dataset, dataset_id, bibliography):
 <pre class="metadata">{json.dumps(dataset.metadata(), indent=2)}</pre>
 </div>
 ''')
+        out.write('</div>')
         out.seek(0)
         return out.read()
 
