@@ -23,6 +23,7 @@ COMMON_HEAD = '''
 
 
 def main():
+    os.environ['IR_DATASETS_SKIP_DEPRECATED_WARNING'] = 'true'
     parser = argparse.ArgumentParser(prog='generate.py', description='Generates documentation files.')
     parser.add_argument('--out_dir', default='./docs')
     parser.add_argument('--release', action='store_true')
@@ -128,7 +129,10 @@ def generate_dataset(dataset, dataset_id, bibliography):
         if 'official_measures' in documentation:
             measures = ', '.join([f'<a href="https://ir-measur.es/en/latest/measures.html"><kbd>{m}</kbd></a>' for m in documentation['official_measures']])
             measures = f'<p>Official evaluation measures: {measures}</p>'
-        out.write(f'''
+        deprecated = ''
+        if hasattr(dataset, 'deprecated'):
+            deprecated = f'<div class="warn">{dataset.deprecated()}</div>'
+        out.write(f'''{deprecated}
 <div class="desc">
 {desc}{measures}
 </div>
@@ -355,11 +359,15 @@ def generate_index(out_dir, version, top_level_map):
             raise RuntimeError(f'unknown version {version}')
         index = []
         jump = []
+        deprecated = []
         for top_level in sorted(top_level_map):
             names = [top_level] + sorted(x[0] for x in top_level_map[top_level])
             for name in names:
                 dataset = ir_datasets.registry[name]
                 parent = name.split('/')[0]
+                if hasattr(dataset, 'deprecated'):
+                    deprecated.append((name, parent, dataset))
+                    continue
                 if parent != name:
                     ds_name = f'<a href="{parent}.html#{name}"><kbd><span class="prefix"><span class="screen-small-hide">{parent}</span><span class="screen-small-show">&hellip;</span></span>{name[len(parent):]}</kbd></a>'
                     tbody = ''
@@ -426,6 +434,15 @@ Install with pip:
 {index}
 </tbody>
 </table>
+''')
+        deprecated_html = ', '.join([f'<a href="{parent}.html#{name}"><kbd>{name}</kbd></a>' for name, parent, dataset in deprecated])
+        out.write(f'''
+<h2 class="underline">Deprecated</h2>
+<p>These datasets have been deprecated. We keep them in the package for reproducibility, but
+better alternative dataset IDs exist (e.g., with improved corpus parsing).</p>
+<p>
+{deprecated_html}
+</p>
 ''')
         v_prefix = '../' if version else ''
         versions = [str(v).split('/')[-2] for v in sorted(Path(out_dir).glob('*/index.html'))]
