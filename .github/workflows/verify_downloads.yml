@@ -2099,6 +2099,51 @@ jobs:
           git pull --rebase --autostash
           git push
         fi
+  wikiclir:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikiclir'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: verify-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --filter "^wikiclir/" --output download.new.json --randdelay 60
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/wikiclir.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'verify_downloads: wikiclir'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
   wikir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikir'"
     needs: [create_branch]
@@ -2146,7 +2191,7 @@ jobs:
         fi
   merge_dlc:
     if: ${{ always() }}
-    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codec, codesearchnet, cord19, cranfield, disks45, dpr-w100, gov, gov2, hc4, highwire, kilt, lotte, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, nfcorpus, nyt, pmc, touche, trec-arabic, trec-cast, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikir]
+    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codec, codesearchnet, cord19, cranfield, disks45, dpr-w100, gov, gov2, hc4, highwire, kilt, lotte, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, nfcorpus, nyt, pmc, touche, trec-arabic, trec-cast, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikiclir, wikir]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
