@@ -893,13 +893,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: {dsid}'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: {dsid}' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 ''')
         out.write(f'''
   merge_dlc:
