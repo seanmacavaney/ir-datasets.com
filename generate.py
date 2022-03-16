@@ -894,13 +894,13 @@ jobs:
         git pull --rebase --autostash
         git add docs/dlc/*.json
         git commit -m 'head_downloads: {dsid}'
-        if git push ; then
-          echo success
-        else
-          # Try again...
+        until git push
+        do
+          echo trying again
           git pull --rebase --autostash
-          git push
-        fi''')
+        done
+        echo success
+''')
         out.write(f'''
   merge_dlc:
     if: ${{{{ always() }}}}
