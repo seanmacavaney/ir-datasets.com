@@ -1,0 +1,2264 @@
+name: Downloadable Content, HEAD
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # run every day at (around) 8:00am UTC
+  workflow_dispatch:
+    inputs:
+      dataset:
+        description: "Top-level dataset ID to run (or leave blank for all)" 
+        required: false
+        default: ''
+
+jobs:
+
+  create_branch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: git checkout -b head-downloads-${{github.run_number}} --track
+    - run: 'echo ${{github.run_number}} > docs/dlc/_placeholder.txt'
+    - uses: EndBug/add-and-commit@v8
+      with:
+        add: 'docs/dlc/_placeholder.txt'
+        message: 'touch'
+        author_name: GitHub Actions
+        author_email: actions@github.com
+
+
+
+
+
+  antique:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'antique'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^antique/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/antique.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: antique'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  aol-ia:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aol-ia'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^aol-ia/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/aol-ia.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: aol-ia'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  aquaint:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aquaint'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^aquaint/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/aquaint.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: aquaint'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  argsme:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'argsme'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^argsme/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/argsme.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: argsme'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  beir:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'beir'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^beir/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/beir.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: beir'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  c4:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'c4'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^c4/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/c4.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: c4'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  car:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'car'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^car/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/car.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: car'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  clinicaltrials:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clinicaltrials'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^clinicaltrials/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clinicaltrials.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: clinicaltrials'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  clirmatrix:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clirmatrix'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^clirmatrix/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clirmatrix.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: clirmatrix'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  clueweb09:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb09'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^clueweb09/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clueweb09.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: clueweb09'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  clueweb12:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb12'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^clueweb12/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/clueweb12.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: clueweb12'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  codec:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'codec'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^codec/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/codec.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: codec'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  codesearchnet:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'codesearchnet'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^codesearchnet/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/codesearchnet.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: codesearchnet'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  cord19:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cord19'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^cord19/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/cord19.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: cord19'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  cranfield:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cranfield'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^cranfield/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/cranfield.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: cranfield'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  disks45:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'disks45'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^disks45/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/disks45.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: disks45'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  dpr-w100:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'dpr-w100'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^dpr-w100/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/dpr-w100.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: dpr-w100'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  gov:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^gov/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/gov.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: gov'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  gov2:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov2'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^gov2/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/gov2.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: gov2'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  hc4:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'hc4'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^hc4/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/hc4.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: hc4'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  highwire:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'highwire'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^highwire/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/highwire.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: highwire'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  kilt:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'kilt'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^kilt/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/kilt.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: kilt'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  lotte:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'lotte'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^lotte/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/lotte.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: lotte'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  medline:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'medline'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^medline/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/medline.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: medline'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  mmarco:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mmarco'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^mmarco/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/mmarco.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: mmarco'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  mr-tydi:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mr-tydi'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^mr-tydi/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/mr-tydi.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: mr-tydi'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  msmarco-document:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^msmarco-document/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-document.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: msmarco-document'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  msmarco-document-v2:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document-v2'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^msmarco-document-v2/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-document-v2.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: msmarco-document-v2'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  msmarco-passage:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^msmarco-passage/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-passage.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: msmarco-passage'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  msmarco-passage-v2:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage-v2'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^msmarco-passage-v2/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-passage-v2.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: msmarco-passage-v2'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  msmarco-qna:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-qna'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^msmarco-qna/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/msmarco-qna.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: msmarco-qna'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  natural-questions:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'natural-questions'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^natural-questions/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/natural-questions.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: natural-questions'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  neuclir:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'neuclir'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^neuclir/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/neuclir.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: neuclir'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  nfcorpus:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nfcorpus'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^nfcorpus/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/nfcorpus.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: nfcorpus'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  nyt:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nyt'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^nyt/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/nyt.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: nyt'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  pmc:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'pmc'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^pmc/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/pmc.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: pmc'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  touche:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'touche'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^touche/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/touche.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: touche'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  trec-arabic:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-arabic'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^trec-arabic/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-arabic.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: trec-arabic'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  trec-cast:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-cast'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^trec-cast/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-cast.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: trec-cast'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  trec-fair-2021:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-fair-2021'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^trec-fair-2021/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-fair-2021.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: trec-fair-2021'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  trec-mandarin:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-mandarin'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^trec-mandarin/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-mandarin.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: trec-mandarin'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  trec-robust04:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-robust04'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^trec-robust04/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-robust04.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: trec-robust04'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  trec-spanish:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-spanish'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^trec-spanish/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-spanish.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: trec-spanish'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  tripclick:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tripclick'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^tripclick/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/tripclick.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: tripclick'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  tweets2013-ia:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tweets2013-ia'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^tweets2013-ia/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/tweets2013-ia.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: tweets2013-ia'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  vaswani:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'vaswani'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^vaswani/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/vaswani.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: vaswani'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  wapo:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wapo'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^wapo/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/wapo.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: wapo'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  wikiclir:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikiclir'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^wikiclir/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/wikiclir.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: wikiclir'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  wikir:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikir'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^wikir/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/wikir.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: wikir'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi
+  merge_dlc:
+    if: ${{ always() }}
+    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codec, codesearchnet, cord19, cranfield, disks45, dpr-w100, gov, gov2, hc4, highwire, kilt, lotte, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, neuclir, nfcorpus, nyt, pmc, touche, trec-arabic, trec-cast, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikiclir, wikir]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: head-downloads-${{github.run_number}}
+        fetch-depth: 0
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        python merge_dlc.py
+    - uses: EndBug/add-and-commit@v8
+      with:
+        add: 'docs/dlc/*.json'
+        message: 'from head_downloads'
+        author_name: GitHub Actions
+        author_email: actions@github.com
+    - run: |
+        git checkout master
+        git merge -s recursive -Xtheirs --squash head-downloads-${{github.run_number}} --allow-unrelated-histories
+        git commit -m head-downloads-${{github.run_number}}
+        git push origin master
+        git push origin --delete head-downloads-${{github.run_number}}

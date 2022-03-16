@@ -822,6 +822,117 @@ jobs:
 ''')
 
 
+    with open('.github/workflows/head_downloads.yml', 'wt') as out:
+        out.write(f'''name: Downloadable Content, HEAD
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # run every day at (around) 8:00am UTC
+  workflow_dispatch:
+    inputs:
+      dataset:
+        description: "Top-level dataset ID to run (or leave blank for all)" 
+        required: false
+        default: ''
+
+jobs:
+
+  create_branch:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: git checkout -b head-downloads-${{{{github.run_number}}}} --track
+    - run: 'echo ${{{{github.run_number}}}} > docs/dlc/_placeholder.txt'
+    - uses: EndBug/add-and-commit@v8
+      with:
+        add: 'docs/dlc/_placeholder.txt'
+        message: 'touch'
+        author_name: GitHub Actions
+        author_email: actions@github.com
+
+
+
+
+''')
+        for dsid in top_levels:
+            out.write(f'''
+  {dsid}:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == '{dsid}'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{{{github.run_number}}}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^{dsid}/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/{dsid}.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        git commit -m 'head_downloads: {dsid}'
+        if git push ; then
+          echo success
+        else
+          # Try again...
+          git pull --rebase --autostash
+          git push
+        fi''')
+        out.write(f'''
+  merge_dlc:
+    if: ${{{{ always() }}}}
+    needs: [{', '.join(top_levels)}]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: head-downloads-${{{{github.run_number}}}}
+        fetch-depth: 0
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - run: |
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        python merge_dlc.py
+    - uses: EndBug/add-and-commit@v8
+      with:
+        add: 'docs/dlc/*.json'
+        message: 'from head_downloads'
+        author_name: GitHub Actions
+        author_email: actions@github.com
+    - run: |
+        git checkout master
+        git merge -s recursive -Xtheirs --squash head-downloads-${{{{github.run_number}}}} --allow-unrelated-histories
+        git commit -m head-downloads-${{{{github.run_number}}}}
+        git push origin master
+        git push origin --delete head-downloads-${{{{github.run_number}}}}
+''')
+
+
 def get_file_path(base_dir, version, file):
     return f'{base_dir}/{version}/{file}' if version else f'{base_dir}/{file}'
 
