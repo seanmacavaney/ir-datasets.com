@@ -66,13 +66,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: antique'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: antique' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   aol-ia:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aol-ia'"
@@ -111,13 +112,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: aol-ia'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: aol-ia' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   aquaint:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'aquaint'"
@@ -156,13 +158,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: aquaint'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: aquaint' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   argsme:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'argsme'"
@@ -201,13 +204,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: argsme'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: argsme' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   beir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'beir'"
@@ -246,13 +250,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: beir'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: beir' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   c4:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'c4'"
@@ -291,13 +296,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: c4'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: c4' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   car:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'car'"
@@ -336,13 +342,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: car'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: car' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   clinicaltrials:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clinicaltrials'"
@@ -381,13 +388,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: clinicaltrials'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: clinicaltrials' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   clirmatrix:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clirmatrix'"
@@ -426,13 +434,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: clirmatrix'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: clirmatrix' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   clueweb09:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb09'"
@@ -471,13 +480,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: clueweb09'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: clueweb09' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   clueweb12:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'clueweb12'"
@@ -516,13 +526,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: clueweb12'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: clueweb12' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   codec:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'codec'"
@@ -561,13 +572,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: codec'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: codec' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   codesearchnet:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'codesearchnet'"
@@ -606,13 +618,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: codesearchnet'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: codesearchnet' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   cord19:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cord19'"
@@ -651,13 +664,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: cord19'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: cord19' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   cranfield:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'cranfield'"
@@ -696,13 +710,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: cranfield'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: cranfield' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   disks45:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'disks45'"
@@ -741,13 +756,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: disks45'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: disks45' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   dpr-w100:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'dpr-w100'"
@@ -786,13 +802,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: dpr-w100'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: dpr-w100' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   gov:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov'"
@@ -831,13 +848,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: gov'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: gov' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   gov2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'gov2'"
@@ -876,13 +894,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: gov2'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: gov2' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   hc4:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'hc4'"
@@ -921,13 +940,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: hc4'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: hc4' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   highwire:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'highwire'"
@@ -966,13 +986,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: highwire'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: highwire' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   kilt:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'kilt'"
@@ -1011,13 +1032,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: kilt'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: kilt' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   lotte:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'lotte'"
@@ -1056,13 +1078,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: lotte'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: lotte' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   medline:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'medline'"
@@ -1101,13 +1124,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: medline'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: medline' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   mmarco:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mmarco'"
@@ -1146,13 +1170,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: mmarco'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: mmarco' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   mr-tydi:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'mr-tydi'"
@@ -1191,13 +1216,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: mr-tydi'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: mr-tydi' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   msmarco-document:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document'"
@@ -1236,13 +1262,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: msmarco-document'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: msmarco-document' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   msmarco-document-v2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-document-v2'"
@@ -1281,13 +1308,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: msmarco-document-v2'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: msmarco-document-v2' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   msmarco-passage:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage'"
@@ -1326,13 +1354,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: msmarco-passage'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: msmarco-passage' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   msmarco-passage-v2:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-passage-v2'"
@@ -1371,13 +1400,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: msmarco-passage-v2'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: msmarco-passage-v2' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   msmarco-qna:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'msmarco-qna'"
@@ -1416,13 +1446,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: msmarco-qna'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: msmarco-qna' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   natural-questions:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'natural-questions'"
@@ -1461,13 +1492,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: natural-questions'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: natural-questions' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   neuclir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'neuclir'"
@@ -1506,13 +1538,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: neuclir'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: neuclir' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   nfcorpus:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nfcorpus'"
@@ -1551,13 +1584,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: nfcorpus'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: nfcorpus' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   nyt:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'nyt'"
@@ -1596,13 +1630,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: nyt'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: nyt' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   pmc:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'pmc'"
@@ -1641,13 +1676,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: pmc'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: pmc' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   touche:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'touche'"
@@ -1686,13 +1722,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: touche'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: touche' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   trec-arabic:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-arabic'"
@@ -1731,13 +1768,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: trec-arabic'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: trec-arabic' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   trec-cast:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-cast'"
@@ -1776,13 +1814,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: trec-cast'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: trec-cast' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   trec-fair-2021:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-fair-2021'"
@@ -1821,13 +1860,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: trec-fair-2021'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: trec-fair-2021' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   trec-mandarin:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-mandarin'"
@@ -1866,13 +1906,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: trec-mandarin'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: trec-mandarin' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   trec-robust04:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-robust04'"
@@ -1911,13 +1952,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: trec-robust04'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: trec-robust04' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   trec-spanish:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-spanish'"
@@ -1956,13 +1998,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: trec-spanish'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: trec-spanish' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   tripclick:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tripclick'"
@@ -2001,13 +2044,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: tripclick'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: tripclick' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   tweets2013-ia:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tweets2013-ia'"
@@ -2046,13 +2090,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: tweets2013-ia'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: tweets2013-ia' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   vaswani:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'vaswani'"
@@ -2091,13 +2136,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: vaswani'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: vaswani' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   wapo:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wapo'"
@@ -2136,13 +2182,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: wapo'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: wapo' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   wikiclir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikiclir'"
@@ -2181,13 +2228,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: wikiclir'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: wikiclir' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   wikir:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'wikir'"
@@ -2226,13 +2274,14 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'head_downloads: wikir'
-        until git push
-        do
-          echo trying again
-          git pull --rebase --autostash
-        done
-        echo success
+        if git commit -m 'head_downloads: wikir' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
 
   merge_dlc:
     if: ${{ always() }}
