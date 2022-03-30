@@ -24,7 +24,7 @@
 Data can be exported to stdout in various formats using the <code>ir_datasets export</code> command.
 </p>
 
-<h4><code>ir_datasts export [dataset-id] docs [--fields] [--format]</code></h4>
+<h4><code>ir_datasets export [dataset-id] docs [--fields] [--format]</code></h4>
 
 <div class="methodinfo">
 <p>Exports documents</p>
@@ -32,7 +32,7 @@ Data can be exported to stdout in various formats using the <code>ir_datasets ex
 <p><code>--format</code>: select output format to use: <code>tsv</code> (default) or <code>jsonl</code></p>
 </div>
 
-<h4><code>ir_datasts export [dataset-id] queries [--fields] [--format]</code></h4>
+<h4><code>ir_datasets export [dataset-id] queries [--fields] [--format]</code></h4>
 
 <div class="methodinfo">
 <p>Exports queries</p>
@@ -40,7 +40,7 @@ Data can be exported to stdout in various formats using the <code>ir_datasets ex
 <p><code>--format</code>: select output format to use: <code>tsv</code> (default) or <code>jsonl</code></p>
 </div>
 
-<h4><code>ir_datasts export [dataset-id] qrels [--fields] [--format]</code></h4>
+<h4><code>ir_datasets export [dataset-id] qrels [--fields] [--format]</code></h4>
 
 <div class="methodinfo">
 <p>Exports queries</p>
@@ -48,7 +48,7 @@ Data can be exported to stdout in various formats using the <code>ir_datasets ex
 <p><code>--format</code>: select output format to use: <code>trec</code>  (default), <code>tsv</code> or <code>jsonl</code></p>
 </div>
 
-<h4><code>ir_datasts export [dataset-id] scoreddocs [--fields] [--format]</code></h4>
+<h4><code>ir_datasets export [dataset-id] scoreddocs [--fields] [--format]</code></h4>
 
 <div class="methodinfo">
 <p>Exports queries</p>
@@ -62,7 +62,7 @@ Data can be exported to stdout in various formats using the <code>ir_datasets ex
 You can look up documents by their <code>doc_id</code> using the <code>ir_datasets lookup</code> command.
 </p>
 
-<h4><code>ir_datasts lookup [dataset-id] [doc_ids ...] [--fields] [--format]</code></h4>
+<h4><code>ir_datasets lookup [dataset-id] [doc_ids ...] [--fields] [--format]</code></h4>
 
 <div class="methodinfo">
 <p>Efficiently finds documents that have the provided doc_ids</p>
@@ -87,7 +87,7 @@ This command will output a command you can run for indexing with Anserini. This 
 until all documents are sent to fifos.
 </p>
 
-<h4><code>ir_datasts doc_fifos [dataset-id] [--fields] [--count]</code></h4>
+<h4><code>ir_datasets doc_fifos [dataset-id] [--fields] [--count]</code></h4>
 
 <div class="methodinfo">
 <p>Creates a temporary directory with fifos</p>
@@ -103,7 +103,7 @@ This command can be used for cleaning up data that can be re-downloaded or re-ge
 again later. This is helpful for freeing up disk space.
 </p>
 
-<h4><code>ir_datasts clean [dataset-ids ...] [--list] [-y] [-H]</code></h4>
+<h4><code>ir_datasets clean [dataset-ids ...] [--list] [-y] [-H]</code></h4>
 
 <div class="methodinfo">
 <p><code>[dataset-ids]</code>: one or more top-level dataset IDs to clean up.</p>
