@@ -23,8 +23,9 @@ $(function () {
     $.ajax({
         'url': 'https://ir-datasets.com/dlc/dlc_merged.json'
     }).done(function (data) {
-        $.each(data, function (ds, downloads) {
-            $('#Downloads').append(generateDownloads(ds, downloads));
+        var ds = Object.keys(data).sort();
+        $.each(ds, function (i, ds) {
+            $('#Downloads').append(generateDownloads(ds, data[ds]));
         });
     });
 });

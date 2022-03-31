@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>KILT - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.1/ir_datasets/datasets/kilt.py">datasets/kilt.py</a></div>
+<h1><code>ir_datasets</code>: KILT</h1>
+<div style="font-weight: bold; font-size: 1.1em;">Index</div>
+<ol class="index">
+<li><a href="#kilt"><kbd>kilt</kbd></a></li>
+<li><a href="#kilt/codec"><kbd><span class="prefix">kilt</span>/codec</kbd></a></li>
+<li><a href="#kilt/codec/economics"><kbd><span class="prefix">kilt</span>/codec/economics</kbd></a></li>
+<li><a href="#kilt/codec/history"><kbd><span class="prefix">kilt</span>/codec/history</kbd></a></li>
+<li><a href="#kilt/codec/politics"><kbd><span class="prefix">kilt</span>/codec/politics</kbd></a></li>
+</ol>
+<div id="Downloads">
+</div>
+<hr />
+<div class="dataset" id="kilt">
+<h3><kbd class="select"><span class="str">"kilt"</span></kbd></h3>
+
+<div class="desc">
+ <p> KILT is a corpus used for various "knowledge intensive language tasks". </p> <ul> <li>Documents: Wikipedia articles</li> <li><a href="https://github.com/facebookresearch/KILT">Repository</a></li> <li><a href="https://arxiv.org/abs/2009.02252">Paper</a></li> <li><a href="https://ai.facebook.com/tools/kilt/">Leaderboard</a></li> </ul> 
+</div>
+<div class="tabs">
+<a class="tab" target="kilt__docs">docs</a>
+<div id="kilt__docs" class="tab-content">
+<span class="ds-count"><kbd title="5903530">5.9M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">KiltDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">text_pieces</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="4"><span class="">anchors</span>: <span class="kwd">Tuple</span>[<div class="type">
+<div class="type-name">KiltDocAnchor: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">href</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">paragraph_id</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">start</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">end</span>: <span class="kwd">int</span></li>
+</ol>
+</div>, ...]</li><li data-tuple-idx="5"><span class="">categories</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="6"><span class="">wikidata_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">history_revid</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">history_timestamp</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">history_parentid</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">history_pageid</span>: <span class="kwd">str</span></li><li data-tuple-idx="11"><span class="">history_url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, text, text_pieces, anchors, categories, wikidata_id, history_revid, history_timestamp, history_parentid, history_pageid, history_url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[text_pieces]&nbsp;&nbsp;&nbsp;&nbsp;[anchors]&nbsp;&nbsp;&nbsp;&nbsp;[categories]&nbsp;&nbsp;&nbsp;&nbsp;[wikidata_id]&nbsp;&nbsp;&nbsp;&nbsp;[history_revid]&nbsp;&nbsp;&nbsp;&nbsp;[history_timestamp]&nbsp;&nbsp;&nbsp;&nbsp;[history_parentid]&nbsp;&nbsp;&nbsp;&nbsp;[history_pageid]&nbsp;&nbsp;&nbsp;&nbsp;[history_url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt&#39;</span><span class="p">)</span>
+<span class="c1"># Index kilt</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;wikidata_id&#39;</span><span class="p">,</span> <span class="s1">&#39;history_revid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;history_parentid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_pageid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_url&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt__citation">Citation</a>
+<div id="kilt__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{petroni-etal-2021-kilt}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{petroni-etal-2021-kilt,
+    title = "{KILT}: a Benchmark for Knowledge Intensive Language Tasks",
+    author = {Petroni, Fabio  and Piktus, Aleksandra  and
+      Fan, Angela  and Lewis, Patrick  and
+      Yazdani, Majid  and De Cao, Nicola  and
+      Thorne, James  and Jernite, Yacine  and
+      Karpukhin, Vladimir  and Maillard, Jean  and
+      Plachouras, Vassilis  and Rockt{\"a}schel, Tim  and
+      Riedel, Sebastian},
+    booktitle = "Proceedings of the 2021 Conference of the North American Chapter of the Association 
+                 for Computational Linguistics: Human Language Technologies",
+    month = "jun",
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.naacl-main.200",
+    doi = "10.18653/v1/2021.naacl-main.200",
+    pages = "2523--2544",
+}</cite>
+</div>
+
+<a class="tab" target="kilt__metadata">Metadata</a>
+<div id="kilt__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 5903530,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="kilt/codec" data-parent="kilt">
+<h3><kbd class="ds-name select"><span class="str">"kilt/codec"</span></kbd></h3>
+
+<div class="desc">
+ <p> CODEC Entity Ranking sub-task. </p> <ul> <li><a href="https://github.com/grill-lab/CODEC">Task Repository</a></li> <li>See also: <a class="ds-ref">codec</a>, the document ranking subtask</li> </ul> 
+</div>
+<div class="tabs">
+<a class="tab" target="kilt/codec__queries">queries</a>
+<div id="kilt/codec__queries" class="tab-content">
+<span class="ds-count"><kbd title="36">36</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec__docs">docs</a>
+<div id="kilt/codec__docs" class="tab-content">
+<span class="ds-count"><kbd title="5903530">5.9M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">kilt</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">KiltDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">text_pieces</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="4"><span class="">anchors</span>: <span class="kwd">Tuple</span>[<div class="type">
+<div class="type-name">KiltDocAnchor: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">href</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">paragraph_id</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">start</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">end</span>: <span class="kwd">int</span></li>
+</ol>
+</div>, ...]</li><li data-tuple-idx="5"><span class="">categories</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="6"><span class="">wikidata_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">history_revid</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">history_timestamp</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">history_parentid</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">history_pageid</span>: <span class="kwd">str</span></li><li data-tuple-idx="11"><span class="">history_url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, text, text_pieces, anchors, categories, wikidata_id, history_revid, history_timestamp, history_parentid, history_pageid, history_url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[text_pieces]&nbsp;&nbsp;&nbsp;&nbsp;[anchors]&nbsp;&nbsp;&nbsp;&nbsp;[categories]&nbsp;&nbsp;&nbsp;&nbsp;[wikidata_id]&nbsp;&nbsp;&nbsp;&nbsp;[history_revid]&nbsp;&nbsp;&nbsp;&nbsp;[history_timestamp]&nbsp;&nbsp;&nbsp;&nbsp;[history_parentid]&nbsp;&nbsp;&nbsp;&nbsp;[history_pageid]&nbsp;&nbsp;&nbsp;&nbsp;[history_url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec&#39;</span><span class="p">)</span>
+<span class="c1"># Index kilt</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;wikidata_id&#39;</span><span class="p">,</span> <span class="s1">&#39;history_revid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;history_parentid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_pageid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_url&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec__qrels">qrels</a>
+<div id="kilt/codec__qrels" class="tab-content">
+<span class="ds-count"><kbd title="10239">10K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. This entity is not useful or on topic.</td><td class="right"><kbd title="6665">6.7K</kbd></td><td class="right">65.1%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. It is useful to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="1910">1.9K</kbd></td><td class="right">18.7%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat valuable. It is important to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="1038">1.0K</kbd></td><td class="right">10.1%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. It is absolutely critical to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="626">626<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.1%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec__metadata">Metadata</a>
+<div id="kilt/codec__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 5903530,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 36
+  },
+  "qrels": {
+    "count": 10239,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 6665,
+          "1": 1910,
+          "2": 1038,
+          "3": 626
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="kilt/codec/economics" data-parent="kilt">
+<h3><kbd class="ds-name select"><span class="str">"kilt/codec/economics"</span></kbd></h3>
+
+<div class="desc">
+ <p> Subset of <a class="ds-ref">codec</a> that only contains topics about economics. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="kilt/codec/economics__queries">queries</a>
+<div id="kilt/codec/economics__queries" class="tab-content">
+<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/economics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/economics queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/economics&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/economics__docs">docs</a>
+<div id="kilt/codec/economics__docs" class="tab-content">
+<span class="ds-count"><kbd title="5903530">5.9M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">kilt</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">KiltDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">text_pieces</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="4"><span class="">anchors</span>: <span class="kwd">Tuple</span>[<div class="type">
+<div class="type-name">KiltDocAnchor: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">href</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">paragraph_id</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">start</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">end</span>: <span class="kwd">int</span></li>
+</ol>
+</div>, ...]</li><li data-tuple-idx="5"><span class="">categories</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="6"><span class="">wikidata_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">history_revid</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">history_timestamp</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">history_parentid</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">history_pageid</span>: <span class="kwd">str</span></li><li data-tuple-idx="11"><span class="">history_url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/economics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, text, text_pieces, anchors, categories, wikidata_id, history_revid, history_timestamp, history_parentid, history_pageid, history_url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/economics docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[text_pieces]&nbsp;&nbsp;&nbsp;&nbsp;[anchors]&nbsp;&nbsp;&nbsp;&nbsp;[categories]&nbsp;&nbsp;&nbsp;&nbsp;[wikidata_id]&nbsp;&nbsp;&nbsp;&nbsp;[history_revid]&nbsp;&nbsp;&nbsp;&nbsp;[history_timestamp]&nbsp;&nbsp;&nbsp;&nbsp;[history_parentid]&nbsp;&nbsp;&nbsp;&nbsp;[history_pageid]&nbsp;&nbsp;&nbsp;&nbsp;[history_url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/economics&#39;</span><span class="p">)</span>
+<span class="c1"># Index kilt</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;wikidata_id&#39;</span><span class="p">,</span> <span class="s1">&#39;history_revid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;history_parentid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_pageid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_url&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/economics__qrels">qrels</a>
+<div id="kilt/codec/economics__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1592">1.6K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="596">596<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">37.4%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="545">545<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">34.2%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="330">330<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">20.7%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="121">121<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">7.6%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/economics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/economics qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/economics&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/economics__metadata">Metadata</a>
+<div id="kilt/codec/economics__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 5903530,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 12
+  },
+  "qrels": {
+    "count": 1592,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 596,
+          "2": 330,
+          "1": 545,
+          "3": 121
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="kilt/codec/history" data-parent="kilt">
+<h3><kbd class="ds-name select"><span class="str">"kilt/codec/history"</span></kbd></h3>
+
+<div class="desc">
+ <p> Subset of <a class="ds-ref">codec</a> that only contains topics about history. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="kilt/codec/history__queries">queries</a>
+<div id="kilt/codec/history__queries" class="tab-content">
+<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/history&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/history queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/history&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/history__docs">docs</a>
+<div id="kilt/codec/history__docs" class="tab-content">
+<span class="ds-count"><kbd title="5903530">5.9M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">kilt</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">KiltDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">text_pieces</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="4"><span class="">anchors</span>: <span class="kwd">Tuple</span>[<div class="type">
+<div class="type-name">KiltDocAnchor: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">href</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">paragraph_id</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">start</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">end</span>: <span class="kwd">int</span></li>
+</ol>
+</div>, ...]</li><li data-tuple-idx="5"><span class="">categories</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="6"><span class="">wikidata_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">history_revid</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">history_timestamp</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">history_parentid</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">history_pageid</span>: <span class="kwd">str</span></li><li data-tuple-idx="11"><span class="">history_url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/history&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, text, text_pieces, anchors, categories, wikidata_id, history_revid, history_timestamp, history_parentid, history_pageid, history_url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/history docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[text_pieces]&nbsp;&nbsp;&nbsp;&nbsp;[anchors]&nbsp;&nbsp;&nbsp;&nbsp;[categories]&nbsp;&nbsp;&nbsp;&nbsp;[wikidata_id]&nbsp;&nbsp;&nbsp;&nbsp;[history_revid]&nbsp;&nbsp;&nbsp;&nbsp;[history_timestamp]&nbsp;&nbsp;&nbsp;&nbsp;[history_parentid]&nbsp;&nbsp;&nbsp;&nbsp;[history_pageid]&nbsp;&nbsp;&nbsp;&nbsp;[history_url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/history&#39;</span><span class="p">)</span>
+<span class="c1"># Index kilt</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;wikidata_id&#39;</span><span class="p">,</span> <span class="s1">&#39;history_revid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;history_parentid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_pageid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_url&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/history__qrels">qrels</a>
+<div id="kilt/codec/history__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1695">1.7K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="870">870<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">51.3%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="509">509<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">30.0%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="235">235<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.9%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="81">81<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.8%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/history&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/history qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/history&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/history__metadata">Metadata</a>
+<div id="kilt/codec/history__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 5903530,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 12
+  },
+  "qrels": {
+    "count": 1695,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 870,
+          "1": 509,
+          "2": 235,
+          "3": 81
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="kilt/codec/politics" data-parent="kilt">
+<h3><kbd class="ds-name select"><span class="str">"kilt/codec/politics"</span></kbd></h3>
+
+<div class="desc">
+ <p> Subset of <a class="ds-ref">codec</a> that only contains topics about politics. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="kilt/codec/politics__queries">queries</a>
+<div id="kilt/codec/politics__queries" class="tab-content">
+<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/politics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/politics queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/politics&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/politics__docs">docs</a>
+<div id="kilt/codec/politics__docs" class="tab-content">
+<span class="ds-count"><kbd title="5903530">5.9M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">kilt</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">KiltDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">text_pieces</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="4"><span class="">anchors</span>: <span class="kwd">Tuple</span>[<div class="type">
+<div class="type-name">KiltDocAnchor: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">href</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">paragraph_id</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">start</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">end</span>: <span class="kwd">int</span></li>
+</ol>
+</div>, ...]</li><li data-tuple-idx="5"><span class="">categories</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>, ...]</li><li data-tuple-idx="6"><span class="">wikidata_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">history_revid</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">history_timestamp</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">history_parentid</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">history_pageid</span>: <span class="kwd">str</span></li><li data-tuple-idx="11"><span class="">history_url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/politics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, text, text_pieces, anchors, categories, wikidata_id, history_revid, history_timestamp, history_parentid, history_pageid, history_url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/politics docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[text_pieces]&nbsp;&nbsp;&nbsp;&nbsp;[anchors]&nbsp;&nbsp;&nbsp;&nbsp;[categories]&nbsp;&nbsp;&nbsp;&nbsp;[wikidata_id]&nbsp;&nbsp;&nbsp;&nbsp;[history_revid]&nbsp;&nbsp;&nbsp;&nbsp;[history_timestamp]&nbsp;&nbsp;&nbsp;&nbsp;[history_parentid]&nbsp;&nbsp;&nbsp;&nbsp;[history_pageid]&nbsp;&nbsp;&nbsp;&nbsp;[history_url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/politics&#39;</span><span class="p">)</span>
+<span class="c1"># Index kilt</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;wikidata_id&#39;</span><span class="p">,</span> <span class="s1">&#39;history_revid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_timestamp&#39;</span><span class="p">,</span> <span class="s1">&#39;history_parentid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_pageid&#39;</span><span class="p">,</span> <span class="s1">&#39;history_url&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/politics__qrels">qrels</a>
+<div id="kilt/codec/politics__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1843">1.8K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="609">609<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">33.0%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="765">765<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">41.5%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="359">359<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">19.5%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="110">110<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/politics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> kilt/codec/politics qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:kilt/codec/politics&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/kilt&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="kilt/codec/politics__metadata">Metadata</a>
+<div id="kilt/codec/politics__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 5903530,
+    "fields": {
+      "doc_id": {
+        "max_len": 8,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 12
+  },
+  "qrels": {
+    "count": 1843,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 765,
+          "2": 359,
+          "0": 609,
+          "3": 110
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    $.ajax({
+        'url': 'https://ir-datasets.com/dlc/kilt.json'
+    }).done(function (data) {
+        $('#Downloads').append(generateDownloads('Downloadable content', data));
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

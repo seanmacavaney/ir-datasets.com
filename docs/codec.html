@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>CODEC - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.1/ir_datasets/datasets/codec.py">datasets/codec.py</a></div>
+<h1><code>ir_datasets</code>: CODEC</h1>
+<div style="font-weight: bold; font-size: 1.1em;">Index</div>
+<ol class="index">
+<li><a href="#codec"><kbd>codec</kbd></a></li>
+<li><a href="#codec/economics"><kbd><span class="prefix">codec</span>/economics</kbd></a></li>
+<li><a href="#codec/history"><kbd><span class="prefix">codec</span>/history</kbd></a></li>
+<li><a href="#codec/politics"><kbd><span class="prefix">codec</span>/politics</kbd></a></li>
+</ol>
+<div id="Downloads">
+</div>
+<hr />
+<div class="dataset" id="codec">
+<h3><kbd class="select"><span class="str">"codec"</span></kbd></h3>
+
+<div class="desc">
+ <p> CODEC Document Ranking sub-task. </p> <ul> <li>Documents: curated web articles</li> <li>Queries: challenging, entity-focused queries</li> <li><a href="https://github.com/grill-lab/CODEC">Task Repository</a></li> <li>See also: <a class="ds-ref">kilt/codec</a>, the entity ranking subtask</li> </ul> 
+</div>
+<div class="tabs">
+<a class="tab" target="codec__queries">queries</a>
+<div id="codec__queries" class="tab-content">
+<span class="ds-count"><kbd title="36">36</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec__qrels">qrels</a>
+<div id="codec__qrels" class="tab-content">
+<span class="ds-count"><kbd title="5130">5.1K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="2075">2.1K</kbd></td><td class="right">40.4%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="1819">1.8K</kbd></td><td class="right">35.5%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="924">924<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">18.0%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="312">312<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.1%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec__metadata">Metadata</a>
+<div id="codec__metadata" class="tab-content">
+<pre class="metadata">{
+  "queries": {
+    "count": 36
+  },
+  "qrels": {
+    "count": 5130,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 2075,
+          "2": 924,
+          "1": 1819,
+          "3": 312
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="codec/economics" data-parent="codec">
+<h3><kbd class="ds-name select"><span class="str">"codec/economics"</span></kbd></h3>
+
+<div class="desc">
+ <p> Subset of <a class="ds-ref">codec</a> that only contains topics about economics. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="codec/economics__queries">queries</a>
+<div id="codec/economics__queries" class="tab-content">
+<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec/economics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec/economics queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec/economics__qrels">qrels</a>
+<div id="codec/economics__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1592">1.6K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="596">596<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">37.4%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="545">545<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">34.2%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="330">330<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">20.7%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="121">121<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">7.6%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec/economics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec/economics qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec/economics__metadata">Metadata</a>
+<div id="codec/economics__metadata" class="tab-content">
+<pre class="metadata">{
+  "queries": {
+    "count": 12
+  },
+  "qrels": {
+    "count": 1592,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 596,
+          "2": 330,
+          "1": 545,
+          "3": 121
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="codec/history" data-parent="codec">
+<h3><kbd class="ds-name select"><span class="str">"codec/history"</span></kbd></h3>
+
+<div class="desc">
+ <p> Subset of <a class="ds-ref">codec</a> that only contains topics about history. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="codec/history__queries">queries</a>
+<div id="codec/history__queries" class="tab-content">
+<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec/history&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec/history queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec/history__qrels">qrels</a>
+<div id="codec/history__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1695">1.7K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="870">870<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">51.3%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="509">509<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">30.0%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="235">235<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.9%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="81">81<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.8%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec/history&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec/history qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec/history__metadata">Metadata</a>
+<div id="codec/history__metadata" class="tab-content">
+<pre class="metadata">{
+  "queries": {
+    "count": 12
+  },
+  "qrels": {
+    "count": 1695,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 870,
+          "1": 509,
+          "2": 235,
+          "3": 81
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="codec/politics" data-parent="codec">
+<h3><kbd class="ds-name select"><span class="str">"codec/politics"</span></kbd></h3>
+
+<div class="desc">
+ <p> Subset of <a class="ds-ref">codec</a> that only contains topics about politics. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="codec/politics__queries">queries</a>
+<div id="codec/politics__queries" class="tab-content">
+<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec/politics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec/politics queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec/politics__qrels">qrels</a>
+<div id="codec/politics__qrels" class="tab-content">
+<span class="ds-count"><kbd title="1843">1.8K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="609">609<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">33.0%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="765">765<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">41.5%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="359">359<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">19.5%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="110">110<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;codec/politics&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> codec/politics qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="codec/politics__metadata">Metadata</a>
+<div id="codec/politics__metadata" class="tab-content">
+<pre class="metadata">{
+  "queries": {
+    "count": 12
+  },
+  "qrels": {
+    "count": 1843,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 765,
+          "2": 359,
+          "0": 609,
+          "3": 110
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    $.ajax({
+        'url': 'https://ir-datasets.com/dlc/codec.json'
+    }).done(function (data) {
+        $('#Downloads').append(generateDownloads('Downloadable content', data));
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

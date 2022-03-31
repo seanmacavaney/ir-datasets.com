@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Design - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/">allenai/ir_datasets</a></div>
+<h1><code>ir_datasets</code>: Design</h1><p>
+    This document summarises the design decisions and reasoning of <kbd>ir_datasets</kbd>.
+</p>
+
+<h2 class="underline">Why Python?</h2>
+
+<p>
+    Python was a natural choice for building <kbd>ir_datasets</kbd>.
+    Python is the language of choice for much of the recent work in Information Retrieval (particularly
+    work that uses deep neural networks).
+    Python also already has a rich ecosystem of software packages, giving <kbd>ir_datasets</kbd> easy
+    access to a variety of development and runtime tools.
+    Finally, Python has a realatiely simple syntax and code structure, simplifying the develoment and
+    maintenance of the package.
+</p>
+
+<p>
+    The decision to build this library with Python isn't without its downsides, however. Processing
+    some data formats are slow in Python and require building specialised Python extensions to
+    handle them efficiently (e.g., <a href="https://github.com/seanmacavaney/pyautocorpus">pyautocorpus</a>
+    was built to take advantage of a fast c-based library for extracting the text from Wikipedia markup.)
+</p>
+
+<h2 class="underline">Why NamedTuples?</h2>
+
+<p>
+    <a href="https://docs.python.org/3/library/typing.html#typing.NamedTuple"><kbd>NamedTuple</kbd></a>s are
+    used as the core data objects in <kbd>ir_datasets</kbd>. These objects are fast, lightweight, immutable, and
+    reasonably self-documenting. Further, since it's part of the Python Standard Library, it does not introduce
+    any dependencies.
+</p>
+
+<p>
+    NamedTuples are also very flexible, and can easily be convered into a variety of formats:
+</p>
+
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;antique&#39;</span><span class="p">)</span>
+<span class="n">doc</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="s1">&#39;1424320_8&#39;</span><span class="p">)</span>
+
+<span class="c1"># To a tuple:</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="c1"># (&#39;1424320_8&#39;, &#39;As others pointed out, there are[SNIP]cash.. . Regards.&#39;)</span>
+
+<span class="c1"># To a dict:</span>
+<span class="n">doc</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span>
+<span class="c1"># {&#39;doc_id&#39;: &#39;1424320_8&#39;, &#39;text&#39;: &#39;As others pointed out, there are[SNIP]cash.. . Regards.&#39;}</span>
+
+<span class="c1"># To a Pandas Dataframe:</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">docs</span><span class="p">)</span>
+<span class="c1">#            doc_id                                               text</span>
+<span class="c1"># 0       2020338_0  A small group of politicians believed strongly...</span>
+<span class="c1"># 1       2020338_1             Because there is a lot of oil in Iraq.</span>
+<span class="c1"># ...           ...                                                ...</span>
+<span class="c1"># 403664  1424320_8  As others pointed out, there are investor lend...</span>
+<span class="c1"># 403665  1424320_9  You can finance up to 100% of the property val...</span>
+</pre></div>
+
+
+<p>
+    Before going with NamedTuples, we also considered several other approachs for data objects:
+</p>
+
+<p>
+    <strong>Why not <a href="https://docs.python.org/3/library/dataclasses.html">dataclass</a>?</strong>
+    The recently-added Python dataclasses provide much of the same functionality as NamedTuple.
+    However, they come with some drawbacks
+    They are generally <a href="https://death.andgravity.com/namedtuples"> slower than NamedTuples</a>
+    (though starting in Python 3.10, <kbd>slots=True</kbd> can help with some operations).
+    NamedTuples allow for easier transformation into other common types, including dicts and tuples.
+    This can be particularly helpful for reducing storage overhead (e.g., the docstore for msmarco-passage is 23%
+    smaller because the contents are encoded as NamedTuples, rather than dataclasses).
+    Since they were only first introduced in python 3.7, they are incompatible with the popular 3.6 release.
+</p>
+
+<p>
+    <strong>Why not <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"><kbd>dict</kbd></a>?</strong>
+    Dictionary objects are popular choices easy, ad hoc data records, since they can be easily created, extended,
+    and serialised into formats like JSON.
+    However, they do not provide a clear and fixed definition of the available fields, so a separate definition
+    structure would need to be provided for information like the type of each field.
+    They are also larger in memory and operations such as looking up items by field are also slower than NamedTuple.
+</p>
+
+<p>
+    <strong>Why not <a href="https://developers.google.com/protocol-buffers/docs/pythontutorial">protobuf</a>?</strong>
+    Protocol Buffers are a serialisation format allowing data to be shared across systems and platforms.
+    The Python binding provides much of the same functionality as NamedTuples, with the added benefit of a well-defined
+    serialisation format.
+    However, they introduce a relatively large dependency and would add non-trivial complexity to the
+    build process (e.g., protobufs need to be compiled to generate the corresponding Python code).
+    They also do not convert as easily to other formats (e.g., Pandas treats them as object types by default,
+    rather than expanding a column out for each field).
+    Per our benchmarking, they are also slightly slower to read from disk, compared to our approach with NamedTuples.
+</p>
+
+
+<h2 class="underline">Why LZ4?</h2>
+
+<p>
+    The <a href="https://github.com/lz4/lz4">LZ4 compression algorithm</a> is used throughout <kbd>ir_datasets</kbd>
+    when data needs to be stored.
+    Most notably, data in most docstore objects&mdash;used for looking up documents by ID, iterating quickly, or
+    slicing document iterators&mdash;compress document object contents using LZ4 compression.
+    We found this compression format preferable to others for a variety of reasons.
+    Most importantly, it provides by far the fastest decompression, while providing a reasonable compression rate.
+    It also allows for fine-grained control over the output frames, which allows for fast seeking to specific offsets.
+    This is helpful for providing functionality like fast document lookups.
+    As a bonus, the software package is lighter-weight than other competing compression libraries (e.g., zstandard, snappy).
+</p>
+
+<p>
+    In some cases, we cannot avoid using other compression techniques. For instance, the ClueWeb datasets would be
+    too large and take too long to re-compress as LZ4. To provide fast lookup and fancy slicing functionality
+    for these datasets, we built the <a href="https://github.com/seanmacavaney/zlib-state"><kbd>zlib-sate</kbd></a>
+    library which allows for more flexible seeking to particular points in gzip files. By distributing files
+    that provide periodic checkpoints, efficient corpus processing is provided while managing stoage costs.
+</p>
+
+<!--
+To add:
+ - Entity types (& their relation to one another). Include a diagram?
+ - Testing strategy (e.g., types of tests, when they get run, etc.)
+-->
+
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Experimaestro - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/">allenai/ir_datasets</a></div>
+<h1><code>ir_datasets</code>: Experimaestro</h1><p>
+    <a href="https://github.com/experimaestro/experimaestro-python">Experimaestro</a> is a experiment manager framework.
+    The <a href="https://github.com/bpiwowar/experimaestro-ir"><kbd>experimaestro-ir</kbd></a> package provides
+    support for IR data and experiments.
+</p>
+
+<p>
+    To get started with experimaestro-ir, see <a href="https://experimaestro-ir.readthedocs.io/en/latest/">this guide</a>.
+    You will need to run:
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">experimaestro</span><span class="o">-</span><span class="n">ir</span>
+</pre></div>
+
+
+
+<h2 class="underline">Basic Usage</h2>
+
+<p>
+    Datasets are references using <kbd>irds.{dotted-irds}</kbd>, where <kbd>{dotted-irds}</kbd> is the
+    ir-datasets dataset ID with the slashes replaced with dots. For example, to load the <a href="antique.html#antique/test"><kbd>antique/test</kbd></a>
+    dataset in Experimaestro, use:
+</p>
+
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s2">&quot;irds.antique.train&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>
+    Experimaestro's Dataset objects</a> have a different API and use a different naming convention than <kbd>ir_datasets</kbd>,
+    but they provide similar functionality. The naming is as follows:
+</p>
+
+<table>
+<tr><th>Experimaestro's...</th><th>Uses...</th></tr>
+<tr><td><kbd>dataset.documents.iter()</kbd></td><td><kbd>dataset.docs_iter()</kbd></td></tr>
+<tr><td><kbd>dataset.topics.iter()</kbd></td><td><kbd>dataset.queries_iter()</kbd></tr>
+<tr><td><kbd>dataset.assessments.iter()</kbd></td><td><kbd>dataset.qrels_iter()</kbd></td></tr>
+</table>
+
+<p>
+    To get the first 20 documents:
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">document</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">dataset</span><span class="o">.</span><span class="n">documents</span><span class="o">.</span><span class="n">iter</span><span class="p">()):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">document</span><span class="o">.</span><span class="n">docid</span><span class="p">,</span> <span class="n">document</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>  <span class="c1"># (qid, text) tuple</span>
+</pre></div>
+
+
+<p>
+    To get the topics:
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="o">.</span><span class="n">qid</span><span class="p">,</span> <span class="n">topic</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">topic</span><span class="o">.</span><span class="n">metadata</span><span class="p">)</span>  <span class="c1"># (qid, text, metadata) tuple</span>
+</pre></div>
+
+
+<h2 class="underline">Running an experiment</h2>
+
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">experimaestro</span> <span class="kn">import</span> <span class="n">experiment</span>
+<span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="kn">from</span> <span class="nn">xpmir.measures</span> <span class="kn">import</span> <span class="n">AP</span><span class="p">,</span> <span class="n">nDCG</span>
+<span class="kn">from</span> <span class="nn">xpmir.interfaces.anserini</span> <span class="kn">import</span> <span class="n">IndexCollection</span><span class="p">,</span> <span class="n">AnseriniRetriever</span>
+<span class="kn">from</span> <span class="nn">xpmir.rankers.standard</span> <span class="kn">import</span> <span class="n">BM25</span>
+<span class="kn">from</span> <span class="nn">xpmir.evaluation</span> <span class="kn">import</span> <span class="n">Evaluate</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s2">&quot;irds.antique.train&quot;</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">experiment</span><span class="p">(</span><span class="s2">&quot;workdir&quot;</span><span class="p">,</span> <span class="s2">&quot;evaluate-bm25&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">12345</span><span class="p">)</span> <span class="k">as</span> <span class="n">xp</span><span class="p">:</span>
+    <span class="c1"># Build the index</span>
+    <span class="n">xp</span><span class="o">.</span><span class="n">setenv</span><span class="p">(</span><span class="s2">&quot;JAVA_HOME&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;JAVA_HOME&quot;</span><span class="p">])</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">IndexCollection</span><span class="p">(</span><span class="n">documents</span><span class="o">=</span><span class="n">dataset</span><span class="o">.</span><span class="n">documents</span><span class="p">)</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
+
+    <span class="n">bm25_retriever</span> <span class="o">=</span> <span class="n">AnseriniRetriever</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">BM25</span><span class="p">())</span>
+    <span class="n">bm25_eval</span> <span class="o">=</span> <span class="n">Evaluate</span><span class="p">(</span><span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span> <span class="n">retriever</span><span class="o">=</span><span class="n">bm25_retriever</span><span class="p">,</span> <span class="n">measures</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">AP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span>
+    <span class="p">])</span><span class="o">.</span><span class="n">submit</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BM25 results&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bm25_eval</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
+</pre></div>
+
+
+</div>
+</body>
+</html>

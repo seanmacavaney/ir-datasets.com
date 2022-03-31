@@ -15,7 +15,7 @@
 
 <div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
 
-<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.0/ir_datasets/datasets/msmarco_passage_v2.py">datasets/msmarco_passage_v2.py</a></div>
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.1/ir_datasets/datasets/msmarco_passage_v2.py">datasets/msmarco_passage_v2.py</a></div>
 <h1><code>ir_datasets</code>: MSMARCO (passage, version 2)</h1>
 <div style="font-weight: bold; font-size: 1.1em;">Index</div>
 <ol class="index">
@@ -107,7 +107,7 @@
   }
 }</pre>
 </div>
-
+</div>
 </div>
 
 <hr />
@@ -346,7 +346,7 @@
   }
 }</pre>
 </div>
-
+</div>
 </div>
 
 <hr />
@@ -585,7 +585,7 @@
   }
 }</pre>
 </div>
-
+</div>
 </div>
 
 <hr />
@@ -593,7 +593,7 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage-v2/train"</span></kbd></h3>
 
 <div class="desc">
- <p> Official train set with 277,144 queries. </p> <p> Note that that qrels in this dataset are not directly human-assessed; labels from <a class="ds-ref">msmarco-passage</a> are mapped to documents via URL, these documents are re-passaged, and then the best approximate match is identified. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
+ <p> Official train set with 277,144 queries. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/train__queries">queries</a>
@@ -824,7 +824,7 @@
   }
 }</pre>
 </div>
-
+</div>
 </div>
 
 <hr />
@@ -832,7 +832,7 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage-v2/trec-dl-2021"</span></kbd></h3>
 
 <div class="desc">
- <p> Official topics for the TREC Deep Learning (DL) 2021 shared task. </p> <p> Note that at this time, qrels are only available to those with TREC active participant login credentials. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>AP@100</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>P(rel=2)@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> Official topics for the TREC Deep Learning (DL) 2021 shared task. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>AP@100</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>P(rel=2)@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021__queries">queries</a>
@@ -1057,7 +1057,7 @@
   }
 }</pre>
 </div>
-
+</div>
 </div>
 
 <hr />
@@ -1065,14 +1065,14 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage-v2/trec-dl-2021/judged"</span></kbd></h3>
 
 <div class="desc">
- <p> <a class="ds-ref">msmarco-passage-v2/trec-dl-2021</a>, but filtered down to the 53 queries with qrels. </p> <p> Note that at this time, this is only available to those with TREC active participant login credentials. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>AP@100</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>P(rel=2)@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
+ <p> <a class="ds-ref">msmarco-passage-v2/trec-dl-2021</a>, but filtered down to the 53 queries with qrels. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>AP@100</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>nDCG@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>P(rel=2)@10</kbd></a>, <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR(rel=2)</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__queries">queries</a>
 <div id="msmarco-passage-v2/trec-dl-2021/judged__queries" class="tab-content">
 <span class="ds-count"><kbd title="53">53</kbd> <kbd>queries</kbd></span>
 
-<p>Language: <em>multiple/other/unknown</em></p>
+<p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
@@ -1103,7 +1103,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage-v2/trec-dl-2021/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__docs">docs</a>
@@ -1195,7 +1203,21 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage-v2/trec-dl-2021/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage-v2&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">AP</span><span class="o">@</span><span class="mi">100</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">P</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage-v2/trec-dl-2021/judged__scoreddocs">scoreddocs</a>
@@ -1268,7 +1290,7 @@
   }
 }</pre>
 </div>
-
+</div>
 </div>
 
 <script type="text/javascript">
