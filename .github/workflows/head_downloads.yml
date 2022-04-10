@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git checkout -b head-downloads-${{github.run_number}} --track
-    - run: 'echo ${{github.run_number}} > docs/dlc/_placeholder.txt'
+    - run: 'echo ${{github.run_number}}-head > docs/dlc/_placeholder.txt'
     - uses: EndBug/add-and-commit@v8
       with:
         add: 'docs/dlc/_placeholder.txt'

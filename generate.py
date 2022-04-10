@@ -731,7 +731,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git checkout -b verify-downloads-${{{{github.run_number}}}} --track
-    - run: 'echo ${{{{github.run_number}}}} > docs/dlc/_placeholder.txt'
+    - run: 'echo ${{{{github.run_number}}}}-verify > docs/dlc/_placeholder.txt'
     - uses: EndBug/add-and-commit@v8
       with:
         add: 'docs/dlc/_placeholder.txt'
@@ -782,13 +782,13 @@ jobs:
         git config user.name "GitHub Actions"
         git pull --rebase --autostash
         git add docs/dlc/*.json
-        git commit -m 'verify_downloads: {dsid}'
-        if git push ; then
-          echo success
-        else
-          # Try again...
-          git pull --rebase --autostash
-          git push
+        if git commit -m 'verify_downloads: {dsid}' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
         fi''')
         out.write(f'''
   merge_dlc:
@@ -842,7 +842,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: git checkout -b head-downloads-${{{{github.run_number}}}} --track
-    - run: 'echo ${{{{github.run_number}}}} > docs/dlc/_placeholder.txt'
+    - run: 'echo ${{{{github.run_number}}}}-head > docs/dlc/_placeholder.txt'
     - uses: EndBug/add-and-commit@v8
       with:
         add: 'docs/dlc/_placeholder.txt'
