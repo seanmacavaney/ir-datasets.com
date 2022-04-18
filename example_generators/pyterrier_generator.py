@@ -38,12 +38,19 @@ class PyTerrierExampleGenerator():
         fields = self.dataset.docs_cls()._fields
         text_content_fields = [f for f in fields if self.dataset.docs_cls().__annotations__[f] is str and f not in ('doc_id', 'marked_up_text', 'source_xml', 'msmarco_document_id')]
         text_content_fields_list = ', '.join([f"'{f}'" for f in text_content_fields])
+
+        # When the doc_id is longer than the default 20 characters, we need to specify a new maximum length for this field.
+        meta = ''
+        max_len = self.dataset.docs_metadata().get('fields', {}).get('doc_id', {}).get('max_len', 0)
+        if max_len > 20:
+            meta = f', meta={{"docno": {max_len}}}'
+
         return Example(code=f'''
 import pyterrier as pt
 pt.init()
 dataset = pt.get_dataset('irds:{self.dataset_id}')
 # Index {self.pt_ds_path}
-indexer = pt.IterDictIndexer('./indices/{self.pt_ds_path.replace('/', '_')}')
+indexer = pt.IterDictIndexer('./indices/{self.pt_ds_path.replace('/', '_')}'{meta})
 index_ref = indexer.index(dataset.get_corpus_iter(), fields=[{text_content_fields_list}])
 ''', message_html='You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.')
 
