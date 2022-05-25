@@ -95,7 +95,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v0</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">46</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
@@ -223,7 +223,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v0</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">46</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
@@ -466,7 +466,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train/judged&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v0</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">46</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
@@ -663,7 +663,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v1</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
@@ -791,7 +791,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v1</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
@@ -1038,7 +1038,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019/judged&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v1</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
@@ -1285,7 +1285,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v1</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
@@ -1492,7 +1492,7 @@
 <span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020/judged&#39;</span><span class="p">)</span>
 <span class="c1"># Index trec-cast/v1</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
 <p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
