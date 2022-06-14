@@ -349,6 +349,7 @@ def generate_data_format(cls):
 
 
 def generate_index(out_dir, version, top_level_map):
+    template = Template(filename=os.path.join("templates", "index.html"))
     with page_template('index.html', out_dir, version, title='Catalog') as out:
         if version == 'master':
             install = '--upgrade git+https://github.com/allenai/ir_datasets.git'
@@ -381,70 +382,7 @@ def generate_index(out_dir, version, top_level_map):
                 index.append(f'{tbody}<tr{row_id}><td>{ds_name}</td><td id="{name}-docs" class="center">{emoji(dataset, name, "docs", parent)}</td><td id="{name}-queries" class="center">{emoji(dataset, name, "queries", parent)}</td><td id="{name}-qrels" class="center">{emoji(dataset, name, "qrels", parent)}</td><td id="{name}-scoreddocs" class="center screen-small-hide">{emoji(dataset, name, "scoreddocs", parent)}</td><td id="{name}-docpairs" class="center screen-small-hide">{emoji(dataset, name, "docpairs", parent)}</td><td id="{name}-qlogs" class="center screen-small-hide">{emoji(dataset, name, "qlogs", parent)}</td></tr>')
         index = '\n'.join(index)
         jump = '\n'.join(jump)
-        out.write(f'''
-<p>
-<code>ir_datasets</code> provides a common interface to many IR ranking datasets.
-</p>
-
-<h2 class="underline">Getting Started</h2>
-
-<p>
-Install with pip:
-</p>
-
-<code class="example">pip install {install}</code>
-
-<p>Guides:</p>
-
-<ul>
-<li>Colab Tutorials: <a href="https://colab.research.google.com/github/allenai/ir_datasets/blob/master/examples/ir_datasets.ipynb">python</a>, <a href="https://colab.research.google.com/github/allenai/ir_datasets/blob/master/examples/ir_datasets_cli.ipynb">CLI</a></li>
-<li><a href="python.html">Python API Documentation</a> (<a href="python-beta.html">beta version</a>)</li>
-<li><a href="cli.html">CLI Documentation</a></li>
-<li><a href="downloads.html">Download Dashboard</a></li>
-<li><a href="counts.html">Dataset Counts</a></li>
-<li><a href="https://github.com/allenai/ir_datasets/blob/master/examples/adding_datasets.ipynb">Adding new datasets</a></li>
-<li><a href="https://arxiv.org/pdf/2103.02280.pdf">ir_datasets SIGIR resource paper</a></li>
-<li>Using <kbd>ir_datasets</kbd> with&hellip;
-<a href="pyterrier.html">PyTerrier</a> &middot;
-<a href="ir-measures.html">ir-measures</a> &middot;
-<a href="trec_eval.html">trec_eval</a> &middot;
-<a href="experimaestro.html">Experimaestro</a>
-</li>
-<li><a href="design.html">Design Documentation</a></li>
-</ul>
-
-<h2 class="underline" style="margin-bottom: 4px;">Dataset Index</h2>
-<select id="DatasetJump">
-<option value="">Jump to Dataset...</option>
-{jump}
-</select>
-<p>✅: Data available as automatic download</p>
-<p>⚠️: Data available from a third party</p>
-<p>⬆️: Data inherited from a parent dataset (highlights which one on hover)</p>
-<table>
-<tbody>
-<tr>
-<th class="stick-top">Dataset</th>
-<th class="stick-top">docs</th>
-<th class="stick-top">queries</th>
-<th class="stick-top">qrels</th>
-<th class="stick-top screen-small-hide">scoreddocs</th>
-<th class="stick-top screen-small-hide">docpairs</th>
-<th class="stick-top screen-small-hide">qlogs</th>
-</tr>
-{index}
-</tbody>
-</table>
-''')
         deprecated_html = ', '.join([f'<a href="{parent}.html#{name}"><kbd>{name}</kbd></a>' for name, parent, dataset in deprecated])
-        out.write(f'''
-<h2 class="underline">Deprecated</h2>
-<p>These datasets have been deprecated. We keep them in the package for reproducibility, but
-better alternative dataset IDs exist (e.g., with improved corpus parsing).</p>
-<p>
-{deprecated_html}
-</p>
-''')
         v_prefix = '../' if version else ''
         versions = [str(v).split('/')[-2] for v in sorted(Path(out_dir).glob('*/index.html'))]
         versions = [v for v in versions if v != version]
@@ -452,25 +390,7 @@ better alternative dataset IDs exist (e.g., with improved corpus parsing).</p>
         if version:
             versions = [f'<li><a href="../index.html">Latest Release</a></li>'] + versions
         versions = '\n'.join(versions)
-        out.write(f'''
-<h2 class="underline">Other Versions</h2>
-<ul>
-{versions}
-</ul>
-<h2 class="underline">Citation</h2>
-<p>
-When using datasets provided by this package, be sure to properly cite them. Bibtex for each dataset
-can be found on each dataset's documenation page.
-</p>
-<p>If you use this tool, please cite our <a href="https://arxiv.org/pdf/2103.02280.pdf">SIGIR resource paper</a>:</p>
-<cite class="select">@inproceedings{{macavaney:sigir2021-irds,
-  author = {{MacAvaney, Sean and Yates, Andrew and Feldman, Sergey and Downey, Doug and Cohan, Arman and Goharian, Nazli}},
-  title = {{Simplified Data Wrangling with ir_datasets}},
-  year = {{2021}},
-  booktitle = {{SIGIR}}
-}}
-</cite>
-''')
+        out.write(template.render(install=install, jump=jump, index=index, deprecated_html=deprecated_html, versions=versions))
 
 
 def generate_counts(out_dir, version, top_level_map):
