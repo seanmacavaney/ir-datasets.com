@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>trec_eval &amp; ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div class="banner">This documentation is for <strong>v0.5.2</strong>. See <a href="../trec_eval.html">here</a> for documentation of the current latest version on pypi.</div>
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/">allenai/ir_datasets</a></div>
+<h1>trec_eval &amp; ir_datasets</h1><p>
+<a href="https://github.com/usnistgov/trec_eval">trec_eval</a> is a popular tool for
+calculating IR evaluation metrics, and is usually the official measure implementation for
+TREC shared tasks.
+</p>
+
+<p>
+To get started with trec_eval, see <a href="https://github.com/usnistgov/trec_eval/blob/master/README">this guide</a>.
+</p>
+
+<h2 class="underline">Basic Usage</h2>
+
+<p>
+<kbd>ir_datasets export</kbd> produces qrels in a trec_eval-compatible format by default.
+To use with trec_eval, first save save the output of the <kbd>ir_datasets export</kbd> command
+as a file, and then use that file as input to trec_eval.
+</p>
+
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-robust04 qrels &gt; trec-robust04.qrels
+trec_eval trec-robust04.qrels path/to/run
+</pre></div>
+
+<code class="output pre">runid                   all run
+num_q                   all 249
+num_ret                 all 60639
+num_rel                 all 17412
+num_rel_ret             all 5293
+map                     all 0.1619
+gm_map                  all 0.0667
+Rprec                   all 0.2199
+...
+</code>
+
+<p>
+Note that trec_eval does not accept named pipes as source files, so using <a href="https://tldp.org/LDP/abs/html/process-sub.html">
+process substitution</a> will result in an error.
+</p>
+
+</div>
+</body>
+</html>

@@ -15,7 +15,7 @@
 
 <div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
 
-<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.1/ir_datasets/datasets/kilt.py">datasets/kilt.py</a></div>
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.2/ir_datasets/datasets/kilt.py">datasets/kilt.py</a></div>
 <h1><code>ir_datasets</code>: KILT</h1>
 <div style="font-weight: bold; font-size: 1.1em;">Index</div>
 <ol class="index">
@@ -137,14 +137,14 @@
 <div class="tabs">
 <a class="tab" target="kilt/codec__queries">queries</a>
 <div id="kilt/codec__queries" class="tab-content">
-<span class="ds-count"><kbd title="36">36</kbd> <kbd>queries</kbd></span>
+<span class="ds-count"><kbd title="42">42</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">domain</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">guidelines</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -153,7 +153,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, domain, guidelines&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -163,7 +163,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[domain]&nbsp;&nbsp;&nbsp;&nbsp;[guidelines]</div>
 <div>...</div>
 
 </code>
@@ -233,7 +233,7 @@
 
 <a class="tab" target="kilt/codec__qrels">qrels</a>
 <div id="kilt/codec__qrels" class="tab-content">
-<span class="ds-count"><kbd title="10239">10K</kbd> <kbd>qrels</kbd></span>
+<span class="ds-count"><kbd title="11323">11K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -246,10 +246,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant. This entity is not useful or on topic.</td><td class="right"><kbd title="6665">6.7K</kbd></td><td class="right">65.1%</td></tr>
-<tr><td class="relScore">1</td><td>Not Valuable. It is useful to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="1910">1.9K</kbd></td><td class="right">18.7%</td></tr>
-<tr><td class="relScore">2</td><td>Somewhat valuable. It is important to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="1038">1.0K</kbd></td><td class="right">10.1%</td></tr>
-<tr><td class="relScore">3</td><td>Very Valuable. It is absolutely critical to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="626">626<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.1%</td></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. This entity is not useful or on topic.</td><td class="right"><kbd title="7053">7.1K</kbd></td><td class="right">62.3%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. It is useful to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="2241">2.2K</kbd></td><td class="right">19.8%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat valuable. It is important to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="1252">1.3K</kbd></td><td class="right">11.1%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. It is absolutely critical to understand what this entity is for understanding this topic.</td><td class="right"><kbd title="777">777<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.9%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -292,6 +292,18 @@
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
+<a class="tab" target="kilt/codec__citation">Citation</a>
+<div id="kilt/codec__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{mackie2022codec}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{mackie2022codec,
+   title={CODEC: Complex Document and Entity Collection},
+   author={Mackie, Iain and Owoicho, Paul and Gemmell, Carlos and Fischer, Sophie and MacAvaney, Sean and Dalton, Jeffery},
+   booktitle={Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+   year={2022}
+}</cite>
+</div>
+
 <a class="tab" target="kilt/codec__metadata">Metadata</a>
 <div id="kilt/codec__metadata" class="tab-content">
 <pre class="metadata">{
@@ -305,17 +317,17 @@
     }
   },
   "queries": {
-    "count": 36
+    "count": 42
   },
   "qrels": {
-    "count": 10239,
+    "count": 11323,
     "fields": {
       "relevance": {
         "counts_by_value": {
-          "0": 6665,
-          "1": 1910,
-          "2": 1038,
-          "3": 626
+          "0": 7053,
+          "2": 1252,
+          "3": 777,
+          "1": 2241
         }
       }
     }
@@ -335,14 +347,14 @@
 <div class="tabs">
 <a class="tab" target="kilt/codec/economics__queries">queries</a>
 <div id="kilt/codec/economics__queries" class="tab-content">
-<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+<span class="ds-count"><kbd title="14">14</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">domain</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">guidelines</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -351,7 +363,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/economics&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, domain, guidelines&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -361,7 +373,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[domain]&nbsp;&nbsp;&nbsp;&nbsp;[guidelines]</div>
 <div>...</div>
 
 </code>
@@ -431,7 +443,7 @@
 
 <a class="tab" target="kilt/codec/economics__qrels">qrels</a>
 <div id="kilt/codec/economics__qrels" class="tab-content">
-<span class="ds-count"><kbd title="1592">1.6K</kbd> <kbd>qrels</kbd></span>
+<span class="ds-count"><kbd title="1970">2.0K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -444,10 +456,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="596">596<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">37.4%</td></tr>
-<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="545">545<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">34.2%</td></tr>
-<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="330">330<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">20.7%</td></tr>
-<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="121">121<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">7.6%</td></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="660">660<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">33.5%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="693">693<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">35.2%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="458">458<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">23.2%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="159">159<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">8.1%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -490,6 +502,18 @@
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
+<a class="tab" target="kilt/codec/economics__citation">Citation</a>
+<div id="kilt/codec/economics__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{mackie2022codec}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{mackie2022codec,
+   title={CODEC: Complex Document and Entity Collection},
+   author={Mackie, Iain and Owoicho, Paul and Gemmell, Carlos and Fischer, Sophie and MacAvaney, Sean and Dalton, Jeffery},
+   booktitle={Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+   year={2022}
+}</cite>
+</div>
+
 <a class="tab" target="kilt/codec/economics__metadata">Metadata</a>
 <div id="kilt/codec/economics__metadata" class="tab-content">
 <pre class="metadata">{
@@ -503,17 +527,17 @@
     }
   },
   "queries": {
-    "count": 12
+    "count": 14
   },
   "qrels": {
-    "count": 1592,
+    "count": 1970,
     "fields": {
       "relevance": {
         "counts_by_value": {
-          "0": 596,
-          "2": 330,
-          "1": 545,
-          "3": 121
+          "2": 458,
+          "0": 660,
+          "1": 693,
+          "3": 159
         }
       }
     }
@@ -533,14 +557,14 @@
 <div class="tabs">
 <a class="tab" target="kilt/codec/history__queries">queries</a>
 <div id="kilt/codec/history__queries" class="tab-content">
-<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+<span class="ds-count"><kbd title="14">14</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">domain</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">guidelines</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -549,7 +573,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/history&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, domain, guidelines&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -559,7 +583,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[domain]&nbsp;&nbsp;&nbsp;&nbsp;[guidelines]</div>
 <div>...</div>
 
 </code>
@@ -629,7 +653,7 @@
 
 <a class="tab" target="kilt/codec/history__qrels">qrels</a>
 <div id="kilt/codec/history__qrels" class="tab-content">
-<span class="ds-count"><kbd title="1695">1.7K</kbd> <kbd>qrels</kbd></span>
+<span class="ds-count"><kbd title="2024">2.0K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -642,10 +666,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="870">870<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">51.3%</td></tr>
-<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="509">509<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">30.0%</td></tr>
-<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="235">235<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.9%</td></tr>
-<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="81">81<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">4.8%</td></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="998">998<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">49.3%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="618">618<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">30.5%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="292">292<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">14.4%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="116">116<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">5.7%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -688,6 +712,18 @@
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
+<a class="tab" target="kilt/codec/history__citation">Citation</a>
+<div id="kilt/codec/history__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{mackie2022codec}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{mackie2022codec,
+   title={CODEC: Complex Document and Entity Collection},
+   author={Mackie, Iain and Owoicho, Paul and Gemmell, Carlos and Fischer, Sophie and MacAvaney, Sean and Dalton, Jeffery},
+   booktitle={Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+   year={2022}
+}</cite>
+</div>
+
 <a class="tab" target="kilt/codec/history__metadata">Metadata</a>
 <div id="kilt/codec/history__metadata" class="tab-content">
 <pre class="metadata">{
@@ -701,17 +737,17 @@
     }
   },
   "queries": {
-    "count": 12
+    "count": 14
   },
   "qrels": {
-    "count": 1695,
+    "count": 2024,
     "fields": {
       "relevance": {
         "counts_by_value": {
-          "0": 870,
-          "1": 509,
-          "2": 235,
-          "3": 81
+          "0": 998,
+          "1": 618,
+          "2": 292,
+          "3": 116
         }
       }
     }
@@ -731,14 +767,14 @@
 <div class="tabs">
 <a class="tab" target="kilt/codec/politics__queries">queries</a>
 <div id="kilt/codec/politics__queries" class="tab-content">
-<span class="ds-count"><kbd title="12">12</kbd> <kbd>queries</kbd></span>
+<span class="ds-count"><kbd title="14">14</kbd> <kbd>queries</kbd></span>
 
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
 <div class="type-name">CodecQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">narrative</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">domain</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">guidelines</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -747,7 +783,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;kilt/codec/politics&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, narrative&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, query, domain, guidelines&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -757,7 +793,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[query]&nbsp;&nbsp;&nbsp;&nbsp;[domain]&nbsp;&nbsp;&nbsp;&nbsp;[guidelines]</div>
 <div>...</div>
 
 </code>
@@ -827,7 +863,7 @@
 
 <a class="tab" target="kilt/codec/politics__qrels">qrels</a>
 <div id="kilt/codec/politics__qrels" class="tab-content">
-<span class="ds-count"><kbd title="1843">1.8K</kbd> <kbd>qrels</kbd></span>
+<span class="ds-count"><kbd title="2192">2.2K</kbd> <kbd>qrels</kbd></span>
 
 <div>Query relevance judgment type:</div>
 <div class="type">
@@ -840,10 +876,10 @@
 
 <table>
 <tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="609">609<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">33.0%</td></tr>
-<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="765">765<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">41.5%</td></tr>
-<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="359">359<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">19.5%</td></tr>
-<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="110">110<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.0%</td></tr>
+<tr><td class="relScore">0</td><td>Not Relevant. Not useful or on topic.</td><td class="right"><kbd title="695">695<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">31.7%</td></tr>
+<tr><td class="relScore">1</td><td>Not Valuable. Consists of definitions or background.</td><td class="right"><kbd title="899">899<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">41.0%</td></tr>
+<tr><td class="relScore">2</td><td>Somewhat Valuable. Includes valuable topic-specific arguments, evidence, or knowledge.</td><td class="right"><kbd title="457">457<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">20.8%</td></tr>
+<tr><td class="relScore">3</td><td>Very Valuable. Includes central topic-specific arguments, evidence, or knowledge. This does not include general definitions or background.</td><td class="right"><kbd title="141">141<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">6.4%</td></tr>
 </table>
 
 <p>Examples:</p><div class="ex-tabs">
@@ -886,6 +922,18 @@
 <p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
 </div>
 
+<a class="tab" target="kilt/codec/politics__citation">Citation</a>
+<div id="kilt/codec/politics__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{mackie2022codec}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{mackie2022codec,
+   title={CODEC: Complex Document and Entity Collection},
+   author={Mackie, Iain and Owoicho, Paul and Gemmell, Carlos and Fischer, Sophie and MacAvaney, Sean and Dalton, Jeffery},
+   booktitle={Proceedings of the 44th International ACM SIGIR Conference on Research and Development in Information Retrieval},
+   year={2022}
+}</cite>
+</div>
+
 <a class="tab" target="kilt/codec/politics__metadata">Metadata</a>
 <div id="kilt/codec/politics__metadata" class="tab-content">
 <pre class="metadata">{
@@ -899,17 +947,17 @@
     }
   },
   "queries": {
-    "count": 12
+    "count": 14
   },
   "qrels": {
-    "count": 1843,
+    "count": 2192,
     "fields": {
       "relevance": {
         "counts_by_value": {
-          "1": 765,
-          "2": 359,
-          "0": 609,
-          "3": 110
+          "3": 141,
+          "2": 457,
+          "1": 899,
+          "0": 695
         }
       }
     }
