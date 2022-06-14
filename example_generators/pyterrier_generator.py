@@ -25,9 +25,21 @@ class PyTerrierExampleGenerator():
         return self.generate_bm25_experiment()
 
     def generate_scoreddocs(self):
-        return None
+        if not self.dataset.has_scoreddocs() or self.pt_ds_path is None or self.skip:
+            return None
+        if self.dataset.has_queries() and self.dataset.queries_lang() != 'en': # TODO: add support for other languages
+            return None
+        return Example(f'''
+import pyterrier as pt
+pt.init()
+dataset = pt.get_dataset('irds:{self.dataset_id}')
+dataset.get_results()
+''', message_html='You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.')
 
     def generate_docpairs(self):
+        return None
+
+    def generate_qlogs(self):
         return None
 
     def generate_indexing(self):
@@ -98,6 +110,3 @@ pt.Experiment(
     [{measures}]
 )
 ''', message_html='You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.')
-
-    def generate_qlogs(self):
-        return None
