@@ -1,1 +1,1 @@
-[]
+[{"name": "istella22/source", "url": "http://hpc.isti.cnr.it/~nardini/istella22-dataset/istella22.tar.gz", "time": "2022-07-17T08:06:10.645313", "duration": 1991.7139010429382, "result": "PASS", "fail_messagae": null, "md5": "c2e49dca9730fbb14164ed890756dc1d", "size": 26499490813, "recent_history": [{"result": "PASS", "time": "2022-07-17T08:06:10.645313"}]}]
