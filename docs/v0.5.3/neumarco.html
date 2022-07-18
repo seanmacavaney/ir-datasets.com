@@ -1,0 +1,2867 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>neuMARCO - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div class="banner">This documentation is for <strong>v0.5.3</strong>. See <a href="../neumarco.html">here</a> for documentation of the current latest version on pypi.</div>
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.3/ir_datasets/datasets/neumarco.py">datasets/neumarco.py</a></div>
+<h1><code>ir_datasets</code>: neuMARCO</h1>
+<div style="font-weight: bold; font-size: 1.1em;">Index</div>
+<ol class="index">
+<li><a href="#neumarco"><kbd>neumarco</kbd></a></li>
+<li><a href="#neumarco/fa"><kbd><span class="prefix">neumarco</span>/fa</kbd></a></li>
+<li><a href="#neumarco/fa/dev"><kbd><span class="prefix">neumarco</span>/fa/dev</kbd></a></li>
+<li><a href="#neumarco/fa/dev/judged"><kbd><span class="prefix">neumarco</span>/fa/dev/judged</kbd></a></li>
+<li><a href="#neumarco/fa/dev/small"><kbd><span class="prefix">neumarco</span>/fa/dev/small</kbd></a></li>
+<li><a href="#neumarco/fa/train"><kbd><span class="prefix">neumarco</span>/fa/train</kbd></a></li>
+<li><a href="#neumarco/fa/train/judged"><kbd><span class="prefix">neumarco</span>/fa/train/judged</kbd></a></li>
+<li><a href="#neumarco/ru"><kbd><span class="prefix">neumarco</span>/ru</kbd></a></li>
+<li><a href="#neumarco/ru/dev"><kbd><span class="prefix">neumarco</span>/ru/dev</kbd></a></li>
+<li><a href="#neumarco/ru/dev/judged"><kbd><span class="prefix">neumarco</span>/ru/dev/judged</kbd></a></li>
+<li><a href="#neumarco/ru/dev/small"><kbd><span class="prefix">neumarco</span>/ru/dev/small</kbd></a></li>
+<li><a href="#neumarco/ru/train"><kbd><span class="prefix">neumarco</span>/ru/train</kbd></a></li>
+<li><a href="#neumarco/ru/train/judged"><kbd><span class="prefix">neumarco</span>/ru/train/judged</kbd></a></li>
+<li><a href="#neumarco/zh"><kbd><span class="prefix">neumarco</span>/zh</kbd></a></li>
+<li><a href="#neumarco/zh/dev"><kbd><span class="prefix">neumarco</span>/zh/dev</kbd></a></li>
+<li><a href="#neumarco/zh/dev/judged"><kbd><span class="prefix">neumarco</span>/zh/dev/judged</kbd></a></li>
+<li><a href="#neumarco/zh/dev/small"><kbd><span class="prefix">neumarco</span>/zh/dev/small</kbd></a></li>
+<li><a href="#neumarco/zh/train"><kbd><span class="prefix">neumarco</span>/zh/train</kbd></a></li>
+<li><a href="#neumarco/zh/train/judged"><kbd><span class="prefix">neumarco</span>/zh/train/judged</kbd></a></li>
+</ol>
+<div id="Downloads">
+</div>
+<hr />
+<div class="dataset" id="neumarco">
+<h3><kbd class="select"><span class="str">"neumarco"</span></kbd></h3>
+
+<div class="desc">
+ <p> A version of <a class="ds-ref">msmarco-passage</a> for cross-language information retrieval, provided by <a href="https://hltcoe.jhu.edu/">JHU HLTCOE</a> with documents translated to other langauges using a <a href="https://www.amazon.science/publications/sockeye-2-a-toolkit-for-neural-machine-translation"> Sockeye 2</a> translation model. </p> <ul> <li>Documents: Web passages using machine translation to English</li> <li>Queries: Natural-language web queries in English</li> </ul> 
+</div>
+<div class="tabs"></div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/fa" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/fa"</span></kbd></h3>
+
+<div class="desc">
+ <p>The <a class="ds-ref">msmarco-passage</a> corpus, translated to Persian (Farsi).</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/fa__docs">docs</a>
+<div id="neumarco/fa__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">fa</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa__metadata">Metadata</a>
+<div id="neumarco/fa__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/fa/dev" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/fa/dev"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev</a>, with the corpus translated to Persian (Farsi).</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/fa/dev__queries">queries</a>
+<div id="neumarco/fa/dev__queries" class="tab-content">
+<span class="ds-count"><kbd title="101093">101K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev__docs">docs</a>
+<div id="neumarco/fa/dev__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/fa</a></p>
+<p>Language: <span class="lang-code">fa</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev__qrels">qrels</a>
+<div id="neumarco/fa/dev__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev__metadata">Metadata</a>
+<div id="neumarco/fa/dev__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 101093
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/fa/dev/judged" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/fa/dev/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev/judged</a>, with the corpus translated to Persian (Farsi).</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/fa/dev/judged__queries">queries</a>
+<div id="neumarco/fa/dev/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="55578">56K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev/judged__docs">docs</a>
+<div id="neumarco/fa/dev/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/fa</a></p>
+<p>Language: <span class="lang-code">fa</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev/judged__qrels">qrels</a>
+<div id="neumarco/fa/dev/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">neumarco/fa/dev</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev/judged__metadata">Metadata</a>
+<div id="neumarco/fa/dev/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 55578
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/fa/dev/small" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/fa/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev/small</a>, with the corpus translated to Persian (Farsi).</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/fa/dev/small__queries">queries</a>
+<div id="neumarco/fa/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev/small__docs">docs</a>
+<div id="neumarco/fa/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/fa</a></p>
+<p>Language: <span class="lang-code">fa</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev/small__qrels">qrels</a>
+<div id="neumarco/fa/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/dev/small__metadata">Metadata</a>
+<div id="neumarco/fa/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/fa/train" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/fa/train"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/train</a>, with the corpus translated to Persian (Farsi).</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/fa/train__queries">queries</a>
+<div id="neumarco/fa/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="808731">809K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train__docs">docs</a>
+<div id="neumarco/fa/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/fa</a></p>
+<p>Language: <span class="lang-code">fa</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train__qrels">qrels</a>
+<div id="neumarco/fa/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train__docpairs">docpairs</a>
+<div id="neumarco/fa/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train__metadata">Metadata</a>
+<div id="neumarco/fa/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 808731
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/fa/train/judged" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/fa/train/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/train/judged</a>, with the corpus translated to Persian (Farsi).</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/fa/train/judged__queries">queries</a>
+<div id="neumarco/fa/train/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="502939">503K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train/judged__docs">docs</a>
+<div id="neumarco/fa/train/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/fa</a></p>
+<p>Language: <span class="lang-code">fa</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train/judged__qrels">qrels</a>
+<div id="neumarco/fa/train/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">neumarco/fa/train</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train/judged__docpairs">docpairs</a>
+<div id="neumarco/fa/train/judged__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
+<p>Inherits docpairs from <a class="ds-ref">neumarco/fa/train</a></p>
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/fa/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/fa/train/judged docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/fa/train/judged__metadata">Metadata</a>
+<div id="neumarco/fa/train/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 502939
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/ru" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/ru"</span></kbd></h3>
+
+<div class="desc">
+ <p>The <a class="ds-ref">msmarco-passage</a> corpus, translated to Russian.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/ru__docs">docs</a>
+<div id="neumarco/ru__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">ru</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru__metadata">Metadata</a>
+<div id="neumarco/ru__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/ru/dev" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/ru/dev"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev</a>, with the corpus translated to Russian.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/ru/dev__queries">queries</a>
+<div id="neumarco/ru/dev__queries" class="tab-content">
+<span class="ds-count"><kbd title="101093">101K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev__docs">docs</a>
+<div id="neumarco/ru/dev__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/ru</a></p>
+<p>Language: <span class="lang-code">ru</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev__qrels">qrels</a>
+<div id="neumarco/ru/dev__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev__metadata">Metadata</a>
+<div id="neumarco/ru/dev__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 101093
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/ru/dev/judged" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/ru/dev/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev/judged</a>, with the corpus translated to Russian.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/ru/dev/judged__queries">queries</a>
+<div id="neumarco/ru/dev/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="55578">56K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev/judged__docs">docs</a>
+<div id="neumarco/ru/dev/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/ru</a></p>
+<p>Language: <span class="lang-code">ru</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev/judged__qrels">qrels</a>
+<div id="neumarco/ru/dev/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">neumarco/ru/dev</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev/judged__metadata">Metadata</a>
+<div id="neumarco/ru/dev/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 55578
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/ru/dev/small" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/ru/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev/small</a>, with the corpus translated to Russian.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/ru/dev/small__queries">queries</a>
+<div id="neumarco/ru/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev/small__docs">docs</a>
+<div id="neumarco/ru/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/ru</a></p>
+<p>Language: <span class="lang-code">ru</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev/small__qrels">qrels</a>
+<div id="neumarco/ru/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/dev/small__metadata">Metadata</a>
+<div id="neumarco/ru/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/ru/train" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/ru/train"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/train</a>, with the corpus translated to Russian.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/ru/train__queries">queries</a>
+<div id="neumarco/ru/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="808731">809K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train__docs">docs</a>
+<div id="neumarco/ru/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/ru</a></p>
+<p>Language: <span class="lang-code">ru</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train__qrels">qrels</a>
+<div id="neumarco/ru/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train__docpairs">docpairs</a>
+<div id="neumarco/ru/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train__metadata">Metadata</a>
+<div id="neumarco/ru/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 808731
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/ru/train/judged" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/ru/train/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/train/judged</a>, with the corpus translated to Russian.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/ru/train/judged__queries">queries</a>
+<div id="neumarco/ru/train/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="502939">503K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train/judged__docs">docs</a>
+<div id="neumarco/ru/train/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/ru</a></p>
+<p>Language: <span class="lang-code">ru</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train/judged__qrels">qrels</a>
+<div id="neumarco/ru/train/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">neumarco/ru/train</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train/judged__docpairs">docpairs</a>
+<div id="neumarco/ru/train/judged__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
+<p>Inherits docpairs from <a class="ds-ref">neumarco/ru/train</a></p>
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/ru/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/ru/train/judged docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/ru/train/judged__metadata">Metadata</a>
+<div id="neumarco/ru/train/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 502939
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/zh" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/zh"</span></kbd></h3>
+
+<div class="desc">
+ <p>The <a class="ds-ref">msmarco-passage</a> corpus, translated to Chinese.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/zh__docs">docs</a>
+<div id="neumarco/zh__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh__metadata">Metadata</a>
+<div id="neumarco/zh__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/zh/dev" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/zh/dev"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev</a>, with the corpus translated to Chinese.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/zh/dev__queries">queries</a>
+<div id="neumarco/zh/dev__queries" class="tab-content">
+<span class="ds-count"><kbd title="101093">101K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev__docs">docs</a>
+<div id="neumarco/zh/dev__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/zh</a></p>
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev__qrels">qrels</a>
+<div id="neumarco/zh/dev__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev__metadata">Metadata</a>
+<div id="neumarco/zh/dev__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 101093
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/zh/dev/judged" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/zh/dev/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev/judged</a>, with the corpus translated to Chinese.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/zh/dev/judged__queries">queries</a>
+<div id="neumarco/zh/dev/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="55578">56K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev/judged__docs">docs</a>
+<div id="neumarco/zh/dev/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/zh</a></p>
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev/judged__qrels">qrels</a>
+<div id="neumarco/zh/dev/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="59273">59K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">neumarco/zh/dev</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="59273">59K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev/judged__metadata">Metadata</a>
+<div id="neumarco/zh/dev/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 55578
+  },
+  "qrels": {
+    "count": 59273,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 59273
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/zh/dev/small" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/zh/dev/small"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/dev/small</a>, with the corpus translated to Chinese.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/zh/dev/small__queries">queries</a>
+<div id="neumarco/zh/dev/small__queries" class="tab-content">
+<span class="ds-count"><kbd title="6980">7.0K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev/small queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev/small__docs">docs</a>
+<div id="neumarco/zh/dev/small__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/zh</a></p>
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev/small docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev/small__qrels">qrels</a>
+<div id="neumarco/zh/dev/small__qrels" class="tab-content">
+<span class="ds-count"><kbd title="7437">7.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="7437">7.4K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/dev/small&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/dev/small qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/dev/small__metadata">Metadata</a>
+<div id="neumarco/zh/dev/small__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 6980
+  },
+  "qrels": {
+    "count": 7437,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 7437
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/zh/train" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/zh/train"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/train</a>, with the corpus translated to Chinese.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/zh/train__queries">queries</a>
+<div id="neumarco/zh/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="808731">809K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train__docs">docs</a>
+<div id="neumarco/zh/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/zh</a></p>
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train__qrels">qrels</a>
+<div id="neumarco/zh/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train__docpairs">docpairs</a>
+<div id="neumarco/zh/train__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
+
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train__metadata">Metadata</a>
+<div id="neumarco/zh/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 808731
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="neumarco/zh/train/judged" data-parent="neumarco">
+<h3><kbd class="ds-name select"><span class="str">"neumarco/zh/train/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p>A version of <a class="ds-ref">msmarco-passage/train/judged</a>, with the corpus translated to Chinese.</p> 
+</div>
+<div class="tabs">
+<a class="tab" target="neumarco/zh/train/judged__queries">queries</a>
+<div id="neumarco/zh/train/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="502939">503K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train/judged__docs">docs</a>
+<div id="neumarco/zh/train/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">neumarco/zh</a></p>
+<p>Language: <span class="lang-code">zh</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train/judged__qrels">qrels</a>
+<div id="neumarco/zh/train/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="532761">533K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">neumarco/zh/train</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="532761">533K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train/judged__docpairs">docpairs</a>
+<div id="neumarco/zh/train/judged__docpairs" class="tab-content">
+<span class="ds-count"><kbd title="269919004">270M</kbd> <kbd>docpairs</kbd></span>
+<p>Inherits docpairs from <a class="ds-ref">neumarco/zh/train</a></p>
+<div>Document Pair type:</div>
+<div class="type">
+<div class="type-name">GenericDocPair: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id_a</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">doc_id_b</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neumarco/zh/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">docpair</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docpairs_iter</span><span class="p">():</span>
+    <span class="n">docpair</span> <span class="c1"># namedtuple&lt;query_id, doc_id_a, doc_id_b&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> neumarco/zh/train/judged docpairs
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_a]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id_b]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="neumarco/zh/train/judged__metadata">Metadata</a>
+<div id="neumarco/zh/train/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 502939
+  },
+  "qrels": {
+    "count": 532761,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 532761
+        }
+      }
+    }
+  },
+  "docpairs": {
+    "count": 269919004
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    $.ajax({
+        'url': 'https://ir-datasets.com/dlc/neumarco.json'
+    }).done(function (data) {
+        $('#Downloads').append(generateDownloads('Downloadable content', data));
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

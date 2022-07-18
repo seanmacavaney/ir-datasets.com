@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>TREC Disks 4 and 5 - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div class="banner">This documentation is for <strong>v0.5.3</strong>. See <a href="../disks45.html">here</a> for documentation of the current latest version on pypi.</div>
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.3/ir_datasets/datasets/disks45.py">datasets/disks45.py</a></div>
+<h1><code>ir_datasets</code>: TREC Disks 4 and 5</h1>
+<div style="font-weight: bold; font-size: 1.1em;">Index</div>
+<ol class="index">
+<li><a href="#disks45"><kbd>disks45</kbd></a></li>
+<li><a href="#disks45/nocr"><kbd><span class="prefix">disks45</span>/nocr</kbd></a></li>
+<li><a href="#disks45/nocr/trec-robust-2004"><kbd><span class="prefix">disks45</span>/nocr/trec-robust-2004</kbd></a></li>
+<li><a href="#disks45/nocr/trec-robust-2004/fold1"><kbd><span class="prefix">disks45</span>/nocr/trec-robust-2004/fold1</kbd></a></li>
+<li><a href="#disks45/nocr/trec-robust-2004/fold2"><kbd><span class="prefix">disks45</span>/nocr/trec-robust-2004/fold2</kbd></a></li>
+<li><a href="#disks45/nocr/trec-robust-2004/fold3"><kbd><span class="prefix">disks45</span>/nocr/trec-robust-2004/fold3</kbd></a></li>
+<li><a href="#disks45/nocr/trec-robust-2004/fold4"><kbd><span class="prefix">disks45</span>/nocr/trec-robust-2004/fold4</kbd></a></li>
+<li><a href="#disks45/nocr/trec-robust-2004/fold5"><kbd><span class="prefix">disks45</span>/nocr/trec-robust-2004/fold5</kbd></a></li>
+<li><a href="#disks45/nocr/trec7"><kbd><span class="prefix">disks45</span>/nocr/trec7</kbd></a></li>
+<li><a href="#disks45/nocr/trec8"><kbd><span class="prefix">disks45</span>/nocr/trec8</kbd></a></li>
+</ol>
+<div id="Downloads">
+</div>
+
+<div id="DataAccess">
+<h3>Data Access Information</h3>
+ <p> To use this dataset, you need a copy of <a href="https://trec.nist.gov/data/cd45/index.html">TREC Disks 4 and 5</a>, provided by NIST. </p> <p> Your organization may already have a copy. If this is the case, you may only need to complete a new "Individual Argeement". Otherwise, your organization will need to file the "Organizational agreement" with NIST. It can take some time to process, but you will end up with a password-protected download link. </p> <p> ir_datasets needs the following directories from the source: </p> <ul> <li><kbd>FBIS</kbd></li> <li><kbd>FR94</kbd></li> <li><kbd>FT</kbd></li> <li><kbd>LATIMES</kbd></li> </ul> <p> ir_datasets expects the above directories to be copied/linked under <kbd>~/.ir_datasets/disks45/corpus</kbd>. The source document files themselves can either be compressed or uncompressed (it seems they have been distributed both ways in the past.) If ir_datasets does not find the files it is expecting, it will raise an error. </p> 
+</div>
+<hr />
+<div class="dataset" id="disks45">
+<h3><kbd class="select"><span class="str">"disks45"</span></kbd></h3>
+
+<div class="desc">
+ <p> TREC Disks 4 and 5, including documents from the Financial Times, the Congressional Record, the Federal Register, the Foreign Broadcast Information Service, and the Los Angeles Times. </p> <p> This dataset is a placeholder for the complete collection, but at this time, only the version of the dataset without the Congressional Record (<a class="ds-ref">disks45/nocr</a>) are provided. </p> <ul> <li><a href="https://trec.nist.gov/data/cd45/">Information and access to TREC Disks 4 and 5.</a></li> </ul> 
+</div>
+<div class="tabs"></div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr"</span></kbd></h3>
+
+<div class="desc">
+ <p> A version of <a class="ds-ref">disks45</a> without the Congressional Record. This is the typical setting for tasks like TREC 7, TREC 8, and TREC Robust 2004. </p> 
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr__docs">docs</a>
+<div id="disks45/nocr__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr__citation">Citation</a>
+<div id="disks45/nocr__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr__metadata">Metadata</a>
+<div id="disks45/nocr__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec-robust-2004" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec-robust-2004"</span></kbd></h3>
+
+<div class="desc">
+ <p> The TREC Robust retrieval task focuses on "improving the consistency of retrieval technology by focusing on poorly performing topics." </p> <p> The TREC Robust document collection is from TREC disks 4 and 5. Due to the copyrighted nature of the  documents, this collection is for research use only, which requires agreements to be filed with NIST. See details <a href="https://trec.nist.gov/data/cd45/index.html">here</a>. </p> <ul> <li>Documents: News articles</li> <li>Queries: keyword queries, descriptions, narratives</li> <li>Relevance: Deep judgments</li> <li><a href="https://trec.nist.gov/pubs/trec13/papers/ROBUST.OVERVIEW.pdf">Task Overview Paper</a></li> <li>See also: <a class="ds-ref">aquaint/trec-robust-2005</a></li> </ul>
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec-robust-2004__queries">queries</a>
+<div id="disks45/nocr/trec-robust-2004__queries" class="tab-content">
+<span class="ds-count"><kbd title="250">250</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">TrecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004__docs">docs</a>
+<div id="disks45/nocr/trec-robust-2004__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004__qrels">qrels</a>
+<div id="disks45/nocr/trec-robust-2004__qrels" class="tab-content">
+<span class="ds-count"><kbd title="311410">311K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="293998">294K</kbd></td><td class="right">94.4%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="16381">16K</kbd></td><td class="right">5.3%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="1031">1.0K</kbd></td><td class="right">0.3%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004__citation">Citation</a>
+<div id="disks45/nocr/trec-robust-2004__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees2004Robust,Huston2014ACO}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees2004Robust,
+  title={Overview of the TREC 2004 Robust Retrieval Track},
+  author={Ellen Voorhees},
+  booktitle={TREC},
+  year={2004}
+}
+@inproceedings{Huston2014ACO,
+  title={A Comparison of Retrieval Models using Term Dependencies},
+  author={Samuel Huston and W. Bruce Croft},
+  booktitle={CIKM},
+  year={2014}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004__metadata">Metadata</a>
+<div id="disks45/nocr/trec-robust-2004__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 250
+  },
+  "qrels": {
+    "count": 311410,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 16381,
+          "0": 293998,
+          "2": 1031
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec-robust-2004/fold1" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec-robust-2004/fold1"</span></kbd></h3>
+
+<div class="desc">
+ <p>Robust04 Fold 1 (Title) proposed by Huston &amp; Croft (2014) and used in numerous works</p>
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold1__queries">queries</a>
+<div id="disks45/nocr/trec-robust-2004/fold1__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold1 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold1&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold1__docs">docs</a>
+<div id="disks45/nocr/trec-robust-2004/fold1__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold1 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold1&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold1__qrels">qrels</a>
+<div id="disks45/nocr/trec-robust-2004/fold1__qrels" class="tab-content">
+<span class="ds-count"><kbd title="62789">63K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="59765">60K</kbd></td><td class="right">95.2%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="2795">2.8K</kbd></td><td class="right">4.5%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="229">229<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.4%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold1 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold1&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold1__citation">Citation</a>
+<div id="disks45/nocr/trec-robust-2004/fold1__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees2004Robust,Huston2014ACO}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees2004Robust,
+  title={Overview of the TREC 2004 Robust Retrieval Track},
+  author={Ellen Voorhees},
+  booktitle={TREC},
+  year={2004}
+}
+@inproceedings{Huston2014ACO,
+  title={A Comparison of Retrieval Models using Term Dependencies},
+  author={Samuel Huston and W. Bruce Croft},
+  booktitle={CIKM},
+  year={2014}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold1__metadata">Metadata</a>
+<div id="disks45/nocr/trec-robust-2004/fold1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 62789,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 59765,
+          "1": 2795,
+          "2": 229
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec-robust-2004/fold2" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec-robust-2004/fold2"</span></kbd></h3>
+
+<div class="desc">
+ <p>Robust04 Fold 2 (Title) proposed by Huston &amp; Croft (2014) and used in numerous works</p>
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold2__queries">queries</a>
+<div id="disks45/nocr/trec-robust-2004/fold2__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold2 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold2&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold2__docs">docs</a>
+<div id="disks45/nocr/trec-robust-2004/fold2__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold2 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold2&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold2__qrels">qrels</a>
+<div id="disks45/nocr/trec-robust-2004/fold2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="63917">64K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="60246">60K</kbd></td><td class="right">94.3%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="3334">3.3K</kbd></td><td class="right">5.2%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="337">337<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.5%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold2 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold2&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold2__citation">Citation</a>
+<div id="disks45/nocr/trec-robust-2004/fold2__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees2004Robust,Huston2014ACO}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees2004Robust,
+  title={Overview of the TREC 2004 Robust Retrieval Track},
+  author={Ellen Voorhees},
+  booktitle={TREC},
+  year={2004}
+}
+@inproceedings{Huston2014ACO,
+  title={A Comparison of Retrieval Models using Term Dependencies},
+  author={Samuel Huston and W. Bruce Croft},
+  booktitle={CIKM},
+  year={2014}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold2__metadata">Metadata</a>
+<div id="disks45/nocr/trec-robust-2004/fold2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 63917,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 3334,
+          "0": 60246,
+          "2": 337
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec-robust-2004/fold3" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec-robust-2004/fold3"</span></kbd></h3>
+
+<div class="desc">
+ <p>Robust04 Fold 3 (Title) proposed by Huston &amp; Croft (2014) and used in numerous works</p>
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold3__queries">queries</a>
+<div id="disks45/nocr/trec-robust-2004/fold3__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold3&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold3 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold3&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold3__docs">docs</a>
+<div id="disks45/nocr/trec-robust-2004/fold3__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold3&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold3 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold3&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold3__qrels">qrels</a>
+<div id="disks45/nocr/trec-robust-2004/fold3__qrels" class="tab-content">
+<span class="ds-count"><kbd title="62901">63K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="58859">59K</kbd></td><td class="right">93.6%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="3877">3.9K</kbd></td><td class="right">6.2%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="165">165<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.3%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold3&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold3 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold3&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold3__citation">Citation</a>
+<div id="disks45/nocr/trec-robust-2004/fold3__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees2004Robust,Huston2014ACO}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees2004Robust,
+  title={Overview of the TREC 2004 Robust Retrieval Track},
+  author={Ellen Voorhees},
+  booktitle={TREC},
+  year={2004}
+}
+@inproceedings{Huston2014ACO,
+  title={A Comparison of Retrieval Models using Term Dependencies},
+  author={Samuel Huston and W. Bruce Croft},
+  booktitle={CIKM},
+  year={2014}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold3__metadata">Metadata</a>
+<div id="disks45/nocr/trec-robust-2004/fold3__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 62901,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 58859,
+          "1": 3877,
+          "2": 165
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec-robust-2004/fold4" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec-robust-2004/fold4"</span></kbd></h3>
+
+<div class="desc">
+ <p>Robust04 Fold 4 (Title) proposed by Huston &amp; Croft (2014) and used in numerous works</p>
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold4__queries">queries</a>
+<div id="disks45/nocr/trec-robust-2004/fold4__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold4&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold4 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold4&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold4__docs">docs</a>
+<div id="disks45/nocr/trec-robust-2004/fold4__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold4&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold4 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold4&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold4__qrels">qrels</a>
+<div id="disks45/nocr/trec-robust-2004/fold4__qrels" class="tab-content">
+<span class="ds-count"><kbd title="57962">58K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="55103">55K</kbd></td><td class="right">95.1%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="2707">2.7K</kbd></td><td class="right">4.7%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="152">152<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.3%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold4&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold4 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold4&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold4__citation">Citation</a>
+<div id="disks45/nocr/trec-robust-2004/fold4__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees2004Robust,Huston2014ACO}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees2004Robust,
+  title={Overview of the TREC 2004 Robust Retrieval Track},
+  author={Ellen Voorhees},
+  booktitle={TREC},
+  year={2004}
+}
+@inproceedings{Huston2014ACO,
+  title={A Comparison of Retrieval Models using Term Dependencies},
+  author={Samuel Huston and W. Bruce Croft},
+  booktitle={CIKM},
+  year={2014}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold4__metadata">Metadata</a>
+<div id="disks45/nocr/trec-robust-2004/fold4__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 57962,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 55103,
+          "1": 2707,
+          "2": 152
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec-robust-2004/fold5" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec-robust-2004/fold5"</span></kbd></h3>
+
+<div class="desc">
+ <p>Robust04 Fold 5 (Title) proposed by Huston &amp; Croft (2014) and used in numerous works</p>
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold5__queries">queries</a>
+<div id="disks45/nocr/trec-robust-2004/fold5__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold5&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold5 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold5&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold5__docs">docs</a>
+<div id="disks45/nocr/trec-robust-2004/fold5__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold5&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold5 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold5&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold5__qrels">qrels</a>
+<div id="disks45/nocr/trec-robust-2004/fold5__qrels" class="tab-content">
+<span class="ds-count"><kbd title="63841">64K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="60025">60K</kbd></td><td class="right">94.0%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="3668">3.7K</kbd></td><td class="right">5.7%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="148">148<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">0.2%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec-robust-2004/fold5&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec-robust-2004/fold5 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec-robust-2004/fold5&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold5__citation">Citation</a>
+<div id="disks45/nocr/trec-robust-2004/fold5__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees2004Robust,Huston2014ACO}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees2004Robust,
+  title={Overview of the TREC 2004 Robust Retrieval Track},
+  author={Ellen Voorhees},
+  booktitle={TREC},
+  year={2004}
+}
+@inproceedings{Huston2014ACO,
+  title={A Comparison of Retrieval Models using Term Dependencies},
+  author={Samuel Huston and W. Bruce Croft},
+  booktitle={CIKM},
+  year={2014}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec-robust-2004/fold5__metadata">Metadata</a>
+<div id="disks45/nocr/trec-robust-2004/fold5__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 63841,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 60025,
+          "1": 3668,
+          "2": 148
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec7" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec7"</span></kbd></h3>
+
+<div class="desc">
+ <p> The TREC 7 Adhoc Retrieval track. </p> <ul> <li><a href="https://trec.nist.gov/pubs/trec7/papers/overview_7.pdf.gz">Task Overview Paper</a></li> </ul> 
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec7__queries">queries</a>
+<div id="disks45/nocr/trec7__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">TrecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec7&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec7 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec7&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec7__docs">docs</a>
+<div id="disks45/nocr/trec7__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec7&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec7 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec7&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec7__qrels">qrels</a>
+<div id="disks45/nocr/trec7__qrels" class="tab-content">
+<span class="ds-count"><kbd title="80345">80K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="75671">76K</kbd></td><td class="right">94.2%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="4674">4.7K</kbd></td><td class="right">5.8%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec7&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec7 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec7&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec7__citation">Citation</a>
+<div id="disks45/nocr/trec7__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees1998Trec7}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees1998Trec7,
+  title = {Overview of the Seventh Text Retrieval Conference (TREC-7)},
+  author = {Ellen M. Voorhees and Donna Harman},
+  year = {1998},
+  booktitle = {TREC}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec7__metadata">Metadata</a>
+<div id="disks45/nocr/trec7__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 80345,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 75671,
+          "1": 4674
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="disks45/nocr/trec8" data-parent="disks45">
+<h3><kbd class="ds-name select"><span class="str">"disks45/nocr/trec8"</span></kbd></h3>
+
+<div class="desc">
+ <p> The TREC 8 Adhoc Retrieval track. </p> <ul> <li><a href="https://trec.nist.gov/pubs/trec8/papers/overview_8.pdf">Task Overview Paper</a></li> </ul> 
+</div>
+<div class="tabs">
+<a class="tab" target="disks45/nocr/trec8__queries">queries</a>
+<div id="disks45/nocr/trec8__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">TrecQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec8&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec8 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec8&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec8__docs">docs</a>
+<div id="disks45/nocr/trec8__docs" class="tab-content">
+<span class="ds-count"><kbd title="528155">528K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">disks45/nocr</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TrecParsedDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">body</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">marked_up_doc</span>: <span class="kwd">bytes</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec8&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, title, body, marked_up_doc&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec8 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[body]&nbsp;&nbsp;&nbsp;&nbsp;[marked_up_doc]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec8&#39;</span><span class="p">)</span>
+<span class="c1"># Index disks45/nocr</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;body&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec8__qrels">qrels</a>
+<div id="disks45/nocr/trec8__qrels" class="tab-content">
+<span class="ds-count"><kbd title="86830">87K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="82102">82K</kbd></td><td class="right">94.6%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="4728">4.7K</kbd></td><td class="right">5.4%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;disks45/nocr/trec8&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> disks45/nocr/trec8 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:disks45/nocr/trec8&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/disks45_nocr&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="disks45/nocr/trec8__citation">Citation</a>
+<div id="disks45/nocr/trec8__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Voorhees1996Disks45,Voorhees1999Trec8}</cite>
+<p>Bibtex:</p>
+<cite class="select">@misc{Voorhees1996Disks45,
+  title = {NIST TREC Disks 4 and 5: Retrieval Test Collections Document Set},
+  author = {Ellen M. Voorhees},
+  doi = {10.18434/t47g6m},
+  year = {1996},
+  publisher = {National Institute of Standards and Technology}
+}
+@inproceedings{Voorhees1999Trec8,
+  title = {Overview of the Eight Text Retrieval Conference (TREC-8)},
+  author = {Ellen M. Voorhees and Donna Harman},
+  year = {1999},
+  booktitle = {TREC}
+}</cite>
+</div>
+
+<a class="tab" target="disks45/nocr/trec8__metadata">Metadata</a>
+<div id="disks45/nocr/trec8__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 528155,
+    "fields": {
+      "doc_id": {
+        "max_len": 16,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 86830,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 82102,
+          "1": 4728
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    $.ajax({
+        'url': 'https://ir-datasets.com/dlc/disks45.json'
+    }).done(function (data) {
+        $('#Downloads').append(generateDownloads('Downloadable content', data));
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

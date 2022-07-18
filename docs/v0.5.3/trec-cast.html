@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>TREC CAsT (Conversational Assistance) - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div class="banner">This documentation is for <strong>v0.5.3</strong>. See <a href="../trec-cast.html">here</a> for documentation of the current latest version on pypi.</div>
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.3/ir_datasets/datasets/trec_cast.py">datasets/trec_cast.py</a></div>
+<h1><code>ir_datasets</code>: TREC CAsT (Conversational Assistance)</h1>
+<div style="font-weight: bold; font-size: 1.1em;">Index</div>
+<ol class="index">
+<li><a href="#trec-cast"><kbd>trec-cast</kbd></a></li>
+<li><a href="#trec-cast/v0"><kbd><span class="prefix">trec-cast</span>/v0</kbd></a></li>
+<li><a href="#trec-cast/v0/train"><kbd><span class="prefix">trec-cast</span>/v0/train</kbd></a></li>
+<li><a href="#trec-cast/v0/train/judged"><kbd><span class="prefix">trec-cast</span>/v0/train/judged</kbd></a></li>
+<li><a href="#trec-cast/v1"><kbd><span class="prefix">trec-cast</span>/v1</kbd></a></li>
+<li><a href="#trec-cast/v1/2019"><kbd><span class="prefix">trec-cast</span>/v1/2019</kbd></a></li>
+<li><a href="#trec-cast/v1/2019/judged"><kbd><span class="prefix">trec-cast</span>/v1/2019/judged</kbd></a></li>
+<li><a href="#trec-cast/v1/2020"><kbd><span class="prefix">trec-cast</span>/v1/2020</kbd></a></li>
+<li><a href="#trec-cast/v1/2020/judged"><kbd><span class="prefix">trec-cast</span>/v1/2020/judged</kbd></a></li>
+</ol>
+<div id="Downloads">
+</div>
+
+<div id="DataAccess">
+<h3>Data Access Information</h3>
+ <p> To use version 0 of the corpus, you need a copy of the <a href="https://trec.nist.gov/data/wapost/">Washington Post Collection</a>, provided by NIST. </p> <p> Your organization may already have a copy. If this is the case, you may only need to complete a new "Individual Argeement". Otherwise, your organization will need to file the "Organizational agreement" with NIST. It can take some time to process, but you will end up with a password-protected download link. </p> <p> For the v0 corpus, the source file required is <kbd>WashingtonPost.v2.tar.gz</kbd>. ir_datasets expects the above file to be copied/linked under <kbd>~/.ir_datasets/wapo/WashingtonPost.v2.tar.gz</kbd>. </p> <!--<p> For the v2 corpus, the source file required is <kbd>WashingtonPost.v4.tar.gz</kbd>. ir_datasets expects the above file to be copied/linked under <kbd>~/.ir_datasets/wapo/WashingtonPost.v4.tar.gz</kbd>. </p>--> 
+</div>
+<hr />
+<div class="dataset" id="trec-cast">
+<h3><kbd class="select"><span class="str">"trec-cast"</span></kbd></h3>
+
+<div class="desc">
+ <p> The TREC Conversational Assistance Track (CAsT) is a benchmark for Conversational Information Seeking (CIS) models. </p> <ul> <li>Documents: Passages from Wikipedia (TREC CAR or KILT), MS MARCO, and/or the Washington Post (depending on year)</li> <li>Queries: raw utterences in sequence, manual/automatic re-writing of queries (depending on year)</li> <li>Relevance: Deep judgments</li> <li><a href="https://www.treccast.ai/">Track Website</a></li> </ul>
+</div>
+<div class="tabs"></div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v0" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v0"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version 0 of the TREC CAsT corpus. This version uses documents from the Washington Post (version 2), TREC CAR (version 2), and MS MARCO passage (version 1). </p> <p> This corpus was originally meant to be used for evaluation of the 2019 task, but the Washington Post corpus was not included for scoring in the final version due to "an error in the process led to ambiguous document ids," and Washington Post documents were removed from participating systems. As such, <a class="ds-ref">trec-cast/v1</a> (which doesn't include the Washington Post) should be used for the 2019 version of the task. However, this version still can be used for the training set (<a class="ds-ref">trec-cast/v0/train</a>) or for replicating the original submissions to the track (prior to the removal of Washingotn Post documents). </p> <ul> <li><a href="https://arxiv.org/pdf/2003.13624.pdf">Task Overview Paper</a></li> </ul>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v0__docs">docs</a>
+<div id="trec-cast/v0__docs" class="tab-content">
+<span class="ds-count"><kbd title="47696605">48M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v0</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">46</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0__citation">Citation</a>
+<div id="trec-cast/v0__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2019Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2019Cast,
+  title={CAsT 2019: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2019}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v0__metadata">Metadata</a>
+<div id="trec-cast/v0__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 47696605,
+    "fields": {
+      "doc_id": {
+        "max_len": 46,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v0/train" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v0/train"</span></kbd></h3>
+
+<div class="desc">
+ <p> Training set provided by TREC CAsT 2019. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v0/train__queries">queries</a>
+<div id="trec-cast/v0/train__queries" class="tab-content">
+<span class="ds-count"><kbd title="269">269</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">Cast2019Query: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">raw_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">topic_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">turn_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">topic_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">topic_description</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, raw_utterance, topic_number, turn_number, topic_title, topic_description&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[raw_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[topic_number]&nbsp;&nbsp;&nbsp;&nbsp;[turn_number]&nbsp;&nbsp;&nbsp;&nbsp;[topic_title]&nbsp;&nbsp;&nbsp;&nbsp;[topic_description]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">))</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train__docs">docs</a>
+<div id="trec-cast/v0/train__docs" class="tab-content">
+<span class="ds-count"><kbd title="47696605">48M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">trec-cast/v0</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v0</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">46</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train__qrels">qrels</a>
+<div id="trec-cast/v0/train__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2399">2.4K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="1759">1.8K</kbd></td><td class="right">73.3%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="329">329<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.7%</td></tr>
+<tr><td class="relScore">2</td><td>very relevant</td><td class="right"><kbd title="311">311<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train__scoreddocs">scoreddocs</a>
+<div id="trec-cast/v0/train__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="269000">269K</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train&#39;</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+</pre></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train__citation">Citation</a>
+<div id="trec-cast/v0/train__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2019Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2019Cast,
+  title={CAsT 2019: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2019}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v0/train__metadata">Metadata</a>
+<div id="trec-cast/v0/train__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 47696605,
+    "fields": {
+      "doc_id": {
+        "max_len": 46,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 269
+  },
+  "qrels": {
+    "count": 2399,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 311,
+          "0": 1759,
+          "1": 329
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 269000
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v0/train/judged" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v0/train/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p> <a class="ds-ref">trec-cast/2019/train</a>, but with queries that do not appear in the qrels removed. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v0/train/judged__queries">queries</a>
+<div id="trec-cast/v0/train/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="120">120</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train/judged__docs">docs</a>
+<div id="trec-cast/v0/train/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="47696605">48M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">trec-cast/v0</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train/judged&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v0</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">46</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train/judged__qrels">qrels</a>
+<div id="trec-cast/v0/train/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2399">2.4K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">trec-cast/v0/train</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="1759">1.8K</kbd></td><td class="right">73.3%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="329">329<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.7%</td></tr>
+<tr><td class="relScore">2</td><td>very relevant</td><td class="right"><kbd title="311">311<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">13.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train/judged__scoreddocs">scoreddocs</a>
+<div id="trec-cast/v0/train/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="120000">120K</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v0/train/judged scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v0/train/judged&#39;</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+</pre></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v0/train/judged__citation">Citation</a>
+<div id="trec-cast/v0/train/judged__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2019Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2019Cast,
+  title={CAsT 2019: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2019}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v0/train/judged__metadata">Metadata</a>
+<div id="trec-cast/v0/train/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 47696605,
+    "fields": {
+      "doc_id": {
+        "max_len": 46,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 120
+  },
+  "qrels": {
+    "count": 2399,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "2": 311,
+          "0": 1759,
+          "1": 329
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 120000
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v1" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v1"</span></kbd></h3>
+
+<div class="desc">
+ <p> Version 1 of the TREC CAsT corpus. This version uses documents from the TREC CAR (version 2) and MS MARCO passage (version 1). This version of the corpus was used for TREC CAsT 2019 and 2020. </p> <ul> <li><a href="https://arxiv.org/pdf/2003.13624.pdf">Task Overview Paper</a></li> </ul>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v1__docs">docs</a>
+<div id="trec-cast/v1__docs" class="tab-content">
+<span class="ds-count"><kbd title="38622444">39M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v1</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1__citation">Citation</a>
+<div id="trec-cast/v1__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2019Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2019Cast,
+  title={CAsT 2019: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2019}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v1__metadata">Metadata</a>
+<div id="trec-cast/v1__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 38622444,
+    "fields": {
+      "doc_id": {
+        "max_len": 44,
+        "common_prefix": ""
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v1/2019" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v1/2019"</span></kbd></h3>
+
+<div class="desc">
+ <p> Official evaluation set for TREC CAsT 2019. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v1/2019__queries">queries</a>
+<div id="trec-cast/v1/2019__queries" class="tab-content">
+<span class="ds-count"><kbd title="479">479</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">Cast2019Query: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">raw_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">topic_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">turn_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">topic_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">topic_description</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, raw_utterance, topic_number, turn_number, topic_title, topic_description&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[raw_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[topic_number]&nbsp;&nbsp;&nbsp;&nbsp;[turn_number]&nbsp;&nbsp;&nbsp;&nbsp;[topic_title]&nbsp;&nbsp;&nbsp;&nbsp;[topic_description]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">))</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019__docs">docs</a>
+<div id="trec-cast/v1/2019__docs" class="tab-content">
+<span class="ds-count"><kbd title="38622444">39M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">trec-cast/v1</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v1</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019__qrels">qrels</a>
+<div id="trec-cast/v1/2019__qrels" class="tab-content">
+<span class="ds-count"><kbd title="29350">29K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Fails to meet. The passage is not relevant to the question. The passage is unrelated to the target query.</td><td class="right"><kbd title="21230">21K</kbd></td><td class="right">72.3%</td></tr>
+<tr><td class="relScore">1</td><td>Slightly meets. The passage includes some information about the turn, but does not directly answer it. Users will find some useful information in the passage that may lead to the correct answer, perhaps after additional rounds of conversation (better than nothing).</td><td class="right"><kbd title="2889">2.9K</kbd></td><td class="right">9.8%</td></tr>
+<tr><td class="relScore">2</td><td>Moderately meets. The passage answers the turn, but is focused on other information that is unrelated to the question. The passage may contain the answer, but users will need extra effort to pick the correct portion. The passage may be relevant, but it may only partially answer the turn, missing a small aspect of the context.</td><td class="right"><kbd title="2157">2.2K</kbd></td><td class="right">7.3%</td></tr>
+<tr><td class="relScore">3</td><td>Highly meets. The passage answers the question and is focused on the turn. It would be a satisfactory answer if Google Assistant or Alexa returned this passage in response to the query. It may contain limited extraneous information.</td><td class="right"><kbd title="1456">1.5K</kbd></td><td class="right">5.0%</td></tr>
+<tr><td class="relScore">4</td><td>Fully meets. The passage is a perfect answer for the turn. It includes all of the information needed to fully answer the turn in the conversation context. It focuses only on the subject and contains little extra information.</td><td class="right"><kbd title="1618">1.6K</kbd></td><td class="right">5.5%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019__scoreddocs">scoreddocs</a>
+<div id="trec-cast/v1/2019__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="479000">479K</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019 scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019&#39;</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+</pre></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019__citation">Citation</a>
+<div id="trec-cast/v1/2019__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2019Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2019Cast,
+  title={CAsT 2019: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2019}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019__metadata">Metadata</a>
+<div id="trec-cast/v1/2019__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 38622444,
+    "fields": {
+      "doc_id": {
+        "max_len": 44,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 479
+  },
+  "qrels": {
+    "count": 29350,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 21230,
+          "1": 2889,
+          "2": 2157,
+          "3": 1456,
+          "4": 1618
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 479000
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v1/2019/judged" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v1/2019/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p> <a class="ds-ref">trec-cast/v1/2019</a>, but with queries that do not appear in the qrels removed. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v1/2019/judged__queries">queries</a>
+<div id="trec-cast/v1/2019/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="173">173</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019/judged__docs">docs</a>
+<div id="trec-cast/v1/2019/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="38622444">39M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">trec-cast/v1</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019/judged&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v1</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019/judged__qrels">qrels</a>
+<div id="trec-cast/v1/2019/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="29350">29K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">trec-cast/v1/2019</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Fails to meet. The passage is not relevant to the question. The passage is unrelated to the target query.</td><td class="right"><kbd title="21230">21K</kbd></td><td class="right">72.3%</td></tr>
+<tr><td class="relScore">1</td><td>Slightly meets. The passage includes some information about the turn, but does not directly answer it. Users will find some useful information in the passage that may lead to the correct answer, perhaps after additional rounds of conversation (better than nothing).</td><td class="right"><kbd title="2889">2.9K</kbd></td><td class="right">9.8%</td></tr>
+<tr><td class="relScore">2</td><td>Moderately meets. The passage answers the turn, but is focused on other information that is unrelated to the question. The passage may contain the answer, but users will need extra effort to pick the correct portion. The passage may be relevant, but it may only partially answer the turn, missing a small aspect of the context.</td><td class="right"><kbd title="2157">2.2K</kbd></td><td class="right">7.3%</td></tr>
+<tr><td class="relScore">3</td><td>Highly meets. The passage answers the question and is focused on the turn. It would be a satisfactory answer if Google Assistant or Alexa returned this passage in response to the query. It may contain limited extraneous information.</td><td class="right"><kbd title="1456">1.5K</kbd></td><td class="right">5.0%</td></tr>
+<tr><td class="relScore">4</td><td>Fully meets. The passage is a perfect answer for the turn. It includes all of the information needed to fully answer the turn in the conversation context. It focuses only on the subject and contains little extra information.</td><td class="right"><kbd title="1618">1.6K</kbd></td><td class="right">5.5%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019/judged__scoreddocs">scoreddocs</a>
+<div id="trec-cast/v1/2019/judged__scoreddocs" class="tab-content">
+<span class="ds-count"><kbd title="173000">173K</kbd> <kbd>scoreddocs</kbd></span>
+
+<div>Scored Document type:</div>
+<div class="type">
+<div class="type-name">GenericScoredDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">score</span>: <span class="kwd">float</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">scoreddoc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">scoreddocs_iter</span><span class="p">():</span>
+    <span class="n">scoreddoc</span> <span class="c1"># namedtuple&lt;query_id, doc_id, score&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2019/judged scoreddocs --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[score]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2019/judged&#39;</span><span class="p">)</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+</pre></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019/judged__citation">Citation</a>
+<div id="trec-cast/v1/2019/judged__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2019Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2019Cast,
+  title={CAsT 2019: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2019}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v1/2019/judged__metadata">Metadata</a>
+<div id="trec-cast/v1/2019/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 38622444,
+    "fields": {
+      "doc_id": {
+        "max_len": 44,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 173
+  },
+  "qrels": {
+    "count": 29350,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 21230,
+          "1": 2889,
+          "2": 2157,
+          "3": 1456,
+          "4": 1618
+        }
+      }
+    }
+  },
+  "scoreddocs": {
+    "count": 173000
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v1/2020" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v1/2020"</span></kbd></h3>
+
+<div class="desc">
+ <p> Official evaluation set for TREC CAsT 2020. </p> <ul> <li><a href="https://trec.nist.gov/pubs/trec29/papers/OVERVIEW.C.pdf">Task Overview Paper</a></li> </ul>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v1/2020__queries">queries</a>
+<div id="trec-cast/v1/2020__queries" class="tab-content">
+<span class="ds-count"><kbd title="216">216</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">Cast2020Query: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">raw_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">automatic_rewritten_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">manual_rewritten_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">manual_canonical_result_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">topic_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="6"><span class="">turn_number</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2020&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, raw_utterance, automatic_rewritten_utterance, manual_rewritten_utterance, manual_canonical_result_id, topic_number, turn_number&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2020 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[raw_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[automatic_rewritten_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[manual_rewritten_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[manual_canonical_result_id]&nbsp;&nbsp;&nbsp;&nbsp;[topic_number]&nbsp;&nbsp;&nbsp;&nbsp;[turn_number]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">))</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020__docs">docs</a>
+<div id="trec-cast/v1/2020__docs" class="tab-content">
+<span class="ds-count"><kbd title="38622444">39M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">trec-cast/v1</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2020&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2020 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v1</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020__qrels">qrels</a>
+<div id="trec-cast/v1/2020__qrels" class="tab-content">
+<span class="ds-count"><kbd title="40451">40K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Fails to meet. The passage is not relevant to the question. The passage is unrelated to the target query.</td><td class="right"><kbd title="33781">34K</kbd></td><td class="right">83.5%</td></tr>
+<tr><td class="relScore">1</td><td>Slightly meets. The passage includes some information about the turn, but does not directly answer it. Users will find some useful information in the passage that may lead to the correct answer, perhaps after additional rounds of conversation (better than nothing).</td><td class="right"><kbd title="2697">2.7K</kbd></td><td class="right">6.7%</td></tr>
+<tr><td class="relScore">2</td><td>Moderately meets. The passage answers the turn, but is focused on other information that is unrelated to the question. The passage may contain the answer, but users will need extra effort to pick the correct portion. The passage may be relevant, but it may only partially answer the turn, missing a small aspect of the context.</td><td class="right"><kbd title="1834">1.8K</kbd></td><td class="right">4.5%</td></tr>
+<tr><td class="relScore">3</td><td>Highly meets. The passage answers the question and is focused on the turn. It would be a satisfactory answer if Google Assistant or Alexa returned this passage in response to the query. It may contain limited extraneous information.</td><td class="right"><kbd title="1408">1.4K</kbd></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">4</td><td>Fully meets. The passage is a perfect answer for the turn. It includes all of the information needed to fully answer the turn in the conversation context. It focuses only on the subject and contains little extra information.</td><td class="right"><kbd title="731">731<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.8%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2020&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2020 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020__citation">Citation</a>
+<div id="trec-cast/v1/2020__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2020Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2020Cast,
+  title={CAsT 2020: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2020}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020__metadata">Metadata</a>
+<div id="trec-cast/v1/2020__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 38622444,
+    "fields": {
+      "doc_id": {
+        "max_len": 44,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 216
+  },
+  "qrels": {
+    "count": 40451,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 2697,
+          "0": 33781,
+          "2": 1834,
+          "3": 1408,
+          "4": 731
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="trec-cast/v1/2020/judged" data-parent="trec-cast">
+<h3><kbd class="ds-name select"><span class="str">"trec-cast/v1/2020/judged"</span></kbd></h3>
+
+<div class="desc">
+ <p> <a class="ds-ref">trec-cast/v1/2020</a>, but with queries that do not appear in the qrels removed. </p>
+</div>
+<div class="tabs">
+<a class="tab" target="trec-cast/v1/2020/judged__queries">queries</a>
+<div id="trec-cast/v1/2020/judged__queries" class="tab-content">
+<span class="ds-count"><kbd title="208">208</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2020/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2020/judged queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020/judged__docs">docs</a>
+<div id="trec-cast/v1/2020/judged__docs" class="tab-content">
+<span class="ds-count"><kbd title="38622444">39M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">trec-cast/v1</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2020/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2020/judged docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020/judged&#39;</span><span class="p">)</span>
+<span class="c1"># Index trec-cast/v1</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020/judged__qrels">qrels</a>
+<div id="trec-cast/v1/2020/judged__qrels" class="tab-content">
+<span class="ds-count"><kbd title="40451">40K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">trec-cast/v1/2020</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>Fails to meet. The passage is not relevant to the question. The passage is unrelated to the target query.</td><td class="right"><kbd title="33781">34K</kbd></td><td class="right">83.5%</td></tr>
+<tr><td class="relScore">1</td><td>Slightly meets. The passage includes some information about the turn, but does not directly answer it. Users will find some useful information in the passage that may lead to the correct answer, perhaps after additional rounds of conversation (better than nothing).</td><td class="right"><kbd title="2697">2.7K</kbd></td><td class="right">6.7%</td></tr>
+<tr><td class="relScore">2</td><td>Moderately meets. The passage answers the turn, but is focused on other information that is unrelated to the question. The passage may contain the answer, but users will need extra effort to pick the correct portion. The passage may be relevant, but it may only partially answer the turn, missing a small aspect of the context.</td><td class="right"><kbd title="1834">1.8K</kbd></td><td class="right">4.5%</td></tr>
+<tr><td class="relScore">3</td><td>Highly meets. The passage answers the question and is focused on the turn. It would be a satisfactory answer if Google Assistant or Alexa returned this passage in response to the query. It may contain limited extraneous information.</td><td class="right"><kbd title="1408">1.4K</kbd></td><td class="right">3.5%</td></tr>
+<tr><td class="relScore">4</td><td>Fully meets. The passage is a perfect answer for the turn. It includes all of the information needed to fully answer the turn in the conversation context. It focuses only on the subject and contains little extra information.</td><td class="right"><kbd title="731">731<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">1.8%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2020/judged&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> trec-cast/v1/2020/judged qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:trec-cast/v1/2020/judged&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020/judged__citation">Citation</a>
+<div id="trec-cast/v1/2020/judged__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Dalton2020Cast}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Dalton2020Cast,
+  title={CAsT 2020: The Conversational Assistance Track Overview},
+  author={Jeffrey Dalton and Chenyan Xiong and Jamie Callan},
+  booktitle={TREC},
+  year={2020}
+}</cite>
+</div>
+
+<a class="tab" target="trec-cast/v1/2020/judged__metadata">Metadata</a>
+<div id="trec-cast/v1/2020/judged__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 38622444,
+    "fields": {
+      "doc_id": {
+        "max_len": 44,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 208
+  },
+  "qrels": {
+    "count": 40451,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 2697,
+          "0": 33781,
+          "2": 1834,
+          "3": 1408,
+          "4": 731
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    $.ajax({
+        'url': 'https://ir-datasets.com/dlc/trec-cast.json'
+    }).done(function (data) {
+        $('#Downloads').append(generateDownloads('Downloadable content', data));
+    });
+});
+</script>
+
+</div>
+</body>
+</html>
