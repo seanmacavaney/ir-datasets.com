@@ -15,7 +15,7 @@
 
 <div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
 
-<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.3/ir_datasets/datasets/clueweb12.py">datasets/clueweb12.py</a></div>
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.4/ir_datasets/datasets/clueweb12.py">datasets/clueweb12.py</a></div>
 <h1><code>ir_datasets</code>: ClueWeb12</h1>
 <div style="font-weight: bold; font-size: 1.1em;">Index</div>
 <ol class="index">
@@ -34,6 +34,8 @@
 <li><a href="#clueweb12/b13/trec-misinfo-2019"><kbd><span class="prefix">clueweb12</span>/b13/trec-misinfo-2019</kbd></a></li>
 <li><a href="#clueweb12/touche-2020-task-2"><kbd><span class="prefix">clueweb12</span>/touche-2020-task-2</kbd></a></li>
 <li><a href="#clueweb12/touche-2021-task-2"><kbd><span class="prefix">clueweb12</span>/touche-2021-task-2</kbd></a></li>
+<li><a href="#clueweb12/touche-2022-task-2"><kbd><span class="prefix">clueweb12</span>/touche-2022-task-2</kbd></a></li>
+<li><a href="#clueweb12/touche-2022-task-2/expanded-doc-t5-query"><kbd><span class="prefix">clueweb12</span>/touche-2022-task-2/expanded-doc-t5-query</kbd></a></li>
 <li><a href="#clueweb12/trec-web-2013"><kbd><span class="prefix">clueweb12</span>/trec-web-2013</kbd></a></li>
 <li><a href="#clueweb12/trec-web-2013/diversity"><kbd><span class="prefix">clueweb12</span>/trec-web-2013/diversity</kbd></a></li>
 <li><a href="#clueweb12/trec-web-2014"><kbd><span class="prefix">clueweb12</span>/trec-web-2014</kbd></a></li>
@@ -2222,52 +2224,42 @@ Documents are judged based on their general topical relevance.
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bondarenko2020Touche,Braunstain2016Support,Rafalak2014Credibility}</cite>
 <p>Bibtex:</p>
 <cite class="select">@inproceedings{Bondarenko2020Touche,
-  address =               {Berlin Heidelberg New York},
-  author =                {Alexander Bondarenko and Maik Fr{\"o}be and Meriem Beloucif and Lukas Gienapp and Yamen Ajjour and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
-  booktitle =             {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 11th International Conference of the CLEF Association (CLEF 2020)},
-  doi =                   {10.1007/978-3-030-58219-7\_26},
-  editor =                {Avi Arampatzis and Evangelos Kanoulas and Theodora Tsikrika and Stefanos Vrochidis and Hideo Joho and Christina Lioma and Carsten Eickhoff and Aur{\'e}lie N{\'e}v{\'e}ol and Linda Cappellato and Nicola Ferro},
-  month =                 sep,
-  pages =                 {384-395},
-  publisher =             {Springer},
-  series =                {Lecture Notes in Computer Science},
-  site =                  {Thessaloniki, Greece},
-  title =                 {{Overview of Touch{\'e} 2020: Argument Retrieval}},
-  url =                   {https://link.springer.com/chapter/10.1007/978-3-030-58219-7_26},
-  volume =                12260,
-  year =                  2020,
+  address = {Berlin Heidelberg New York},
+  author = {Alexander Bondarenko and Maik Fr{\"o}be and Meriem Beloucif and Lukas Gienapp and Yamen Ajjour and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
+  booktitle = {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 11th International Conference of the CLEF Association (CLEF 2020)},
+  doi = {10.1007/978-3-030-58219-7\_26},
+  editor = {Avi Arampatzis and Evangelos Kanoulas and Theodora Tsikrika and Stefanos Vrochidis and Hideo Joho and Christina Lioma and Carsten Eickhoff and Aur{\'e}lie N{\'e}v{\'e}ol and Linda Cappellato and Nicola Ferro},
+  month = sep,
+  pages = {384-395},
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  site = {Thessaloniki, Greece},
+  title = {{Overview of Touch{\'e} 2020: Argument Retrieval}},
+  url = {https://link.springer.com/chapter/10.1007/978-3-030-58219-7_26},
+  volume = 12260,
+  year = 2020,
 }
 @inproceedings{Braunstain2016Support,
-  author    = {Liora Braunstain and Oren Kurland and David Carmel and Idan Szpektor and Anna Shtok},
-  editor    = {Nicola Ferro and Fabio Crestani and Marie{-}Francine Moens and Josiane Mothe and Fabrizio Silvestri and Giorgio Maria Di Nunzio and Claudia Hauff and Gianmaria Silvello},
-  title     = {Supporting Human Answers for Advice-Seeking Questions in {CQA} Sites},
+  author = {Liora Braunstain and Oren Kurland and David Carmel and Idan Szpektor and Anna Shtok},
+  editor = {Nicola Ferro and Fabio Crestani and Marie{-}Francine Moens and Josiane Mothe and Fabrizio Silvestri and Giorgio Maria Di Nunzio and Claudia Hauff and Gianmaria Silvello},
+  title = {Supporting Human Answers for Advice-Seeking Questions in {CQA} Sites},
   booktitle = {Advances in Information Retrieval - 38th European Conference on {IR} Research, {ECIR} 2016, Padua, Italy, March 20-23, 2016. Proceedings},
-  series    = {Lecture Notes in Computer Science},
-  volume    = {9626},
-  pages     = {129--141},
+  series = {Lecture Notes in Computer Science},
+  volume = {9626},
+  pages = {129--141},
   publisher = {Springer},
-  year      = {2016},
-  url       = {https://doi.org/10.1007/978-3-319-30671-1\_10},
-  doi       = {10.1007/978-3-319-30671-1\_10},
-  timestamp = {Sun, 25 Oct 2020 22:33:09 +0100},
-  biburl    = {https://dblp.org/rec/conf/ecir/BraunstainKCSS16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  year = {2016},
+  doi = {10.1007/978-3-319-30671-1\_10},
 }
 @inproceedings{Rafalak2014Credibility,
-    author = {Rafalak, Maria and Abramczuk, Katarzyna and Wierzbicki, Adam},
-    title = {Incredible: Is (Almost) All Web Content Trustworthy? Analysis of Psychological Factors Related to Website Credibility Evaluation},
-    year = {2014},
-    isbn = {9781450327459},
-    publisher = {Association for Computing Machinery},
-    address = {New York, NY, USA},
-    url = {https://doi.org/10.1145/2567948.2578997},
-    doi = {10.1145/2567948.2578997},
-    booktitle = {Proceedings of the 23rd International Conference on World Wide Web},
-    pages = {1117–1122},
-    numpages = {6},
-    keywords = {bias, risk-taking, online behavior, trust, credibility},
-    location = {Seoul, Korea},
-    series = {WWW '14 Companion}
+  author    = {Maria Rafalak and Katarzyna Abramczuk and Adam Wierzbicki},
+  editor = {Chin{-}Wan Chung and Andrei Z. Broder and Kyuseok Shim and Torsten Suel},
+  title = {Incredible: is (almost) all web content trustworthy? analysis of psychological factors related to website credibility evaluation},
+  booktitle = {23rd International World Wide Web Conference, {WWW} '14, Seoul, Republic of Korea, April 7-11, 2014, Companion Volume},
+  pages = {1117--1122},
+  publisher = {{ACM}},
+  year = {2014},
+  doi = {10.1145/2567948.2578997},
 }</cite>
 </div>
 
@@ -2463,20 +2455,20 @@ i.e., "well-writtenness" of the document:
 <p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bondarenko2021Touche}</cite>
 <p>Bibtex:</p>
 <cite class="select">@inproceedings{Bondarenko2021Touche,
-  address =               {Berlin Heidelberg New York},
-  author =                {Alexander Bondarenko and Lukas Gienapp and Maik Fr{\"o}be and Meriem Beloucif and Yamen Ajjour and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
-  booktitle =             {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 12th International Conference of the CLEF Association (CLEF 2021)},
-  doi =                   {10.1007/978-3-030-85251-1\_28},
-  editor =                {{K. Sel{\c{c}}uk} Candan and Bogdan Ionescu and Lorraine Goeuriot and Henning M{\"u}ller and Alexis Joly and Maria Maistro and Florina Piroi and Guglielmo Faggioli and Nicola Ferro},
-  month =                 sep,
-  pages =                 {450-467},
-  publisher =             {Springer},
-  series =                {Lecture Notes in Computer Science},
-  site =                  {Bucharest, Romania},
-  title =                 {{Overview of Touch{\'e} 2021: Argument Retrieval}},
-  url =                   {https://link.springer.com/chapter/10.1007/978-3-030-85251-1_28},
-  volume =                12880,
-  year =                  2021,
+  address = {Berlin Heidelberg New York},
+  author = {Alexander Bondarenko and Lukas Gienapp and Maik Fr{\"o}be and Meriem Beloucif and Yamen Ajjour and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
+  booktitle = {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 12th International Conference of the CLEF Association (CLEF 2021)},
+  doi = {10.1007/978-3-030-85251-1\_28},
+  editor = {{K. Sel{\c{c}}uk} Candan and Bogdan Ionescu and Lorraine Goeuriot and Henning M{\"u}ller and Alexis Joly and Maria Maistro and Florina Piroi and Guglielmo Faggioli and Nicola Ferro},
+  month = sep,
+  pages = {450-467},
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  site = {Bucharest, Romania},
+  title = {{Overview of Touch{\'e} 2021: Argument Retrieval}},
+  url = {https://link.springer.com/chapter/10.1007/978-3-030-85251-1_28},
+  volume = 12880,
+  year = 2021,
 }</cite>
 </div>
 
@@ -2503,6 +2495,397 @@ i.e., "well-writtenness" of the document:
           "0": 1435,
           "1": 377,
           "2": 264
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="clueweb12/touche-2022-task-2" data-parent="clueweb12">
+<h3><kbd class="ds-name select"><span class="str">"clueweb12/touche-2022-task-2"</span></kbd></h3>
+
+<div class="desc">
+<p>
+Decision making processes, be it at the societal or at the personal level,
+often come to a point where one side challenges the other with a why-question,
+which is a prompt to justify some stance based on arguments.
+Since technologies for argument mining are maturing at a rapid pace,
+also ad-hoc argument retrieval becomes a feasible task in reach.
+Touché 2022 is the third lab on argument retrieval at CLEF 2022 featuring three tasks.
+</p>
+<p>
+Given a comparative topic and a collection of documents, the task is to retrieve relevant argumentative passages for either compared object or for both and to detect their respective stances with respect to the object they talk about.
+</p>
+<p>
+Documents are judged based on their general topical relevance and for rhetorical quality,
+i.e., "well-writtenness" of the document:
+(1) whether the text has a good style of speech (formal language is preferred over informal),
+(2) whether the text has a proper sentence structure and is easy to read,
+(3) whether it includes profanity, has typos, and makes use of other detrimental style choices.
+</p>
+<p>
+Additionally, classify the stance of the retrieved text passages towards the compared objects in questions. For instance, in the question <i>Who is a better friend, a cat or a dog?</i> the terms <i>cat</i> and <i>dog</i> are the comparison objects. An answer candidate like <i>Cats can be quite affectionate and attentive, and thus are good friends</i> should be classified as pro the <i>cat</i> object, while <i>Cats are less faithful than dogs</i> as supporting the <i>dog</i> object.
+</p>
+<ul>
+<li><a href="https://touche.webis.de/clef22/touche22-web/argument-retrieval-for-comparative-questions.html">Task 2 website</a></li>
+<li><a href="https://touche.webis.de/clef22/touche22-web/">Lab website</a></li>
+<li><a href="https://doi.org/10.1007/978-3-030-99739-7_43">Overview paper</a></li>
+</ul>
+
+</div>
+<div class="tabs">
+<a class="tab" target="clueweb12/touche-2022-task-2__queries">queries</a>
+<div id="clueweb12/touche-2022-task-2__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">ToucheComparativeQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">objects</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>,<span class="kwd">str</span>]</li><li data-tuple-idx="3"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;clueweb12/touche-2022-task-2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, objects, description, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> clueweb12/touche-2022-task-2 queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[objects]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2__docs">docs</a>
+<div id="clueweb12/touche-2022-task-2__docs" class="tab-content">
+<span class="ds-count"><kbd title="868655">869K</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TouchePassageDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">chatnoir_url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;clueweb12/touche-2022-task-2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text, chatnoir_url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> clueweb12/touche-2022-task-2 docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[chatnoir_url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2__qrels">qrels</a>
+<div id="clueweb12/touche-2022-task-2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2107">2.1K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">ToucheQualityComparativeStanceQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">quality</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">stance</span>: <span class="kwd">ToucheComparativeStance</span>[FIRST, SECOND, NEUTRAL, NO]</li><li data-tuple-idx="5"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="851">851<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">40.4%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="723">723<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">34.3%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="533">533<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">25.3%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;clueweb12/touche-2022-task-2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, quality, stance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> clueweb12/touche-2022-task-2 qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[quality]&nbsp;&nbsp;&nbsp;&nbsp;[stance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2__citation">Citation</a>
+<div id="clueweb12/touche-2022-task-2__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bondarenko2022Touche}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Bondarenko2022Touche,
+  address = {Berlin Heidelberg New York},
+  author = {Alexander Bondarenko and Maik Fr{\"o}be and Johannes Kiesel and Shahbaz Syed and Timon Gurcke and Meriem Beloucif and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
+  booktitle = {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 13th International Conference of the CLEF Association (CLEF 2022)},
+  editor = {Alberto Barr{\'o}n-Cede{\~n}o and Giovanni Da San Martino and Mirko Degli Esposti and Fabrizio Sebastiani and Craig Macdonald and Gabriella Pasi and Allan Hanbury and Martin Potthast and Guglielmo Faggioli and Nicola Ferro},
+  month = sep,
+  numpages = 29,
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  site = {Bologna, Italy},
+  title = {{Overview of Touch{\'e} 2022: Argument Retrieval}},
+  year = 2022
+}</cite>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2__metadata">Metadata</a>
+<div id="clueweb12/touche-2022-task-2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 868655,
+    "fields": {
+      "doc_id": {
+        "max_len": 32,
+        "common_prefix": "clueweb12-"
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 2107,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 851,
+          "1": 723,
+          "2": 533
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="clueweb12/touche-2022-task-2/expanded-doc-t5-query" data-parent="clueweb12">
+<h3><kbd class="ds-name select"><span class="str">"clueweb12/touche-2022-task-2/expanded-doc-t5-query"</span></kbd></h3>
+
+<div class="desc">
+<p>
+Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> where each passage has been expanded with queries generated using DocT5Query.
+</p>
+
+</div>
+<div class="tabs">
+<a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__queries">queries</a>
+<div id="clueweb12/touche-2022-task-2/expanded-doc-t5-query__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+<p>Inherits queries from <a class="ds-ref">clueweb12/touche-2022-task-2</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">ToucheComparativeQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">objects</span>: <span class="kwd">Tuple</span>[<span class="kwd">str</span>,<span class="kwd">str</span>]</li><li data-tuple-idx="3"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;clueweb12/touche-2022-task-2/expanded-doc-t5-query&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, objects, description, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> clueweb12/touche-2022-task-2/expanded-doc-t5-query queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[objects]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__docs">docs</a>
+<div id="clueweb12/touche-2022-task-2/expanded-doc-t5-query__docs" class="tab-content">
+<span class="ds-count"><kbd title="868655">869K</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">TouchePassageDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">chatnoir_url</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;clueweb12/touche-2022-task-2/expanded-doc-t5-query&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text, chatnoir_url&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> clueweb12/touche-2022-task-2/expanded-doc-t5-query docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[chatnoir_url]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__qrels">qrels</a>
+<div id="clueweb12/touche-2022-task-2/expanded-doc-t5-query__qrels" class="tab-content">
+<span class="ds-count"><kbd title="2107">2.1K</kbd> <kbd>qrels</kbd></span>
+<p>Inherits qrels from <a class="ds-ref">clueweb12/touche-2022-task-2</a></p>
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">ToucheQualityComparativeStanceQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">quality</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">stance</span>: <span class="kwd">ToucheComparativeStance</span>[FIRST, SECOND, NEUTRAL, NO]</li><li data-tuple-idx="5"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="851">851<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">40.4%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="723">723<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">34.3%</td></tr>
+<tr><td class="relScore">2</td><td>highly relevant</td><td class="right"><kbd title="533">533<span style="visibility: hidden;">&nbsp;</span></kbd></td><td class="right">25.3%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;clueweb12/touche-2022-task-2/expanded-doc-t5-query&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, quality, stance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> clueweb12/touche-2022-task-2/expanded-doc-t5-query qrels --format tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[quality]&nbsp;&nbsp;&nbsp;&nbsp;[stance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<p><i>No example available for PyTerrier</i></p></div></div>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__citation">Citation</a>
+<div id="clueweb12/touche-2022-task-2/expanded-doc-t5-query__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bondarenko2022Touche}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Bondarenko2022Touche,
+  address = {Berlin Heidelberg New York},
+  author = {Alexander Bondarenko and Maik Fr{\"o}be and Johannes Kiesel and Shahbaz Syed and Timon Gurcke and Meriem Beloucif and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
+  booktitle = {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 13th International Conference of the CLEF Association (CLEF 2022)},
+  editor = {Alberto Barr{\'o}n-Cede{\~n}o and Giovanni Da San Martino and Mirko Degli Esposti and Fabrizio Sebastiani and Craig Macdonald and Gabriella Pasi and Allan Hanbury and Martin Potthast and Guglielmo Faggioli and Nicola Ferro},
+  month = sep,
+  numpages = 29,
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  site = {Bologna, Italy},
+  title = {{Overview of Touch{\'e} 2022: Argument Retrieval}},
+  year = 2022
+}</cite>
+</div>
+
+<a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__metadata">Metadata</a>
+<div id="clueweb12/touche-2022-task-2/expanded-doc-t5-query__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 868655,
+    "fields": {
+      "doc_id": {
+        "max_len": 32,
+        "common_prefix": "clueweb12-"
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 2107,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "0": 851,
+          "1": 723,
+          "2": 533
         }
       }
     }
