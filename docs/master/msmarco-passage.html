@@ -23,7 +23,6 @@
 <ol class="index">
 <li><a href="#msmarco-passage"><kbd>msmarco-passage</kbd></a></li>
 <li><a href="#msmarco-passage/dev"><kbd><span class="prefix">msmarco-passage</span>/dev</kbd></a></li>
-<li><a href="#msmarco-passage/dev/2"><kbd><span class="prefix">msmarco-passage</span>/dev/2</kbd></a></li>
 <li><a href="#msmarco-passage/dev/judged"><kbd><span class="prefix">msmarco-passage</span>/dev/judged</kbd></a></li>
 <li><a href="#msmarco-passage/dev/small"><kbd><span class="prefix">msmarco-passage</span>/dev/small</kbd></a></li>
 <li><a href="#msmarco-passage/eval"><kbd><span class="prefix">msmarco-passage</span>/eval</kbd></a></li>
@@ -98,7 +97,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage__citation">Citation</a>
@@ -181,7 +189,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev__docs">docs</a>
@@ -226,7 +242,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev__qrels">qrels</a>
@@ -284,7 +309,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev__citation">Citation</a>
@@ -320,205 +353,6 @@
       "relevance": {
         "counts_by_value": {
           "1": 59273
-        }
-      }
-    }
-  }
-}</pre>
-</div>
-</div>
-</div>
-
-<hr />
-<div class="dataset" id="msmarco-passage/dev/2" data-parent="msmarco-passage">
-<h3><kbd class="ds-name select"><span class="str">"msmarco-passage/dev/2"</span></kbd></h3>
-
-<div class="desc">
- <p> "Dev2" split of the <a class="ds-ref">msmarco-passage/dev</a> set. Originally released as part of the v2 corpus. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
-</div>
-<div class="tabs">
-<a class="tab" target="msmarco-passage/dev/2__queries">queries</a>
-<div id="msmarco-passage/dev/2__queries" class="tab-content">
-<span class="ds-count"><kbd title="4281">4.3K</kbd> <kbd>queries</kbd></span>
-
-<p>Language: <span class="lang-code">en</span></p>
-<div>Query type:</div>
-<div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
-<ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
-</ol>
-</div>
-<p>Examples:</p><div class="ex-tabs">
-<a class="ex-tab" target="irds-python">Python API</a>
-<div class="ex-tab-content irds-python">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/2&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
-</pre></div>
-<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
-<a class="ex-tab" target="irds-cli">CLI</a>
-<div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/2 queries
-</pre></div>
-
-<code class="output">
-
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
-<div>...</div>
-
-</code>
-<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
-<a class="ex-tab" target="pyterrier">PyTerrier</a>
-<div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/2&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
-</pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
-</div>
-
-<a class="tab" target="msmarco-passage/dev/2__docs">docs</a>
-<div id="msmarco-passage/dev/2__docs" class="tab-content">
-<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
-<p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
-<p>Language: <span class="lang-code">en</span></p>
-<div>Document type:</div>
-<div class="type">
-<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
-<ol class="type-fields">
-<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
-</ol>
-</div>
-<p>Examples:</p><div class="ex-tabs">
-<a class="ex-tab" target="irds-python">Python API</a>
-<div class="ex-tab-content irds-python">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/2&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
-    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
-</pre></div>
-<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
-<a class="ex-tab" target="irds-cli">CLI</a>
-<div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/2 docs
-</pre></div>
-
-<code class="output">
-
-<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
-<div>...</div>
-
-</code>
-<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
-<a class="ex-tab" target="pyterrier">PyTerrier</a>
-<div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/2&#39;</span><span class="p">)</span>
-<span class="c1"># Index msmarco-passage</span>
-<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
-</div>
-
-<a class="tab" target="msmarco-passage/dev/2__qrels">qrels</a>
-<div id="msmarco-passage/dev/2__qrels" class="tab-content">
-<span class="ds-count"><kbd title="4655">4.7K</kbd> <kbd>qrels</kbd></span>
-
-<div>Query relevance judgment type:</div>
-<div class="type">
-<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
-<ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
-</ol>
-</div>
-<p>Relevance levels</p>
-
-<table>
-<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
-<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="4655">4.7K</kbd></td><td class="right">100.0%</td></tr>
-</table>
-
-<p>Examples:</p><div class="ex-tabs">
-<a class="ex-tab" target="irds-python">Python API</a>
-<div class="ex-tab-content irds-python">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/2&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
-    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
-</pre></div>
-<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
-<a class="ex-tab" target="irds-cli">CLI</a>
-<div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/2 qrels --format tsv
-</pre></div>
-
-<code class="output">
-
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
-<div>...</div>
-
-</code>
-<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
-<a class="ex-tab" target="pyterrier">PyTerrier</a>
-<div class="ex-tab-content pyterrier">
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
-<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/2&#39;</span><span class="p">)</span>
-<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
-<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
-<span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
-    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
-    <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
-<span class="p">)</span>
-</pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
-</div>
-
-<a class="tab" target="msmarco-passage/dev/2__citation">Citation</a>
-<div id="msmarco-passage/dev/2__citation" class="tab-content">
-<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bajaj2016Msmarco}</cite>
-<p>Bibtex:</p>
-<cite class="select">@inproceedings{Bajaj2016Msmarco,
-  title={MS MARCO: A Human Generated MAchine Reading COmprehension Dataset},
-  author={Payal Bajaj, Daniel Campos, Nick Craswell, Li Deng, Jianfeng Gao, Xiaodong Liu, Rangan Majumder, Andrew McNamara, Bhaskar Mitra, Tri Nguyen, Mir Rosenberg, Xia Song, Alina Stoica, Saurabh Tiwary, Tong Wang},
-  booktitle={InCoCo@NIPS},
-  year={2016}
-}</cite>
-</div>
-
-<a class="tab" target="msmarco-passage/dev/2__metadata">Metadata</a>
-<div id="msmarco-passage/dev/2__metadata" class="tab-content">
-<pre class="metadata">{
-  "docs": {
-    "count": 8841823,
-    "fields": {
-      "doc_id": {
-        "max_len": 7,
-        "common_prefix": ""
-      }
-    }
-  },
-  "queries": {
-    "count": 4281
-  },
-  "qrels": {
-    "count": 4655,
-    "fields": {
-      "relevance": {
-        "counts_by_value": {
-          "1": 4655
         }
       }
     }
@@ -579,7 +413,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.judged.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/judged__docs">docs</a>
@@ -624,7 +466,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.judged&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/judged__qrels">qrels</a>
@@ -682,7 +533,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.judged.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/judged__citation">Citation</a>
@@ -778,7 +637,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.small.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/small__docs">docs</a>
@@ -823,7 +690,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.small&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/small__qrels">qrels</a>
@@ -881,7 +757,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.small.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/small__scoreddocs">scoreddocs</a>
@@ -923,7 +807,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/small&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.small.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/dev/small__citation">Citation</a>
@@ -1022,7 +915,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.eval.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/eval__docs">docs</a>
@@ -1067,7 +968,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.eval&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/eval__citation">Citation</a>
@@ -1153,7 +1063,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.eval.small.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/eval/small__docs">docs</a>
@@ -1198,7 +1116,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.eval.small&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/eval/small__scoreddocs">scoreddocs</a>
@@ -1240,7 +1167,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/eval/small&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.eval.small.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/eval/small__citation">Citation</a>
@@ -1329,7 +1265,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train__docs">docs</a>
@@ -1374,7 +1318,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train__qrels">qrels</a>
@@ -1432,7 +1385,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train__scoreddocs">scoreddocs</a>
@@ -1474,7 +1435,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train__docpairs">docpairs</a>
@@ -1511,7 +1481,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">docpairs</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.docpairs&#39;</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">docpairs</span><span class="o">.</span><span class="n">iter</span><span class="p">())</span>  <span class="c1"># Display the first triplet</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.TrainingTriplets">TrainingTriplets</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train__citation">Citation</a>
@@ -1613,7 +1591,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.judged.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/judged__docs">docs</a>
@@ -1658,7 +1644,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.judged&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/judged__qrels">qrels</a>
@@ -1716,7 +1711,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.judged.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/judged__scoreddocs">scoreddocs</a>
@@ -1758,7 +1761,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/judged&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.judged.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/judged__docpairs">docpairs</a>
@@ -1795,7 +1807,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">docpairs</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.judged.docpairs&#39;</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">docpairs</span><span class="o">.</span><span class="n">iter</span><span class="p">())</span>  <span class="c1"># Display the first triplet</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.TrainingTriplets">TrainingTriplets</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/judged__citation">Citation</a>
@@ -1897,7 +1917,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.medical.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/medical__docs">docs</a>
@@ -1942,7 +1970,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.medical&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/medical__qrels">qrels</a>
@@ -2000,7 +2037,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.medical.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/medical__scoreddocs">scoreddocs</a>
@@ -2042,7 +2087,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/medical&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.medical.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/medical__docpairs">docpairs</a>
@@ -2079,7 +2133,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">docpairs</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.medical.docpairs&#39;</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">docpairs</span><span class="o">.</span><span class="n">iter</span><span class="p">())</span>  <span class="c1"># Display the first triplet</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.TrainingTriplets">TrainingTriplets</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/medical__citation">Citation</a>
@@ -2187,7 +2249,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-train.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-train__docs">docs</a>
@@ -2232,7 +2302,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-train&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-train__qrels">qrels</a>
@@ -2290,7 +2369,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-train.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-train__scoreddocs">scoreddocs</a>
@@ -2332,7 +2419,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/split200-train&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-train.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-train__docpairs">docpairs</a>
@@ -2369,7 +2465,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">docpairs</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-train.docpairs&#39;</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">docpairs</span><span class="o">.</span><span class="n">iter</span><span class="p">())</span>  <span class="c1"># Display the first triplet</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.TrainingTriplets">TrainingTriplets</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-train__citation">Citation</a>
@@ -2471,7 +2575,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-valid.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-valid__docs">docs</a>
@@ -2516,7 +2628,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-valid&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-valid__qrels">qrels</a>
@@ -2574,7 +2695,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-valid.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-valid__scoreddocs">scoreddocs</a>
@@ -2616,7 +2745,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/split200-valid&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-valid.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-valid__docpairs">docpairs</a>
@@ -2653,7 +2791,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">docpairs</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.split200-valid.docpairs&#39;</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">docpairs</span><span class="o">.</span><span class="n">iter</span><span class="p">())</span>  <span class="c1"># Display the first triplet</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.TrainingTriplets">TrainingTriplets</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/split200-valid__citation">Citation</a>
@@ -2755,7 +2901,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-small.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-small__docs">docs</a>
@@ -2800,7 +2954,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-small&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-small__qrels">qrels</a>
@@ -2858,7 +3021,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-small.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-small__scoreddocs">scoreddocs</a>
@@ -2900,7 +3071,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/triples-small&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-small.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-small__docpairs">docpairs</a>
@@ -2937,7 +3117,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">docpairs</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-small.docpairs&#39;</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">docpairs</span><span class="o">.</span><span class="n">iter</span><span class="p">())</span>  <span class="c1"># Display the first triplet</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.TrainingTriplets">TrainingTriplets</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-small__citation">Citation</a>
@@ -3039,7 +3227,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-v2.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-v2__docs">docs</a>
@@ -3084,7 +3280,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-v2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-v2__qrels">qrels</a>
@@ -3142,7 +3347,15 @@
     <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-v2.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-v2__scoreddocs">scoreddocs</a>
@@ -3184,7 +3397,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/train/triples-v2&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-v2.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-v2__docpairs">docpairs</a>
@@ -3221,7 +3443,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">docpairs</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.train.triples-v2.docpairs&#39;</span><span class="p">)</span>
+<span class="nb">next</span><span class="p">(</span><span class="n">docpairs</span><span class="o">.</span><span class="n">iter</span><span class="p">())</span>  <span class="c1"># Display the first triplet</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.TrainingTriplets">TrainingTriplets</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/train/triples-v2__citation">Citation</a>
@@ -3323,7 +3553,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019__docs">docs</a>
@@ -3368,7 +3606,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019__qrels">qrels</a>
@@ -3429,7 +3676,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">AP</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019__scoreddocs">scoreddocs</a>
@@ -3471,7 +3726,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2019&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019__citation">Citation</a>
@@ -3579,7 +3843,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019.judged.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__docs">docs</a>
@@ -3624,7 +3896,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019.judged&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__qrels">qrels</a>
@@ -3685,7 +3966,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">AP</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019.judged.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__scoreddocs">scoreddocs</a>
@@ -3727,7 +4016,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2019/judged&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2019.judged.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2019/judged__citation">Citation</a>
@@ -3835,7 +4133,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020__docs">docs</a>
@@ -3880,7 +4186,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020__qrels">qrels</a>
@@ -3941,7 +4256,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">AP</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020__scoreddocs">scoreddocs</a>
@@ -3983,7 +4306,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2020&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020__citation">Citation</a>
@@ -4091,7 +4423,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020.judged.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__docs">docs</a>
@@ -4136,7 +4476,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020.judged&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__qrels">qrels</a>
@@ -4197,7 +4546,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="n">AP</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020.judged.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__scoreddocs">scoreddocs</a>
@@ -4239,7 +4596,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/trec-dl-2020/judged&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-2020.judged.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-2020/judged__citation">Citation</a>
@@ -4347,7 +4713,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard__docs">docs</a>
@@ -4392,7 +4766,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard__qrels">qrels</a>
@@ -4453,7 +4836,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard__citation">Citation</a>
@@ -4559,7 +4950,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold1.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold1__docs">docs</a>
@@ -4604,7 +5003,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold1__qrels">qrels</a>
@@ -4665,7 +5073,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold1.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold1__citation">Citation</a>
@@ -4771,7 +5187,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold2.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold2__docs">docs</a>
@@ -4816,7 +5240,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold2__qrels">qrels</a>
@@ -4877,7 +5310,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold2.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold2__citation">Citation</a>
@@ -4983,7 +5424,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold3.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold3__docs">docs</a>
@@ -5028,7 +5477,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold3&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold3__qrels">qrels</a>
@@ -5089,7 +5547,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold3.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold3__citation">Citation</a>
@@ -5195,7 +5661,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold4.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold4__docs">docs</a>
@@ -5240,7 +5714,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold4&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold4__qrels">qrels</a>
@@ -5301,7 +5784,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold4.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold4__citation">Citation</a>
@@ -5407,7 +5898,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold5.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold5__docs">docs</a>
@@ -5452,7 +5951,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold5&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold5__qrels">qrels</a>
@@ -5513,7 +6021,15 @@
     <span class="p">[</span><span class="n">nDCG</span><span class="o">@</span><span class="mi">10</span><span class="p">,</span> <span class="n">RR</span><span class="p">(</span><span class="n">rel</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.trec-dl-hard.fold5.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="msmarco-passage/trec-dl-hard/fold5__citation">Citation</a>

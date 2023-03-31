@@ -114,6 +114,7 @@ def generate_dataset(dataset, dataset_id, bibliography):
         ('Python API', 'irds-python'): example_generators.PythonExampleGenerator(dataset_id),
         ('CLI', 'irds-cli'): example_generators.CliExampleGenerator(dataset_id),
         ('PyTerrier', 'pyterrier'): example_generators.PyTerrierExampleGenerator(dataset_id),
+        ('XPM-IR', 'xmpir'): example_generators.XPMIRExampleGenerator(dataset_id),
     }
     with io.StringIO() as out:
         if hasattr(dataset, 'documentation'):
@@ -303,7 +304,6 @@ def generate_data_access_section(documentation):
 </div>
 '''
 
-
 def generate_data_format(cls):
     if cls in (str, int, float, bytes, bool):
         return f'<span class="kwd">{cls.__name__}</span>'
@@ -320,7 +320,7 @@ def generate_data_format(cls):
                 args.append(generate_data_format(arg))
         if cls._name in ('Tuple', 'List', 'Dict'):
             return f'<span class="kwd">{cls._name}</span>[{",".join(args)}]'
-        if cls._name is None: # aka union
+        if typing.get_origin(cls) is typing.Union: # aka union
             if len(args) == 2 and args[1] == '<span class="kwd">None</span>':
                 return f'<span class="kwd">Optional</span>[{args[0]}]'
             else:

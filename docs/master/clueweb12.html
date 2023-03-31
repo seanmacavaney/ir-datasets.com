@@ -93,7 +93,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12__metadata">Metadata</a>
@@ -156,7 +165,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13__metadata">Metadata</a>
@@ -219,7 +237,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth__docs">docs</a>
@@ -257,7 +283,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth__qrels">qrels</a>
@@ -303,7 +338,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth__citation">Citation</a>
@@ -399,7 +442,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.cs.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/cs__docs">docs</a>
@@ -437,7 +488,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.cs&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/cs__qrels">qrels</a>
@@ -483,7 +543,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.cs.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/cs__citation">Citation</a>
@@ -579,7 +647,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.de.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/de__docs">docs</a>
@@ -617,7 +693,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.de&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/de__qrels">qrels</a>
@@ -663,7 +748,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.de.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/de__citation">Citation</a>
@@ -759,7 +852,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.fr.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/fr__docs">docs</a>
@@ -797,7 +898,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.fr&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/fr__qrels">qrels</a>
@@ -843,7 +953,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.fr.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/fr__citation">Citation</a>
@@ -939,7 +1057,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.hu.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/hu__docs">docs</a>
@@ -977,7 +1103,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.hu&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/hu__qrels">qrels</a>
@@ -1023,7 +1158,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.hu.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/hu__citation">Citation</a>
@@ -1119,7 +1262,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.pl.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/pl__docs">docs</a>
@@ -1157,7 +1308,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.pl&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/pl__qrels">qrels</a>
@@ -1203,7 +1363,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.pl.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/pl__citation">Citation</a>
@@ -1299,7 +1467,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.sv.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/sv__docs">docs</a>
@@ -1337,7 +1513,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.sv&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/sv__qrels">qrels</a>
@@ -1383,7 +1568,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.clef-ehealth.sv.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/clef-ehealth/sv__citation">Citation</a>
@@ -1479,7 +1672,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-1.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-1__docs">docs</a>
@@ -1517,7 +1718,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-1__qrels">qrels</a>
@@ -1565,7 +1775,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-1.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-1__citation">Citation</a>
@@ -1657,7 +1875,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-2.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-2__docs">docs</a>
@@ -1695,7 +1921,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-2__qrels">qrels</a>
@@ -1743,7 +1978,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-2.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-2__citation">Citation</a>
@@ -1835,7 +2078,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-3.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-3__docs">docs</a>
@@ -1873,7 +2124,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.ntcir-www-3&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/ntcir-www-3__metadata">Metadata</a>
@@ -1939,7 +2199,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.trec-misinfo-2019.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/trec-misinfo-2019__docs">docs</a>
@@ -1977,7 +2245,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.trec-misinfo-2019&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/trec-misinfo-2019__qrels">qrels</a>
@@ -2023,7 +2300,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.b13.trec-misinfo-2019.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/b13/trec-misinfo-2019__citation">Citation</a>
@@ -2134,7 +2419,15 @@ Documents are judged based on their general topical relevance.
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2020-task-2.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2020-task-2__docs">docs</a>
@@ -2172,7 +2465,16 @@ Documents are judged based on their general topical relevance.
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2020-task-2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2020-task-2__qrels">qrels</a>
@@ -2218,7 +2520,15 @@ Documents are judged based on their general topical relevance.
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2020-task-2.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2020-task-2__citation">Citation</a>
@@ -2365,7 +2675,15 @@ i.e., "well-writtenness" of the document:
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2021-task-2.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2021-task-2__docs">docs</a>
@@ -2403,7 +2721,16 @@ i.e., "well-writtenness" of the document:
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2021-task-2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2021-task-2__qrels">qrels</a>
@@ -2449,7 +2776,15 @@ i.e., "well-writtenness" of the document:
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2021-task-2.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2021-task-2__citation">Citation</a>
@@ -2575,7 +2910,15 @@ Additionally, classify the stance of the retrieved text passages towards the com
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2022-task-2.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2022-task-2__docs">docs</a>
@@ -2613,7 +2956,16 @@ Additionally, classify the stance of the retrieved text passages towards the com
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2022-task-2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2022-task-2__qrels">qrels</a>
@@ -2659,7 +3011,15 @@ Additionally, classify the stance of the retrieved text passages towards the com
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2022-task-2.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2022-task-2__citation">Citation</a>
@@ -2759,7 +3119,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2022-task-2.expanded-doc-t5-query.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__docs">docs</a>
@@ -2797,7 +3165,16 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2022-task-2.expanded-doc-t5-query&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__qrels">qrels</a>
@@ -2843,7 +3220,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.touche-2022-task-2.expanded-doc-t5-query.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/touche-2022-task-2/expanded-doc-t5-query__citation">Citation</a>
@@ -2945,7 +3330,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2013.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2013__docs">docs</a>
@@ -2983,7 +3376,16 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2013&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2013__qrels">qrels</a>
@@ -3032,7 +3434,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2013.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2013__citation">Citation</a>
@@ -3130,7 +3540,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2013.diversity.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2013/diversity__docs">docs</a>
@@ -3168,7 +3586,16 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2013.diversity&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2013/diversity__qrels">qrels</a>
@@ -3217,7 +3644,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2013.diversity.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2013/diversity__citation">Citation</a>
@@ -3315,7 +3750,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2014.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2014__docs">docs</a>
@@ -3353,7 +3796,16 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2014&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2014__qrels">qrels</a>
@@ -3402,7 +3854,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2014.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2014__citation">Citation</a>
@@ -3500,7 +3960,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2014.diversity.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2014/diversity__docs">docs</a>
@@ -3538,7 +4006,16 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2014.diversity&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2014/diversity__qrels">qrels</a>
@@ -3587,7 +4064,15 @@ Pre-processed version of <a class="ds-ref">clueweb12/touche-2022-task-2</a> wher
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.clueweb12.trec-web-2014.diversity.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="clueweb12/trec-web-2014/diversity__citation">Citation</a>

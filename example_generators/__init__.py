@@ -11,3 +11,4 @@ class Example(NamedTuple):
 from .python_generator import PythonExampleGenerator
 from .cli_generator import CliExampleGenerator
 from .pyterrier_generator import PyTerrierExampleGenerator
+from .xpmir_generator import XPMIRExampleGenerator

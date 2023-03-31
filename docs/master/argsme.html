@@ -165,7 +165,16 @@ Individual rights to the content still apply.
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_1.0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">39</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.1.0&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/1.0__citation">Citation</a>
@@ -291,7 +300,16 @@ Individual rights to the content still apply.
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_1.0-cleaned&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">39</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.1.0-cleaned&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/1.0-cleaned__citation">Citation</a>
@@ -404,7 +422,15 @@ This dataset's relevance judgements should <em>not</em> be used without preproce
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.1.0.touche-2020-task-1.uncorrected.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/1.0/touche-2020-task-1/uncorrected__docs">docs</a>
@@ -464,7 +490,16 @@ This dataset's relevance judgements should <em>not</em> be used without preproce
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_1.0&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">39</span><span class="p">})</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.1.0.touche-2020-task-1.uncorrected&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/1.0/touche-2020-task-1/uncorrected__qrels">qrels</a>
@@ -527,7 +562,15 @@ This dataset's relevance judgements should <em>not</em> be used without preproce
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.1.0.touche-2020-task-1.uncorrected.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/1.0/touche-2020-task-1/uncorrected__citation">Citation</a>
@@ -673,7 +716,16 @@ Individual rights to the content still apply.
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01__citation">Citation</a>
@@ -792,7 +844,16 @@ Subset of the 338 620 arguments from <a class="ds-ref">argsme/2020-04-01</a> tha
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01_debateorg&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.debateorg&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/debateorg__citation">Citation</a>
@@ -911,7 +972,16 @@ Subset of the 21 197 arguments from <a class="ds-ref">argsme/2020-04-01</a> that
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01_debatepedia&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.debatepedia&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/debatepedia__citation">Citation</a>
@@ -1030,7 +1100,16 @@ Subset of the 14 353 arguments from <a class="ds-ref">argsme/2020-04-01</a> that
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01_debatewise&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.debatewise&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/debatewise__citation">Citation</a>
@@ -1149,7 +1228,16 @@ Subset of the 13 522 arguments from <a class="ds-ref">argsme/2020-04-01</a> that
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01_idebate&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.idebate&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/idebate__citation">Citation</a>
@@ -1268,7 +1356,16 @@ Subset of the 48 arguments from <a class="ds-ref">argsme/2020-04-01</a> that wer
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01_parliamentary&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.parliamentary&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/parliamentary__citation">Citation</a>
@@ -1392,7 +1489,16 @@ Pre-processed version of <a class="ds-ref">argsme/2020-04-01</a> where each argu
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01_processed&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.processed&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/processed__citation">Citation</a>
@@ -1517,7 +1623,15 @@ i.e., "well-writtenness" of the document:
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.processed.touche-2022-task-1.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/processed/touche-2022-task-1__docs">docs</a>
@@ -1582,7 +1696,16 @@ i.e., "well-writtenness" of the document:
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01_processed&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.processed.touche-2022-task-1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/processed/touche-2022-task-1__qrels">qrels</a>
@@ -1642,7 +1765,15 @@ i.e., "well-writtenness" of the document:
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.processed.touche-2022-task-1.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/processed/touche-2022-task-1__citation">Citation</a>
@@ -1768,7 +1899,15 @@ Documents are judged based on their general topical relevance.
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2020-task-1.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2020-task-1__docs">docs</a>
@@ -1828,7 +1967,16 @@ Documents are judged based on their general topical relevance.
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2020-task-1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2020-task-1__qrels">qrels</a>
@@ -1891,7 +2039,15 @@ Documents are judged based on their general topical relevance.
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2020-task-1.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2020-task-1__citation">Citation</a>
@@ -2022,7 +2178,15 @@ This dataset's relevance judgements should <em>not</em> be used without preproce
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2020-task-1.uncorrected.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2020-task-1/uncorrected__docs">docs</a>
@@ -2082,7 +2246,16 @@ This dataset's relevance judgements should <em>not</em> be used without preproce
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2020-task-1.uncorrected&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2020-task-1/uncorrected__qrels">qrels</a>
@@ -2145,7 +2318,15 @@ This dataset's relevance judgements should <em>not</em> be used without preproce
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2020-task-1.uncorrected.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2020-task-1/uncorrected__citation">Citation</a>
@@ -2292,7 +2473,15 @@ i.e., "well-writtenness" of the document:
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2021-task-1.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2021-task-1__docs">docs</a>
@@ -2352,7 +2541,16 @@ i.e., "well-writtenness" of the document:
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/argsme_2020-04-01&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;conclusion&#39;</span><span class="p">,</span> <span class="s1">&#39;premises_texts&#39;</span><span class="p">,</span> <span class="s1">&#39;aspects_names&#39;</span><span class="p">,</span> <span class="s1">&#39;source_id&#39;</span><span class="p">,</span> <span class="s1">&#39;source_title&#39;</span><span class="p">,</span> <span class="s1">&#39;topic&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2021-task-1&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2021-task-1__qrels">qrels</a>
@@ -2413,7 +2611,15 @@ i.e., "well-writtenness" of the document:
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.argsme.2020-04-01.touche-2021-task-1.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="argsme/2020-04-01/touche-2021-task-1__citation">Citation</a>

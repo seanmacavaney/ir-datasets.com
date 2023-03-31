@@ -131,7 +131,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en1k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k__citation">Citation</a>
@@ -220,7 +229,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.test.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/test__docs">docs</a>
@@ -265,7 +282,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en1k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/test__qrels">qrels</a>
@@ -325,7 +351,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.test.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/test__scoreddocs">scoreddocs</a>
@@ -367,7 +401,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en1k/test&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.test.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/test__citation">Citation</a>
@@ -473,7 +516,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.training.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/training__docs">docs</a>
@@ -518,7 +569,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en1k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.training&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/training__qrels">qrels</a>
@@ -578,7 +638,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.training.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/training__scoreddocs">scoreddocs</a>
@@ -620,7 +688,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en1k/training&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.training.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/training__citation">Citation</a>
@@ -726,7 +803,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.validation.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/validation__docs">docs</a>
@@ -771,7 +856,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en1k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.validation&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/validation__qrels">qrels</a>
@@ -831,7 +925,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.validation.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/validation__scoreddocs">scoreddocs</a>
@@ -873,7 +975,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en1k/validation&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en1k.validation.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en1k/validation__citation">Citation</a>
@@ -978,7 +1089,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en59k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k__citation">Citation</a>
@@ -1067,7 +1187,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.test.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/test__docs">docs</a>
@@ -1112,7 +1240,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en59k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/test__qrels">qrels</a>
@@ -1172,7 +1309,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.test.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/test__scoreddocs">scoreddocs</a>
@@ -1214,7 +1359,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en59k/test&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.test.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/test__citation">Citation</a>
@@ -1320,7 +1474,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.training.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/training__docs">docs</a>
@@ -1365,7 +1527,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en59k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.training&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/training__qrels">qrels</a>
@@ -1425,7 +1596,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.training.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/training__scoreddocs">scoreddocs</a>
@@ -1467,7 +1646,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en59k/training&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.training.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/training__citation">Citation</a>
@@ -1573,7 +1761,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.validation.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/validation__docs">docs</a>
@@ -1618,7 +1814,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en59k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.validation&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/validation__qrels">qrels</a>
@@ -1678,7 +1883,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.validation.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/validation__scoreddocs">scoreddocs</a>
@@ -1720,7 +1933,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en59k/validation&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en59k.validation.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en59k/validation__citation">Citation</a>
@@ -1825,7 +2047,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k__citation">Citation</a>
@@ -1914,7 +2145,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.test.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/test__docs">docs</a>
@@ -1959,7 +2198,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/test__qrels">qrels</a>
@@ -2019,7 +2267,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.test.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/test__scoreddocs">scoreddocs</a>
@@ -2061,7 +2317,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en78k/test&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.test.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/test__citation">Citation</a>
@@ -2167,7 +2432,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.training.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/training__docs">docs</a>
@@ -2212,7 +2485,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.training&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/training__qrels">qrels</a>
@@ -2272,7 +2554,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.training.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/training__scoreddocs">scoreddocs</a>
@@ -2314,7 +2604,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en78k/training&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.training.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/training__citation">Citation</a>
@@ -2420,7 +2719,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.validation.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/validation__docs">docs</a>
@@ -2465,7 +2772,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_en78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.validation&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/validation__qrels">qrels</a>
@@ -2525,7 +2841,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.validation.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/validation__scoreddocs">scoreddocs</a>
@@ -2567,7 +2891,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/en78k/validation&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.en78k.validation.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/en78k/validation__citation">Citation</a>
@@ -2672,7 +3005,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_ens78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k__citation">Citation</a>
@@ -2761,7 +3103,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.test.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/test__docs">docs</a>
@@ -2806,7 +3156,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_ens78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/test__qrels">qrels</a>
@@ -2866,7 +3225,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.test.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/test__scoreddocs">scoreddocs</a>
@@ -2908,7 +3275,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/ens78k/test&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.test.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/test__citation">Citation</a>
@@ -3014,7 +3390,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.training.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/training__docs">docs</a>
@@ -3059,7 +3443,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_ens78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.training&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/training__qrels">qrels</a>
@@ -3119,7 +3512,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.training.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/training__scoreddocs">scoreddocs</a>
@@ -3161,7 +3562,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/ens78k/training&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.training.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/training__citation">Citation</a>
@@ -3267,7 +3677,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.validation.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/validation__docs">docs</a>
@@ -3312,7 +3730,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/wikir_ens78k&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.validation&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/validation__qrels">qrels</a>
@@ -3372,7 +3799,15 @@
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.validation.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/validation__scoreddocs">scoreddocs</a>
@@ -3414,7 +3849,16 @@
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:wikir/ens78k/validation&#39;</span><span class="p">)</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 </pre></div>
-<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier dataset API <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#pyterrier.datasets.Dataset.get_results">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.ens78k.validation.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/ens78k/validation__citation">Citation</a>
@@ -3512,7 +3956,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k__citation">Citation</a>
@@ -3593,7 +4046,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.test.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/test__docs">docs</a>
@@ -3631,7 +4092,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/test__qrels">qrels</a>
@@ -3677,7 +4147,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.test.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/test__scoreddocs">scoreddocs</a>
@@ -3714,7 +4192,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.test.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/test__citation">Citation</a>
@@ -3812,7 +4299,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.training.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/training__docs">docs</a>
@@ -3850,7 +4345,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.training&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/training__qrels">qrels</a>
@@ -3896,7 +4400,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.training.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/training__scoreddocs">scoreddocs</a>
@@ -3933,7 +4445,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.training.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/training__citation">Citation</a>
@@ -4031,7 +4552,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.validation.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/validation__docs">docs</a>
@@ -4069,7 +4598,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.validation&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/validation__qrels">qrels</a>
@@ -4115,7 +4653,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.validation.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/validation__scoreddocs">scoreddocs</a>
@@ -4152,7 +4698,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.es13k.validation.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/es13k/validation__citation">Citation</a>
@@ -4250,7 +4805,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k__citation">Citation</a>
@@ -4331,7 +4895,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.test.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/test__docs">docs</a>
@@ -4369,7 +4941,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/test__qrels">qrels</a>
@@ -4415,7 +4996,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.test.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/test__scoreddocs">scoreddocs</a>
@@ -4452,7 +5041,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.test.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/test__citation">Citation</a>
@@ -4550,7 +5148,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.training.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/training__docs">docs</a>
@@ -4588,7 +5194,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.training&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/training__qrels">qrels</a>
@@ -4634,7 +5249,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.training.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/training__scoreddocs">scoreddocs</a>
@@ -4671,7 +5294,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.training.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/training__citation">Citation</a>
@@ -4769,7 +5401,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.validation.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/validation__docs">docs</a>
@@ -4807,7 +5447,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.validation&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/validation__qrels">qrels</a>
@@ -4853,7 +5502,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.validation.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/validation__scoreddocs">scoreddocs</a>
@@ -4890,7 +5547,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.fr14k.validation.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/fr14k/validation__citation">Citation</a>
@@ -4988,7 +5654,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k__citation">Citation</a>
@@ -5069,7 +5744,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.test.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/test__docs">docs</a>
@@ -5107,7 +5790,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/test__qrels">qrels</a>
@@ -5153,7 +5845,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.test.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/test__scoreddocs">scoreddocs</a>
@@ -5190,7 +5890,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.test.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/test__citation">Citation</a>
@@ -5288,7 +5997,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.training.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/training__docs">docs</a>
@@ -5326,7 +6043,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.training&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/training__qrels">qrels</a>
@@ -5372,7 +6098,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.training.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/training__scoreddocs">scoreddocs</a>
@@ -5409,7 +6143,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.training.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/training__citation">Citation</a>
@@ -5507,7 +6250,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.validation.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/validation__docs">docs</a>
@@ -5545,7 +6296,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.validation&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/validation__qrels">qrels</a>
@@ -5591,7 +6351,15 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.validation.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/validation__scoreddocs">scoreddocs</a>
@@ -5628,7 +6396,16 @@
 <p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
 <a class="ex-tab" target="pyterrier">PyTerrier</a>
 <div class="ex-tab-content pyterrier">
-<p><i>No example available for PyTerrier</i></p></div></div>
+<p><i>No example available for PyTerrier</i></p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datamaestro</span> <span class="c1"># Supposes experimaestro-ir be installed</span>
+
+<span class="n">run</span> <span class="o">=</span> <span class="n">datamaestro</span><span class="o">.</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.wikir.it16k.validation.scoreddocs&#39;</span><span class="p">)</span> <span class="c1"># AdhocRun</span>
+<span class="c1"># A run is a generic object, and is specialized into final classes</span>
+<span class="c1"># e.g. TrecAdhocRun </span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocRun">AdhocRun</a></p></div></div>
 </div>
 
 <a class="tab" target="wikir/it16k/validation__citation">Citation</a>

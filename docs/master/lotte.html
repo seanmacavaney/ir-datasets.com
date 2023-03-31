@@ -134,7 +134,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_lifestyle_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.dev&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/dev__citation">Citation</a>
@@ -218,7 +227,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.dev.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/dev/forum__docs">docs</a>
@@ -263,7 +280,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_lifestyle_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.dev.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/dev/forum__qrels">qrels</a>
@@ -321,7 +347,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.dev.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/dev/forum__citation">Citation</a>
@@ -418,7 +452,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.dev.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/dev/search__docs">docs</a>
@@ -463,7 +505,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_lifestyle_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.dev.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/dev/search__qrels">qrels</a>
@@ -521,7 +572,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.dev.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/dev/search__citation">Citation</a>
@@ -617,7 +676,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_lifestyle_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/test__citation">Citation</a>
@@ -701,7 +769,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.test.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/test/forum__docs">docs</a>
@@ -746,7 +822,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_lifestyle_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.test.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/test/forum__qrels">qrels</a>
@@ -804,7 +889,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.test.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/test/forum__citation">Citation</a>
@@ -901,7 +994,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.test.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/test/search__docs">docs</a>
@@ -946,7 +1047,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_lifestyle_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.test.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/test/search__qrels">qrels</a>
@@ -1004,7 +1114,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.lifestyle.test.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/lifestyle/test/search__citation">Citation</a>
@@ -1100,7 +1218,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_pooled_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.dev&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/dev__citation">Citation</a>
@@ -1184,7 +1311,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.dev.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/dev/forum__docs">docs</a>
@@ -1229,7 +1364,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_pooled_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.dev.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/dev/forum__qrels">qrels</a>
@@ -1287,7 +1431,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.dev.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/dev/forum__citation">Citation</a>
@@ -1384,7 +1536,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.dev.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/dev/search__docs">docs</a>
@@ -1429,7 +1589,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_pooled_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.dev.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/dev/search__qrels">qrels</a>
@@ -1487,7 +1656,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.dev.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/dev/search__citation">Citation</a>
@@ -1583,7 +1760,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_pooled_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/test__citation">Citation</a>
@@ -1667,7 +1853,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.test.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/test/forum__docs">docs</a>
@@ -1712,7 +1906,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_pooled_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.test.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/test/forum__qrels">qrels</a>
@@ -1770,7 +1973,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.test.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/test/forum__citation">Citation</a>
@@ -1867,7 +2078,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.test.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/test/search__docs">docs</a>
@@ -1912,7 +2131,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_pooled_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.test.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/test/search__qrels">qrels</a>
@@ -1970,7 +2198,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.pooled.test.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/pooled/test/search__citation">Citation</a>
@@ -2066,7 +2302,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_recreation_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.dev&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/dev__citation">Citation</a>
@@ -2150,7 +2395,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.dev.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/dev/forum__docs">docs</a>
@@ -2195,7 +2448,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_recreation_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.dev.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/dev/forum__qrels">qrels</a>
@@ -2253,7 +2515,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.dev.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/dev/forum__citation">Citation</a>
@@ -2350,7 +2620,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.dev.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/dev/search__docs">docs</a>
@@ -2395,7 +2673,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_recreation_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.dev.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/dev/search__qrels">qrels</a>
@@ -2453,7 +2740,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.dev.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/dev/search__citation">Citation</a>
@@ -2549,7 +2844,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_recreation_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/test__citation">Citation</a>
@@ -2633,7 +2937,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.test.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/test/forum__docs">docs</a>
@@ -2678,7 +2990,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_recreation_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.test.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/test/forum__qrels">qrels</a>
@@ -2736,7 +3057,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.test.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/test/forum__citation">Citation</a>
@@ -2833,7 +3162,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.test.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/test/search__docs">docs</a>
@@ -2878,7 +3215,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_recreation_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.test.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/test/search__qrels">qrels</a>
@@ -2936,7 +3282,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.recreation.test.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/recreation/test/search__citation">Citation</a>
@@ -3032,7 +3386,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_science_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.dev&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/dev__citation">Citation</a>
@@ -3116,7 +3479,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.dev.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/dev/forum__docs">docs</a>
@@ -3161,7 +3532,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_science_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.dev.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/dev/forum__qrels">qrels</a>
@@ -3219,7 +3599,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.dev.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/dev/forum__citation">Citation</a>
@@ -3316,7 +3704,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.dev.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/dev/search__docs">docs</a>
@@ -3361,7 +3757,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_science_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.dev.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/dev/search__qrels">qrels</a>
@@ -3419,7 +3824,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.dev.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/dev/search__citation">Citation</a>
@@ -3515,7 +3928,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_science_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/test__citation">Citation</a>
@@ -3599,7 +4021,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.test.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/test/forum__docs">docs</a>
@@ -3644,7 +4074,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_science_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.test.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/test/forum__qrels">qrels</a>
@@ -3702,7 +4141,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.test.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/test/forum__citation">Citation</a>
@@ -3799,7 +4246,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.test.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/test/search__docs">docs</a>
@@ -3844,7 +4299,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_science_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.test.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/test/search__qrels">qrels</a>
@@ -3902,7 +4366,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.science.test.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/science/test/search__citation">Citation</a>
@@ -3998,7 +4470,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_technology_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.dev&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/dev__citation">Citation</a>
@@ -4082,7 +4563,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.dev.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/dev/forum__docs">docs</a>
@@ -4127,7 +4616,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_technology_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.dev.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/dev/forum__qrels">qrels</a>
@@ -4185,7 +4683,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.dev.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/dev/forum__citation">Citation</a>
@@ -4282,7 +4788,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.dev.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/dev/search__docs">docs</a>
@@ -4327,7 +4841,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_technology_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.dev.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/dev/search__qrels">qrels</a>
@@ -4385,7 +4908,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.dev.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/dev/search__citation">Citation</a>
@@ -4481,7 +5012,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_technology_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/test__citation">Citation</a>
@@ -4565,7 +5105,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.test.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/test/forum__docs">docs</a>
@@ -4610,7 +5158,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_technology_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.test.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/test/forum__qrels">qrels</a>
@@ -4668,7 +5225,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.test.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/test/forum__citation">Citation</a>
@@ -4765,7 +5330,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.test.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/test/search__docs">docs</a>
@@ -4810,7 +5383,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_technology_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.test.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/test/search__qrels">qrels</a>
@@ -4868,7 +5450,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.technology.test.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/technology/test/search__citation">Citation</a>
@@ -4964,7 +5554,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_writing_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.dev&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/dev__citation">Citation</a>
@@ -5048,7 +5647,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.dev.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/dev/forum__docs">docs</a>
@@ -5093,7 +5700,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_writing_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.dev.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/dev/forum__qrels">qrels</a>
@@ -5151,7 +5767,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.dev.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/dev/forum__citation">Citation</a>
@@ -5248,7 +5872,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.dev.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/dev/search__docs">docs</a>
@@ -5293,7 +5925,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_writing_dev&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.dev.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/dev/search__qrels">qrels</a>
@@ -5351,7 +5992,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.dev.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/dev/search__citation">Citation</a>
@@ -5447,7 +6096,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_writing_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.test&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/test__citation">Citation</a>
@@ -5531,7 +6189,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.test.forum.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/test/forum__docs">docs</a>
@@ -5576,7 +6242,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_writing_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.test.forum&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/test/forum__qrels">qrels</a>
@@ -5634,7 +6309,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.test.forum.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/test/forum__citation">Citation</a>
@@ -5731,7 +6414,15 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
 </pre></div>
-<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.test.search.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/test/search__docs">docs</a>
@@ -5776,7 +6467,16 @@
 <span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/lotte_writing_test&#39;</span><span class="p">)</span>
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
 </pre></div>
-<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.test.search&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/test/search__qrels">qrels</a>
@@ -5834,7 +6534,15 @@
     <span class="p">[</span><span class="n">Success</span><span class="o">@</span><span class="mi">5</span><span class="p">]</span>
 <span class="p">)</span>
 </pre></div>
-<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.lotte.writing.test.search.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
 </div>
 
 <a class="tab" target="lotte/writing/test/search__citation">Citation</a>
