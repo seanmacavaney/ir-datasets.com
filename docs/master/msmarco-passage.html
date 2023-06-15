@@ -23,6 +23,7 @@
 <ol class="index">
 <li><a href="#msmarco-passage"><kbd>msmarco-passage</kbd></a></li>
 <li><a href="#msmarco-passage/dev"><kbd><span class="prefix">msmarco-passage</span>/dev</kbd></a></li>
+<li><a href="#msmarco-passage/dev/2"><kbd><span class="prefix">msmarco-passage</span>/dev/2</kbd></a></li>
 <li><a href="#msmarco-passage/dev/judged"><kbd><span class="prefix">msmarco-passage</span>/dev/judged</kbd></a></li>
 <li><a href="#msmarco-passage/dev/small"><kbd><span class="prefix">msmarco-passage</span>/dev/small</kbd></a></li>
 <li><a href="#msmarco-passage/eval"><kbd><span class="prefix">msmarco-passage</span>/eval</kbd></a></li>
@@ -78,7 +79,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -143,7 +144,7 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/dev"</span></kbd></h3>
 
 <div class="desc">
- <p> Official dev set. </p> <p> scoreddocs are the top 1000 results from BM25. These are used for the "re-ranking" setting. Note that these are sub-sampled to about 1/8 of the total avaialable dev queries by the MSMARCO authors for faster evaluation. The BM25 scores from scoreddocs are not available (all have a score of 0). </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
+ <p> Official dev set. </p> <p> scoreddocs are the top 1000 results from BM25. These are used for the "re-ranking" setting. Note that these are sub-sampled to about 1/8 of the total available dev queries by the MSMARCO authors for faster evaluation. The BM25 scores from scoreddocs are not available (all have a score of 0). </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/dev__queries">queries</a>
@@ -169,7 +170,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -223,7 +224,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -283,7 +284,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -363,6 +364,230 @@
 </div>
 
 <hr />
+<div class="dataset" id="msmarco-passage/dev/2" data-parent="msmarco-passage">
+<h3><kbd class="ds-name select"><span class="str">"msmarco-passage/dev/2"</span></kbd></h3>
+
+<div class="desc">
+ <p> "Dev2" split of the <a class="ds-ref">msmarco-passage/dev</a> set. Originally released as part of the v2 corpus. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
+</div>
+<div class="tabs">
+<a class="tab" target="msmarco-passage/dev/2__queries">queries</a>
+<div id="msmarco-passage/dev/2__queries" class="tab-content">
+<span class="ds-count"><kbd title="4281">4.3K</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/2<span class="w"> </span>queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/2&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.2.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
+</div>
+
+<a class="tab" target="msmarco-passage/dev/2__docs">docs</a>
+<div id="msmarco-passage/dev/2__docs" class="tab-content">
+<span class="ds-count"><kbd title="8841823">8.8M</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">msmarco-passage</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">GenericDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/2<span class="w"> </span>docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/2&#39;</span><span class="p">)</span>
+<span class="c1"># Index msmarco-passage</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.2&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
+</div>
+
+<a class="tab" target="msmarco-passage/dev/2__qrels">qrels</a>
+<div id="msmarco-passage/dev/2__qrels" class="tab-content">
+<span class="ds-count"><kbd title="4655">4.7K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">GenericQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">1</td><td>Labeled by crowd worker as relevant</td><td class="right"><kbd title="4655">4.7K</kbd></td><td class="right">100.0%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage/dev/2&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/2<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage/dev/2&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">RR</span><span class="o">@</span><span class="mi">10</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage.dev.2.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
+</div>
+
+<a class="tab" target="msmarco-passage/dev/2__citation">Citation</a>
+<div id="msmarco-passage/dev/2__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bajaj2016Msmarco}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Bajaj2016Msmarco,
+  title={MS MARCO: A Human Generated MAchine Reading COmprehension Dataset},
+  author={Payal Bajaj, Daniel Campos, Nick Craswell, Li Deng, Jianfeng Gao, Xiaodong Liu, Rangan Majumder, Andrew McNamara, Bhaskar Mitra, Tri Nguyen, Mir Rosenberg, Xia Song, Alina Stoica, Saurabh Tiwary, Tong Wang},
+  booktitle={InCoCo@NIPS},
+  year={2016}
+}</cite>
+</div>
+
+<a class="tab" target="msmarco-passage/dev/2__metadata">Metadata</a>
+<div id="msmarco-passage/dev/2__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 8841823,
+    "fields": {
+      "doc_id": {
+        "max_len": 7,
+        "common_prefix": ""
+      }
+    }
+  },
+  "queries": {
+    "count": 4281
+  },
+  "qrels": {
+    "count": 4655,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 4655
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
 <div class="dataset" id="msmarco-passage/dev/judged" data-parent="msmarco-passage">
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/dev/judged"</span></kbd></h3>
 
@@ -393,7 +618,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/judged queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/judged<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -447,7 +672,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/judged docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/judged<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -507,7 +732,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/judged qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/judged<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -617,7 +842,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/small queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/small<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -671,7 +896,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/small docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/small<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -731,7 +956,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/small qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/small<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -790,7 +1015,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/dev/small scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/dev/small<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -869,7 +1094,7 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/eval"</span></kbd></h3>
 
 <div class="desc">
- <p> Official eval set for submission to MS MARCO leaderboard. Relevance judgments are hidden. </p> <p> scoreddocs are the top 1000 results from BM25. These are used for the "re-ranking" setting. Note that these are sub-sampled to about 1/8 of the total avaialable eval queries by the MSMARCO authors for faster evaluation. The BM25 scores from scoreddocs are not available (all have a score of 0). </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
+ <p> Official eval set for submission to MS MARCO leaderboard. Relevance judgments are hidden. </p> <p> scoreddocs are the top 1000 results from BM25. These are used for the "re-ranking" setting. Note that these are sub-sampled to about 1/8 of the total available eval queries by the MSMARCO authors for faster evaluation. The BM25 scores from scoreddocs are not available (all have a score of 0). </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/eval__queries">queries</a>
@@ -895,7 +1120,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/eval queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/eval<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -949,7 +1174,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/eval docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/eval<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -1043,7 +1268,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/eval/small queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/eval/small<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -1097,7 +1322,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/eval/small docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/eval/small<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -1150,7 +1375,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/eval/small scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/eval/small<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -1219,7 +1444,7 @@
 <h3><kbd class="ds-name select"><span class="str">"msmarco-passage/train"</span></kbd></h3>
 
 <div class="desc">
- <p> Official train set. </p> <p> Not all queries have relevance judgments. Use <a class="ds-ref">msmarco-passage/train/judged</a> for a filtered list that only includes documents that have at least one qrel. </p> <p> scoreddocs are the top 1000 results from BM25. These are used for the "re-ranking" setting. Note that these are sub-sampled to about 1/8 of the total avaialable train queries by the MSMARCO authors for faster evaluation. The BM25 scores from scoreddocs are not available (all have a score of 0). </p> <p> docpairs provides access to the "official" sequence for pairwise training. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
+ <p> Official train set. </p> <p> Not all queries have relevance judgments. Use <a class="ds-ref">msmarco-passage/train/judged</a> for a filtered list that only includes documents that have at least one qrel. </p> <p> scoreddocs are the top 1000 results from BM25. These are used for the "re-ranking" setting. Note that these are sub-sampled to about 1/8 of the total available train queries by the MSMARCO authors for faster evaluation. The BM25 scores from scoreddocs are not available (all have a score of 0). </p> <p> docpairs provides access to the "official" sequence for pairwise training. </p> <p>Official evaluation measures: <a href="https://ir-measur.es/en/latest/measures.html"><kbd>RR@10</kbd></a></p>
 </div>
 <div class="tabs">
 <a class="tab" target="msmarco-passage/train__queries">queries</a>
@@ -1245,7 +1470,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -1299,7 +1524,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -1359,7 +1584,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -1418,7 +1643,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -1469,7 +1694,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train docpairs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train<span class="w"> </span>docpairs
 </pre></div>
 
 <code class="output">
@@ -1571,7 +1796,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/judged queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/judged<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -1625,7 +1850,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/judged docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/judged<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -1685,7 +1910,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/judged qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/judged<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -1744,7 +1969,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/judged scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/judged<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -1795,7 +2020,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/judged docpairs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/judged<span class="w"> </span>docpairs
 </pre></div>
 
 <code class="output">
@@ -1897,7 +2122,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/medical queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/medical<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -1951,7 +2176,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/medical docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/medical<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -2011,7 +2236,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/medical qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/medical<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -2070,7 +2295,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/medical scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/medical<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -2121,7 +2346,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/medical docpairs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/medical<span class="w"> </span>docpairs
 </pre></div>
 
 <code class="output">
@@ -2229,7 +2454,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-train queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-train<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -2283,7 +2508,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-train docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-train<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -2343,7 +2568,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-train qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-train<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -2402,7 +2627,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-train scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-train<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -2453,7 +2678,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-train docpairs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-train<span class="w"> </span>docpairs
 </pre></div>
 
 <code class="output">
@@ -2555,7 +2780,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-valid queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-valid<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -2609,7 +2834,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-valid docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-valid<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -2669,7 +2894,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-valid qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-valid<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -2728,7 +2953,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-valid scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-valid<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -2779,7 +3004,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/split200-valid docpairs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/split200-valid<span class="w"> </span>docpairs
 </pre></div>
 
 <code class="output">
@@ -2881,7 +3106,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-small queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-small<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -2935,7 +3160,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-small docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-small<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -2995,7 +3220,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-small qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-small<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -3054,7 +3279,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-small scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-small<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -3105,7 +3330,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-small docpairs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-small<span class="w"> </span>docpairs
 </pre></div>
 
 <code class="output">
@@ -3207,7 +3432,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-v2 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-v2<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -3261,7 +3486,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-v2 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-v2<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -3321,7 +3546,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-v2 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-v2<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -3380,7 +3605,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-v2 scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-v2<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -3431,7 +3656,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/train/triples-v2 docpairs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/train/triples-v2<span class="w"> </span>docpairs
 </pre></div>
 
 <code class="output">
@@ -3533,7 +3758,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -3587,7 +3812,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -3650,7 +3875,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -3709,7 +3934,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019 scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -3823,7 +4048,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019/judged queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019/judged<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -3877,7 +4102,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019/judged docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019/judged<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -3940,7 +4165,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019/judged qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019/judged<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -3999,7 +4224,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2019/judged scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2019/judged<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -4113,7 +4338,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -4167,7 +4392,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -4230,7 +4455,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -4289,7 +4514,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020 scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -4403,7 +4628,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020/judged queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020/judged<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -4457,7 +4682,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020/judged docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020/judged<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -4520,7 +4745,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020/judged qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020/judged<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -4579,7 +4804,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-2020/judged scoreddocs --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-2020/judged<span class="w"> </span>scoreddocs<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -4693,7 +4918,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -4747,7 +4972,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -4810,7 +5035,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -4930,7 +5155,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold1 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold1<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -4984,7 +5209,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold1 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold1<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -5047,7 +5272,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold1 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold1<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -5167,7 +5392,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold2 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold2<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -5221,7 +5446,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold2 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold2<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -5284,7 +5509,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold2 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold2<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -5404,7 +5629,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold3 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold3<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -5458,7 +5683,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold3 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold3<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -5521,7 +5746,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold3 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold3<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -5641,7 +5866,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold4 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold4<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -5695,7 +5920,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold4 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold4<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -5758,7 +5983,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold4 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold4<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">
@@ -5878,7 +6103,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold5 queries
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold5<span class="w"> </span>queries
 </pre></div>
 
 <code class="output">
@@ -5932,7 +6157,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold5 docs
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold5<span class="w"> </span>docs
 </pre></div>
 
 <code class="output">
@@ -5995,7 +6220,7 @@
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
 <div class="ex-tab-content irds-cli">
-<div class="highlight"><pre><span></span>ir_datasets <span class="nb">export</span> msmarco-passage/trec-dl-hard/fold5 qrels --format tsv
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage/trec-dl-hard/fold5<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
 </pre></div>
 
 <code class="output">

@@ -1777,6 +1777,52 @@ jobs:
             echo success
         fi
 
+  sara:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'sara'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^sara/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/sara.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        if git commit -m 'head_downloads: sara' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
+
   touche:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'touche'"
     needs: [create_branch]
@@ -2191,6 +2237,52 @@ jobs:
             echo success
         fi
 
+  trec-tot:
+    if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'trec-tot'"
+    needs: [create_branch]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: allenai/ir_datasets
+        path: ir-datasets
+    - uses: actions/checkout@v2
+      with:
+        path: ir-datasets.com
+        ref: head-downloads-${{github.run_number}}
+    - uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        cd ir-datasets
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Test
+      env:
+        IR_DATASETS_DL_DISABLE_PBAR: 'true'
+      run: |
+        cd ir-datasets
+        python -m test.downloads --head_precheck --filter "^trec-tot/" --output download.new.json --randdelay 10
+    - name: Upload
+      if: always()
+      run: |
+        cd ir-datasets
+        python ../ir-datasets.com/merge_history.py download.new.json "../ir-datasets.com/docs/dlc/trec-tot.json"
+        cd ../ir-datasets.com/
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
+        git pull --rebase --autostash
+        git add docs/dlc/*.json
+        if git commit -m 'head_downloads: trec-tot' ; then
+            until git push
+            do
+              echo trying again
+              git pull --rebase --autostash
+            done
+            echo success
+        fi
+
   tripclick:
     if: "!github.event.inputs.dataset || github.event.inputs.dataset == 'tripclick'"
     needs: [create_branch]
@@ -2469,7 +2561,7 @@ jobs:
 
   merge_dlc:
     if: ${{ always() }}
-    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codec, codesearchnet, cord19, cranfield, disks45, dpr-w100, gov, gov2, hc4, highwire, istella22, kilt, lotte, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, neuclir, neumarco, nfcorpus, nyt, pmc, touche, touche-image, trec-arabic, trec-cast, trec-fair, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, tripclick, tweets2013-ia, vaswani, wapo, wikiclir, wikir]
+    needs: [antique, aol-ia, aquaint, argsme, beir, c4, car, clinicaltrials, clirmatrix, clueweb09, clueweb12, codec, codesearchnet, cord19, cranfield, disks45, dpr-w100, gov, gov2, hc4, highwire, istella22, kilt, lotte, medline, mmarco, mr-tydi, msmarco-document, msmarco-document-v2, msmarco-passage, msmarco-passage-v2, msmarco-qna, natural-questions, neuclir, neumarco, nfcorpus, nyt, pmc, sara, touche, touche-image, trec-arabic, trec-cast, trec-fair, trec-fair-2021, trec-mandarin, trec-robust04, trec-spanish, trec-tot, tripclick, tweets2013-ia, vaswani, wapo, wikiclir, wikir]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
