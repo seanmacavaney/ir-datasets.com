@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Touché Image Search - ir_datasets</title>
+</head>
+<body>
+<div class="page">
+
+<div class="banner">This documentation is for <strong>v0.5.5</strong>. See <a href="../touche-image.html">here</a> for documentation of the current latest version on pypi.</div>
+
+<div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
+
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.5/ir_datasets/datasets/touche_image.py">datasets/touche_image.py</a></div>
+<h1><code>ir_datasets</code>: Touché Image Search</h1>
+<div style="font-weight: bold; font-size: 1.1em;">Index</div>
+<ol class="index">
+<li><a href="#touche-image"><kbd>touche-image</kbd></a></li>
+<li><a href="#touche-image/2022-06-13"><kbd><span class="prefix">touche-image</span>/2022-06-13</kbd></a></li>
+<li><a href="#touche-image/2022-06-13/touche-2022-task-3"><kbd><span class="prefix">touche-image</span>/2022-06-13/touche-2022-task-3</kbd></a></li>
+</ol>
+<div id="Downloads">
+</div>
+<hr />
+<div class="dataset" id="touche-image">
+<h3><kbd class="select"><span class="str">"touche-image"</span></kbd></h3>
+
+<div class="desc">
+<p>
+Focused crawl of about 23 841 images (and associated web pages) as document collection.
+</p>
+<p>
+This collection is licensed with the
+<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.
+Individual rights to the content still apply.
+</p>
+<ul>
+<li><a href="https://zenodo.org/record/6873575">Zenodo</a></li>
+<li><a href="https://touche.webis.de/clef22/touche22-web/image-retrieval-for-arguments.html">Touché 2022 task 3 website</a></li>
+<li><a href="https://touche.webis.de/clef22/touche22-web/">Touché 2022 lab website</a></li>
+<li><a href="https://doi.org/10.1007/978-3-030-99739-7_43">Overview paper</a></li>
+</ul>
+
+</div>
+<div class="tabs">
+<a class="tab" target="touche-image__citation">Citation</a>
+<div id="touche-image__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bondarenko2022Touche,Kiesel2021Image,Dimitrov2021SemEval,Yanai2007Image}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Bondarenko2022Touche,
+  address = {Berlin Heidelberg New York},
+  author = {Alexander Bondarenko and Maik Fr{\"o}be and Johannes Kiesel and Shahbaz Syed and Timon Gurcke and Meriem Beloucif and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
+  booktitle = {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 13th International Conference of the CLEF Association (CLEF 2022)},
+  editor = {Alberto Barr{\'o}n-Cede{\~n}o and Giovanni Da San Martino and Mirko Degli Esposti and Fabrizio Sebastiani and Craig Macdonald and Gabriella Pasi and Allan Hanbury and Martin Potthast and Guglielmo Faggioli and Nicola Ferro},
+  month = sep,
+  numpages = 29,
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  site = {Bologna, Italy},
+  title = {{Overview of Touch{\'e} 2022: Argument Retrieval}},
+  year = 2022
+}
+@inproceedings{Kiesel2021Image,
+  author = {Johannes Kiesel and Nico Reichenbach and Benno Stein and Martin Potthast},
+  booktitle = {8th Workshop on Argument Mining (ArgMining 2021) at EMNLP},
+  doi = {10.18653/v1/2021.argmining-1.4},
+  editor = {Khalid Al-Khatib and Yufang Hou and Manfred Stede},
+  month = nov,
+  pages = {36-45},
+  publisher = {Association for Computational Linguistics},
+  site = {Punta Cana, Dominican Republic},
+  title = {{Image Retrieval for Arguments Using Stance-Aware Query Expansion}},
+  url = {https://aclanthology.org/2021.argmining-1.4/},
+  year = 2021
+}
+@inproceedings{Dimitrov2021SemEval,
+  author = {Dimitar Dimitrov and Bishr Bin Ali and Shaden Shaar and Firoj Alam and Fabrizio Silvestri and Hamed Firooz and Preslav Nakov and Giovanni Da San Martino},
+  editor = {Alexis Palmer and Nathan Schneider and Natalie Schluter and Guy Emerson and Aur{\'{e}}lie Herbelot and Xiaodan Zhu},
+  title = {SemEval-2021 Task 6: Detection of Persuasion Techniques in Texts and Images},
+  booktitle = {Proceedings of the 15th International Workshop on Semantic Evaluation, SemEval@ACL/IJCNLP 2021, Virtual Event / Bangkok, Thailand, August 5-6, 2021},
+  pages = {70--98},
+  publisher = {Association for Computational Linguistics},
+  year = {2021},
+  doi = {10.18653/v1/2021.semeval-1.7},
+}
+@inproceedings{Yanai2007Image,
+  author = {Keiji Yanai},
+  editor = {Carey L. Williamson and Mary Ellen Zurko and Peter F. Patel{-}Schneider and Prashant J. Shenoy},
+  title = {Image collector {III:} a web image-gathering system with bag-of-keypoints},
+  booktitle = {Proceedings of the 16th International Conference on World Wide Web, {WWW} 2007, Banff, Alberta, Canada, May 8-12, 2007},
+  pages = {1295--1296},
+  publisher = {{ACM}},
+  year = {2007},
+  doi = {10.1145/1242572.1242816},
+}</cite>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="touche-image/2022-06-13" data-parent="touche-image">
+<h3><kbd class="ds-name select"><span class="str">"touche-image/2022-06-13"</span></kbd></h3>
+
+<div class="desc">
+<p>
+Corpus version 2022-06-13 with 23 841 images.
+It was released on June 13, 2022 on <a href="https://zenodo.org/record/3734893">Zenodo</a>.
+</p>
+<p>
+This collection is licensed with the
+<a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.
+Individual rights to the content still apply.
+</p>
+<ul>
+<li><a href="https://zenodo.org/record/6873575">Zenodo</a></li>
+<li><a href="https://touche.webis.de/clef22/touche22-web/image-retrieval-for-arguments.html">Touché 2022 task 3 website</a></li>
+<li><a href="https://touche.webis.de/clef22/touche22-web/">Touché 2022 lab website</a></li>
+<li><a href="https://doi.org/10.1007/978-3-030-99739-7_43">Overview paper</a></li>
+</ul>
+
+</div>
+<div class="tabs">
+<a class="tab" target="touche-image/2022-06-13__docs">docs</a>
+<div id="touche-image/2022-06-13__docs" class="tab-content">
+<span class="ds-count"><kbd title="23841">24K</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">ToucheImageDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">png</span>: <span class="kwd">bytes</span></li><li data-tuple-idx="2"><span class="">webp</span>: <span class="kwd">bytes</span></li><li data-tuple-idx="3"><span class="">url</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">phash</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">pages</span>: <span class="kwd">List</span>[<div class="type">
+<div class="type-name">ToucheImagePage: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">page_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">url</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">rankings</span>: <span class="kwd">List</span>[<div class="type">
+<div class="type-name">ToucheImageRanking: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">rank</span>: <span class="kwd">int</span></li>
+</ol>
+</div>]</li><li data-tuple-idx="3"><span class="">dom_html</span>: <span class="kwd">bytes</span></li><li data-tuple-idx="4"><span class="">xpaths</span>: <span class="kwd">List</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="5"><span class="">nodes</span>: <span class="kwd">List</span>[<div class="type">
+<div class="type-name">ToucheImageNode: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">xpath</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">visible</span>: <span class="kwd">bool</span></li><li data-tuple-idx="2"><span class="">id</span>: <span class="kwd">Optional</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="3"><span class="">classes</span>: <span class="kwd">List</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="4"><span class="">position</span>: <span class="kwd">Tuple</span>[<span class="kwd">float</span>,<span class="kwd">float</span>,<span class="kwd">float</span>,<span class="kwd">float</span>]</li><li data-tuple-idx="5"><span class="">text</span>: <span class="kwd">Optional</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="6"><span class="">css</span>: <span class="kwd">Dict</span>[<span class="kwd">str</span>,<span class="kwd">str</span>]</li>
+</ol>
+</div>]</li><li data-tuple-idx="6"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>]</li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;touche-image/2022-06-13&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, png, webp, url, phash, pages&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>touche-image/2022-06-13<span class="w"> </span>docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[png]&nbsp;&nbsp;&nbsp;&nbsp;[webp]&nbsp;&nbsp;&nbsp;&nbsp;[url]&nbsp;&nbsp;&nbsp;&nbsp;[phash]&nbsp;&nbsp;&nbsp;&nbsp;[pages]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:touche-image/2022-06-13&#39;</span><span class="p">)</span>
+<span class="c1"># Index touche-image/2022-06-13</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/touche-image_2022-06-13&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;phash&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.touche-image.2022-06-13&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
+</div>
+
+<a class="tab" target="touche-image/2022-06-13__citation">Citation</a>
+<div id="touche-image/2022-06-13__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bondarenko2022Touche,Kiesel2021Image,Dimitrov2021SemEval,Yanai2007Image}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Bondarenko2022Touche,
+  address = {Berlin Heidelberg New York},
+  author = {Alexander Bondarenko and Maik Fr{\"o}be and Johannes Kiesel and Shahbaz Syed and Timon Gurcke and Meriem Beloucif and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
+  booktitle = {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 13th International Conference of the CLEF Association (CLEF 2022)},
+  editor = {Alberto Barr{\'o}n-Cede{\~n}o and Giovanni Da San Martino and Mirko Degli Esposti and Fabrizio Sebastiani and Craig Macdonald and Gabriella Pasi and Allan Hanbury and Martin Potthast and Guglielmo Faggioli and Nicola Ferro},
+  month = sep,
+  numpages = 29,
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  site = {Bologna, Italy},
+  title = {{Overview of Touch{\'e} 2022: Argument Retrieval}},
+  year = 2022
+}
+@inproceedings{Kiesel2021Image,
+  author = {Johannes Kiesel and Nico Reichenbach and Benno Stein and Martin Potthast},
+  booktitle = {8th Workshop on Argument Mining (ArgMining 2021) at EMNLP},
+  doi = {10.18653/v1/2021.argmining-1.4},
+  editor = {Khalid Al-Khatib and Yufang Hou and Manfred Stede},
+  month = nov,
+  pages = {36-45},
+  publisher = {Association for Computational Linguistics},
+  site = {Punta Cana, Dominican Republic},
+  title = {{Image Retrieval for Arguments Using Stance-Aware Query Expansion}},
+  url = {https://aclanthology.org/2021.argmining-1.4/},
+  year = 2021
+}
+@inproceedings{Dimitrov2021SemEval,
+  author = {Dimitar Dimitrov and Bishr Bin Ali and Shaden Shaar and Firoj Alam and Fabrizio Silvestri and Hamed Firooz and Preslav Nakov and Giovanni Da San Martino},
+  editor = {Alexis Palmer and Nathan Schneider and Natalie Schluter and Guy Emerson and Aur{\'{e}}lie Herbelot and Xiaodan Zhu},
+  title = {SemEval-2021 Task 6: Detection of Persuasion Techniques in Texts and Images},
+  booktitle = {Proceedings of the 15th International Workshop on Semantic Evaluation, SemEval@ACL/IJCNLP 2021, Virtual Event / Bangkok, Thailand, August 5-6, 2021},
+  pages = {70--98},
+  publisher = {Association for Computational Linguistics},
+  year = {2021},
+  doi = {10.18653/v1/2021.semeval-1.7},
+}
+@inproceedings{Yanai2007Image,
+  author = {Keiji Yanai},
+  editor = {Carey L. Williamson and Mary Ellen Zurko and Peter F. Patel{-}Schneider and Prashant J. Shenoy},
+  title = {Image collector {III:} a web image-gathering system with bag-of-keypoints},
+  booktitle = {Proceedings of the 16th International Conference on World Wide Web, {WWW} 2007, Banff, Alberta, Canada, May 8-12, 2007},
+  pages = {1295--1296},
+  publisher = {{ACM}},
+  year = {2007},
+  doi = {10.1145/1242572.1242816},
+}</cite>
+</div>
+
+<a class="tab" target="touche-image/2022-06-13__metadata">Metadata</a>
+<div id="touche-image/2022-06-13__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 23841,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "I"
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="touche-image/2022-06-13/touche-2022-task-3" data-parent="touche-image">
+<h3><kbd class="ds-name select"><span class="str">"touche-image/2022-06-13/touche-2022-task-3"</span></kbd></h3>
+
+<div class="desc">
+<p>
+Decision making processes, be it at the societal or at the personal level,
+often come to a point where one side challenges the other with a why-question,
+which is a prompt to justify some stance based on arguments.
+Since technologies for argument mining are maturing at a rapid pace,
+also ad-hoc argument retrieval becomes a feasible task in reach.
+Touché 2022 is the third lab on argument retrieval at CLEF 2022 featuring three tasks.
+</p>
+<p>
+Given a controversial topic, the task is to retrieve images (from <a class="ds-ref">touche-image/2022-06-13</a>) for each stance (pro/con) that show support for that stance.
+</p>
+<p>
+Systems are evaluated on Touché topics 1-50 by the ratio of images among the 20 retrieved images for each topic (10 images for each stance) that are all three: relevant to the topic, argumentative, and have the associated stance.
+</p>
+<ul>
+<li><a href="https://touche.webis.de/clef22/touche22-web/image-retrieval-for-arguments.html">Task 3 website</a></li>
+<li><a href="https://touche.webis.de/clef22/touche22-web/">Lab website</a></li>
+<li><a href="https://doi.org/10.1007/978-3-030-99739-7_43">Overview paper</a></li>
+</ul>
+
+</div>
+<div class="tabs">
+<a class="tab" target="touche-image/2022-06-13/touche-2022-task-3__queries">queries</a>
+<div id="touche-image/2022-06-13/touche-2022-task-3__queries" class="tab-content">
+<span class="ds-count"><kbd title="50">50</kbd> <kbd>queries</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Query type:</div>
+<div class="type">
+<div class="type-name">ToucheQuery: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;touche-image/2022-06-13/touche-2022-task-3&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>touche-image/2022-06-13/touche-2022-task-3<span class="w"> </span>queries
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:touche-image/2022-06-13/touche-2022-task-3&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/touche-image_2022-06-13&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
+</pre></div>
+<p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">topics</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.touche-image.2022-06-13.touche-2022-task-3.queries&#39;</span><span class="p">)</span>  <span class="c1"># AdhocTopics</span>
+<span class="k">for</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">topics</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocTopics">AdhocTopics</a>.</p></div></div>
+</div>
+
+<a class="tab" target="touche-image/2022-06-13/touche-2022-task-3__docs">docs</a>
+<div id="touche-image/2022-06-13/touche-2022-task-3__docs" class="tab-content">
+<span class="ds-count"><kbd title="23841">24K</kbd> <kbd>docs</kbd></span>
+<p>Inherits docs from <a class="ds-ref">touche-image/2022-06-13</a></p>
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">ToucheImageDoc: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">png</span>: <span class="kwd">bytes</span></li><li data-tuple-idx="2"><span class="">webp</span>: <span class="kwd">bytes</span></li><li data-tuple-idx="3"><span class="">url</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">phash</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">pages</span>: <span class="kwd">List</span>[<div class="type">
+<div class="type-name">ToucheImagePage: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">page_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">url</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">rankings</span>: <span class="kwd">List</span>[<div class="type">
+<div class="type-name">ToucheImageRanking: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">query</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">rank</span>: <span class="kwd">int</span></li>
+</ol>
+</div>]</li><li data-tuple-idx="3"><span class="">dom_html</span>: <span class="kwd">bytes</span></li><li data-tuple-idx="4"><span class="">xpaths</span>: <span class="kwd">List</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="5"><span class="">nodes</span>: <span class="kwd">List</span>[<div class="type">
+<div class="type-name">ToucheImageNode: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">xpath</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">visible</span>: <span class="kwd">bool</span></li><li data-tuple-idx="2"><span class="">id</span>: <span class="kwd">Optional</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="3"><span class="">classes</span>: <span class="kwd">List</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="4"><span class="">position</span>: <span class="kwd">Tuple</span>[<span class="kwd">float</span>,<span class="kwd">float</span>,<span class="kwd">float</span>,<span class="kwd">float</span>]</li><li data-tuple-idx="5"><span class="">text</span>: <span class="kwd">Optional</span>[<span class="kwd">str</span>]</li><li data-tuple-idx="6"><span class="">css</span>: <span class="kwd">Dict</span>[<span class="kwd">str</span>,<span class="kwd">str</span>]</li>
+</ol>
+</div>]</li><li data-tuple-idx="6"><span class="">text</span>: <span class="kwd">str</span></li>
+</ol>
+</div>]</li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;touche-image/2022-06-13/touche-2022-task-3&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, png, webp, url, phash, pages&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>touche-image/2022-06-13/touche-2022-task-3<span class="w"> </span>docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[png]&nbsp;&nbsp;&nbsp;&nbsp;[webp]&nbsp;&nbsp;&nbsp;&nbsp;[url]&nbsp;&nbsp;&nbsp;&nbsp;[phash]&nbsp;&nbsp;&nbsp;&nbsp;[pages]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:touche-image/2022-06-13/touche-2022-task-3&#39;</span><span class="p">)</span>
+<span class="c1"># Index touche-image/2022-06-13</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/touche-image_2022-06-13&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;phash&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.touche-image.2022-06-13.touche-2022-task-3&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
+</div>
+
+<a class="tab" target="touche-image/2022-06-13/touche-2022-task-3__qrels">qrels</a>
+<div id="touche-image/2022-06-13/touche-2022-task-3__qrels" class="tab-content">
+<span class="ds-count"><kbd title="19821">20K</kbd> <kbd>qrels</kbd></span>
+
+<div>Query relevance judgment type:</div>
+<div class="type">
+<div class="type-name">TrecQrel: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">relevance</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">iteration</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Relevance levels</p>
+
+<table>
+<tr><th>Rel.</th><th>Definition</th><th>Count</th><th>%</th></tr>
+<tr><td class="relScore">0</td><td>not relevant</td><td class="right"><kbd title="11085">11K</kbd></td><td class="right">55.9%</td></tr>
+<tr><td class="relScore">1</td><td>relevant</td><td class="right"><kbd title="8736">8.7K</kbd></td><td class="right">44.1%</td></tr>
+</table>
+
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;touche-image/2022-06-13/touche-2022-task-3&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">qrel</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">qrels_iter</span><span class="p">():</span>
+    <span class="n">qrel</span> <span class="c1"># namedtuple&lt;query_id, doc_id, relevance, iteration&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>touche-image/2022-06-13/touche-2022-task-3<span class="w"> </span>qrels<span class="w"> </span>--format<span class="w"> </span>tsv
+</pre></div>
+
+<code class="output">
+
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[relevance]&nbsp;&nbsp;&nbsp;&nbsp;[iteration]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">from</span> <span class="nn">pyterrier.measures</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:touche-image/2022-06-13/touche-2022-task-3&#39;</span><span class="p">)</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/touche-image_2022-06-13&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
+<span class="c1"># (optionally other pipeline components)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
+    <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+<p>You can find more details about PyTerrier experiments <a href="https://pyterrier.readthedocs.io/en/latest/experiments.html">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">qrels</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.touche-image.2022-06-13.touche-2022-task-3.qrels&#39;</span><span class="p">)</span>  <span class="c1"># AdhocAssessments</span>
+<span class="k">for</span> <span class="n">topic_qrels</span> <span class="ow">in</span> <span class="n">qrels</span><span class="o">.</span><span class="n">iter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">topic_qrels</span><span class="p">)</span>  <span class="c1"># An AdhocTopic</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocAssessments">AdhocAssessments</a>.</p></div></div>
+</div>
+
+<a class="tab" target="touche-image/2022-06-13/touche-2022-task-3__citation">Citation</a>
+<div id="touche-image/2022-06-13/touche-2022-task-3__citation" class="tab-content">
+<p><a href="ir_datasets.bib">ir_datasets.bib</a>:</p><cite class="select">\cite{Bondarenko2022Touche,Kiesel2021Image,Dimitrov2021SemEval,Yanai2007Image}</cite>
+<p>Bibtex:</p>
+<cite class="select">@inproceedings{Bondarenko2022Touche,
+  address = {Berlin Heidelberg New York},
+  author = {Alexander Bondarenko and Maik Fr{\"o}be and Johannes Kiesel and Shahbaz Syed and Timon Gurcke and Meriem Beloucif and Alexander Panchenko and Chris Biemann and Benno Stein and Henning Wachsmuth and Martin Potthast and Matthias Hagen},
+  booktitle = {Experimental IR Meets Multilinguality, Multimodality, and Interaction. 13th International Conference of the CLEF Association (CLEF 2022)},
+  editor = {Alberto Barr{\'o}n-Cede{\~n}o and Giovanni Da San Martino and Mirko Degli Esposti and Fabrizio Sebastiani and Craig Macdonald and Gabriella Pasi and Allan Hanbury and Martin Potthast and Guglielmo Faggioli and Nicola Ferro},
+  month = sep,
+  numpages = 29,
+  publisher = {Springer},
+  series = {Lecture Notes in Computer Science},
+  site = {Bologna, Italy},
+  title = {{Overview of Touch{\'e} 2022: Argument Retrieval}},
+  year = 2022
+}
+@inproceedings{Kiesel2021Image,
+  author = {Johannes Kiesel and Nico Reichenbach and Benno Stein and Martin Potthast},
+  booktitle = {8th Workshop on Argument Mining (ArgMining 2021) at EMNLP},
+  doi = {10.18653/v1/2021.argmining-1.4},
+  editor = {Khalid Al-Khatib and Yufang Hou and Manfred Stede},
+  month = nov,
+  pages = {36-45},
+  publisher = {Association for Computational Linguistics},
+  site = {Punta Cana, Dominican Republic},
+  title = {{Image Retrieval for Arguments Using Stance-Aware Query Expansion}},
+  url = {https://aclanthology.org/2021.argmining-1.4/},
+  year = 2021
+}
+@inproceedings{Dimitrov2021SemEval,
+  author = {Dimitar Dimitrov and Bishr Bin Ali and Shaden Shaar and Firoj Alam and Fabrizio Silvestri and Hamed Firooz and Preslav Nakov and Giovanni Da San Martino},
+  editor = {Alexis Palmer and Nathan Schneider and Natalie Schluter and Guy Emerson and Aur{\'{e}}lie Herbelot and Xiaodan Zhu},
+  title = {SemEval-2021 Task 6: Detection of Persuasion Techniques in Texts and Images},
+  booktitle = {Proceedings of the 15th International Workshop on Semantic Evaluation, SemEval@ACL/IJCNLP 2021, Virtual Event / Bangkok, Thailand, August 5-6, 2021},
+  pages = {70--98},
+  publisher = {Association for Computational Linguistics},
+  year = {2021},
+  doi = {10.18653/v1/2021.semeval-1.7},
+}
+@inproceedings{Yanai2007Image,
+  author = {Keiji Yanai},
+  editor = {Carey L. Williamson and Mary Ellen Zurko and Peter F. Patel{-}Schneider and Prashant J. Shenoy},
+  title = {Image collector {III:} a web image-gathering system with bag-of-keypoints},
+  booktitle = {Proceedings of the 16th International Conference on World Wide Web, {WWW} 2007, Banff, Alberta, Canada, May 8-12, 2007},
+  pages = {1295--1296},
+  publisher = {{ACM}},
+  year = {2007},
+  doi = {10.1145/1242572.1242816},
+}</cite>
+</div>
+
+<a class="tab" target="touche-image/2022-06-13/touche-2022-task-3__metadata">Metadata</a>
+<div id="touche-image/2022-06-13/touche-2022-task-3__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 23841,
+    "fields": {
+      "doc_id": {
+        "max_len": 17,
+        "common_prefix": "I"
+      }
+    }
+  },
+  "queries": {
+    "count": 50
+  },
+  "qrels": {
+    "count": 19821,
+    "fields": {
+      "relevance": {
+        "counts_by_value": {
+          "1": 8736,
+          "0": 11085
+        }
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    $.ajax({
+        'url': 'https://ir-datasets.com/dlc/touche-image.json'
+    }).done(function (data) {
+        $('#Downloads').append(generateDownloads('Downloadable content', data));
+    });
+});
+</script>
+
+</div>
+</body>
+</html>
