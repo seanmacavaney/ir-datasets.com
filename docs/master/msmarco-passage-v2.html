@@ -22,6 +22,7 @@
 <div style="font-weight: bold; font-size: 1.1em;">Index</div>
 <ol class="index">
 <li><a href="#msmarco-passage-v2"><kbd>msmarco-passage-v2</kbd></a></li>
+<li><a href="#msmarco-passage-v2/dedup"><kbd><span class="prefix">msmarco-passage-v2</span>/dedup</kbd></a></li>
 <li><a href="#msmarco-passage-v2/dev1"><kbd><span class="prefix">msmarco-passage-v2</span>/dev1</kbd></a></li>
 <li><a href="#msmarco-passage-v2/dev2"><kbd><span class="prefix">msmarco-passage-v2</span>/dev2</kbd></a></li>
 <li><a href="#msmarco-passage-v2/train"><kbd><span class="prefix">msmarco-passage-v2</span>/train</kbd></a></li>
@@ -112,6 +113,85 @@
 <pre class="metadata">{
   "docs": {
     "count": 138364198,
+    "fields": {
+      "doc_id": {
+        "max_len": 28,
+        "common_prefix": "msmarco_passage_"
+      }
+    }
+  }
+}</pre>
+</div>
+</div>
+</div>
+
+<hr />
+<div class="dataset" id="msmarco-passage-v2/dedup" data-parent="msmarco-passage-v2">
+<h3><kbd class="ds-name select"><span class="str">"msmarco-passage-v2/dedup"</span></kbd></h3>
+
+<div class="desc">
+<p><i>(no description provided)</i></p>
+</div>
+<div class="tabs">
+<a class="tab" target="msmarco-passage-v2/dedup__docs">docs</a>
+<div id="msmarco-passage-v2/dedup__docs" class="tab-content">
+<span class="ds-count"><kbd title="119582876">120M</kbd> <kbd>docs</kbd></span>
+
+<p>Language: <span class="lang-code">en</span></p>
+<div>Document type:</div>
+<div class="type">
+<div class="type-name">MsMarcoV2Passage: (<span class="kwd">namedtuple</span>)</div>
+<ol class="type-fields">
+<li data-tuple-idx="0"><span class="">doc_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">spans</span>: <span class="kwd">Tuple</span>[<span class="kwd">Tuple</span>[<span class="kwd">int</span>,<span class="kwd">int</span>], ...]</li><li data-tuple-idx="3"><span class="">msmarco_document_id</span>: <span class="kwd">str</span></li>
+</ol>
+</div>
+<p>Examples:</p><div class="ex-tabs">
+<a class="ex-tab" target="irds-python">Python API</a>
+<div class="ex-tab-content irds-python">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;msmarco-passage-v2/dedup&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">docs_iter</span><span class="p">():</span>
+    <span class="n">doc</span> <span class="c1"># namedtuple&lt;doc_id, text, spans, msmarco_document_id&gt;</span>
+</pre></div>
+<p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
+<a class="ex-tab" target="irds-cli">CLI</a>
+<div class="ex-tab-content irds-cli">
+<div class="highlight"><pre><span></span>ir_datasets<span class="w"> </span><span class="nb">export</span><span class="w"> </span>msmarco-passage-v2/dedup<span class="w"> </span>docs
+</pre></div>
+
+<code class="output">
+
+<div>[doc_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[spans]&nbsp;&nbsp;&nbsp;&nbsp;[msmarco_document_id]</div>
+<div>...</div>
+
+</code>
+<p>You can find more details about the CLI <a href="cli.html">here</a>.</p></div>
+<a class="ex-tab" target="pyterrier">PyTerrier</a>
+<div class="ex-tab-content pyterrier">
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyterrier</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s1">&#39;irds:msmarco-passage-v2/dedup&#39;</span><span class="p">)</span>
+<span class="c1"># Index msmarco-passage-v2/dedup</span>
+<span class="n">indexer</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IterDictIndexer</span><span class="p">(</span><span class="s1">&#39;./indices/msmarco-passage-v2_dedup&#39;</span><span class="p">,</span> <span class="n">meta</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;docno&quot;</span><span class="p">:</span> <span class="mi">28</span><span class="p">})</span>
+<span class="n">index_ref</span> <span class="o">=</span> <span class="n">indexer</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_corpus_iter</span><span class="p">(),</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+</pre></div>
+<p>You can find more details about PyTerrier indexing <a href="https://pyterrier.readthedocs.io/en/latest/datasets.html#examples">here</a>.</p></div>
+<a class="ex-tab" target="xmpir">XPM-IR</a>
+<div class="ex-tab-content xmpir">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datamaestro</span> <span class="kn">import</span> <span class="n">prepare_dataset</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">prepare_dataset</span><span class="p">(</span><span class="s1">&#39;irds.msmarco-passage-v2.dedup&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iter_documents</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>  <span class="c1"># an AdhocDocumentStore</span>
+    <span class="k">break</span>
+</pre></div>
+<p>This examples requires that <a href="https://experimaestro-ir.readthedocs.io/">experimaestro-ir</a> be installed. For more information about the returned object, see the documentation about <a href="https://datamaestro-text.readthedocs.io/en/latest/api/ir.html#datamaestro_text.data.ir.AdhocDocumentStore">AdhocDocumentStore</a></p></div></div>
+</div>
+
+<a class="tab" target="msmarco-passage-v2/dedup__metadata">Metadata</a>
+<div id="msmarco-passage-v2/dedup__metadata" class="tab-content">
+<pre class="metadata">{
+  "docs": {
+    "count": 119582876,
     "fields": {
       "doc_id": {
         "max_len": 28,
