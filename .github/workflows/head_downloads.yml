@@ -1205,7 +1205,7 @@ jobs:
         IR_DATASETS_DL_DISABLE_PBAR: 'true'
       run: |
         cd ir-datasets
-        python -m test.downloads --head_precheck --filter "^miracl/" --output download.new.json --randdelay 10
+        python -m test.downloads --head_precheck --filter "^miracl/" --output download.new.json --randdelay 5
     - name: Upload
       if: always()
       run: |
