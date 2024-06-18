@@ -15,7 +15,7 @@
 
 <div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
 
-<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.7/ir_datasets/datasets/beir.py">datasets/beir.py</a></div>
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.8/ir_datasets/datasets/beir.py">datasets/beir.py</a></div>
 <h1><code>ir_datasets</code>: Beir (benchmark suite)</h1>
 <div style="font-weight: bold; font-size: 1.1em;">Index</div>
 <ol class="index">
@@ -7646,9 +7646,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">BeirUrlQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">url</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -7657,7 +7657,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;beir/nfcorpus/dev&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text, url&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -7667,7 +7667,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[url]</div>
 <div>...</div>
 
 </code>
@@ -7680,7 +7680,7 @@
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/beir_nfcorpus&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
 <span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">))</span>
 </pre></div>
 <p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
 <a class="ex-tab" target="xmpir">XPM-IR</a>
@@ -7797,7 +7797,7 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
@@ -7881,9 +7881,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">BeirUrlQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">url</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -7892,7 +7892,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;beir/nfcorpus/test&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text, url&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -7902,7 +7902,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[url]</div>
 <div>...</div>
 
 </code>
@@ -7915,7 +7915,7 @@
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/beir_nfcorpus&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
 <span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">))</span>
 </pre></div>
 <p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
 <a class="ex-tab" target="xmpir">XPM-IR</a>
@@ -8032,7 +8032,7 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
@@ -8116,9 +8116,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">BeirUrlQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">url</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -8127,7 +8127,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;beir/nfcorpus/train&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text, url&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -8137,7 +8137,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]&nbsp;&nbsp;&nbsp;&nbsp;[url]</div>
 <div>...</div>
 
 </code>
@@ -8150,7 +8150,7 @@
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/beir_nfcorpus&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
 <span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">))</span>
 </pre></div>
 <p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
 <a class="ex-tab" target="xmpir">XPM-IR</a>
@@ -8267,7 +8267,7 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>

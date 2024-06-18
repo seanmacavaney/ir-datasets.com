@@ -15,7 +15,7 @@
 
 <div style="position: absolute; top: 4px; left: 4px;"><a href="index.html">&larr; home</a></div>
 
-<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.7/ir_datasets/datasets/wikiclir.py">datasets/wikiclir.py</a></div>
+<div style="position: absolute; top: 4px; right: 4px;">Github: <a href="https://github.com/allenai/ir_datasets/blob/v0.5.8/ir_datasets/datasets/wikiclir.py">datasets/wikiclir.py</a></div>
 <h1><code>ir_datasets</code>: WikiCLIR</h1>
 <div style="font-weight: bold; font-size: 1.1em;">Index</div>
 <ol class="index">
@@ -95,9 +95,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -106,7 +106,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/ar&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -116,7 +116,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -302,9 +302,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -313,7 +313,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/ca&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -323,7 +323,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -509,9 +509,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -520,7 +520,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/cs&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -530,7 +530,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -716,9 +716,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -727,7 +727,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/de&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -737,7 +737,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -923,9 +923,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -934,7 +934,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/en-simple&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -944,7 +944,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -957,7 +957,7 @@
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/wikiclir_en-simple&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
 <span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">))</span>
 </pre></div>
 <p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
 <a class="ex-tab" target="xmpir">XPM-IR</a>
@@ -1075,7 +1075,7 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
@@ -1159,9 +1159,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1170,7 +1170,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/es&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1180,7 +1180,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -1366,9 +1366,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1377,7 +1377,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/fi&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1387,7 +1387,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -1573,9 +1573,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1584,7 +1584,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/fr&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1594,7 +1594,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -1780,9 +1780,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1791,7 +1791,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/it&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1801,7 +1801,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -1987,9 +1987,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1998,7 +1998,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/ja&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2008,7 +2008,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -2194,9 +2194,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -2205,7 +2205,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/ko&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2215,7 +2215,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -2401,9 +2401,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -2412,7 +2412,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/nl&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2422,7 +2422,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -2608,9 +2608,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -2619,7 +2619,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/nn&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2629,7 +2629,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -2815,9 +2815,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -2826,7 +2826,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/no&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2836,7 +2836,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -3022,9 +3022,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -3033,7 +3033,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/pl&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3043,7 +3043,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -3229,9 +3229,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -3240,7 +3240,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/pt&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3250,7 +3250,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -3436,9 +3436,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -3447,7 +3447,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/ro&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3457,7 +3457,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -3643,9 +3643,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -3654,7 +3654,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/ru&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3664,7 +3664,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -3850,9 +3850,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -3861,7 +3861,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/sv&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -3871,7 +3871,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -4057,9 +4057,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -4068,7 +4068,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/sw&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -4078,7 +4078,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -4264,9 +4264,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -4275,7 +4275,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/tl&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -4285,7 +4285,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -4471,9 +4471,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -4482,7 +4482,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/tr&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -4492,7 +4492,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -4678,9 +4678,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -4689,7 +4689,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/uk&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -4699,7 +4699,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -4885,9 +4885,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -4896,7 +4896,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/vi&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -4906,7 +4906,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
@@ -5092,9 +5092,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">WikiClirQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">first_sent</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -5103,7 +5103,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;wikiclir/zh&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, first_sent&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -5113,7 +5113,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[first_sent]</div>
 <div>...</div>
 
 </code>
