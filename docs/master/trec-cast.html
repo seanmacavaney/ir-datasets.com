@@ -436,9 +436,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">Cast2019Query: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">raw_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">topic_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">turn_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">topic_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">topic_description</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -447,7 +447,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v0/train/judged&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, raw_utterance, topic_number, turn_number, topic_title, topic_description&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -457,7 +457,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[raw_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[topic_number]&nbsp;&nbsp;&nbsp;&nbsp;[turn_number]&nbsp;&nbsp;&nbsp;&nbsp;[topic_title]&nbsp;&nbsp;&nbsp;&nbsp;[topic_description]</div>
 <div>...</div>
 
 </code>
@@ -470,7 +470,7 @@
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v0&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
 <span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">))</span>
 </pre></div>
 <p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
 <a class="ex-tab" target="xmpir">XPM-IR</a>
@@ -589,7 +589,7 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
@@ -1095,9 +1095,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">Cast2019Query: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">raw_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">topic_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="3"><span class="">turn_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="4"><span class="">topic_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">topic_description</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1106,7 +1106,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2019/judged&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, raw_utterance, topic_number, turn_number, topic_title, topic_description&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1116,7 +1116,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[raw_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[topic_number]&nbsp;&nbsp;&nbsp;&nbsp;[turn_number]&nbsp;&nbsp;&nbsp;&nbsp;[topic_title]&nbsp;&nbsp;&nbsp;&nbsp;[topic_description]</div>
 <div>...</div>
 
 </code>
@@ -1129,7 +1129,7 @@
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
 <span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">))</span>
 </pre></div>
 <p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
 <a class="ex-tab" target="xmpir">XPM-IR</a>
@@ -1250,7 +1250,7 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>
@@ -1613,9 +1613,9 @@
 <p>Language: <span class="lang-code">en</span></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">Cast2020Query: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">raw_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">automatic_rewritten_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">manual_rewritten_utterance</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">manual_canonical_result_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">topic_number</span>: <span class="kwd">int</span></li><li data-tuple-idx="6"><span class="">turn_number</span>: <span class="kwd">int</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1624,7 +1624,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;trec-cast/v1/2020/judged&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, raw_utterance, automatic_rewritten_utterance, manual_rewritten_utterance, manual_canonical_result_id, topic_number, turn_number&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1634,7 +1634,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[raw_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[automatic_rewritten_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[manual_rewritten_utterance]&nbsp;&nbsp;&nbsp;&nbsp;[manual_canonical_result_id]&nbsp;&nbsp;&nbsp;&nbsp;[topic_number]&nbsp;&nbsp;&nbsp;&nbsp;[turn_number]</div>
 <div>...</div>
 
 </code>
@@ -1647,7 +1647,7 @@
 <span class="n">index_ref</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">IndexRef</span><span class="o">.</span><span class="n">of</span><span class="p">(</span><span class="s1">&#39;./indices/trec-cast_v1&#39;</span><span class="p">)</span> <span class="c1"># assumes you have already built an index</span>
 <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">BatchRetrieve</span><span class="p">(</span><span class="n">index_ref</span><span class="p">,</span> <span class="n">wmodel</span><span class="o">=</span><span class="s1">&#39;BM25&#39;</span><span class="p">)</span>
 <span class="c1"># (optionally other pipeline components)</span>
-<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">())</span>
+<span class="n">pipeline</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">))</span>
 </pre></div>
 <p>You can find more details about PyTerrier retrieval <a href="https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html">here</a>.</p></div>
 <a class="ex-tab" target="xmpir">XPM-IR</a>
@@ -1768,7 +1768,7 @@
 <span class="c1"># (optionally other pipeline components)</span>
 <span class="n">pt</span><span class="o">.</span><span class="n">Experiment</span><span class="p">(</span>
     <span class="p">[</span><span class="n">pipeline</span><span class="p">],</span>
-    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(),</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">get_topics</span><span class="p">(</span><span class="s1">&#39;raw_utterance&#39;</span><span class="p">),</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">get_qrels</span><span class="p">(),</span>
     <span class="p">[</span><span class="n">MAP</span><span class="p">,</span> <span class="n">nDCG</span><span class="o">@</span><span class="mi">20</span><span class="p">]</span>
 <span class="p">)</span>

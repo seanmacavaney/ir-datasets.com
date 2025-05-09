@@ -352,9 +352,9 @@
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">ExctractedCCNoReportQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">ht_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">ht_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="6"><span class="">ht_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">mt_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">mt_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">mt_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">translation_lang</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -363,7 +363,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neuclir/1/fa/trec-2022&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative, ht_title, ht_description, ht_narrative, mt_title, mt_description, mt_narrative, translation_lang&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -373,7 +373,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]&nbsp;&nbsp;&nbsp;&nbsp;[ht_title]&nbsp;&nbsp;&nbsp;&nbsp;[ht_description]&nbsp;&nbsp;&nbsp;&nbsp;[ht_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[mt_title]&nbsp;&nbsp;&nbsp;&nbsp;[mt_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[translation_lang]</div>
 <div>...</div>
 
 </code>
@@ -539,9 +539,9 @@
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">ExctractedCCNoReportNoHtNarQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">ht_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">ht_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="6"><span class="">mt_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">mt_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">mt_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">translation_lang</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -550,7 +550,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neuclir/1/fa/trec-2023&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative, ht_title, ht_description, mt_title, mt_description, mt_narrative, translation_lang&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -560,7 +560,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]&nbsp;&nbsp;&nbsp;&nbsp;[ht_title]&nbsp;&nbsp;&nbsp;&nbsp;[ht_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_title]&nbsp;&nbsp;&nbsp;&nbsp;[mt_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[translation_lang]</div>
 <div>...</div>
 
 </code>
@@ -1264,9 +1264,9 @@
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">ExctractedCCNoReportQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">ht_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">ht_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="6"><span class="">ht_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">mt_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">mt_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">mt_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">translation_lang</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1275,7 +1275,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neuclir/1/ru/trec-2022&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative, ht_title, ht_description, ht_narrative, mt_title, mt_description, mt_narrative, translation_lang&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1285,7 +1285,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]&nbsp;&nbsp;&nbsp;&nbsp;[ht_title]&nbsp;&nbsp;&nbsp;&nbsp;[ht_description]&nbsp;&nbsp;&nbsp;&nbsp;[ht_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[mt_title]&nbsp;&nbsp;&nbsp;&nbsp;[mt_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[translation_lang]</div>
 <div>...</div>
 
 </code>
@@ -1451,9 +1451,9 @@
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">ExctractedCCNoReportNoHtNarQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">ht_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">ht_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="6"><span class="">mt_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">mt_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">mt_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">translation_lang</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1462,7 +1462,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neuclir/1/ru/trec-2023&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative, ht_title, ht_description, mt_title, mt_description, mt_narrative, translation_lang&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1472,7 +1472,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]&nbsp;&nbsp;&nbsp;&nbsp;[ht_title]&nbsp;&nbsp;&nbsp;&nbsp;[ht_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_title]&nbsp;&nbsp;&nbsp;&nbsp;[mt_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[translation_lang]</div>
 <div>...</div>
 
 </code>
@@ -1916,9 +1916,9 @@
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">ExctractedCCNoReportQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">ht_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">ht_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="6"><span class="">ht_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">mt_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">mt_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">mt_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="10"><span class="">translation_lang</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -1927,7 +1927,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neuclir/1/zh/trec-2022&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative, ht_title, ht_description, ht_narrative, mt_title, mt_description, mt_narrative, translation_lang&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -1937,7 +1937,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]&nbsp;&nbsp;&nbsp;&nbsp;[ht_title]&nbsp;&nbsp;&nbsp;&nbsp;[ht_description]&nbsp;&nbsp;&nbsp;&nbsp;[ht_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[mt_title]&nbsp;&nbsp;&nbsp;&nbsp;[mt_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[translation_lang]</div>
 <div>...</div>
 
 </code>
@@ -2103,9 +2103,9 @@
 <p>Language: <em>multiple/other/unknown</em></p>
 <div>Query type:</div>
 <div class="type">
-<div class="type-name">GenericQuery: (<span class="kwd">namedtuple</span>)</div>
+<div class="type-name">ExctractedCCNoReportNoHtNarQuery: (<span class="kwd">namedtuple</span>)</div>
 <ol class="type-fields">
-<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">text</span>: <span class="kwd">str</span></li>
+<li data-tuple-idx="0"><span class="">query_id</span>: <span class="kwd">str</span></li><li data-tuple-idx="1"><span class="">title</span>: <span class="kwd">str</span></li><li data-tuple-idx="2"><span class="">description</span>: <span class="kwd">str</span></li><li data-tuple-idx="3"><span class="">narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="4"><span class="">ht_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="5"><span class="">ht_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="6"><span class="">mt_title</span>: <span class="kwd">str</span></li><li data-tuple-idx="7"><span class="">mt_description</span>: <span class="kwd">str</span></li><li data-tuple-idx="8"><span class="">mt_narrative</span>: <span class="kwd">str</span></li><li data-tuple-idx="9"><span class="">translation_lang</span>: <span class="kwd">str</span></li>
 </ol>
 </div>
 <p>Examples:</p><div class="ex-tabs">
@@ -2114,7 +2114,7 @@
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ir_datasets</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">ir_datasets</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;neuclir/1/zh/trec-2023&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">queries_iter</span><span class="p">():</span>
-    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, text&gt;</span>
+    <span class="n">query</span> <span class="c1"># namedtuple&lt;query_id, title, description, narrative, ht_title, ht_description, mt_title, mt_description, mt_narrative, translation_lang&gt;</span>
 </pre></div>
 <p>You can find more details about the Python API <a href="python.html">here</a>.</p></div>
 <a class="ex-tab" target="irds-cli">CLI</a>
@@ -2124,7 +2124,7 @@
 
 <code class="output">
 
-<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[text]</div>
+<div>[query_id]&nbsp;&nbsp;&nbsp;&nbsp;[title]&nbsp;&nbsp;&nbsp;&nbsp;[description]&nbsp;&nbsp;&nbsp;&nbsp;[narrative]&nbsp;&nbsp;&nbsp;&nbsp;[ht_title]&nbsp;&nbsp;&nbsp;&nbsp;[ht_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_title]&nbsp;&nbsp;&nbsp;&nbsp;[mt_description]&nbsp;&nbsp;&nbsp;&nbsp;[mt_narrative]&nbsp;&nbsp;&nbsp;&nbsp;[translation_lang]</div>
 <div>...</div>
 
 </code>
