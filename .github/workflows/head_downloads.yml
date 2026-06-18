@@ -36,7 +36,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -82,7 +82,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -128,7 +128,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -174,7 +174,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -220,7 +220,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -266,7 +266,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -312,7 +312,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -358,7 +358,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -404,7 +404,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -450,7 +450,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -496,7 +496,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -542,7 +542,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -588,7 +588,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -634,7 +634,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -680,7 +680,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -726,7 +726,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -772,7 +772,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -818,7 +818,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -864,7 +864,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -910,7 +910,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -956,7 +956,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1002,7 +1002,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1048,7 +1048,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1094,7 +1094,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1140,7 +1140,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1186,7 +1186,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1232,7 +1232,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1278,7 +1278,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1324,7 +1324,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1370,7 +1370,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1416,7 +1416,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1462,7 +1462,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1508,7 +1508,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1554,7 +1554,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1600,7 +1600,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1646,7 +1646,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1692,7 +1692,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1738,7 +1738,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1784,7 +1784,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1830,7 +1830,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1876,7 +1876,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1922,7 +1922,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -1968,7 +1968,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2014,7 +2014,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2060,7 +2060,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2106,7 +2106,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2152,7 +2152,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2198,7 +2198,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2244,7 +2244,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2290,7 +2290,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2336,7 +2336,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2382,7 +2382,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2428,7 +2428,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2474,7 +2474,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2520,7 +2520,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2566,7 +2566,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2612,7 +2612,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -2658,7 +2658,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:

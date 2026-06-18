@@ -352,7 +352,7 @@ def generate_index(out_dir, version, top_level_map):
     template = Template(filename=os.path.join("templates", "index.html"))
     with page_template('index.html', out_dir, version, title='Catalog') as out:
         if version == 'master':
-            install = '--upgrade git+https://github.com/allenai/ir_datasets.git'
+            install = '--upgrade git+https://github.com/ir-datasets/ir-datasets.git'
         elif version.startswith('v'):
             install = f'ir_datasets=={version[1:]}'
         elif not version:
@@ -588,8 +588,8 @@ def page_template(file, base_dir, version, title=None, source=None, include_irds
 <div class="page">
 ''')
         path_segment = 'blob' if source else 'tree'
-        url = 'https://github.com/allenai/ir_datasets/' + (f'{path_segment}/{version or ("v" + ir_datasets.__version__)}/' if source else '') + (f'ir_datasets/{source}' if source else '')
-        text = source or 'allenai/ir_datasets'
+        url = 'https://github.com/ir-datasets/ir-datasets/' + (f'{path_segment}/{version or ("v" + ir_datasets.__version__)}/' if source else '') + (f'ir_datasets/{source}' if source else '')
+        text = source or 'ir-datasets/ir-datasets'
         if version: # a specific version -- warn the user
             out.write(f'''
 <div class="banner">This documentation is for <strong>{version}</strong>. See <a href="../{file}">here</a> for documentation of the current latest version on pypi.</div>
@@ -672,7 +672,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:
@@ -783,7 +783,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: allenai/ir_datasets
+        repository: ir-datasets/ir-datasets
         path: ir-datasets
     - uses: actions/checkout@v2
       with:

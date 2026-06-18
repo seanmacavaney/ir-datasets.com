@@ -173,7 +173,7 @@ function generateDownloads(title, downloads) {
     });
     return $('<details></details>')
         .append($('<summary></summary>').text(toEmoji(allGood) + ' ' + title + ' (' + goodCount.toString() + ' of ' + totalCount.toString() + ')'))
-        .append($('<p>These files are automatically downloaded by ir_datasets as they are needed. We also periodically check that they are still available and unchanged through an automated <a href="https://github.com/allenai/ir_datasets/actions/workflows/verify_downloads.yml">GitHub action</a>. The latest results from that test are shown here:</p>'))
+        .append($('<p>These files are automatically downloaded by ir_datasets as they are needed. We also periodically check that they are still available and unchanged through an automated <a href="https://github.com/ir-datasets/ir-datasets/actions/workflows/verify_downloads.yml">GitHub action</a>. The latest results from that test are shown here:</p>'))
         .append($content)
         .prop('open', !allGood);
 }
